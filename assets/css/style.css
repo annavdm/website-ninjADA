@@ -1,14 +1,67 @@
-html, body {
+/* General page style */
+body {
   margin: 0;
   padding: 0;
-  background-color: #2a2a2a; /* dark grey */
-  color: #ffffff;            /* white text */
-  font-family: Arial, sans-serif;
+  background: #1e1e1e;        /* dark gray background */
+  color: #ffffff;             /* white text */
+  font-family: "Inter", sans-serif;  /* modern clean font */
+  line-height: 1.6;
 }
 
-.content {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 20px;
+/* Header */
+header {
+  background: #141414;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #333;
+}
+
+header h1 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+
+/* Navigation */
+nav a {
+  color: #ffffff;
+  margin-left: 1.5rem;
+  font-weight: 400;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+nav a:hover {
+  opacity: 0.7;
+}
+
+/* Main content area */
+main {
+  max-width: 850px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.4rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  border-top: 1px solid #333;
+  font-size: 0.9rem;
+  color: #bbbbbb;
 }
 
