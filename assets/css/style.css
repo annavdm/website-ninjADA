@@ -71,32 +71,12 @@ footer {
 .hero {
   position: relative;
   height: 60vh;
-  background-image: url("/website-ninjADA/images/reddit.jpeg");
+  background-image: url("../../images/reddit.jpeg");
   background-size: cover;
   background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-/* Text on top of the image */
-.hero-text {
-  text-align: center;
-  color: white;                     /* text color */
-  background: rgba(0, 0, 0, 0.4);   /* optional: dark transparent box */
-  padding: 1rem 2rem;
-  border-radius: 8px;
-}
-
-.hero-text h1 {
-  margin: 0;
-  font-size: 3rem;
-  font-weight: 700;
-}
-
-.hero-text p {
-  margin: 0.5rem 0 0;
-  font-size: 1.2rem;
 }
 
 
