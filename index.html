@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<img src="../website-ninjADA/images/Reddit_Logo.png" alt="Reddit logo" class="floating-reddit">
+
+
 <head>
   <meta charset="UTF-8">
   <title>My Website</title>
@@ -23,7 +27,6 @@
   
   </header>
 
-
   <section class="hero">
     <div class="hero-text">
       <a href="#introduction" class="hero-button">Let’s start ! </a>
@@ -33,23 +36,56 @@
   <main>
     <section id="introduction">
       <h2>Introduction</h2>
-      <p>
-        <!-- Put your introduction text here -->
-        This project explores the online figure of the “hater” and how hate is expressed and structured in digital spaces.
-      </p>
+      <div class="intro-box">
+        <p>
+          <!-- introduction text here -->
+          Online conflict is rising, and social media often turns into a stage for anonymous negativity. Using a Reddit dataset (2014–2017), we trace how subreddits link to each other and reveal a hidden network of hostility.
+          Focusing on the 10% of interactions tagged as negative, we dive into the profiles of the users who spread this hostility: their communities, writing styles, targets, and posting habits.
+          By uncovering how these “haters” operate, we aim to shed light on the dynamics that fuel online anger.
+        </p>
+      </div> 
     </section>
   
     <section id="research-questions">
       <h2>Research Questions</h2>
-      <ul>
-        <li>Who are the “haters” in this context?</li>
-        <li>How do they express hate online?</li>
-        <li>What patterns or structures can we identify in their behavior?</li>
-      </ul>
+
+      <div class="rq-grid">
+        <article class="rq-card">
+
+          <p>
+            Is a hater likely to be active in certain subreddits ?
+          </p>
+        </article>
+    
+        <article class="rq-card">
+
+          <p>
+            Are there persisting conflicts between subreddits ?
+          </p>
+        </article>
+    
+        <article class="rq-card">
+
+          <p>
+            Does a hater have a particular way of writing/ communicating?
+          </p>
+        </article>
+      </div>
     </section>
   
     <section id="data-presentation">
       <h2>Data Presentation</h2>
+
+      <iframe src="plots/sentiment_distribution.html" 
+      width="100%" 
+      height="500" 
+      style="border:none;">
+    </iframe>
+    <iframe src="plots/subreddit_network_interactive.html" 
+    width="100%" 
+    height="500" 
+    style="border:none;">
+  </iframe>
       <p>
         <!-- Describe what data you used, where it comes from, etc. -->
         Here you can present your dataset, visualizations, and key descriptive statistics.
@@ -75,7 +111,7 @@
   
 
   <footer>
-    <p>© 2025 Your Name</p>
+    <p>© 2025 NinjADA Team</p>
   </footer>
 </body>
 
