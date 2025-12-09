@@ -155,7 +155,7 @@ footer {
 .rq-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
-  border-color: rgba(255, 0, 0, 0.7);
+  border-color: rgb(255, 69, 0);
 }
 
 @media (min-width: 800px) {
