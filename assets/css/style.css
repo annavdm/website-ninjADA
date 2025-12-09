@@ -10,7 +10,7 @@ body {
 
 /* Header */
 header {
-  background: #141414;
+  background: none;
   padding: 1.5rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -67,15 +67,16 @@ footer {
 }
 
 /* HERO SECTION */
+
 .hero {
   position: relative;
-  height: 60vh;                     /* height of the top section */
-  background-image: url("../images/reddit.jpeg");
-  background-size: cover;           /* makes the image fill the area */
-  background-position: center;      /* centers the image */
+  height: 60vh;
+  background-image: url("/website-ninjADA/images/reddit.jpeg");
+  background-size: cover;
+  background-position: center;
   display: flex;
-  align-items: center;              /* vertically center text */
-  justify-content: center;          /* horizontally center text */
+  align-items: center;
+  justify-content: center;
 }
 
 /* Text on top of the image */
