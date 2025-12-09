@@ -42,6 +42,7 @@ main {
   max-width: 850px;
   margin: 3rem auto;
   padding: 0 1.5rem;
+  background: #1e1e1e; 
 }
 
 section {
@@ -64,4 +65,37 @@ footer {
   font-size: 0.9rem;
   color: #bbbbbb;
 }
+
+/* HERO SECTION */
+.hero {
+  position: relative;
+  height: 60vh;                     /* height of the top section */
+  background-image: url("../images/reddit.jpeg");
+  background-size: cover;           /* makes the image fill the area */
+  background-position: center;      /* centers the image */
+  display: flex;
+  align-items: center;              /* vertically center text */
+  justify-content: center;          /* horizontally center text */
+}
+
+/* Text on top of the image */
+.hero-text {
+  text-align: center;
+  color: white;                     /* text color */
+  background: rgba(0, 0, 0, 0.4);   /* optional: dark transparent box */
+  padding: 1rem 2rem;
+  border-radius: 8px;
+}
+
+.hero-text h1 {
+  margin: 0;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.hero-text p {
+  margin: 0.5rem 0 0;
+  font-size: 1.2rem;
+}
+
 
