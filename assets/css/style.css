@@ -70,7 +70,7 @@ footer {
 
 .hero {
   position: relative;
-  height: 60vh;
+  height: 100vh; /* full screen height */
   background-image: url("../../images/reddit.jpeg");
   background-size: cover;
   background-position: center;
@@ -79,4 +79,25 @@ footer {
   justify-content: center;
 }
 
+.hero-button {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.6rem;
+  background: rgba(0, 0, 0, 0.4);   /* transparent black */
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 700;                    /* BOLD TEXT */
+  border-radius: 10px;
+  opacity: 0;
+  pointer-events: none;      /* cannot click while invisible */
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.hero:hover .hero-button {
+  opacity: 1;
+  pointer-events: auto;      /* now clickable */
+  transform: translateY(0);
+}
 
