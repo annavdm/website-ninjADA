@@ -10,7 +10,7 @@ body {
 
 /* Header */
 header {
-  background: none;
+  background: black;
   padding: 1.5rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -72,7 +72,7 @@ footer {
 .hero {
   position: relative;
   height: 100vh; /* full screen height */
-  background-image: url("../../images/reddit.jpeg");
+  background-image: url("../../images/reddit-img.jpeg");
   background-size: cover;
   background-position: center;
   display: flex;
