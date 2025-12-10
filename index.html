@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<img src="../website-ninjADA/images/Reddit_Logo.png" alt="Reddit logo" class="floating-reddit">
+<div class="floating-reddit-container">
+  <img src="images/Reddit_Logo.png" class="floating-reddit" alt="Reddit Logo">
+  <div class="reddit-bubble">Hello!</div>
+</div>
+
 
 
 <head>
@@ -13,6 +17,20 @@
 
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
+<script>
+  function toggleRedditBubble() {
+    const bubble = document.getElementById("reddit-bubble");
+    
+    if (bubble.style.opacity === "1") {
+      bubble.style.opacity = "0";
+      bubble.style.transform = "translateY(10px)";
+    } else {
+      bubble.style.opacity = "1";
+      bubble.style.transform = "translateY(0)";
+    }
+  }
+</script>
 
 <body>
   <header>

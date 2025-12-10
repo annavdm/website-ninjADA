@@ -149,22 +149,7 @@ footer {
     grid-template-columns: 1fr 1fr;
   }
 }
-/* Floating Reddit Icon */
-.floating-reddit {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 55px;           /* taille du logo */
-  opacity: 0.8;          /* léger transparent */
-  z-index: 9999;         /* devant tout */
-  transition: transform 0.2s ease, opacity 0.2s ease;
-}
 
-.floating-reddit:hover {
-  transform: scale(1.1); /* léger zoom au survol */
-  opacity: 1;
-  cursor: pointer;
-}
 
 /* Big intro text */
 .intro-big-text {
@@ -178,4 +163,51 @@ footer {
 #introduction {
   padding-bottom: 1rem !important;   /* instead of huge default */
   padding-top: 1rem !important;      /* adjust if needed */
+}
+
+/* Wrapper keeps position + allows bubble placement */
+.floating-reddit-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+/* Floating Reddit Icon (your original code) */
+.floating-reddit {
+  width: 55px;
+  opacity: 0.8;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.floating-reddit:hover {
+  transform: scale(1.1);
+  opacity: 1;
+  cursor: pointer;
+}
+
+/* Speech Bubble */
+.reddit-bubble {
+  position: absolute;
+  right: 70px;         /* distance from the icon */
+  bottom: 10px;        /* vertical alignment */
+  background: #FF4500; /* Reddit orange */
+  color: white;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  white-space: nowrap;
+
+  /* Hidden by default */
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+
+  pointer-events: none; /* bubble doesn’t block clicks */
+}
+
+/* Bubble appears only when hovering the icon */
+.floating-reddit-container:hover .reddit-bubble {
+  opacity: 1;
+  transform: translateY(0);
 }
