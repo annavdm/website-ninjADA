@@ -49,16 +49,6 @@ section {
   margin-bottom: 3rem;
 }
 
-.intro-box {
-  background: rgba(255, 255, 255, 0.05);   /* soft transparent box */
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 1rem 1rem;
-  border-radius: 16px;
-  max-width: 800px;
-  margin: 2rem auto;                      /* center in page */
-  box-shadow: 0 0 20px rgba(0,0,0,0.2);
-}
-
 
 h2 {
   margin-bottom: 0.5rem;
@@ -112,13 +102,9 @@ footer {
   transform: translateY(0);
 }
 
-/* Research questions layout */
-#research-questions {
-  padding: 6rem 2rem;
-}
 
-#research-questions h2 {
-  text-align: center;
+#introduction h2, #research-questions h2, #data-presentation h2, #anatomy-of-a-hater h2, #conclusion h2 {
+  text-align: left;
   font-size: 2.2rem;
   margin-bottom: 3rem;
 }
@@ -178,4 +164,18 @@ footer {
   transform: scale(1.1); /* léger zoom au survol */
   opacity: 1;
   cursor: pointer;
+}
+
+/* Big intro text */
+.intro-big-text {
+  font-size: 1.5rem;            /* much bigger */
+  font-weight: 400;             /* elegant, modern */       
+  line-height: 1.5;
+  max-width: 900px;
+  color: #ffffff;               /* text color */
+}
+
+#introduction {
+  padding-bottom: 1rem !important;   /* instead of huge default */
+  padding-top: 1rem !important;      /* adjust if needed */
 }
