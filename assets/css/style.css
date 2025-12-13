@@ -2,9 +2,9 @@
 body {
   margin: 0;
   padding: 0;
-  background: #1e1e1e;        /* dark gray background */
-  color: #ffffff;             /* white text */
-  font-family: "Inter", sans-serif;  /* modern clean font */
+  background: #1e1e1e;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
   line-height: 1.6;
 }
 
@@ -42,13 +42,12 @@ main {
   max-width: 850px;
   margin: 3rem auto;
   padding: 0 1.5rem;
-  background: #1e1e1e; 
+  background: #1e1e1e;
 }
 
 section {
   margin-bottom: 3rem;
 }
-
 
 h2 {
   margin-bottom: 0.5rem;
@@ -67,49 +66,63 @@ footer {
   color: #bbbbbb;
 }
 
-/* HERO SECTION */
+/* ================= HERO SECTION ================= */
 
 .hero {
   position: relative;
-  height: 100vh; /* full screen height */
-  background-image: url("../../images/reddit-img.jpeg");
+  height: 100vh;
+  background-image: url("../../images/fond_reddit_mechant.png");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+/* Image button wrapper */
 .hero-button {
   display: inline-block;
-  margin-top: 1.5rem;
-  padding: 0.8rem 1.6rem;
-  background: rgba(0, 0, 0, 0.4);   /* transparent black */
-  color: white;
-  text-decoration: none;
-  font-size: 1.5rem;
-  font-weight: 700;                    /* BOLD TEXT */
-  border-radius: 10px;
   opacity: 0;
-  pointer-events: none;      /* cannot click while invisible */
+  pointer-events: none;
   transform: translateY(10px);
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
+/* Reveal button on hover */
 .hero:hover .hero-button {
   opacity: 1;
-  pointer-events: auto;      /* now clickable */
+  pointer-events: auto;
   transform: translateY(0);
 }
 
+/* Start button image */
+.start-button-image {
+  width: 160px;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
 
-#introduction h2, #research-questions h2, #data-presentation h2, #anatomy-of-a-hater h2, #conclusion h2 {
+.start-button-image:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* ================= SECTION TITLES ================= */
+
+#introduction h2,
+#research-questions h2,
+#data-presentation h2,
+#anatomy-of-a-hater h2,
+#conclusion h2 {
   text-align: left;
   font-size: 2.2rem;
   margin-bottom: 3rem;
 }
 
-/* Grid for cards */
+/* ================= RESEARCH QUESTIONS ================= */
+
 .rq-grid {
   max-width: 900px;
   margin: 0 auto;
@@ -117,7 +130,6 @@ footer {
   gap: 1.5rem;
 }
 
-/* Card */
 .rq-card {
   position: relative;
   background: rgba(255, 255, 255, 0.04);
@@ -129,15 +141,12 @@ footer {
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
-
-/* Text inside card */
 .rq-card p {
   margin: 0;
   font-size: 1.2rem;
   line-height: 1.7;
 }
 
-/* Hover effect */
 .rq-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
@@ -150,22 +159,23 @@ footer {
   }
 }
 
+/* ================= INTRO TEXT ================= */
 
-/* Big intro text */
 .intro-big-text {
-  font-size: 1.5rem;            /* much bigger */
-  font-weight: 400;             /* elegant, modern */       
+  font-size: 1.5rem;
+  font-weight: 400;
   line-height: 1.5;
   max-width: 900px;
-  color: #ffffff;               /* text color */
+  color: #ffffff;
 }
 
 #introduction {
-  padding-bottom: 1rem !important;   /* instead of huge default */
-  padding-top: 1rem !important;      /* adjust if needed */
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
 }
 
-/* Wrapper keeps position + allows bubble placement */
+/* ================= FLOATING REDDIT ================= */
+
 .floating-reddit-container {
   position: fixed;
   bottom: 20px;
@@ -173,7 +183,6 @@ footer {
   z-index: 9999;
 }
 
-/* Floating Reddit Icon (your original code) */
 .floating-reddit {
   width: 55px;
   opacity: 0.8;
@@ -189,25 +198,24 @@ footer {
 /* Speech Bubble */
 .reddit-bubble {
   position: absolute;
-  right: 70px;         /* distance from the icon */
-  bottom: 10px;        /* vertical alignment */
-  background: #FF4500; /* Reddit orange */
+  right: 70px;
+  bottom: 10px;
+  background: #FF4500;
   color: white;
   padding: 10px 14px;
   border-radius: 12px;
   font-size: 14px;
   white-space: nowrap;
 
-  /* Hidden by default */
   opacity: 0;
   transform: translateY(10px);
   transition: opacity 0.25s ease, transform 0.25s ease;
 
-  pointer-events: none; /* bubble doesn’t block clicks */
+  pointer-events: none;
 }
 
-/* Bubble appears only when hovering the icon */
 .floating-reddit-container:hover .reddit-bubble {
   opacity: 1;
   transform: translateY(0);
 }
+
