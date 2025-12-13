@@ -2,7 +2,7 @@
 
 body {
   margin: 0;
-  background: #1e1e1e;
+  background: #2a2929;
   color: #ffffff;
   font-family: "Inter", sans-serif;
 }
@@ -10,7 +10,7 @@ body {
 /* ================= HEADER ================= */
 
 header {
-  background: #1e1e1e;
+  background: #2a2929;
   padding: 1.5rem 2rem;
   display: flex;
   justify-content: space-between;
