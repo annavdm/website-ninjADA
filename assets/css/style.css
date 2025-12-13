@@ -10,7 +10,7 @@ body {
 /* ================= HEADER ================= */
 
 header {
-  background: black;
+  background: #1e1e1e;
   padding: 1.5rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -39,10 +39,10 @@ nav a:hover {
 .hero {
   height: 100vh;
   width: 100%;
-  background-image: url("../../images/reddit-img.png");
+  background-image: url("../../images/reddit-img3.png");
   background-repeat: no-repeat;
   background-size: cover;              /* ✅ fills hero, no gray frame */
-  background-position: center 100%;     /* 🔼 moves reddit guy UP */
+  background-position: center 107%;     /* 🔼 moves reddit guy UP */
 
   display: flex;
   justify-content: center;
@@ -59,12 +59,14 @@ nav a:hover {
   padding: 0.7rem 1.4rem;
   font-size: 1.2rem;
   font-weight: 700;
-  background: rgba(0, 0, 0, 0.55);
-  color: #ff1100;
+  background: rgba(255, 69, 0, 0.1);
+  color: #FF4500;
   text-decoration: none;
   border-radius: 10px;
   transition: transform 0.2s ease, background 0.2s ease;
   white-space: nowrap;
+  border: 2px solid #FF4500;
+  border-radius: 15px;
 }
 
 .hero-button:hover {
