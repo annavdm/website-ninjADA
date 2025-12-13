@@ -1,14 +1,14 @@
-/* General page style */
+/* ================= GLOBAL ================= */
+
 body {
   margin: 0;
-  padding: 0;
   background: #1e1e1e;
   color: #ffffff;
   font-family: "Inter", sans-serif;
-  line-height: 1.6;
 }
 
-/* Header */
+/* ================= HEADER ================= */
+
 header {
   background: black;
   padding: 1.5rem 2rem;
@@ -20,158 +20,74 @@ header {
 
 header h1 {
   margin: 0;
-  font-weight: 600;
   font-size: 1.8rem;
+  font-weight: 600;
 }
 
-/* Navigation */
 nav a {
-  color: #ffffff;
+  color: white;
   margin-left: 1.5rem;
-  font-weight: 400;
   text-decoration: none;
-  transition: opacity 0.2s ease;
 }
 
 nav a:hover {
   opacity: 0.7;
 }
 
-/* Main content area */
+/* ================= HERO ================= */
+
+.hero {
+  height: 100vh;
+  width: 100%;
+  background-image: url("../../images/reddit-img.png");
+  background-repeat: no-repeat;
+  background-size: cover;              /* ✅ fills hero, no gray frame */
+  background-position: center 100%;     /* 🔼 moves reddit guy UP */
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.hero-content {
+  margin-top: 70vh;                    /* 🔽 moves button BELOW reddit text */
+  display: flex;
+  justify-content: center;
+}
+
+.hero-button {
+  padding: 0.7rem 1.4rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  background: rgba(0, 0, 0, 0.55);
+  color: #ff1100;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: transform 0.2s ease, background 0.2s ease;
+  white-space: nowrap;
+}
+
+.hero-button:hover {
+  transform: scale(1.05);
+  background: rgba(0, 0, 0, 0.75);
+}
+
+/* ================= CONTENT ================= */
+
 main {
   max-width: 850px;
   margin: 3rem auto;
   padding: 0 1.5rem;
-  background: #1e1e1e;
-}
-
-section {
-  margin-bottom: 3rem;
 }
 
 h2 {
-  margin-bottom: 0.5rem;
-  font-size: 1.6rem;
-  font-weight: 600;
-  border-bottom: 1px solid #333;
-  padding-bottom: 0.4rem;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 1.5rem;
-  border-top: 1px solid #333;
-  font-size: 0.9rem;
-  color: #bbbbbb;
-}
-
-/* ================= HERO SECTION ================= */
-
-.hero {
-  position: relative;
-  height: 100vh;
-  background-image: url("../../images/fond_reddit_mechant.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Image button wrapper */
-.hero-button {
-  display: inline-block;
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(10px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-}
-
-/* Reveal button on hover */
-.hero:hover .hero-button {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0);
-}
-
-/* Start button image */
-.start-button-image {
-  width: 160px;
-  cursor: pointer;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
-.start-button-image:hover {
-  transform: scale(1.05);
-  opacity: 0.9;
-}
-
-/* ================= SECTION TITLES ================= */
-
-#introduction h2,
-#research-questions h2,
-#data-presentation h2,
-#anatomy-of-a-hater h2,
-#conclusion h2 {
-  text-align: left;
   font-size: 2.2rem;
-  margin-bottom: 3rem;
+  border-bottom: 1px solid #333;
 }
-
-/* ================= RESEARCH QUESTIONS ================= */
-
-.rq-grid {
-  max-width: 900px;
-  margin: 0 auto;
-  display: grid;
-  gap: 1.5rem;
-}
-
-.rq-card {
-  position: relative;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  padding: 1.8rem 2.5rem 1.8rem 3.5rem;
-  border-radius: 18px;
-  backdrop-filter: blur(3px);
-  box-shadow: 0 0 18px rgba(0, 0, 0, 0.25);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-}
-
-.rq-card p {
-  margin: 0;
-  font-size: 1.2rem;
-  line-height: 1.7;
-}
-
-.rq-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
-  border-color: rgb(255, 69, 0);
-}
-
-@media (min-width: 800px) {
-  .rq-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-/* ================= INTRO TEXT ================= */
 
 .intro-big-text {
   font-size: 1.5rem;
-  font-weight: 400;
   line-height: 1.5;
-  max-width: 900px;
-  color: #ffffff;
-}
-
-#introduction {
-  padding-top: 1rem !important;
-  padding-bottom: 1rem !important;
 }
 
 /* ================= FLOATING REDDIT ================= */
@@ -195,7 +111,6 @@ footer {
   cursor: pointer;
 }
 
-/* Speech Bubble */
 .reddit-bubble {
   position: absolute;
   right: 70px;
@@ -205,12 +120,9 @@ footer {
   padding: 10px 14px;
   border-radius: 12px;
   font-size: 14px;
-  white-space: nowrap;
-
   opacity: 0;
   transform: translateY(10px);
   transition: opacity 0.25s ease, transform 0.25s ease;
-
   pointer-events: none;
 }
 
@@ -219,3 +131,11 @@ footer {
   transform: translateY(0);
 }
 
+/* ================= FOOTER ================= */
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  border-top: 1px solid #333;
+  color: #bbb;
+}
