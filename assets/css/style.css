@@ -2,20 +2,24 @@
 
 body {
   margin: 0;
-  background: #2a2929;
+  background: #1e1e1e;
   color: #ffffff;
   font-family: "Inter", sans-serif;
+  line-height: 1.6;
 }
 
 /* ================= HEADER ================= */
 
 header {
-  background: #2a2929;
+  position: relative;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.85);
   padding: 1.5rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #333;
+  backdrop-filter: blur(4px);
 }
 
 header h1 {
@@ -25,9 +29,11 @@ header h1 {
 }
 
 nav a {
-  color: white;
+  color: #ffffff;
   margin-left: 1.5rem;
   text-decoration: none;
+  font-weight: 400;
+  transition: opacity 0.2s ease;
 }
 
 nav a:hover {
@@ -41,16 +47,16 @@ nav a:hover {
   width: 100%;
   background-image: url("../../images/reddit-img3.png");
   background-repeat: no-repeat;
-  background-size: cover;              /* ✅ fills hero, no gray frame */
-  background-position: center 107%;     /* 🔼 moves reddit guy UP */
-
+  background-size: cover;
+  background-position: center 107%;
+  
   display: flex;
   justify-content: center;
   align-items: flex-start;
 }
 
 .hero-content {
-  margin-top: 70vh;                    /* 🔽 moves button BELOW reddit text */
+  margin-top: 70vh;
   display: flex;
   justify-content: center;
 }
@@ -62,11 +68,10 @@ nav a:hover {
   background: rgba(255, 69, 0, 0.1);
   color: #FF4500;
   text-decoration: none;
-  border-radius: 10px;
+  border-radius: 15px;
   transition: transform 0.2s ease, background 0.2s ease;
   white-space: nowrap;
   border: 2px solid #FF4500;
-  border-radius: 15px;
 }
 
 .hero-button:hover {
@@ -74,7 +79,7 @@ nav a:hover {
   background: rgba(0, 0, 0, 0.75);
 }
 
-/* ================= CONTENT ================= */
+/* ================= MAIN ================= */
 
 main {
   max-width: 850px;
@@ -82,14 +87,52 @@ main {
   padding: 0 1.5rem;
 }
 
+section {
+  margin-bottom: 3rem;
+}
+
 h2 {
   font-size: 2.2rem;
   border-bottom: 1px solid #333;
+  padding-bottom: 0.4rem;
 }
 
 .intro-big-text {
   font-size: 1.5rem;
   line-height: 1.5;
+}
+
+/* ================= RESEARCH QUESTIONS ================= */
+
+.rq-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 800px) {
+  .rq-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.rq-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 1.8rem 2.5rem;
+  border-radius: 18px;
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.rq-card p {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.rq-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+  border-color: #FF4500;
 }
 
 /* ================= FLOATING REDDIT ================= */
@@ -122,6 +165,7 @@ h2 {
   padding: 10px 14px;
   border-radius: 12px;
   font-size: 14px;
+  white-space: nowrap;
   opacity: 0;
   transform: translateY(10px);
   transition: opacity 0.25s ease, transform 0.25s ease;
@@ -133,11 +177,68 @@ h2 {
   transform: translateY(0);
 }
 
+/* ================= HATE BUBBLES ================= */
+
+/* Zone hover autour du personnage */
+/* Longue bande horizontale centrée */
+.hate-zone {
+  position: absolute;
+  top: 50%;                      /* bande au milieu verticalement */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw;                   /* ⬅️ très large bande */
+  max-width: 1200px;             /* limite sur grands écrans */
+  height: 260px;                 /* hauteur raisonnable */
+  z-index: 2;
+}
+
+
+/* Container des bulles */
+.hate-bubble {
+  position: absolute;
+  background: white;
+  color: #1e1e1e;
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+  animation: popIn 0.25s ease-out;
+}
+
+/* Petite animation d’apparition */
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.85) translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Fade out animation */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+
+
 /* ================= FOOTER ================= */
 
 footer {
   text-align: center;
   padding: 1.5rem;
   border-top: 1px solid #333;
-  color: #bbb;
+  color: #bbbbbb;
+  font-size: 0.9rem;
 }
