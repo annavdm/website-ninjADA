@@ -1,168 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <title>The Anatomy of a Hater</title>
+  <meta charset="UTF-8" />
+  <title>r/TheAnatomyOfAHater</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Main CSS -->
+  <!-- CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
 
-  <!-- Floating Reddit Icon -->
-  <div class="floating-reddit-container">
-    <img src="images/Reddit_Logo.png" class="floating-reddit" alt="Reddit Logo">
-    <div class="reddit-bubble">Hello!</div>
+  <!-- ===== Top Bar ===== -->
+  <div class="topbar">
+    <div class="logo">
+      <img src="images/Reddit_Logo.png" alt="Reddit">
+      reddit
+    </div>
+
+    <div class="search" role="search">
+      <span class="searchIcon" aria-hidden="true">🔎</span>
+      <input type="search" placeholder="Search Reddit" aria-label="Search Reddit">
+    </div>
   </div>
 
-  <!-- HEADER -->
-  <header>
-    <h1>The Anatomy of a Hater</h1>
-    <nav>
-      <a href="#introduction">Introduction</a>
-      <a href="#research-questions">Research Questions</a>
-      <a href="#data-presentation">Data Presentation</a>
-      <a href="#anatomy-of-a-hater">Anatomy of a Hater</a>
-      <a href="#conclusion">Conclusion</a>
-    </nav>
-  </header>
+  <!-- ===== Main Layout ===== -->
+  <div class="app">
 
-  <!-- HERO -->
-  <section class="hero">
+    <!-- ===== Left Sidebar ===== -->
+    <aside class="sidebar">
+      <div class="subreddit-title">r/TheAnatomyOfAHater</div>
+      <a href="#introduction">📌 Introduction</a>
+      <a href="#research-questions">❓ Research Questions</a>
+      <a href="#data-presentation">📊 Data Presentation</a>
+      <a href="#anatomy-of-a-hater">🧠 Anatomy of a Hater</a>
+      <a href="#conclusion">✅ Conclusion</a>
+    </aside>
 
-    <!-- Invisible hover zone on the character -->
-    <div class="hate-zone" id="hate-zone"></div>
+    <!-- ===== Feed ===== -->
+    <main class="feed">
+      <article class="post">
 
-    <div class="hero-content">
-      <a href="#introduction" class="hero-button">Let’s start</a>
-    </div>
-  </section>
+        <div class="post-header">
+          Posted by u/NinjADA • pinned • 2025
+        </div>
 
-  <!-- MAIN CONTENT -->
-  <main>
+        <div class="post-body">
+          <h1>The Anatomy of a Hater</h1>
 
-    <section id="introduction">
-      <h2>Introduction</h2>
-      <p class="intro-big-text">
-        Online conflict is rising, and social media often turns into a stage for anonymous negativity.
-        Using a Reddit dataset (2014–2017), we trace how subreddits link to each other and reveal a hidden
-        network of hostility.
-      </p>
-    </section>
+          <!-- ✅ IMAGE before Introduction + hover bubbles -->
+          <div class="hover-hate-wrapper" id="hateZone">
+            <img
+              src="images/reddit-img3.png"
+              alt="Reddit visualization"
+              class="hover-hate-image"
+            >
+            <div class="hover-bubble-layer" id="hoverBubbleLayer"></div>
+          </div>
 
-    <section id="research-questions">
-      <h2>Research Questions</h2>
+          <section id="introduction">
+            <h2>Introduction</h2>
+            <p class="intro-big-text">
+              Online conflict is rising, and social media often turns into a stage for anonymous negativity.
+              Using a Reddit dataset (2014–2017), we trace how subreddits link to each other and reveal a hidden network of hostility.
+              Focusing on the 10% of interactions tagged as negative, we dive into the profiles of the users who spread this hostility:
+              their communities, writing styles, targets, and posting habits.
+              By uncovering how these “haters” operate, we aim to shed light on the dynamics that fuel online anger.
+            </p>
+          </section>
 
-      <div class="rq-grid">
-        <article class="rq-card">
-          <p>Is a hater likely to be active in certain subreddits?</p>
-        </article>
+          <section id="research-questions">
+            <h2>Research Questions</h2>
+            <div class="rq-grid">
+              <div class="rq-card">Is a hater likely to be active in certain subreddits?</div>
+              <div class="rq-card">Are there persisting conflicts between subreddits?</div>
+              <div class="rq-card">Does a hater have a particular way of writing?</div>
+            </div>
+          </section>
 
-        <article class="rq-card">
-          <p>Are there persisting conflicts between subreddits?</p>
-        </article>
+          <section id="data-presentation">
+            <h2>Data Presentation</h2>
+            <iframe src="plots/sentiment_distribution.html" height="450" title="Sentiment distribution"></iframe>
+            <iframe src="plots/subreddit_network_interactive.html" height="450" title="Subreddit network interactive"></iframe>
+          </section>
 
-        <article class="rq-card">
-          <p>Does a hater have a particular way of writing or communicating?</p>
-        </article>
+          <section id="anatomy-of-a-hater">
+            <h2>Anatomy of a Hater</h2>
+            <p>
+              This section breaks down the typical characteristics, language, and dynamics of the “hater”.
+            </p>
+          </section>
+
+          <section id="conclusion">
+            <h2>Conclusion</h2>
+            <p>
+              Summary of findings, limitations, and future research directions.
+            </p>
+          </section>
+
+          <footer>© 2025 NinjADA Team</footer>
+        </div>
+      </article>
+    </main>
+
+    <!-- ✅ ===== Right Sidebar (back as before) ===== -->
+    <aside class="about">
+      <div class="about-box">
+        <strong>About this subreddit</strong>
+        <p>Data-driven analysis of online hostility on Reddit (2014–2017).</p>
       </div>
-    </section>
 
-    <section id="data-presentation">
-      <h2>Data Presentation</h2>
+      <div class="about-box">
+        <strong>Rules</strong>
+        <p>
+          1. Be respectful<br>
+          2. Data-based discussion only
+        </p>
+      </div>
+    </aside>
 
-      <iframe src="plots/sentiment_distribution.html"
-              width="100%"
-              height="500"
-              style="border:none;">
-      </iframe>
+  </div>
 
-      <iframe src="plots/subreddit_network_interactive.html"
-              width="100%"
-              height="500"
-              style="border:none;">
-      </iframe>
-    </section>
-
-    <section id="anatomy-of-a-hater">
-      <h2>Anatomy of a Hater</h2>
-      <p>
-        This section breaks down the typical characteristics, language, and dynamics
-        of users spreading hostility across Reddit.
-      </p>
-    </section>
-
-    <section id="conclusion">
-      <h2>Conclusion</h2>
-      <p>
-        We summarize our findings, discuss limitations, and outline future research
-        directions for understanding online negativity.
-      </p>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2025 NinjADA Team</p>
-  </footer>
-
+  <!-- ===== Hover bubbles JS ===== -->
   <script>
-  const hateZone = document.getElementById("hate-zone");
+    const NEGATIVE_COMMENTS = [
+      "This makes no sense.",
+      "Completely missing the point.",
+      "Another bad Reddit take.",
+      "You’re reading way too much into this.",
+      "That conclusion is a stretch.",
+      "Nice graph, wrong interpretation.",
+      "This is why comments are locked.",
+      "Correlation ≠ causation."
+    ];
 
-  const hateMessages = [
-    '"f*** you"',
-    '"this is so stupid !!!"',
-    '"@$##%!!!"',
-    '"what a dumb take"',
-    '"you are clueless"',
-    '"this makes no sense"',
-    '"absolute garbage"',
-    '"are you serious???"',
-    '"brain-dead post"',
-    '"touch grass"'
-  ];
+    const hateZone = document.getElementById("hateZone");
+    const layer = document.getElementById("hoverBubbleLayer");
 
-  let bubbleInterval = null;
-  let bubbleCount = 0;
+    let bubbleInterval = null;
 
-  hateZone.addEventListener("mouseenter", () => {
-    if (bubbleInterval) return;
+    function randomItem(arr){
+      return arr[Math.floor(Math.random() * arr.length)];
+    }
 
-    // Reset bubbles on each hover
-    hateZone.innerHTML = "";
-    bubbleCount = 0;
+    function clamp(n, min, max){
+      return Math.max(min, Math.min(max, n));
+    }
 
-    bubbleInterval = setInterval(() => {
-      if (bubbleCount >= hateMessages.length) return;
-
+    function spawnBubble(){
       const bubble = document.createElement("div");
-      bubble.className = "hate-bubble";
-      bubble.innerText = hateMessages[bubbleCount];
+      const life = 2000 + Math.random() * 2200; // 2s–4.2s
 
-      // Adaptive random placement inside the band
-      const zoneWidth = hateZone.offsetWidth;
-      const zoneHeight = hateZone.offsetHeight;
+      bubble.className = "hover-bubble";
+      bubble.style.setProperty("--life", `${life}ms`);
+      bubble.textContent = randomItem(NEGATIVE_COMMENTS);
 
-      const x = Math.random() * (zoneWidth - 120);
-      const y = Math.random() * (zoneHeight - 60);
+      const rect = layer.getBoundingClientRect();
 
-      bubble.style.left = `${x}px`;
-      bubble.style.top = `${y}px`;
+      // Center-biased random position (avoid edges)
+      const x = rect.width  * (0.25 + Math.random() * 0.5);
+      const y = rect.height * (0.25 + Math.random() * 0.5);
 
-      hateZone.appendChild(bubble);
-      bubbleCount++;
-    }, 300);
-  });
+      // After bubble is in DOM we can correct for its size
+      layer.appendChild(bubble);
 
-  hateZone.addEventListener("mouseleave", () => {
-    clearInterval(bubbleInterval);
-    bubbleInterval = null;
-  });
-</script>
+      const bw = bubble.offsetWidth;
+      const bh = bubble.offsetHeight;
+
+      bubble.style.left = `${clamp(x - bw / 2, 10, rect.width - bw - 10)}px`;
+      bubble.style.top  = `${clamp(y - bh / 2, 10, rect.height - bh - 10)}px`;
+
+      // Clean up after it fades
+      setTimeout(() => bubble.remove(), life + 350);
+    }
+
+    function startBubbles(){
+      if (bubbleInterval) return;
+      spawnBubble();
+      bubbleInterval = setInterval(() => {
+        spawnBubble();
+      }, 900 + Math.random() * 700); // ~0.9s–1.6s
+    }
+
+    function stopBubbles(){
+      clearInterval(bubbleInterval);
+      bubbleInterval = null;
+      layer.innerHTML = "";
+    }
+
+    hateZone.addEventListener("mouseenter", startBubbles);
+    hateZone.addEventListener("mouseleave", stopBubbles);
+  </script>
+
 </body>
+</html>
