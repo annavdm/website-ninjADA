@@ -194,6 +194,30 @@
     hateZone.addEventListener("mouseenter", startBubbles);
     hateZone.addEventListener("mouseleave", stopBubbles);
   </script>
+    <!-- ===== Sidebar follows cursor JS ===== -->
+  <script>
+    const sidebar = document.querySelector('.sidebar');
+
+    // Ensure JS can move it
+    sidebar.style.position = 'absolute';
+    sidebar.style.left = '0px';       // adjust if needed
+
+    let targetTop = 80;               // starting offset from top in px
+    const easing = 0.1;               // 0–1, lower = smoother
+
+    window.addEventListener('mousemove', (e) => {
+      targetTop = e.clientY - sidebar.offsetHeight / 2;
+    });
+
+    function animateSidebar() {
+      const currentTop = parseFloat(getComputedStyle(sidebar).top) || 0;
+      const nextTop = currentTop + (targetTop - currentTop) * easing;
+      sidebar.style.top = `${nextTop}px`;
+      requestAnimationFrame(animateSidebar);
+    }
+    animateSidebar();
+  </script>
+  
 
 </body>
 </html>
