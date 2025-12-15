@@ -51,7 +51,7 @@
         <div class="post-body">
           <h1>The Anatomy of a Hater</h1>
 
-          <!-- ✅ IMAGE before Introduction + hover bubbles -->
+          <!-- IMAGE before Introduction + hover bubbles -->
           <div class="hover-hate-wrapper" id="hateZone">
             <img
               src="images/reddit-img3.png"
@@ -82,31 +82,105 @@
           </section>
 
           <section id="data-presentation">
-            <h2>Data Presentation</h2>
-            <iframe src="plots/sentiment_distribution.html" height="450" title="Sentiment distribution"></iframe>
-            <iframe src="plots/subreddit_network_interactive.html" height="450" title="Subreddit network interactive"></iframe>
-          </section>
+  <section id="data-presentation">
+  <h2>Data Presentation</h2>
+    <!-- Dataset 1: SUBREDDIT EMBEDDINGS -->
+  <section id="dataset-embeddings">
+    <h3>\subredditembedings</h3>
+    <p class="data-intro">
+      So the dataset takes about 2.5 years of Reddit activity and turns it into 51,278 subreddits, each represented as a 300-dimensional vector 
+      that captures “who posts where,” meaning users who post in similar subreddits end up close together in the embedding space. In theory, 
+      this should help identify what subreddit haters are actually interested in. In practice… well, right now it’s just a massive pile of 
+      51k vectors with zero insight. Tried projecting it with PCA and t-SNE, and neither really works—no structure, no clusters, nothing 
+      enlightening. Kind of thought NinjADA was supposed to do more than just dump numbers and magically explain them, but maybe that part’s 
+      still coming.
+    </p>
+    <label for="plotSelectorA">Choose a plot:</label>
+    <select id="plotSelectorA">
+      <option value="pca_2d">2D PCA</option>
+      <option value="tsne">TSNE</option>
+    </select>
 
-          <section id="anatomy-of-a-hater">
-            <h2>Anatomy of a Hater</h2>
-            <p>
-              This section breaks down the typical characteristics, language, and dynamics of the “hater”.
-            </p>
-          </section>
+    <div class="plot-panel" id="plotA-pca_2d">
+      <iframe src="plots/subreddit_pca_2d.html"
+          height="450"
+          title="Subreddit Embeddings in 2D"></iframe>
+    </div>
 
-          <section id="conclusion">
-            <h2>Conclusion</h2>
-            <p>
-              Summary of findings, limitations, and future research directions.
-            </p>
-          </section>
+    <div class="plot-panel" id="plotA-tsne" style="display:none;">
+      <iframe src="plots/tsne_on_pca.html"
+          height="450"
+          title="Subreddit embedding after TSNE"></iframe>
+    </div>
+
+  </section>
+
+  <!-- Dataset 2: Filtered posts (>=5 per subreddit) -->
+  <section id="dataset-hyperlinks">
+    <h3>\hyperlinkdataset</h3>
+    <p class="data-intro">
+      After removing boring subreddits, i.e., those with fewer than 5 posts per subreddit which makes them useless for our analysis here is how the dataset looks like.
+    </p>
+
+    <label for="plotSelectorB">Choose a plot:</label>
+    <select id="plotSelectorB">
+      <option value="sentiment">Sentiment distribution</option>
+      <option value="body_vs_title">Body vs title</option>
+    </select>
+
+    <div class="plot-panel" id="plotB-sentiment">
+      <iframe src="plots/sentiment_distribution.html"
+              height="450"
+              title="Sentiment distribution"></iframe>
+    </div>
+
+    <div class="plot-panel" id="plotB-body_vs_title" style="display:none;">
+      <iframe src="plots/body_vs_title.html"
+              height="450"
+              title="Body vs title"></iframe>
+    </div>
+  </section>
+  <section id="anatomy-of-a-hater">
+  <h2>Anatomy of a Hater</h2>
+  <p>
+    This section breaks down the typical characteristics, language, and dynamics of the “hater”.
+  </p>
+
+  <!-- 1. Geopolitics -->
+  <h3>\Geopolitics</h3>
+  <p>
+    Haters often cluster around geopolitical topics, attacking countries, ideologies, or political figures and amplifying existing international tensions.
+  </p>
+
+  <!-- 2. Pop culture -->
+  <h3>\Pop culture</h3>
+  <p>
+    In pop culture subreddits, hostility targets celebrities, fandoms, and media franchises, with haters using irony and sarcasm to police taste and status.
+  </p>
+
+  <!-- 3. Self‑improvement & mental health -->
+  <h3>\Self improvement & mental health</h3>
+  <p>
+    Even in support oriented spaces, haters undermine vulnerable users by mocking struggles, questioning sincerity, or pushing toxic “tough love” narratives.
+  </p>
+
+  <!-- 4. Reddit core -->
+  <h3>\Reddit core</h3>
+  <p>
+    Some haters operate in meta communities focused on Reddit itself, attacking other subreddits, moderation decisions, and users who challenge platform norms.
+  </p>
+</section>
+
+</section>
+
+
 
           <footer>© 2025 NinjADA Team</footer>
         </div>
       </article>
     </main>
 
-    <!-- ✅ ===== Right Sidebar (back as before) ===== -->
+    <!--===== Right Sidebar (back as before) ===== -->
     <aside class="about">
       <div class="about-box">
         <strong>About this subreddit</strong>
@@ -194,30 +268,28 @@
     hateZone.addEventListener("mouseenter", startBubbles);
     hateZone.addEventListener("mouseleave", stopBubbles);
   </script>
-    <!-- ===== Sidebar follows cursor JS ===== -->
   <script>
-    const sidebar = document.querySelector('.sidebar');
+  // Dataset 1 toggle
+  const selectorA = document.getElementById('plotSelectorA');
+  const panelsA = {
+    pca_2d: document.getElementById('plotA-pca_2d'),
+    tsne: document.getElementById('plotA-tsne')
+  };
 
-    // Ensure JS can move it
-    sidebar.style.position = 'absolute';
-    sidebar.style.left = '0px';       // adjust if needed
-
-    let targetTop = 80;               // starting offset from top in px
-    const easing = 0.1;               // 0–1, lower = smoother
-
-    window.addEventListener('mousemove', (e) => {
-      targetTop = e.clientY - sidebar.offsetHeight / 2;
-    });
-
-    function animateSidebar() {
-      const currentTop = parseFloat(getComputedStyle(sidebar).top) || 0;
-      const nextTop = currentTop + (targetTop - currentTop) * easing;
-      sidebar.style.top = `${nextTop}px`;
-      requestAnimationFrame(animateSidebar);
+  function updatePlotA() {
+    const choice = selectorA.value;
+    Object.values(panelsA).forEach(p => p.style.display = 'none');
+    if (panelsA[choice]) {
+      panelsA[choice].style.display = 'block';
     }
-    animateSidebar();
-  </script>
-  
+  }
+
+  selectorA.addEventListener('change', updatePlotA);
+  updatePlotA();  // initial state
+</script>
+
+
+
 
 </body>
 </html>

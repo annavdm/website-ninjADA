@@ -81,10 +81,13 @@ body{
 
 /* ===== Sidebar Left ===== */
 .sidebar{
-  border-right:1px solid var(--border);
-  padding:16px;
-  background:var(--panel2);
+  border-right: 1px solid var(--border);
+  padding: 16px;
+  background: var(--panel2);
+  position: sticky;
+  top: 60px; /* for example */
 }
+
 
 .subreddit-title{
   font-weight:700;
