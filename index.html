@@ -88,10 +88,10 @@
   <section id="dataset-embeddings">
     <h3>\subredditembedings</h3>
     <p class="data-intro">
-      So the dataset takes about 2.5 years of Reddit activity and turns it into 51,278 subreddits, each represented as a 300-dimensional vector 
-      that captures “who posts where,” meaning users who post in similar subreddits end up close together in the embedding space. In theory, 
-      this should help identify what subreddit haters are actually interested in. In practice… well, right now it’s just a massive pile of 
-      51k vectors with zero insight. Tried projecting it with PCA and t-SNE, and neither really works—no structure, no clusters, nothing 
+      So the dataset takes about 2.5 years of Reddit activity in 51,278 unique subreddits, then turns each subreddit into a 300-dimensional vector 
+      that captures “who posts where,” meaning that subreddits that have similar users end up close together in the embedding space. In theory, 
+      this should help us identify if haters tend to gravit around the same subreddits or not. In practice… well, right now it’s just a massive pile of 
+      51k vectors with zero insight. Tried projecting it with PCA and t-SNE, and neither really works:no structure, no clusters, nothing 
       enlightening. Kind of thought NinjADA was supposed to do more than just dump numbers and magically explain them, but maybe that part’s 
       still coming.
     </p>
@@ -119,7 +119,12 @@
   <section id="dataset-hyperlinks">
     <h3>\hyperlinkdataset</h3>
     <p class="data-intro">
-      After removing boring subreddits, i.e., those with fewer than 5 posts per subreddit which makes them useless for our analysis here is how the dataset looks like.
+    So now there’s this giant network of Reddit where every time one subreddit links to another, it counts as a little arrow from 
+    “source” to “target.” It’s not just “who links who,” though — each arrow knows when it happened, how much love or hate 
+    was in the post. It also has a big properties vector attached to each posts that numerically encodes the writing style/content of the source post.
+    Put together, you get a directed, signed, time-aware, feature-rich network of subreddits yelling at (or supporting) each other.
+    The thing is that the subreddit embedding dataset and the hyperlink network dataset don't exactly match: the subreddits that are in one 
+    are not in the other therefore both datasets were filtered to get only the common ones. 
     </p>
 
     <label for="plotSelectorB">Choose a plot:</label>
@@ -129,22 +134,40 @@
     </select>
 
     <div class="plot-panel" id="plotB-sentiment">
+      <p class="plot-caption">
+        The link sentiment comes from a crowdsourced and classifier pipeline specifically trained to detect hostile and non-hostilr subreddit to subreddit 
+        links making it highly reliable and will be the indicator to analyse hostility intesity and trends within the network. here we see that 
+        hostile posts represents about 10% of the dataset the aim here is to put understandable characteristics to this red part of the graph.  
+      </p>
       <iframe src="plots/sentiment_distribution.html"
               height="450"
               title="Sentiment distribution"></iframe>
     </div>
 
     <div class="plot-panel" id="plotB-body_vs_title" style="display:none;">
-      <iframe src="plots/body_vs_title.html"
+      <iframe src="plots/body_title_sentiment.html"
               height="450"
               title="Body vs title"></iframe>
     </div>
+
+    <p class="subreddit-growth">
+     Considering that a new subreddit is created the first time it figures as a source subreddit in the hyperlink dataset, lets look at the 
+     evolution of subreddit counts over time. 
+    <iframe src="plots/subreddit_growth.html"
+              height="450"
+              title="Subreddits count over time">
+    </iframe>
+    </p>
+
   </section>
+
   <section id="anatomy-of-a-hater">
   <h2>Anatomy of a Hater</h2>
   <p>
-    This section breaks down the typical characteristics, language, and dynamics of the “hater”.
+  Now that the dataset has no more secrets lets dive into the hater hunting process. The idea here is to start from the embeddings dataset and cluster them
+  into communities to see if there are hater-friendly themes coming out. 
   </p>
+
 
   <!-- 1. Geopolitics -->
   <h3>\Geopolitics</h3>
@@ -268,13 +291,18 @@
     hateZone.addEventListener("mouseenter", startBubbles);
     hateZone.addEventListener("mouseleave", stopBubbles);
   </script>
-  <script>
+<script>
   // Dataset 1 toggle
   const selectorA = document.getElementById('plotSelectorA');
   const panelsA = {
     pca_2d: document.getElementById('plotA-pca_2d'),
     tsne: document.getElementById('plotA-tsne')
   };
+
+  // Dataset 2 toggle
+  const selectorB = document.getElementById('plotSelectorB');
+  const sentimentDiv = document.getElementById('plotB-sentiment');
+  const bodyVsTitleDiv = document.getElementById('plotB-body_vs_title');
 
   function updatePlotA() {
     const choice = selectorA.value;
@@ -284,8 +312,23 @@
     }
   }
 
+  function updatePlotB() {
+    const choice = selectorB.value;
+    if (choice === 'sentiment') {
+      sentimentDiv.style.display = 'block';
+      bodyVsTitleDiv.style.display = 'none';
+    } else if (choice === 'body_vs_title') {
+      sentimentDiv.style.display = 'none';
+      bodyVsTitleDiv.style.display = 'block';
+    }
+  }
+
   selectorA.addEventListener('change', updatePlotA);
-  updatePlotA();  // initial state
+  selectorB.addEventListener('change', updatePlotB);
+
+  // initial states
+  updatePlotA();
+  updatePlotB();
 </script>
 
 
