@@ -91,8 +91,8 @@
       So the dataset takes about 2.5 years of Reddit activity in 51,278 unique subreddits, then turns each subreddit into a 300-dimensional vector 
       that captures “who posts where,” meaning that subreddits that have similar users end up close together in the embedding space. In theory, 
       this should help us identify if haters tend to gravit around the same subreddits or not. In practice… well, right now it’s just a massive pile of 
-      51k vectors with zero insight. Tried projecting it with PCA and t-SNE, and neither really works:no structure, no clusters, nothing 
-      enlightening. Kind of thought NinjADA was supposed to do more than just dump numbers and magically explain them, but maybe that part’s 
+      51k vectors with zero insight. Tried projecting it with PCA and t-SNE, and neither gives interesting results at first sight : no structure, no clusters, nothing 
+      really enlightening. Kind of thought NinjADA was supposed to do more than just dump numbers and magically explain them, but maybe that part’s 
       still coming.
     </p>
     <label for="plotSelectorA">Choose a plot:</label>
@@ -120,8 +120,8 @@
     <h3>\hyperlinkdataset</h3>
     <p class="data-intro">
     So now there’s this giant network of Reddit where every time one subreddit links to another, it counts as a little arrow from 
-    “source” to “target.” It’s not just “who links who,” though — each arrow knows when it happened, how much love or hate 
-    was in the post. It also has a big properties vector attached to each posts that numerically encodes the writing style/content of the source post.
+    “source” to “target.” It’s not just “who links who,” though — each arrow knows when it happened, and if it was love or hate 
+    in the post. It also has a big properties vector attached to each posts that numerically encodes the writing style/content of the source post.
     Put together, you get a directed, signed, time-aware, feature-rich network of subreddits yelling at (or supporting) each other.
     The thing is that the subreddit embedding dataset and the hyperlink network dataset don't exactly match: the subreddits that are in one 
     are not in the other therefore both datasets were filtered to get only the common ones. 
@@ -145,34 +145,51 @@
     </div>
 
     <div class="plot-panel" id="plotB-body_vs_title" style="display:none;">
+      <p class="plot-caption">
+        The dataset provides information on where the link is located in the post - either title or body. 
+
+      </p>
       <iframe src="plots/body_title_sentiment.html"
               height="450"
               title="Body vs title"></iframe>
     </div>
 
-    <p class="subreddit-growth">
+    <!-- <p class="subreddit-growth">
      Considering that a new subreddit is created the first time it figures as a source subreddit in the hyperlink dataset, lets look at the 
      evolution of subreddit counts over time. 
     <iframe src="plots/subreddit_growth.html"
               height="450"
               title="Subreddits count over time">
     </iframe>
-    </p>
+    </p> -->
 
   </section>
 
   <section id="anatomy-of-a-hater">
   <h2>Anatomy of a Hater</h2>
-  <p>
-  Now that the dataset has no more secrets lets dive into the hater hunting process. The idea here is to start from the embeddings dataset and cluster them
-  into communities to see if there are hater-friendly themes coming out. 
-  </p>
+    <p>
+  Now that the dataset has no more secrets lets see what a hater is actually made of. The idea here is to start 
+  from the embeddings dataset and cluster them into communities to see if some are more hater-friendly than others. Therefore after PCA and k-mean clustering 
+  we obtain 15 distinct communities of subreddits. 
+    <div class="plot-panel" id="plotB-subred_embed_pca2d">
+      <iframe src="plots/subreddit_pca_clusters_2d.html"
+              height="450"
+              title="Subreddit embedding clustered into 15 communities"></iframe>
+      </div>
+    <div class="plot-panel" id="plotB-subred_embed_pca2d">
+      <iframe src="plots/cluster_treemap.html"
+              height="450"
+              title="Subreddit embedding clustered into 15 communities"></iframe>
+      </div>
+
+    </p>
 
 
   <!-- 1. Geopolitics -->
   <h3>\Geopolitics</h3>
   <p>
-    Haters often cluster around geopolitical topics, attacking countries, ideologies, or political figures and amplifying existing international tensions.
+    Haters often cluster around geopolitical topics, attacking countries, ideologies, or political figures and amplifying
+     existing international tensions. 
   </p>
 
   <!-- 2. Pop culture -->
