@@ -75,7 +75,7 @@ body{
 /* ===== Layout ===== */
 .app{
   display:grid;
-  grid-template-columns:260px 1fr 320px; /* ✅ right menu back */
+  grid-template-columns:260px 1fr 320px;
   min-height:calc(100vh - 56px);
 }
 
@@ -85,9 +85,10 @@ body{
   padding: 16px;
   background: var(--panel2);
   position: sticky;
-  top: 60px; /* for example */
+  top: 60px;
+  height: calc(100vh - 60px);
+  overflow:auto;
 }
-
 
 .subreddit-title{
   font-weight:700;
@@ -113,32 +114,182 @@ body{
   min-width:0;
 }
 
+/* Post cards (closed view) */
 .post{
   background:var(--panel);
   border:1px solid var(--border);
   border-radius:var(--radius);
   overflow:hidden;
+  margin-bottom: 24px;
+}
+
+.post:focus{
+  outline:2px solid rgba(255,69,0,.35);
+  outline-offset:2px;
+}
+
+.post-summary{
+  cursor:pointer;
 }
 
 .post-header{
+  display:flex;
+  align-items:center;
+  gap:12px;
   padding:14px;
-  border-bottom:1px solid var(--border);
+  color:var(--muted);
   font-size:13px;
+}
+
+.post-icon{
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  object-fit:cover;
+  flex-shrink:0;
+  border:1px solid var(--border);
+  background:#081012;
+  
+}
+
+.post-meta{
+  display:flex;
+  flex-direction:column;
+  min-width:0;
+}
+
+.post-subreddit{
+  font-weight:600;
+  color:var(--text);
+}
+
+.post-author{
+  font-size:12.5px;
   color:var(--muted);
 }
 
+.post-title-row{
+  padding:0 14px 10px;
+}
+
+.post-title{
+  margin:0;
+  font-size:20px;
+  letter-spacing:-.02em;
+}
+
+.post-thumb{
+  width:100%;
+  height:auto;
+  object-fit:contain; /* pas nécessaire si height:auto, mais ok */
+  display:block;
+  background:#081012;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+
+
+
+.post-actions{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:10px 12px;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.action-sep{
+  opacity:.6;
+}
+
+.open-hint{
+  opacity:.75;
+}
+
+/* Like/Dislike buttons (under post card) */
+.vote-btn{
+  border:none;
+  background:transparent;
+  cursor:pointer;
+  font-size:16px;
+  line-height:1;
+  padding:6px 8px;
+  border-radius:10px;
+  color:var(--muted);
+}
+
+.vote-btn:hover{
+  background:rgba(255,255,255,.06);
+  color:var(--text);
+}
+
+.vote-btn.is-active{
+  background:rgba(255,69,0,.12);
+  color:var(--accent);
+}
+
+.vote-score{
+  font-weight:600;
+  color:var(--text);
+  min-width: 18px;
+  text-align:center;
+}
+
+/* ===== Open view ===== */
+.post-full{
+  display:none;
+}
+
+.post.is-open .post-full{
+  display:block;
+}
+
+.post.is-open .post-summary{
+  display:none;
+}
+
+/* Hide other posts when one is open */
+body.viewing-post .post:not(.is-open){
+  display:none;
+}
+
+.post-topbar{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:12px 12px;
+  border-bottom:1px solid var(--border);
+  background: #0c1416;
+  cursor:pointer;
+}
+
+.back-btn{
+  border:none;
+  background:rgba(255,255,255,.06);
+  color:var(--text);
+  padding:8px 10px;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+.back-btn:hover{
+  background:rgba(255,255,255,.10);
+}
+
+.topbar-title{
+  font-weight:700;
+  font-size:14px;
+  color:var(--text);
+}
+
+/* Full post body */
 .post-body{
   padding:18px;
 }
 
-.post-body h1{
-  margin-top:0;
-  font-size:26px;
-  letter-spacing:-.02em;
-}
-
 .post-body h2{
-  margin-top:32px;
+  margin-top:26px;
   font-size:20px;
 }
 
@@ -219,7 +370,6 @@ footer{
   cursor:pointer;
 }
 
-/* Layer on top of image */
 .hover-bubble-layer{
   position:absolute;
   inset:0;
@@ -227,7 +377,6 @@ footer{
   overflow:hidden;
 }
 
-/* White text bubbles with black text */
 .hover-bubble{
   position:absolute;
   max-width:240px;
@@ -276,3 +425,22 @@ footer{
   .rq-grid{ grid-template-columns:1fr; }
   .search{ display:none; }
 }
+
+/* Open post header layout */
+.post.is-open .post-topbar{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+/* Big profile-like icon in open post */
+.post.is-open .post-icon--hero{
+  width:48px;              /* Reddit-ish size */
+  height:48px;
+  border-radius:50%;
+  object-fit:cover;
+  background:#081012;
+  border:1px solid var(--border);
+  flex-shrink:0;
+}
+
