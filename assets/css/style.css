@@ -444,3 +444,32 @@ footer{
   flex-shrink:0;
 }
 
+/* Make Geo-Politics plot fully visible */
+#negative_links_geopo iframe{
+  height:600px;   /* 👈 doit être >= hauteur plot + marges */
+  width:100%;   /* enough to show the whole Plotly figure */
+  border-radius:12px;
+  border:white ; 
+  background:transparent;
+}
+
+/* Make Geo-Politics plot fully visible */
+#network_geopo iframe{
+  height:600px;   /* 👈 doit être >= hauteur plot + marges */
+  width:100%;   /* enough to show the whole Plotly figure */
+  border-radius:12px;
+  border:white ; 
+  background:transparent;
+}
+
+
+
+/* Make Geo-Politics plot fully visible */
+#sankey_geopo iframe{
+  height:800px;   /* 👈 doit être >= hauteur plot + marges */
+  width:100%;   /* enough to show the whole Plotly figure */
+  border-radius:12px;
+  border:white ; 
+  background:transparent;
+}
+

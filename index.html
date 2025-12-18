@@ -4,12 +4,15 @@
   <meta charset="UTF-8" />
   <title>r/TheAnatomyOfAHater</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.plot.ly/plotly-3.3.0.min.js"></script>
 
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
   <!-- CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
+
+
 </head>
 
 <body>
@@ -228,7 +231,59 @@
             <h2>What counts as “hate” here?</h2>
             <p>
               We use the dataset’s hostile/non-hostile labels on subreddit-to-subreddit links.
+
             </p>
+            <section>
+              <h2>Negative links over time</h2>
+              <p class="plot-caption">
+                Monthly count of negative links sent vs received for Geo-Politics.
+              </p>
+            
+              <div class="plot-panel" id="negative_links_geopo">
+                <iframe
+                  src="plots/reactions_dynamics/negative_links_geopo.html?v=3"
+                  title="Negative links over time — Geo-Politics"
+                  >
+              </iframe>
+              
+              
+              </div>
+
+              <div class="plot-panel" id="network_geopo">
+                <iframe
+                  src="plots/reactions_dynamics/network_geopo.html?v=3"
+                  title="Network— Geo-Politics">
+                </iframe>
+              </div>
+
+              <div class="plot-panel" id="sankey_geopo">
+                <iframe
+                  src="plots/reactions_dynamics/sankey-geopo.html"
+                  title="Sankey Geo-Politics">
+                </iframe>
+              </div>
+
+              <div class="plot-panel" id="sankey_geopo">
+                <iframe
+                  src="plots/reactions_dynamics/spikes_pop_table_geopo.html"
+                  title="Sankey Geo-Politics">
+                </iframe>
+              </div>
+
+              <div class="plot-panel" id="sankey_geopo">
+                <iframe
+                  src="plots/reactions_dynamics/geopo_year_dropdown.html"
+                  title="Sankey Geo-Politics">
+                </iframe>
+              </div>
+
+
+        
+
+              
+              
+            </section>
+            
 
             <h2>Limitations</h2>
             <p>
@@ -597,6 +652,7 @@
       if (e.key === "Escape") closeAllPosts();
     });
   </script>
+
 
 </body>
 </html>
