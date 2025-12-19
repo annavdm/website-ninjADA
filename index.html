@@ -1026,9 +1026,90 @@
     </div>
 
     <div class="post-body">
-      <h2>Content</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>
-      <p>Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi.</p>
+      <h2>The Hater's Schedule</h2>
+         <p> Do haters have a specific time schedule ? Is there more negativity during summer than during winter ? Or on the week-end as opposed to during the week ? </p>
+                <p>Let's plot the data and find out !</p>
+        <label for="datasetSelector-plotT">Select Dataset</label>
+        <select id="datasetSelector-plotT">
+          <option value="full">Full Dataset</option>
+          <option value="geopolitics">Cluster Geopolitics</option>
+          <option value="popculture">Cluster Pop-Culture</option>
+        </select>
+
+        <label for="timespanSelector-plotT">Timespan</label>
+        <select id="timespanSelector-plotT">
+          <option value="complete">Complete</option>
+          <option value="year_by_month">Year by month</option>
+          <option value="week">Average Week</option>
+        </select>
+
+        <div class="plot-container">
+          <div class="plot-panel" id="plotT-full-complete" style="display:block;">
+            <iframe src="plots/julien/schedule_full_complete.html" title="Full dataset - complete timespan" width="100%" height="450" style="border:none;"></iframe>
+          </div>
+          <div class="plot-panel" id="plotT-full-year_by_month" style="display:none;">
+            <iframe src="plots/julien/schedule_full_year_by_month.html" title="Full dataset - year by month" width="100%" height="450" style="border:none;"></iframe>
+          </div>
+          <div class="plot-panel" id="plotT-full-week" style="display:none;">
+            <iframe src="plots/julien/schedule_full_week.html" title="Full dataset - average week" width="100%" height="450" style="border:none;"></iframe>
+          </div>
+          <div class="plot-panel" id="plotT-geopolitics-complete" style="display:none;">
+            <iframe src="plots/julien/schedule_geopolitics_complete.html" title="Geopolitics - complete timespan" width="100%" height="450" style="border:none;"></iframe>
+          </div>
+          <div class="plot-panel" id="plotT-geopolitics-year_by_month" style="display:none;">
+            <iframe src="plots/julien/schedule_geopolitics_year_by_month.html" title="Geopolitics - year by month" width="100%" height="450" style="border:none;"></iframe>
+          </div>
+          <div class="plot-panel" id="plotT-geopolitics-week" style="display:none;">
+            <iframe src="plots/julien/schedule_geopolitics_week.html" title="Geopolitics - average week" width="100%" height="450" style="border:none;"></iframe>
+          </div>
+          <div class="plot-panel" id="plotT-popculture-complete" style="display:none;">
+            <iframe src="plots/julien/schedule_popculture_complete.html" title="Pop-Culture - complete timespan" width="100%" height="450" style="border:none;"></iframe>
+          </div>
+          <div class="plot-panel" id="plotT-popculture-year_by_month" style="display:none;">
+            <iframe src="plots/julien/schedule_popculture_year_by_month.html" title="Pop-Culture - year by month" width="100%" height="450" style="border:none;"></iframe>
+          </div>
+          <div class="plot-panel" id="plotT-popculture-week" style="display:none;">
+            <iframe src="plots/julien/schedule_popculture_week.html" title="Pop-Culture - average week" width="100%" height="450" style="border:none;"></iframe>
+          </div>
+        </div>
+
+        <p> Let's look at the week-level. In the plot above you can see the "typical" week : for example above Tuesday you can read the mean of the negativity rate of every single Tuesday in our dataset. (Reminder : this negativity rate
+            is simply the number of negative posts divided by the number of total posts for that particular day). </p>
+        <p>We will fit a logistic regression on the days of the week : Monday represents the reference negativity rate (value 0, also called the intercept). For each other day of the week, the model tries to find the value by which the 
+          rate for this day changes on average when compared with Monday. Logistic regression can calculate log-odds (the chance between 0 and 1 that a random post on e.g. Tuesday is negative) based 
+          on categorical variables (the days of the week). The negativity rate can be naturally interpreted as a log-odd : if there are 10 negative posts for 100 total posts, the rate of 0.1 means that a randomly picked post has 0.1 
+          chance of being negative. So it makes sense to use this model. Let's look at the results.
+        </p>
+        <div class="plot-container">
+        <!-- Logistic regression - week -->
+        <iframe id="plot_logistic_regression_week"
+                src="plots/julien/log_reg_full_week.html"
+                title="Logistic regression - week"
+                width="100%" height="450" style="border:none;"></iframe>
+      </div>
+      <p>How do we interpret this table ? The p-value tells us the probability that the null-hypothesis "there is no difference of negativity ratio between day X and Monday" is true, so we can only consider that there is some
+          statistically significant event when the p-value < 0.05. The column "increase %" tells us by how much the negativity rate increased (or decreased if it's negative) between day X and monday. It is calculated using the coefficient
+          beta discovered by the logistic regression model for this day as follows : increase % = (exp(beta) - 1)*100. The confidence interval column represents the range in which the increase % will fall 95% of the time (calculated 
+          with a binomial distribution / Wald interval) and finally the z-score = beta / standard_error represents the "effect size".
+          So we see that two days have a stastically significant p-value : Saturday and Sunday with a corresponding percentage % of 7.35% and 6.3% respectively. Nice ! Did we determine that haters tend to hate more on the weekends ? 
+          Sadly there are two more values in the table that we need to pay attention to : pseudo R-squared and Pearson's Chi-square. 
+          R-squared tells us the explaining power of the model, it is a value from 0 to 1 that represents the amount of the observed difference in rate that our model explains (1 would mean that our model explains 100% of the observed difference,
+          i.e the model perfectly encampsulates the observed phenomenon). Our logistic regression can't provide us with a real R-squared metric, but this pseudo-metric is an approximation. 
+          On the other hand the Chi-square measures the goodness of fit of our model : it sums the squared differences between observed data and model predictions (weighted by expected values). 
+          Low values indicate that our predictions closely match reality (it's a good model) while high values show significant mismatches.
+
+          Our table gives us an abysmally small pseudo R-squared, and an extremely high Chi-square, which means our model has almost no explaining power, and a terribly bad fit. In short, it tells us almost nothing 😢.      
+      </p>
+
+      <p>Let's try the same analysis comparing the different months of the year.</p>
+
+      <div class="plot-container">
+        <!-- Logistic regression - year by month -->
+        <iframe id="plot_logistic_regression_year_by_month"
+                src="plots/julien/log_reg_full_year_by_month.html"
+                title="Logistic regression - year by month"
+                width="100%" height="450" style="border:none;"></iframe>
+      </div>
 
 
       <h2>Is the hater sensitive to world events ? </h2>
@@ -1315,10 +1396,74 @@
     }
 
 
+    // Time-Analysis - Hater's schedule (plotT)
+    const datasetSelectorPlotT = document.getElementById('datasetSelector-plotT');
+    const timespanSelectorPlotT = document.getElementById('timespanSelector-plotT');
+    const panelsPlotT = {
+      'full-complete': document.getElementById('plotT-full-complete'),
+      'full-year_by_month': document.getElementById('plotT-full-year_by_month'),
+      'full-week': document.getElementById('plotT-full-week'),
+      'geopolitics-complete': document.getElementById('plotT-geopolitics-complete'),
+      'geopolitics-year_by_month': document.getElementById('plotT-geopolitics-year_by_month'),
+      'geopolitics-week': document.getElementById('plotT-geopolitics-week'),
+      'popculture-complete': document.getElementById('plotT-popculture-complete'),
+      'popculture-year_by_month': document.getElementById('plotT-popculture-year_by_month'),
+      'popculture-week': document.getElementById('plotT-popculture-week')
+    };
+
+    function updatePlotT() {
+      if (!datasetSelectorPlotT || !timespanSelectorPlotT) return;
+      const dataset = datasetSelectorPlotT.value;
+      const timespan = timespanSelectorPlotT.value;
+      const key = dataset + '-' + timespan;
+
+      Object.values(panelsPlotT).forEach(p => { if (p) p.style.display = 'none'; });
+      if (panelsPlotT[key]) { panelsPlotT[key].style.display = 'block'; }
+    }
+
+  
+
+    // for the logistic regression plots
+    // Logistic regression plots (dependent only on datasetSelector-plotT)
+    const logisticWeekFrame = document.getElementById('plot_logistic_regression_week');
+    const logisticYearFrame = document.getElementById('plot_logistic_regression_year_by_month');
+
+    const logisticSrcWeekByDataset = {
+      full:        'plots/julien/log_reg_full_week.html',
+      geopolitics: 'plots/julien/log_reg_geopolitics_week.html',
+      popculture:  'plots/julien/log_reg_popculture_week.html'
+    };
+
+    const logisticSrcYearByMonthByDataset = {
+      full:        'plots/julien/log_reg_full_year_by_month.html',
+      geopolitics: 'plots/julien/log_reg_geopolitics_year_by_month.html',
+      popculture:  'plots/julien/log_reg_popculture_year_by_month.html'
+    };
+
+    function updateLogisticPlotsT() {
+      if (!datasetSelectorPlotT) return;
+      const dataset = datasetSelectorPlotT.value;
+
+      if (logisticWeekFrame && logisticSrcWeekByDataset[dataset]) {
+        logisticWeekFrame.src = logisticSrcWeekByDataset[dataset];
+      }
+      if (logisticYearFrame && logisticSrcYearByMonthByDataset[dataset]) {
+        logisticYearFrame.src = logisticSrcYearByMonthByDataset[dataset];
+      }
+    }
 
 
+    //end of logistic regression plots
 
-        // Time-Analysis event plots toggle
+    if (datasetSelectorPlotT && timespanSelectorPlotT) {
+      datasetSelectorPlotT.addEventListener('change', () => { updatePlotT(); updateLogisticPlotsT(); });
+      timespanSelectorPlotT.addEventListener('change', updatePlotT);
+      updatePlotT(); // initial
+      updateLogisticPlotsT();
+    }
+
+
+        // Time-Analysis - Event Analysis toggle
     const eventDatasetSelector = document.getElementById('eventDatasetSelector');
     const eventPanels = {
       full:        document.getElementById('event-full'),
