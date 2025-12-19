@@ -531,8 +531,32 @@
     </div>
 
 
-    <p> There seems to be no discernable pattern sadly </p>
-    <p>(en fait j'ai ditch un peu mes analyses de regression mais je devrais essayer de les mettre, et en faire plus ?)</p>
+    <p> Let's look at the week-level. In the plot above you can see the "typical" week : for example above Tuesday you can read the mean of the negativity rate of every single Tuesday in our dataset. (Reminder : this negativity rate
+      is simply the number of negative posts divided by the number of total posts for that particular day). </p>
+    <p>We will fit a logistic regression on the days of the week : Monday represents the reference negativity rate (value 0, also called the intercept). For each other day of the week, the model tries to find the value by which the 
+      rate for this day changes on average when compared with Monday. Logistic regression can calculate log-odds (the chance between 0 and 1 that a random post on e.g. Tuesday is negative) based 
+      on categorical variables (the days of the week). The negativity rate can be naturally interpreted as a log-odd : if there are 10 negative posts for 100 total posts, the rate of 0.1 means that a randomly picked post has 0.1 
+      chance of being negative. So it makes sense to use this model. Let's look at the results.
+    </p>
+
+    <iframe id="logisticFrame" src="plots/julien/log_reg_full_week.html" title="Logistic regression" width="100%" height="450" style="border:none;"></iframe>
+
+      <p>How do we interpret this table ? The p-value tells us the probability that the null-hypothesis "there is no difference of negativity ratio between day X and Monday" is true, so we can only consider that there is some
+        statistically significant event when the p-value < 0.05. The column "increase %" tells us by how much the negativity rate increased (or decreased if it's negative) between day X and monday. It is calculated using the coefficient
+        beta discovered by the logistic regression model for this day as follows : increase % = (exp(beta) - 1)*100. The confidence interval column represents the range in which the increase % will fall 95% of the time (calculated 
+        with a binomial distribution / Wald interval) and finally the z-score = beta / standard_error represents the "effect size".
+        So we see that two days have a stastically significant p-value : Saturday and Sunday with a corresponding percentage % of 7.35% and 6.3% respectively. Nice ! Did we determine that haters tend to hate more on the weekends ? 
+        Sadly there are two more values in the table that we need to pay attention to : pseudo R-squared and Pearson's Chi-square. 
+        R-squared tells us the explaining power of the model, it is a value from 0 to 1 that represents the amount of the observed difference in rate that our model explains (1 would mean that our model explains 100% of the observed difference,
+        i.e the model perfectly encampsulates the observed phenomenon). Our logistic regression can't provide us with a real R-squared metric, but this pseudo-metric is an approximation. 
+        On the other hand the Chi-square measures the goodness of fit of our model : it sums the squared differences between observed data and model predictions (weighted by expected values). 
+        Low values indicate that our predictions closely match reality (it's a good model) while high values show significant mismatches.
+
+        Our table gives us an abysmally small pseudo R-squared, and an extremely high Chi-square, which means our model has almost no explaining power, and a terribly bad fit. In short, it tells us almost nothing 😢.
+
+        
+         
+    </p>
 
     </section>
 
@@ -661,6 +685,13 @@
       'popculture-week' : document.getElementById('plotD-popculture-week'),
     };
 
+    const logisticSrcByDataset = {
+      full:        'plots/julien/log_reg_full_week.html',
+      geopolitics: 'plots/julien/log_reg_geopolitics_week.html',
+      popculture:  'plots/julien/log_reg_popculture_week.html'
+    };
+    const logisticFrame = document.getElementById('logisticFrame');
+
 
     function updatePlotA() {
       if (!selectorA) return;
@@ -700,13 +731,24 @@
     }
 
 
+    function updateLogisticFrame() {
+      if (!logisticFrame) return;
+      const dataset = datasetSelector.value;  // you already have datasetSelector
+      const newSrc = logisticSrcByDataset[dataset];
+      if (newSrc) {
+        logisticFrame.src = newSrc;
+      }
+    }
+
+
     if (selectorA) selectorA.addEventListener('change', updatePlotA);
     if (selectorB) selectorB.addEventListener('change', updatePlotB);
     datasetSelector.addEventListener('change', updatePlotD);
-    timespanSelector.addEventListener('change', updatePlotD);
+    timespanSelector.addEventListener('change', () =>  {updatePlotD(); updateLogisticFrame(); } ); //update plotD and the logistics plot
     updatePlotA();
     updatePlotB();
     updatePlotD();
+    updateLogisticFrame();
   </script>
 
   <script>
