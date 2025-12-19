@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>r/TheAnatomyOfAHater</title>
@@ -84,11 +85,7 @@
           <div class="post-body">
             <!-- IMAGE before Introduction + hover bubbles -->
             <div class="hover-hate-wrapper" id="hateZone">
-              <img
-                src="images/reddit-img3.png"
-                alt="Reddit visualization"
-                class="hover-hate-image"
-              >
+              <img src="images/reddit-img3.png" alt="Reddit visualization" class="hover-hate-image">
               <div class="hover-bubble-layer" id="hoverBubbleLayer"></div>
             </div>
 
@@ -96,8 +93,10 @@
               <h2>Introduction</h2>
               <p class="intro-big-text">
                 Online conflict is rising, and social media often turns into a stage for anonymous negativity.
-                Using a Reddit dataset (2014–2017), we trace how subreddits link to each other and reveal a hidden network of hostility.
-                Focusing on the 10% of interactions tagged as negative, we dive into the profiles of the users who spread this hostility:
+                Using a Reddit dataset (2014–2017), we trace how subreddits link to each other and reveal a hidden
+                network of hostility.
+                Focusing on the 10% of interactions tagged as negative, we dive into the profiles of the users who
+                spread this hostility:
                 their communities, writing styles, targets, and posting habits.
                 By uncovering how these “haters” operate, we aim to shed light on the dynamics that fuel online anger.
               </p>
@@ -118,8 +117,10 @@
               <section id="dataset-embeddings">
                 <h3>Subreddit Embeddings</h3>
                 <p class="data-intro">
-                  So the dataset takes about 2.5 years of Reddit activity in 51,278 unique subreddits, then turns each subreddit into a 300-dimensional vector
-                  that captures “who posts where,” meaning that subreddits that have similar users end up close together in the embedding space.
+                  So the dataset takes about 2.5 years of Reddit activity in 51,278 unique subreddits, then turns each
+                  subreddit into a 300-dimensional vector
+                  that captures “who posts where,” meaning that subreddits that have similar users end up close together
+                  in the embedding space.
                 </p>
 
                 <label for="plotSelectorA">Choose a plot:</label>
@@ -140,7 +141,8 @@
               <section id="dataset-hyperlinks">
                 <h3>Hyperlink Network Dataset</h3>
                 <p class="data-intro">
-                  So now there’s this giant network of Reddit where every time one subreddit links to another, it counts as a little arrow from
+                  So now there’s this giant network of Reddit where every time one subreddit links to another, it counts
+                  as a little arrow from
                   “source” to “target.”
                 </p>
 
@@ -152,13 +154,15 @@
 
                 <div class="plot-panel" id="plotB-sentiment">
                   <p class="plot-caption">
-                    Hostile posts represent about 10% of the dataset — the goal is to understand what characterizes that “red” portion.
+                    Hostile posts represent about 10% of the dataset — the goal is to understand what characterizes that
+                    “red” portion.
                   </p>
                   <iframe src="plots/sentiment_distribution.html" height="450" title="Sentiment distribution"></iframe>
                 </div>
 
                 <div class="plot-panel" id="plotB-body_vs_title" style="display:none;">
-                  <p class="plot-caption">The dataset provides information on where the link is located — either title or body.</p>
+                  <p class="plot-caption">The dataset provides information on where the link is located — either title
+                    or body.</p>
                   <iframe src="plots/body_title_sentiment.html" height="450" title="Body vs title"></iframe>
                 </div>
               </section>
@@ -171,45 +175,41 @@
         </div>
       </article>
 
-<!-- ================== POST #2 ================== -->
-<article class="post" id="post-clusteringninja" tabindex="0" aria-expanded="false">
-  <div class="post-summary" role="button" aria-label="Open post">
-    <div class="post-header">
-      <img src="images/fond_reddit_mechant.png" alt="r/clusteringninja icon" class="post-icon">
-      <div class="post-meta">
-        <div class="post-subreddit">r/clusteringninja</div>
-        <div class="post-author">Posted by u/NinjADA • 2025</div>
-      </div>
-    </div>
+      <!-- ================== POST #2 ================== -->
+      <article class="post" id="post-clusteringninja" tabindex="0" aria-expanded="false">
+        <div class="post-summary" role="button" aria-label="Open post">
+          <div class="post-header">
+            <img src="images/fond_reddit_mechant.png" alt="r/clusteringninja icon" class="post-icon">
+            <div class="post-meta">
+              <div class="post-subreddit">r/clusteringninja</div>
+              <div class="post-author">Posted by u/NinjADA • 2025</div>
+            </div>
+          </div>
 
-    <div class="post-title-row">
-      <h1 class="post-title">ClusteringNinja</h1>
-    </div>
+          <div class="post-title-row">
+            <h1 class="post-title">ClusteringNinja</h1>
+          </div>
 
-    <img class="post-thumb" src="images/redditcore_preview.png" alt="ClusteringNinja preview">
+          <img class="post-thumb" src="images/redditcore_preview.png" alt="ClusteringNinja preview">
 
-    <div class="post-actions">
-      <button class="vote-btn up" type="button" aria-label="Like">▲</button>
-      <span class="vote-score">0</span>
-      <button class="vote-btn down" type="button" aria-label="Dislike">▼</button>
-      <span class="action-sep">•</span>
-      <span class="open-hint">Click to open</span>
-    </div>
-  </div>
+          <div class="post-actions">
+            <button class="vote-btn up" type="button" aria-label="Like">▲</button>
+            <span class="vote-score">0</span>
+            <button class="vote-btn down" type="button" aria-label="Dislike">▼</button>
+            <span class="action-sep">•</span>
+            <span class="open-hint">Click to open</span>
+          </div>
+        </div>
 
-  <div class="post-full">
-    <div class="post-topbar" role="button" aria-label="Close post">
-      <button class="back-btn" type="button" aria-label="Back">←</button>
-      <img
-        src="images/icon-reddit.png"
-        alt="r/clusteringninja icon"
-        class="post-icon post-icon--hero"
-      >
-      <div class="topbar-title">r/clusteringninja</div>
-    </div>
+        <div class="post-full">
+          <div class="post-topbar" role="button" aria-label="Close post">
+            <button class="back-btn" type="button" aria-label="Back">←</button>
+            <img src="images/icon-reddit.png" alt="r/clusteringninja icon" class="post-icon post-icon--hero">
+            <div class="topbar-title">r/clusteringninja</div>
+          </div>
 
-    <div class="post-body">
-      <h2>Content</h2>
+          <div class="post-body">
+            <h2>Content</h2>
             <section id="anatomy-of-a-hater">
               <h2>Anatomy of a Hater</h2>
               <p>
@@ -228,80 +228,77 @@
             <section id="conclusion">
               <h2>Conclusion</h2>
               <p>
-                This project maps hostile interactions between communities and starts sketching the behavioral “profile” of haters.
+                This project maps hostile interactions between communities and starts sketching the behavioral “profile”
+                of haters.
               </p>
             </section>
 
-      <h2>Limitations</h2>
-      <p>(Fill this post limitations.)</p>
+            <h2>Limitations</h2>
+            <p>(Fill this post limitations.)</p>
 
-      <footer>© 2025 NinjADA Team</footer>
-    </div>
-  </div>
-</article>
+            <footer>© 2025 NinjADA Team</footer>
+          </div>
+        </div>
+      </article>
 
-<!-- ================== POST #3 ================== -->
-<article class="post" id="post-methods" tabindex="0" aria-expanded="false">
-  <div class="post-summary" role="button" aria-label="Open post">
-    <div class="post-header">
-      <img src="images/adageek.png" alt="r/adageeks icon" class="post-icon">
-      <div class="post-meta">
-        <div class="post-subreddit">r/adageeks</div>
-        <div class="post-author">Posted by u/NinjADA • 2025</div>
-      </div>
-    </div>
+      <!-- ================== POST #3 ================== -->
+      <article class="post" id="post-methods" tabindex="0" aria-expanded="false">
+        <div class="post-summary" role="button" aria-label="Open post">
+          <div class="post-header">
+            <img src="images/adageek.png" alt="r/adageeks icon" class="post-icon">
+            <div class="post-meta">
+              <div class="post-subreddit">r/adageeks</div>
+              <div class="post-author">Posted by u/NinjADA • 2025</div>
+            </div>
+          </div>
 
-    <div class="post-title-row">
-      <h1 class="post-title">Methods for ADA geeks</h1>
-    </div>
+          <div class="post-title-row">
+            <h1 class="post-title">Methods for ADA geeks</h1>
+          </div>
 
-    <img class="post-thumb" src="images/redditcore_preview.png" alt="Methods for ADA geeks preview">
+          <img class="post-thumb" src="images/redditcore_preview.png" alt="Methods for ADA geeks preview">
 
-    <div class="post-actions">
-      <button class="vote-btn up" type="button" aria-label="Like">▲</button>
-      <span class="vote-score">0</span>
-      <button class="vote-btn down" type="button" aria-label="Dislike">▼</button>
-      <span class="action-sep">•</span>
-      <span class="open-hint">Click to open</span>
-    </div>
-  </div>
+          <div class="post-actions">
+            <button class="vote-btn up" type="button" aria-label="Like">▲</button>
+            <span class="vote-score">0</span>
+            <button class="vote-btn down" type="button" aria-label="Dislike">▼</button>
+            <span class="action-sep">•</span>
+            <span class="open-hint">Click to open</span>
+          </div>
+        </div>
 
-  <div class="post-full">
-    <div class="post-topbar" role="button" aria-label="Close post">
-      <button class="back-btn" type="button" aria-label="Back">←</button>
-      <img
-        src="images/icon-reddit.png"
-        alt="r/adageeks icon"
-        class="post-icon post-icon--hero"
-      >
-      <div class="topbar-title">r/adageeks</div>
-    </div>
+        <div class="post-full">
+          <div class="post-topbar" role="button" aria-label="Close post">
+            <button class="back-btn" type="button" aria-label="Back">←</button>
+            <img src="images/icon-reddit.png" alt="r/adageeks icon" class="post-icon post-icon--hero">
+            <div class="topbar-title">r/adageeks</div>
+          </div>
 
-    <div class="post-body">
-      <h2>Content</h2>
+          <div class="post-body">
+            <h2>Content</h2>
 
-      <section class="method">
-        <h3>Reaction dynamics</h3>
-        <p>[Short description of method 1.]</p>
-      </section>
+            <section class="method">
+              <h3>Reaction dynamics</h3>
+              <p>[Short description of method 1.]</p>
+            </section>
 
-      <section class="method">
-        <h3>Feature analysis</h3>
-        <p>[Short description of method 2.]</p>
-      </section>
+            <section class="method">
+              <h3>Feature analysis</h3>
+              <p>[Short description of method 2.]</p>
+            </section>
 
-      <section class="method">
-        <h3>Time analysis</h3>
-        <p>[Short description of method 3.]</p>
-      </section>
+            <section class="method">
+              <h3>Time analysis</h3>
+              <p>[Short description of method 3.]</p>
+            </section>
 
-      <h2>Limitations</h2>
-      <p>(Fill this post limitations.)</p>
+            <h2>Limitations</h2>
+            <p>(Fill this post limitations.)</p>
 
-      <footer>© 2025 NinjADA Team</footer>
-    </div>
-  </div>
-</article>
+            <footer>© 2025 NinjADA Team</footer>
+          </div>
+        </div>
+      </article>
 
 
 
@@ -334,25 +331,16 @@
         <div class="post-full">
           <div class="post-topbar" role="button" aria-label="Close post">
             <button class="back-btn" type="button" aria-label="Back">←</button>
-            <img
-            src="images/icon-geopo.png"
-            alt="r/Geopo icon"
-            class="post-icon post-icon--hero"
-          >
+            <img src="images/icon-geopo.png" alt="r/Geopo icon" class="post-icon post-icon--hero">
             <div class="topbar-title">r/Geo-Politics</div>
           </div>
 
           <div class="post-body">
-              <div class="plot-wrapper" id="network_geopo">
-                <embed
-                src="plots/maelle/geo_politics_overall_distribution.html"
-                type="text/html"
-                title="Negative - Positive link distribution"
-                class="plot-iframe"
-                width="100%"
-                height="800"
+            <div class="plot-wrapper" id="network_geopo">
+              <embed src="plots/maelle/geo_politics_overall_distribution.html" type="text/html"
+                title="Negative - Positive link distribution" class="plot-iframe" width="100%" height="800"
                 style="border:none; overflow:visible;">
-              </div>
+            </div>
             <h2>What counts as “hate” here?</h2>
             <p>
               We use the dataset’s hostile/non-hostile labels on subreddit-to-subreddit links.
@@ -363,97 +351,81 @@
               <p class="plot-caption">
                 Monthly count of negative links sent vs received for Geo-Politics.
               </p>
-            
+
               <div class="plot-panel" id="negative_links_geopo">
-                <iframe
-                  src="plots/reactions_dynamics/negative_links_geopo.html?v=3"
-                  title="Negative links over time — Geo-Politics"
-                  >
-              </iframe>
-              
-              
+                <iframe src="plots/reactions_dynamics/negative_links_geopo.html?v=3"
+                  title="Negative links over time — Geo-Politics">
+                </iframe>
+
+
               </div>
 
               <div class="plot-wrapper" id="network_geopo">
-                <embed
-                src="plots/reactions_dynamics/network_geopo.html"
-                type="text/html"
-                title="Network— Geo-Politics"
-                class="plot-iframe"
-                width="100%"
-                height="800"
-                style="border:none; overflow:visible;">
+                <embed src="plots/reactions_dynamics/network_geopo.html" type="text/html" title="Network— Geo-Politics"
+                  class="plot-iframe" width="100%" height="800" style="border:none; overflow:visible;">
               </div>
 
               <div class="plot-panel" id="sankey_geopo">
-                <iframe
-                  src="plots/reactions_dynamics/sankey-geopo.html"
-                  title="Sankey Geo-Politics">
+                <iframe src="plots/reactions_dynamics/sankey-geopo.html" title="Sankey Geo-Politics">
                 </iframe>
               </div>
 
               <div class="plot-wrapper" id="table_geopo">
-                <embed
-                src="plots/reactions_dynamics/spikes_pop_table_geopo.html"
-                type="text/html"
-                title="tableGeo-Politics"
-                style="
-                  width: 100%;
-                  height: 500px;
-                  border: none;
-                  background: transparent;
-                ">
+                <embed src="plots/reactions_dynamics/spikes_pop_table_geopo.html" type="text/html"
+                  title="tableGeo-Politics" style="
+                        width: 100%;
+                        height: 500px;
+                        border: none;
+                        background: transparent;
+                      ">
               </div>
 
               <div class="plot-wrapper" id="dropdown_geopo">
-                <embed
-                  src="plots/reactions_dynamics/geopo_year_dropdown.html"
-                  type="text/html"
-                  title="Dropdown Geo-Politics"
-                  style="
-                    width: 100%;
-                    height: 650px;
-                    border: none;
-                    background: transparent;
-                  ">
+                <embed src="plots/reactions_dynamics/geopo_year_dropdown.html" type="text/html"
+                  title="Dropdown Geo-Politics" style="
+                          width: 100%;
+                          height: 650px;
+                          border: none;
+                          background: transparent;
+                        ">
               </div>
 
 
               <section class="result-card">
                 <h1>Negative link activity after attack peaks</h1>
-              
+
                 <div class="result-header">
                   <span class="result-cluster">Geo-Politics</span>
                   <span class="result-badge significant">Statistically significant</span>
                 </div>
-              
+
                 <div class="result-meta">
                   <span class="chip">47 spikes</span>
                   <span class="chip">7-day window</span>
                   <span class="chip">Tested on rate</span>
                 </div>
-              
+
                 <div class="result-metrics">
                   <div class="metric">
                     <div class="label">Before</div>
                     <div class="value">26.79</div>
                     <div class="sub">mean rate</div>
                   </div>
-              
+
                   <div class="arrow">→</div>
-              
+
                   <div class="metric">
                     <div class="label">After</div>
                     <div class="value">28.64</div>
                     <div class="sub">mean rate</div>
                   </div>
-              
+
                   <div class="delta positive">
                     <div class="delta-value">+1.85</div>
                     <div class="delta-sub">(+6.9%)</div>
                   </div>
                 </div>
-              
+
                 <div class="result-footer">
                   <div class="pval">p = 0.00079</div>
                   <div class="note">
@@ -463,715 +435,669 @@
               </section>
 
               <div class="plot-wrapper" id="spearman_geopo">
-                <embed
-                  src="plots/reactions_dynamics/spearman_geopo.html"
-                  type="text/html"
-                  title="Spearman Geo-Politics"
+                <embed src="plots/reactions_dynamics/spearman_geopo.html" type="text/html" title="Spearman Geo-Politics"
                   style="
-                    width: 100%;
-                    height: 750px;
-                    border: none;
-                    background: transparent;
-                  ">
+                          width: 100%;
+                          height: 750px;
+                          border: none;
+                          background: transparent;
+                        ">
               </div>
 
               <div class="plot-wrapper" id="Retaliation_geopo">
-                <embed
-                  src="plots/reactions_dynamics/retaliation_cluster_vs_subreddit_geopo.html"
-                  type="text/html"
-                  title="Retaliation Geo-Politics"
-                  style="
-                    width: 100%;
-                    height: 750px;
-                    border: none;
-                    background: transparent;
-                  ">
+                <embed src="plots/reactions_dynamics/retaliation_cluster_vs_subreddit_geopo.html" type="text/html"
+                  title="Retaliation Geo-Politics" style="
+                          width: 100%;
+                          height: 750px;
+                          border: none;
+                          background: transparent;
+                        ">
               </div>
 
               <div class="plot-wrapper" id="bar_geopo">
-                <embed
-                  src="plots/reactions_dynamics/bar_geopo.html"
-                  type="text/html"
-                  title="bar Geo-Politics"
-                  style="
-                    width: 100%;
-                    height: 750px;
-                    border: none;
-                    background: transparent;
-                  ">
+                <embed src="plots/reactions_dynamics/bar_geopo.html" type="text/html" title="bar Geo-Politics" style="
+                          width: 100%;
+                          height: 750px;
+                          border: none;
+                          background: transparent;
+                        ">
               </div>
 
               <div class="plot-wrapper" id="heatmap_geopo">
-                <embed
-                  src="plots/reactions_dynamics/heatmap_geopo.html"
-                  type="text/html"
-                  title="heatmap Geo-Politics"
+                <embed src="plots/reactions_dynamics/heatmap_geopo.html" type="text/html" title="heatmap Geo-Politics"
                   style="
-                    width: 100%;
-                    height: 750px;
-                    border: none;
-                    background: transparent;
-                  ">
+                          width: 100%;
+                          height: 750px;
+                          border: none;
+                          background: transparent;
+                        ">
               </div>
               <div class="plot-wrapper" id="spearman_geopo">
-                <embed
-                  src="plots/maelle/geo_politics_pronouns_diff.html"
-                  type="text/html"
-                  title="Difference of the mean - promoun features"
-                  style="
-                    width: 100%;
-                    height: 750px;
-                    border: none;
-                    background: transparent;
-                  ">
-              </div>              
-                <embed
-                  src="plots/maelle/geopolitics_pronouns_diff_features_table.html"
-                  type="text/html"
-                  title="p values of the pronoun features"
-                  style="
-                    width: 100%;
-                    height: 750px;
-                    border: none;
-                    background: transparent;
-                  ">
+                <embed src="plots/maelle/geo_politics_pronouns_diff.html" type="text/html"
+                  title="Difference of the mean - promoun features" style="
+                          width: 100%;
+                          height: 750px;
+                          border: none;
+                          background: transparent;
+                        ">
               </div>
-              <div class="plot-wrapper" id="spearman_geopo">
-                <embed
-                  src="plots/maelle/geo_logit_pronouns.html"
-                  type="text/html"
-                  title="Logit pronoun analysis"
-                  style="
-                    width: 100%;
-                    height: 750px;
-                    border: none;
-                    background: transparent;
-                  ">
-              </div>     
-              <div class="plot-wrapper" id="spearman_geopo">
-                <embed
-                  src="plots/maelle/geo_politics_sentiment_diff.html"
-                  type="text/html"
-                  title="Difference of the mean - promoun features"
-                  style="
-                    width: 100%;
-                    height: 750px;
-                    border: none;
-                    background: transparent;
-                  ">
-              <div class="plot-wrapper" id="spearman_geopo">
-                <embed
-                  src="plots/maelle/geopolitics_sentiments_diff_features_table.html"
-                  type="text/html"
-                  title="p values of the sentiment difference"
-                  style="
-                    width: 100%;
-                    height: 750px;
-                    border: none;
-                    background: transparent;
-                  ">
-              </div>
-              <div class="plot-wrapper" id="spearman_geopo">
-                <embed
-                  src="plots/maelle/geo_logit_sentiments.html"
-                  type="text/html"
-                  title="Logit sentiment analysis"
-                  style="
-                    width: 100%;
-                    height: 750px;
-                    border: none;
-                    background: transparent;
-                  ">
-              </div> 
-
-            
+              <embed src="plots/maelle/geopolitics_pronouns_diff_features_table.html" type="text/html"
+                title="p values of the pronoun features" style="
+                          width: 100%;
+                          height: 750px;
+                          border: none;
+                          background: transparent;
+                        ">
+          </div>
+          <div class="plot-wrapper" id="spearman_geopo">
+            <embed src="plots/maelle/geo_logit_pronouns.html" type="text/html" title="Logit pronoun analysis" style="
+                          width: 100%;
+                          height: 750px;
+                          border: none;
+                          background: transparent;
+                        ">
+          </div>
+          <div class="plot-wrapper" id="spearman_geopo">
+            <embed src="plots/maelle/geo_politics_sentiment_diff.html" type="text/html"
+              title="Difference of the mean - promoun features" style="
+                          width: 100%;
+                          height: 750px;
+                          border: none;
+                          background: transparent;
+                        ">
+            <div class="plot-wrapper" id="spearman_geopo">
+              <embed src="plots/maelle/geopolitics_sentiments_diff_features_table.html" type="text/html"
+                title="p values of the sentiment difference" style="
+                          width: 100%;
+                          height: 750px;
+                          border: none;
+                          background: transparent;
+                        ">
+            </div>
+            <div class="plot-wrapper" id="spearman_geopo">
+              <embed src="plots/maelle/geo_logit_sentiments.html" type="text/html" title="Logit sentiment analysis"
+                style="
+                          width: 100%;
+                          height: 750px;
+                          border: none;
+                          background: transparent;
+                        ">
+            </div>
 
 
-        
-
-              
-              
-              </div>
-            </section>
 
 
-            <section id="haters-schedule">
-              <h2>The Hater's Schedule</h2>
-                <p> Do haters have a specific time schedule ? Is there more negativity during summer than during winter ? Or on the week-end as opposed to during the week ? </p>
-                <p>Let's plot the data and find out !</p>
-              <!-- Interactive plot with timespan selector -->
-              <label for="timespanSelectorGeo">Select Timespan</label>
-              <select id="timespanSelectorGeo">
-                <option value="complete">Complete</option>
-                <option value="year_by_month">Year by month</option>
-                <option value="week">Average Week</option>
-              </select>
-              
-              <!-- Hidden iframes for each timespan -->
-              <div class="plot-panel" id="geopo-complete" style="display: block;">
-                <iframe src="plots/julien/geopolitics_complete.html" height="450" title="Geopolitics Complete" style="width: 100%; border: none;"></iframe>
-              </div>
-              <div class="plot-panel" id="geopo-year_by_month" style="display: none;">
-                <iframe src="plots/julien/geopolitics_year_by_month.html" height="450" title="Geopolitics Year by Month" style="width: 100%; border: none;"></iframe>
-              </div>
-              <div class="plot-panel" id="geopo-week" style="display: none;">
-                <iframe src="plots/julien/geopolitics_week.html" height="450" title="Geopolitics Average Week" style="width: 100%; border: none;"></iframe>
-              </div>
-              
-              <p> Let's look at the week-level. In the plot above you can see the "typical" week : for example above Tuesday you can read the mean of the negativity rate of every single Tuesday in our dataset. (Reminder : this negativity rate
-                is simply the number of negative posts divided by the number of total posts for that particular day). </p>
-              <p>We will fit a logistic regression on the days of the week : Monday represents the reference negativity rate (value 0, also called the intercept). For each other day of the week, the model tries to find the value by which the 
-                rate for this day changes on average when compared with Monday. Logistic regression can calculate log-odds (the chance between 0 and 1 that a random post on e.g. Tuesday is negative) based 
-                on categorical variables (the days of the week). The negativity rate can be naturally interpreted as a log-odd : if there are 10 negative posts for 100 total posts, the rate of 0.1 means that a randomly picked post has 0.1 
-                chance of being negative. So it makes sense to use this model. Let's look at the results.
-              </p>
-                        
-              <!-- Fixed logistic regression plot (first instance) -->
-              <p>Logistic regression results for week-level analysis</p>
-              <iframe src="plots/julien/log_reg_geopolitics_week.html" height="450" title="Logistic Regression Geopolitics Week" style="width: 100%; border: none;"></iframe>
-              
-              <p>How do we interpret this table ? The p-value tells us the probability that the null-hypothesis "there is no difference of negativity ratio between day X and Monday" is true, so we can only consider that there is some
-              statistically significant event when the p-value < 0.05. The column "increase %" tells us by how much the negativity rate increased (or decreased if it's negative) between day X and monday. It is calculated using the coefficient
-              beta discovered by the logistic regression model for this day as follows : increase % = (exp(beta) - 1)*100. The confidence interval column represents the range in which the increase % will fall 95% of the time (calculated 
-              with a binomial distribution / Wald interval) and finally the z-score = beta / standard_error represents the "effect size".
-              So we see that two days have a stastically significant p-value : Saturday and Sunday with a corresponding percentage % of 7.35% and 6.3% respectively. Nice ! Did we determine that haters tend to hate more on the weekends ? 
-              Sadly there are two more values in the table that we need to pay attention to : pseudo R-squared and Pearson's Chi-square. 
-              R-squared tells us the explaining power of the model, it is a value from 0 to 1 that represents the amount of the observed difference in rate that our model explains (1 would mean that our model explains 100% of the observed difference,
-              i.e the model perfectly encampsulates the observed phenomenon). Our logistic regression can't provide us with a real R-squared metric, but this pseudo-metric is an approximation. 
-              On the other hand the Chi-square measures the goodness of fit of our model : it sums the squared differences between observed data and model predictions (weighted by expected values). 
-              Low values indicate that our predictions closely match reality (it's a good model) while high values show significant mismatches.
 
-              Our table gives us an abysmally small pseudo R-squared, and an extremely high Chi-square, which means our model has almost no explaining power, and a terribly bad fit. In short, it tells us almost nothing 😢.      
-              </p>
 
-               <p>Let's try the same analysis comparing the different months of the year.</p>
 
-              
-              <!-- Fixed logistic regression plot (second instance) -->
-              <iframe src="plots/julien/log_reg_geopolitics_year_by_month.html" height="550" title="Logistic Regression Geopolitics Week" style="width: 100%; border: none;"></iframe>
-              
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. The chi-square shows goodness-of-fit between model predictions and observed data.</p>
-            </section>
 
-            
+          </div>
+          </section>
 
-            <h2>Limitations</h2>
-            <p>
-              Reddit context is messy: sarcasm, brigading, moderation changes, and cross-posting can all affect interpretation.
+
+          <section id="haters-schedule">
+            <h2>The Hater's Schedule</h2>
+            <p> Do haters have a specific time schedule ? Is there more negativity during summer than during winter ? Or
+              on the week-end as opposed to during the week ? </p>
+            <p>Let's plot the data and find out !</p>
+            <!-- Interactive plot with timespan selector -->
+            <label for="timespanSelectorGeo">Select Timespan</label>
+            <select id="timespanSelectorGeo">
+              <option value="complete">Complete</option>
+              <option value="year_by_month">Year by month</option>
+              <option value="week">Average Week</option>
+            </select>
+
+            <!-- Hidden iframes for each timespan -->
+            <div class="plot-panel" id="geopo-complete" style="display: block;">
+              <iframe src="plots/julien/geopolitics_complete.html" height="450" title="Geopolitics Complete"
+                style="width: 100%; border: none;"></iframe>
+            </div>
+            <div class="plot-panel" id="geopo-year_by_month" style="display: none;">
+              <iframe src="plots/julien/geopolitics_year_by_month.html" height="450" title="Geopolitics Year by Month"
+                style="width: 100%; border: none;"></iframe>
+            </div>
+            <div class="plot-panel" id="geopo-week" style="display: none;">
+              <iframe src="plots/julien/geopolitics_week.html" height="450" title="Geopolitics Average Week"
+                style="width: 100%; border: none;"></iframe>
+            </div>
+
+            <p> Let's look at the week-level. In the plot above you can see the "typical" week : for example above
+              Tuesday you can read the mean of the negativity rate of every single Tuesday in our dataset. (Reminder :
+              this negativity rate
+              is simply the number of negative posts divided by the number of total posts for that particular day). </p>
+            <p>We will fit a logistic regression on the days of the week : Monday represents the reference negativity
+              rate (value 0, also called the intercept). For each other day of the week, the model tries to find the
+              value by which the
+              rate for this day changes on average when compared with Monday. Logistic regression can calculate log-odds
+              (the chance between 0 and 1 that a random post on e.g. Tuesday is negative) based
+              on categorical variables (the days of the week). The negativity rate can be naturally interpreted as a
+              log-odd : if there are 10 negative posts for 100 total posts, the rate of 0.1 means that a randomly picked
+              post has 0.1
+              chance of being negative. So it makes sense to use this model. Let's look at the results.
             </p>
 
+            <!-- Fixed logistic regression plot (first instance) -->
+            <p>Logistic regression results for week-level analysis</p>
+            <iframe src="plots/julien/log_reg_geopolitics_week.html" height="450"
+              title="Logistic Regression Geopolitics Week" style="width: 100%; border: none;"></iframe>
+
+            <p>How do we interpret this table ? The p-value tells us the probability that the null-hypothesis "there is
+              no difference of negativity ratio between day X and Monday" is true, so we can only consider that there is
+              some
+              statistically significant event when the p-value < 0.05. The column "increase %" tells us by how much the
+                negativity rate increased (or decreased if it's negative) between day X and monday. It is calculated
+                using the coefficient beta discovered by the logistic regression model for this day as follows :
+                increase %=(exp(beta) - 1)*100. The confidence interval column represents the range in which the
+                increase % will fall 95% of the time (calculated with a binomial distribution / Wald interval) and
+                finally the z-score=beta / standard_error represents the "effect size" . So we see that two days have a
+                stastically significant p-value : Saturday and Sunday with a corresponding percentage % of 7.35% and
+                6.3% respectively. Nice ! Did we determine that haters tend to hate more on the weekends ? Sadly there
+                are two more values in the table that we need to pay attention to : pseudo R-squared and Pearson's
+                Chi-square. R-squared tells us the explaining power of the model, it is a value from 0 to 1 that
+                represents the amount of the observed difference in rate that our model explains (1 would mean that our
+                model explains 100% of the observed difference, i.e the model perfectly encampsulates the observed
+                phenomenon). Our logistic regression can't provide us with a real R-squared metric, but this
+                pseudo-metric is an approximation. On the other hand the Chi-square measures the goodness of fit of our
+                model : it sums the squared differences between observed data and model predictions (weighted by
+                expected values). Low values indicate that our predictions closely match reality (it's a good model)
+                while high values show significant mismatches. Our table gives us an abysmally small pseudo R-squared,
+                and an extremely high Chi-square, which means our model has almost no explaining power, and a terribly
+                bad fit. In short, it tells us almost nothing 😢. </p>
+
+                <p>Let's try the same analysis comparing the different months of the year.</p>
+
+
+                <!-- Fixed logistic regression plot (second instance) -->
+                <iframe src="plots/julien/log_reg_geopolitics_year_by_month.html" height="550"
+                  title="Logistic Regression Geopolitics Week" style="width: 100%; border: none;"></iframe>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. The chi-square shows goodness-of-fit between
+                  model predictions and observed data.</p>
+          </section>
+
+
+
+          <h2>Limitations</h2>
+          <p>
+            Reddit context is messy: sarcasm, brigading, moderation changes, and cross-posting can all affect
+            interpretation.
+          </p>
+
+          <footer>© 2025 NinjADA Team</footer>
+        </div>
+      
+      </article>
+
+      <!-- ================== POST #5 ================== -->
+      <article class="post" id="post-5" tabindex="0" aria-expanded="false">
+        <div class="post-summary" role="button" aria-label="Open post">
+          <div class="post-header">
+            <img src="images/icon-pop.png" alt="r/PopCulture icon" class="post-icon">
+            <div class="post-meta">
+              <div class="post-subreddit">r/PopCulture</div>
+              <div class="post-author">Posted by u/NinjADA • 2025</div>
+            </div>
+          </div>
+
+          <div class="post-title-row">
+            <h1 class="post-title">r/Pop-Culture</h1>
+          </div>
+
+          <img class="post-thumb" src="images/popculture_preview.png" alt="Pop culture preview">
+
+          <div class="post-actions">
+            <button class="vote-btn up" type="button" aria-label="Like">▲</button>
+            <span class="vote-score">0</span>
+            <button class="vote-btn down" type="button" aria-label="Dislike">▼</button>
+            <span class="action-sep">•</span>
+            <span class="open-hint">Click to open</span>
+          </div>
+        </div>
+
+        <div class="post-full">
+          <div class="post-topbar" role="button" aria-label="Close post">
+            <button class="back-btn" type="button" aria-label="Back">←</button>
+            <img src="images/icon-pop.png" alt="r/Pop-culture icon" class="post-icon post-icon--hero">
+            <div class="topbar-title">r/Pop-Culture</div>
+          </div>
+
+          <div class="post-body">
+            <div class="plot-wrapper" id="pop_overall_distribution">
+              <embed src="plots/maelle/pop_overall_distribution.html" type="text/html"
+                title="Negative - Positive link distribution" class="plot-iframe" width="100%" height="800"
+                style="border:none; overflow:visible;">
+            </div>
+
+            <h2>Content</h2>
+            <p>(Fill this post content.)</p>
+
+            <div class="plot-wrapper" id="pop_pronouns_diff">
+              <embed src="plots/maelle/pop_culture_pronouns_diff.html" type="text/html"
+                title="Difference of the means - pronoun features"
+                style="width: 100%; height: 750px; border: none; background: transparent;">
+            </div>
+
+            <div class="plot-wrapper" id="pop_pronouns_table">
+              <embed src="plots/maelle/popculture_pronouns_diff_features_table.html" type="text/html"
+                title="p values of the pronouns features difference"
+                style="width: 100%; height: 750px; border: none; background: transparent;">
+            </div>
+
+            <div class="plot-wrapper" id="pop_logit_pronouns">
+              <embed src="plots/maelle/pop_logit_pronouns.html" type="text/html" title="Logit analysis - pronouns"
+                style="width: 100%; height: 750px; border: none; background: transparent;">
+            </div>
+
+            <div class="plot-wrapper" id="pop_sentiment_diff">
+              <embed src="plots/maelle/pop_culture_sentiment_diff.html" type="text/html"
+                title="Difference of the mean sentiment features"
+                style="width: 100%; height: 750px; border: none; background: transparent;">
+            </div>
+
+            <div class="plot-wrapper" id="pop_sentiments_table">
+              <embed src="plots/maelle/popculture_sentiments_diff_features_table.html" type="text/html"
+                title="p-value of the sentiment features difference"
+                style="width: 100%; height: 750px; border: none; background: transparent;">
+            </div>
+
+            <div class="plot-wrapper" id="pop_logit_sentiments">
+              <embed src="plots/maelle/pop_logit_sentiments.html" type="text/html" title="Logit analysis - sentiment"
+                style="width: 100%; height: 750px; border: none; background: transparent;">
+            </div>
+
+            <h2>Limitations</h2>
+            <p>(Fill this post limitations.)</p>
+
             <footer>© 2025 NinjADA Team</footer>
+          </div> <!-- /.post-body -->
+        </div> <!-- /.post-full -->
+      </article>
+
+
+      <!-- ================== POST #6 ================== -->
+      <article class="post" id="post-4" tabindex="0" aria-expanded="false">
+        <div class="post-summary" role="button" aria-label="Open post">
+          <div class="post-header">
+            <img src="images/icon-reddit.png" alt="r/RedditCore icon" class="post-icon">
+            <div class="post-meta">
+              <div class="post-subreddit">r/RedditCore</div>
+              <div class="post-author">Posted by u/NinjADA • 2025</div>
+            </div>
+          </div>
+
+          <div class="post-title-row">
+            <h1 class="post-title">r/Reddit Core</h1>
+          </div>
+
+          <img class="post-thumb" src="images/redditcore_preview.png" alt="Reddit core preview">
+
+          <div class="post-actions">
+            <button class="vote-btn up" type="button" aria-label="Like">▲</button>
+            <span class="vote-score">0</span>
+            <button class="vote-btn down" type="button" aria-label="Dislike">▼</button>
+            <span class="action-sep">•</span>
+            <span class="open-hint">Click to open</span>
+          </div>
+        </div>
+
+        <div class="post-full">
+          <div class="post-topbar" role="button" aria-label="Close post">
+            <button class="back-btn" type="button" aria-label="Back">←</button>
+            <img src="images/icon-reddit.png" alt="r/Reddit icon" class="post-icon post-icon--hero">
+            <div class="topbar-title">r/Reddit Core</div>
+          </div>
+
+          <div class="post-body">
+            <h2>Content</h2>
+            <p></p>
+
+            <div class="plot-wrapper" id="reddit_overall_distribution">
+              <embed src="plots/maelle/reddit_overall_distribution.html" type="text/html"
+                title="Negative - Positive link distribution" class="plot-iframe" width="100%" height="800"
+                style="border:none; overflow:visible;">
+            </div>
+
+            <div class="plot-wrapper" id="reddit_pronouns_diff">
+              <embed src="plots/maelle/reddit_culture_pronouns_diff.html" type="text/html"
+                title="Difference of the mean - Pronouns feature"
+                style="width: 100%; height: 750px; border: none; background: transparent;">
+            </div>
+
+            <div class="plot-wrapper" id="reddit_pronouns_table">
+              <embed src="plots/maelle/reddit_pronouns_diff_features_table.html" type="text/html"
+                title="p-value for difference of the mean - pronoun feature"
+                style="width: 100%; height: 750px; border: none; background: transparent;">
+            </div>
+
+            <div class="plot-wrapper" id="reddit_logit_pronouns">
+              <embed src="plots/maelle/reddit_logit_pronouns.html" type="text/html" title="Logit Analysis - Pronouns"
+                style="width: 100%; height: 750px; border: none; background: transparent;">
+            </div>
+
+            <div class="plot-wrapper" id="reddit_sentiment_diff">
+              <embed src="plots/maelle/reddit_culture_sentiment_diff.html" type="text/html"
+                title="Difference of the mean - Sentiment feature"
+                style="width: 100%; height: 750px; border: none; background: transparent;">
+            </div>
+
+            <div class="plot-wrapper" id="reddit_sentiments_table">
+              <embed src="plots/maelle/reddit_sentiments_diff_features_table.html" type="text/html"
+                title="p-value for difference of the mean - Sentiment features"
+                style="width: 100%; height: 750px; border: none; background: transparent;">
+            </div>
+
+            <div class="plot-wrapper" id="reddit_logit_sentiments">
+              <embed src="plots/maelle/reddit_logit_sentiments.html" type="text/html"
+                title="Logit analysis - Sentiment features"
+                style="width: 100%; height: 750px; border: none; background: transparent;">
+            </div>
+
+            <h2>Limitations</h2>
+            <p>(Fill this post limitations.)</p>
+
+            <footer>© 2025 NinjADA Team</footer>
+          </div> <!-- /.post-body -->
+        </div> <!-- /.post-full -->
+      </article>
+
+      <!-- ================== POST #7 ================== -->
+      <article class="post" id="post-5" tabindex="0" aria-expanded="false">
+        <div class="post-summary" role="button" aria-label="Open post">
+          <div class="post-header">
+            <img src="images/icon-health.png" alt="r/MentalHealth icon" class="post-icon post-icon--hero">
+            <div class="post-meta">
+              <div class="post-subreddit">r/MentalHealth</div>
+              <div class="post-author">Posted by u/NinjADA • 2025</div>
+            </div>
+          </div>
+
+          <div class="post-title-row">
+            <h1 class="post-title">r/Mental Health</h1>
+          </div>
+
+          <img class="post-thumb" src="images/mentalhealth_preview.png" alt="Mental health preview">
+
+          <div class="post-actions">
+            <button class="vote-btn up" type="button" aria-label="Like">▲</button>
+            <span class="vote-score">0</span>
+            <button class="vote-btn down" type="button" aria-label="Dislike">▼</button>
+            <span class="action-sep">•</span>
+            <span class="open-hint">Click to open</span>
+          </div>
+        </div>
+
+        <div class="post-full">
+          <div class="post-topbar" role="button" aria-label="Close post">
+            <button class="back-btn" type="button" aria-label="Back">←</button>
+            <img src="images/icon-health.png" alt="r/MentalHealth icon" class="post-icon post-icon--hero">
+            <div class="topbar-title">r/Mental Health</div>
+          </div>
+
+          <div class="post-body">
+            <h2>Content</h2>
+            <p>(Fill this post content.)</p>
+
+            <div class="plot-wrapper" id="selfmh_overall_distribution">
+              <embed src="plots/maelle/self_mh_overall_distribution.html" type="text/html"
+                title="Negative - Positive link distribution" class="plot-iframe" width="100%" height="800"
+                style="border:none; overflow:visible;">
+            </div>
+
+            <div class="plot-wrapper" id="selfmh_pronouns_diff">
+              <embed src="plots/maelle/self_mh_culture_pronouns_diff.html" type="text/html"
+                title="Difference of the means - Pronouns"
+                style="width: 100%; height: 750px; border: none; background: transparent;">
+            </div>
+
+            <div class="plot-wrapper" id="selfmh_pronouns_table">
+              <embed src="plots/maelle/self_mh_pronouns_diff_features_table.html" type="text/html"
+                title="p-value for difference of the mean - Pronoun features"
+                style="width: 100%; height: 750px; border: none; background: transparent;">
+            </div>
+
+            <div class="plot-wrapper" id="selfmh_logit_pronouns">
+              <embed src="plots/maelle/self_mh_logit_pronouns.html" type="text/html" title="Logit Analysis - Pronouns"
+                style="width: 100%; height: 750px; border: none; background: transparent;">
+            </div>
+
+            <div class="plot-wrapper" id="selfmh_sentiment_diff">
+              <embed src="plots/maelle/self_mh_culture_sentiment_diff.html" type="text/html"
+                title="Difference of the mean - Sentiment"
+                style="width: 100%; height: 750px; border: none; background: transparent;">
+            </div>
+
+            <div class="plot-wrapper" id="selfmh_sentiments_table">
+              <embed src="plots/maelle/self_mh_sentiments_diff_features_table.html" type="text/html"
+                title="p-value for difference of the mean - Sentiment features"
+                style="width: 100%; height: 750px; border: none; background: transparent;">
+            </div>
+
+            <div class="plot-wrapper" id="selfmh_logit_sentiments">
+              <embed src="plots/maelle/self_mh_logit_sentiments.html" type="text/html" title="Logit Analysis - Sentiment"
+                style="width: 100%; height: 750px; border: none; background: transparent;">
+            </div>
+
+            <h2>Limitations</h2>
+            <p>(Fill this post limitations.)</p>
+
+            <footer>© 2025 NinjADA Team</footer>
+          </div> <!-- /.post-body -->
+        </div> <!-- /.post-full -->
+      </article>
+
+      <!-- ================== POST #7 ================== -->
+      <article class="post" id="post-time" tabindex="0" aria-expanded="false">
+        <div class="post-summary" role="button" aria-label="Open post">
+          <div class="post-header">
+            <img src="images/icon-health.png" alt="r/TimeAnalysis icon" class="post-icon">
+            <div class="post-meta">
+              <div class="post-subreddit">r/TimeAnalysis</div>
+              <div class="post-author">Posted by u/NinjADA • 2025</div>
+            </div>
+          </div>
+
+          <div class="post-title-row">
+            <h1 class="post-title">Time-Analysis</h1>
+          </div>
+
+          <img class="post-thumb" src="images/mentalhealth_preview.png" alt="Time-Analysis preview">
+
+          <div class="post-actions">
+            <button class="vote-btn up" type="button" aria-label="Like">▲</button>
+            <span class="vote-score">0</span>
+            <button class="vote-btn down" type="button" aria-label="Dislike">▼</button>
+            <span class="action-sep">•</span>
+            <span class="open-hint">Click to open</span>
+          </div>
+        </div>
+
+        <div class="post-full">
+          <div class="post-topbar" role="button" aria-label="Close post">
+            <button class="back-btn" type="button" aria-label="Back">←</button>
+            <img src="images/icon-health.png" alt="r/TimeAnalysis icon" class="post-icon post-icon--hero">
+            <div class="topbar-title">Time-Analysis</div>
+          </div>
+
+          <div class="post-body">
+            <h2>The Hater's Schedule</h2>
+            <p> Do haters have a specific time schedule ? Is there more negativity during summer than during winter ? Or on
+              the week-end as opposed to during the week ? </p>
+            <p>Let's plot the data and find out !</p>
+            <label for="datasetSelector-plotT">Select Dataset</label>
+            <select id="datasetSelector-plotT">
+              <option value="full">Full Dataset</option>
+              <option value="geopolitics">Cluster Geopolitics</option>
+              <option value="popculture">Cluster Pop-Culture</option>
+            </select>
+
+            <label for="timespanSelector-plotT">Timespan</label>
+            <select id="timespanSelector-plotT">
+              <option value="complete">Complete</option>
+              <option value="year_by_month">Year by month</option>
+              <option value="week">Average Week</option>
+            </select>
+
+            <div class="plot-container">
+              <div class="plot-panel" id="plotT-full-complete" style="display:block;">
+                <iframe src="plots/julien/schedule_full_complete.html" title="Full dataset - complete timespan" width="100%"
+                  height="450" style="border:none;"></iframe>
+              </div>
+              <div class="plot-panel" id="plotT-full-year_by_month" style="display:none;">
+                <iframe src="plots/julien/schedule_full_year_by_month.html" title="Full dataset - year by month"
+                  width="100%" height="450" style="border:none;"></iframe>
+              </div>
+              <div class="plot-panel" id="plotT-full-week" style="display:none;">
+                <iframe src="plots/julien/schedule_full_week.html" title="Full dataset - average week" width="100%"
+                  height="450" style="border:none;"></iframe>
+              </div>
+              <div class="plot-panel" id="plotT-geopolitics-complete" style="display:none;">
+                <iframe src="plots/julien/schedule_geopolitics_complete.html" title="Geopolitics - complete timespan"
+                  width="100%" height="450" style="border:none;"></iframe>
+              </div>
+              <div class="plot-panel" id="plotT-geopolitics-year_by_month" style="display:none;">
+                <iframe src="plots/julien/schedule_geopolitics_year_by_month.html" title="Geopolitics - year by month"
+                  width="100%" height="450" style="border:none;"></iframe>
+              </div>
+              <div class="plot-panel" id="plotT-geopolitics-week" style="display:none;">
+                <iframe src="plots/julien/schedule_geopolitics_week.html" title="Geopolitics - average week" width="100%"
+                  height="450" style="border:none;"></iframe>
+              </div>
+              <div class="plot-panel" id="plotT-popculture-complete" style="display:none;">
+                <iframe src="plots/julien/schedule_popculture_complete.html" title="Pop-Culture - complete timespan"
+                  width="100%" height="450" style="border:none;"></iframe>
+              </div>
+              <div class="plot-panel" id="plotT-popculture-year_by_month" style="display:none;">
+                <iframe src="plots/julien/schedule_popculture_year_by_month.html" title="Pop-Culture - year by month"
+                  width="100%" height="450" style="border:none;"></iframe>
+              </div>
+              <div class="plot-panel" id="plotT-popculture-week" style="display:none;">
+                <iframe src="plots/julien/schedule_popculture_week.html" title="Pop-Culture - average week" width="100%"
+                  height="450" style="border:none;"></iframe>
+              </div>
+            </div>
+
+            <p> Let's look at the week-level. In the plot above you can see the "typical" week : for example above Tuesday
+              you can read the mean of the negativity rate of every single Tuesday in our dataset. (Reminder : this
+              negativity rate
+              is simply the number of negative posts divided by the number of total posts for that particular day). </p>
+            <p>We will fit a logistic regression on the days of the week : Monday represents the reference negativity rate
+              (value 0, also called the intercept). For each other day of the week, the model tries to find the value by
+              which the
+              rate for this day changes on average when compared with Monday. Logistic regression can calculate log-odds
+              (the chance between 0 and 1 that a random post on e.g. Tuesday is negative) based
+              on categorical variables (the days of the week). The negativity rate can be naturally interpreted as a log-odd
+              : if there are 10 negative posts for 100 total posts, the rate of 0.1 means that a randomly picked post has
+              0.1
+              chance of being negative. So it makes sense to use this model. Let's look at the results.
+            </p>
+            <div class="plot-container">
+              <!-- Logistic regression - week -->
+              <iframe id="plot_logistic_regression_week" src="plots/julien/log_reg_full_week.html"
+                title="Logistic regression - week" width="100%" height="450" style="border:none;"></iframe>
+            </div>
+            <p>How do we interpret this table ? The p-value tells us the probability that the null-hypothesis "there is no
+              difference of negativity ratio between day X and Monday" is true, so we can only consider that there is some
+              statistically significant event when the p-value < 0.05. The column "increase %" tells us by how much the
+                negativity rate increased (or decreased if it's negative) between day X and monday. It is calculated using
+                the coefficient beta discovered by the logistic regression model for this day as follows : increase
+                %=(exp(beta) - 1)*100. The confidence interval column represents the range in which the increase % will fall
+                95% of the time (calculated with a binomial distribution / Wald interval) and finally the z-score=beta /
+                standard_error represents the "effect size" . So we see that two days have a stastically significant p-value
+                : Saturday and Sunday with a corresponding percentage % of 7.35% and 6.3% respectively. Nice ! Did we
+                determine that haters tend to hate more on the weekends ? Sadly there are two more values in the table that
+                we need to pay attention to : pseudo R-squared and Pearson's Chi-square. R-squared tells us the explaining
+                power of the model, it is a value from 0 to 1 that represents the amount of the observed difference in rate
+                that our model explains (1 would mean that our model explains 100% of the observed difference, i.e the model
+                perfectly encampsulates the observed phenomenon). Our logistic regression can't provide us with a real
+                R-squared metric, but this pseudo-metric is an approximation. On the other hand the Chi-square measures the
+                goodness of fit of our model : it sums the squared differences between observed data and model predictions
+                (weighted by expected values). Low values indicate that our predictions closely match reality (it's a good
+                model) while high values show significant mismatches. Our table gives us an abysmally small pseudo
+                R-squared, and an extremely high Chi-square, which means our model has almost no explaining power, and a
+                terribly bad fit. In short, it tells us almost nothing 😢. </p>
+
+                <p>Let's try the same analysis comparing the different months of the year.</p>
+
+                <div class="plot-container">
+                  <!-- Logistic regression - year by month -->
+                  <iframe id="plot_logistic_regression_year_by_month" src="plots/julien/log_reg_full_year_by_month.html"
+                    title="Logistic regression - year by month" width="100%" height="450" style="border:none;"></iframe>
+                </div>
+
+
+                <h2>Is the hater sensitive to world events ? </h2>
+                <p>After having examined the negative posting behavior over time, we wonder if it is possible to see the
+                  effect of important events on the amount of negatitivity posted on Reddit. Intuitively this would make
+                  sense : if some
+                  controversial event happens in the real world, some Redditors will probably post about it in a deragotive
+                  manner or argue about it. With some luck and if the event is important enough, there would be
+                  enough discussion on the subject inside or between subreddits, generating enough hyperlinks associated
+                  with a negative link sentiment such that we detect a change.
+                </p>
+                <label for="eventDatasetSelector">Select Dataset</label>
+                <select id="eventDatasetSelector">
+                  <option value="full">Full Dataset</option>
+                  <option value="geopolitics">Cluster Geopolitics</option>
+                  <option value="popculture">Cluster Pop-Culture</option>
+                </select>
+
+                <div class="plot-container">
+                  <div id="event-full" class="plot-panel" style="display: block;">
+                    <iframe src="plots/julien/event_analysis_full.html" title="Negativity & Events - Full dataset"
+                      width="100%" height="700" style="border:none;"> </iframe>
+                  </div>
+                  <div id="event-geopolitics" class="plot-panel" style="display: none;">
+                    <iframe src="plots/julien/event_analysis_geopolitics.html" title="Negativity & Events - Geopolitics"
+                      width="100%" height="700" style="border:none;"> </iframe>
+                  </div>
+                  <div id="event-popculture" class="plot-panel" style="display: none;">
+                    <iframe src="plots/julien/event_analysis_popculture.html" title="Negativity & Events - Pop-Culture"
+                      width="100%" height="700" style="border:none;"> </iframe>
+                  </div>
+                </div>
+
+                <p>Of course here we are only detecting correlation, not causation. Trump's election correlates quite
+                  strongly with a decrease in negativity among the dataset overall. Is it because Redditors are happy about
+                  the election ?
+                  Is it actually because the campaigning preceding the election has higher above average negativity due to
+                  the political tensions, and that the period after the election simply went back to the normal rate ?
+                  Is it because of some completely different exterior factor (maybe Redditors are just less negative in
+                  November than in September in general) ? Those questions are still open.
+
+
+
+                <h2>Limitations</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus
+                  ante dapibus diam.</p>
+
+                <footer>© 2025 NinjADA Team</footer>
           </div>
         </div>
       </article>
 
-<!-- ================== POST #5 ================== -->
-<article class="post" id="post-5" tabindex="0" aria-expanded="false">
-  <div class="post-summary" role="button" aria-label="Open post">
-    <div class="post-header">
-      <img src="images/icon-pop.png" alt="r/PopCulture icon" class="post-icon">
-      <div class="post-meta">
-        <div class="post-subreddit">r/PopCulture</div>
-        <div class="post-author">Posted by u/NinjADA • 2025</div>
-      </div>
+
+
+  </main>
+
+  <!--===== Right Sidebar ===== -->
+  <aside class="about">
+    <div class="about-box">
+      <strong>About this subreddit</strong>
+      <p>Data-driven analysis of online hostility on Reddit (2014–2017).</p>
     </div>
 
-    <div class="post-title-row">
-      <h1 class="post-title">r/Pop-Culture</h1>
-    </div>
-
-    <img class="post-thumb" src="images/popculture_preview.png" alt="Pop culture preview">
-
-    <div class="post-actions">
-      <button class="vote-btn up" type="button" aria-label="Like">▲</button>
-      <span class="vote-score">0</span>
-      <button class="vote-btn down" type="button" aria-label="Dislike">▼</button>
-      <span class="action-sep">•</span>
-      <span class="open-hint">Click to open</span>
-    </div>
-  </div>
-
-  <div class="post-full">
-    <div class="post-topbar" role="button" aria-label="Close post">
-      <button class="back-btn" type="button" aria-label="Back">←</button>
-      <img
-        src="images/icon-pop.png"
-        alt="r/Pop-culture icon"
-        class="post-icon post-icon--hero"
-      >
-      <div class="topbar-title">r/Pop-Culture</div>
-    </div>
-
-    <div class="post-body">
-      <div class="plot-wrapper" id="pop_overall_distribution">
-        <embed
-          src="plots/maelle/pop_overall_distribution.html"
-          type="text/html"
-          title="Negative - Positive link distribution"
-          class="plot-iframe"
-          width="100%"
-          height="800"
-          style="border:none; overflow:visible;">
-      </div>
-
-      <h2>Content</h2>
-      <p>(Fill this post content.)</p>
-
-      <div class="plot-wrapper" id="pop_pronouns_diff">
-        <embed
-          src="plots/maelle/pop_culture_pronouns_diff.html"
-          type="text/html"
-          title="Difference of the means - pronoun features"
-          style="width: 100%; height: 750px; border: none; background: transparent;">
-      </div>
-
-      <div class="plot-wrapper" id="pop_pronouns_table">
-        <embed
-          src="plots/maelle/popculture_pronouns_diff_features_table.html"
-          type="text/html"
-          title="p values of the pronouns features difference"
-          style="width: 100%; height: 750px; border: none; background: transparent;">
-      </div>
-
-      <div class="plot-wrapper" id="pop_logit_pronouns">
-        <embed
-          src="plots/maelle/pop_logit_pronouns.html"
-          type="text/html"
-          title="Logit analysis - pronouns"
-          style="width: 100%; height: 750px; border: none; background: transparent;">
-      </div>
-
-      <div class="plot-wrapper" id="pop_sentiment_diff">
-        <embed
-          src="plots/maelle/pop_culture_sentiment_diff.html"
-          type="text/html"
-          title="Difference of the mean sentiment features"
-          style="width: 100%; height: 750px; border: none; background: transparent;">
-      </div>
-
-      <div class="plot-wrapper" id="pop_sentiments_table">
-        <embed
-          src="plots/maelle/popculture_sentiments_diff_features_table.html"
-          type="text/html"
-          title="p-value of the sentiment features difference"
-          style="width: 100%; height: 750px; border: none; background: transparent;">
-      </div>
-
-      <div class="plot-wrapper" id="pop_logit_sentiments">
-        <embed
-          src="plots/maelle/pop_logit_sentiments.html"
-          type="text/html"
-          title="Logit analysis - sentiment"
-          style="width: 100%; height: 750px; border: none; background: transparent;">
-      </div>
-
-      <h2>Limitations</h2>
-      <p>(Fill this post limitations.)</p>
-
-      <footer>© 2025 NinjADA Team</footer>
-    </div> <!-- /.post-body -->
-  </div>   <!-- /.post-full -->
-</article>
-
-
- <!-- ================== POST #6 ================== -->
-<article class="post" id="post-4" tabindex="0" aria-expanded="false">
-  <div class="post-summary" role="button" aria-label="Open post">
-    <div class="post-header">
-      <img src="images/icon-reddit.png" alt="r/RedditCore icon" class="post-icon">
-      <div class="post-meta">
-        <div class="post-subreddit">r/RedditCore</div>
-        <div class="post-author">Posted by u/NinjADA • 2025</div>
-      </div>
-    </div>
-
-    <div class="post-title-row">
-      <h1 class="post-title">r/Reddit Core</h1>
-    </div>
-
-    <img class="post-thumb" src="images/redditcore_preview.png" alt="Reddit core preview">
-
-    <div class="post-actions">
-      <button class="vote-btn up" type="button" aria-label="Like">▲</button>
-      <span class="vote-score">0</span>
-      <button class="vote-btn down" type="button" aria-label="Dislike">▼</button>
-      <span class="action-sep">•</span>
-      <span class="open-hint">Click to open</span>
-    </div>
-  </div>
-
-  <div class="post-full">
-    <div class="post-topbar" role="button" aria-label="Close post">
-      <button class="back-btn" type="button" aria-label="Back">←</button>
-      <img
-        src="images/icon-reddit.png"
-        alt="r/Reddit icon"
-        class="post-icon post-icon--hero">
-      <div class="topbar-title">r/Reddit Core</div>
-    </div>
-
-    <div class="post-body">
-      <h2>Content</h2>
-      <p></p>
-
-      <div class="plot-wrapper" id="reddit_overall_distribution">
-        <embed
-          src="plots/maelle/reddit_overall_distribution.html"
-          type="text/html"
-          title="Negative - Positive link distribution"
-          class="plot-iframe"
-          width="100%"
-          height="800"
-          style="border:none; overflow:visible;">
-      </div>
-
-      <div class="plot-wrapper" id="reddit_pronouns_diff">
-        <embed
-          src="plots/maelle/reddit_culture_pronouns_diff.html"
-          type="text/html"
-          title="Difference of the mean - Pronouns feature"
-          style="width: 100%; height: 750px; border: none; background: transparent;">
-      </div>
-
-      <div class="plot-wrapper" id="reddit_pronouns_table">
-        <embed
-          src="plots/maelle/reddit_pronouns_diff_features_table.html"
-          type="text/html"
-          title="p-value for difference of the mean - pronoun feature"
-          style="width: 100%; height: 750px; border: none; background: transparent;">
-      </div>
-
-      <div class="plot-wrapper" id="reddit_logit_pronouns">
-        <embed
-          src="plots/maelle/reddit_logit_pronouns.html"
-          type="text/html"
-          title="Logit Analysis - Pronouns"
-          style="width: 100%; height: 750px; border: none; background: transparent;">
-      </div>
-
-      <div class="plot-wrapper" id="reddit_sentiment_diff">
-        <embed
-          src="plots/maelle/reddit_culture_sentiment_diff.html"
-          type="text/html"
-          title="Difference of the mean - Sentiment feature"
-          style="width: 100%; height: 750px; border: none; background: transparent;">
-      </div>
-
-      <div class="plot-wrapper" id="reddit_sentiments_table">
-        <embed
-          src="plots/maelle/reddit_sentiments_diff_features_table.html"
-          type="text/html"
-          title="p-value for difference of the mean - Sentiment features"
-          style="width: 100%; height: 750px; border: none; background: transparent;">
-      </div>
-
-      <div class="plot-wrapper" id="reddit_logit_sentiments">
-        <embed
-          src="plots/maelle/reddit_logit_sentiments.html"
-          type="text/html"
-          title="Logit analysis - Sentiment features"
-          style="width: 100%; height: 750px; border: none; background: transparent;">
-      </div>
-
-      <h2>Limitations</h2>
-      <p>(Fill this post limitations.)</p>
-
-      <footer>© 2025 NinjADA Team</footer>
-    </div> <!-- /.post-body -->
-  </div>   <!-- /.post-full -->
-</article>
-
-<!-- ================== POST #7 ================== -->
-<article class="post" id="post-5" tabindex="0" aria-expanded="false">
-  <div class="post-summary" role="button" aria-label="Open post">
-    <div class="post-header">
-      <img src="images/icon-health.png" alt="r/MentalHealth icon" class="post-icon post-icon--hero">
-      <div class="post-meta">
-        <div class="post-subreddit">r/MentalHealth</div>
-        <div class="post-author">Posted by u/NinjADA • 2025</div>
-      </div>
-    </div>
-
-    <div class="post-title-row">
-      <h1 class="post-title">r/Mental Health</h1>
-    </div>
-
-    <img class="post-thumb" src="images/mentalhealth_preview.png" alt="Mental health preview">
-
-    <div class="post-actions">
-      <button class="vote-btn up" type="button" aria-label="Like">▲</button>
-      <span class="vote-score">0</span>
-      <button class="vote-btn down" type="button" aria-label="Dislike">▼</button>
-      <span class="action-sep">•</span>
-      <span class="open-hint">Click to open</span>
-    </div>
-  </div>
-
-  <div class="post-full">
-    <div class="post-topbar" role="button" aria-label="Close post">
-      <button class="back-btn" type="button" aria-label="Back">←</button>
-      <img
-        src="images/icon-health.png"
-        alt="r/MentalHealth icon"
-        class="post-icon post-icon--hero">
-      <div class="topbar-title">r/Mental Health</div>
-    </div>
-
-    <div class="post-body">
-      <h2>Content</h2>
-      <p>(Fill this post content.)</p>
-
-      <div class="plot-wrapper" id="selfmh_overall_distribution">
-        <embed
-          src="plots/maelle/self_mh_overall_distribution.html"
-          type="text/html"
-          title="Negative - Positive link distribution"
-          class="plot-iframe"
-          width="100%"
-          height="800"
-          style="border:none; overflow:visible;">
-      </div>
-
-      <div class="plot-wrapper" id="selfmh_pronouns_diff">
-        <embed
-          src="plots/maelle/self_mh_culture_pronouns_diff.html"
-          type="text/html"
-          title="Difference of the means - Pronouns"
-          style="width: 100%; height: 750px; border: none; background: transparent;">
-      </div>
-
-      <div class="plot-wrapper" id="selfmh_pronouns_table">
-        <embed
-          src="plots/maelle/self_mh_pronouns_diff_features_table.html"
-          type="text/html"
-          title="p-value for difference of the mean - Pronoun features"
-          style="width: 100%; height: 750px; border: none; background: transparent;">
-      </div>
-
-      <div class="plot-wrapper" id="selfmh_logit_pronouns">
-        <embed
-          src="plots/maelle/self_mh_logit_pronouns.html"
-          type="text/html"
-          title="Logit Analysis - Pronouns"
-          style="width: 100%; height: 750px; border: none; background: transparent;">
-      </div>
-
-      <div class="plot-wrapper" id="selfmh_sentiment_diff">
-        <embed
-          src="plots/maelle/self_mh_culture_sentiment_diff.html"
-          type="text/html"
-          title="Difference of the mean - Sentiment"
-          style="width: 100%; height: 750px; border: none; background: transparent;">
-      </div>
-
-      <div class="plot-wrapper" id="selfmh_sentiments_table">
-        <embed
-          src="plots/maelle/self_mh_sentiments_diff_features_table.html"
-          type="text/html"
-          title="p-value for difference of the mean - Sentiment features"
-          style="width: 100%; height: 750px; border: none; background: transparent;">
-      </div>
-
-      <div class="plot-wrapper" id="selfmh_logit_sentiments">
-        <embed
-          src="plots/maelle/self_mh_logit_sentiments.html"
-          type="text/html"
-          title="Logit Analysis - Sentiment"
-          style="width: 100%; height: 750px; border: none; background: transparent;">
-      </div>
-
-      <h2>Limitations</h2>
-      <p>(Fill this post limitations.)</p>
-
-      <footer>© 2025 NinjADA Team</footer>
-    </div> <!-- /.post-body -->
-  </div>   <!-- /.post-full -->
-</article>
-
-<!-- ================== POST #7 ================== -->
-<article class="post" id="post-time" tabindex="0" aria-expanded="false">
-  <div class="post-summary" role="button" aria-label="Open post">
-    <div class="post-header">
-      <img src="images/icon-health.png" alt="r/TimeAnalysis icon" class="post-icon">
-      <div class="post-meta">
-        <div class="post-subreddit">r/TimeAnalysis</div>
-        <div class="post-author">Posted by u/NinjADA • 2025</div>
-      </div>
-    </div>
-
-    <div class="post-title-row">
-      <h1 class="post-title">Time-Analysis</h1>
-    </div>
-
-    <img class="post-thumb" src="images/mentalhealth_preview.png" alt="Time-Analysis preview">
-
-    <div class="post-actions">
-      <button class="vote-btn up" type="button" aria-label="Like">▲</button>
-      <span class="vote-score">0</span>
-      <button class="vote-btn down" type="button" aria-label="Dislike">▼</button>
-      <span class="action-sep">•</span>
-      <span class="open-hint">Click to open</span>
-    </div>
-  </div>
-
-  <div class="post-full">
-    <div class="post-topbar" role="button" aria-label="Close post">
-      <button class="back-btn" type="button" aria-label="Back">←</button>
-      <img
-        src="images/icon-health.png"
-        alt="r/TimeAnalysis icon"
-        class="post-icon post-icon--hero"
-      >
-      <div class="topbar-title">Time-Analysis</div>
-    </div>
-
-    <div class="post-body">
-      <h2>The Hater's Schedule</h2>
-         <p> Do haters have a specific time schedule ? Is there more negativity during summer than during winter ? Or on the week-end as opposed to during the week ? </p>
-                <p>Let's plot the data and find out !</p>
-        <label for="datasetSelector-plotT">Select Dataset</label>
-        <select id="datasetSelector-plotT">
-          <option value="full">Full Dataset</option>
-          <option value="geopolitics">Cluster Geopolitics</option>
-          <option value="popculture">Cluster Pop-Culture</option>
-        </select>
-
-        <label for="timespanSelector-plotT">Timespan</label>
-        <select id="timespanSelector-plotT">
-          <option value="complete">Complete</option>
-          <option value="year_by_month">Year by month</option>
-          <option value="week">Average Week</option>
-        </select>
-
-        <div class="plot-container">
-          <div class="plot-panel" id="plotT-full-complete" style="display:block;">
-            <iframe src="plots/julien/schedule_full_complete.html" title="Full dataset - complete timespan" width="100%" height="450" style="border:none;"></iframe>
-          </div>
-          <div class="plot-panel" id="plotT-full-year_by_month" style="display:none;">
-            <iframe src="plots/julien/schedule_full_year_by_month.html" title="Full dataset - year by month" width="100%" height="450" style="border:none;"></iframe>
-          </div>
-          <div class="plot-panel" id="plotT-full-week" style="display:none;">
-            <iframe src="plots/julien/schedule_full_week.html" title="Full dataset - average week" width="100%" height="450" style="border:none;"></iframe>
-          </div>
-          <div class="plot-panel" id="plotT-geopolitics-complete" style="display:none;">
-            <iframe src="plots/julien/schedule_geopolitics_complete.html" title="Geopolitics - complete timespan" width="100%" height="450" style="border:none;"></iframe>
-          </div>
-          <div class="plot-panel" id="plotT-geopolitics-year_by_month" style="display:none;">
-            <iframe src="plots/julien/schedule_geopolitics_year_by_month.html" title="Geopolitics - year by month" width="100%" height="450" style="border:none;"></iframe>
-          </div>
-          <div class="plot-panel" id="plotT-geopolitics-week" style="display:none;">
-            <iframe src="plots/julien/schedule_geopolitics_week.html" title="Geopolitics - average week" width="100%" height="450" style="border:none;"></iframe>
-          </div>
-          <div class="plot-panel" id="plotT-popculture-complete" style="display:none;">
-            <iframe src="plots/julien/schedule_popculture_complete.html" title="Pop-Culture - complete timespan" width="100%" height="450" style="border:none;"></iframe>
-          </div>
-          <div class="plot-panel" id="plotT-popculture-year_by_month" style="display:none;">
-            <iframe src="plots/julien/schedule_popculture_year_by_month.html" title="Pop-Culture - year by month" width="100%" height="450" style="border:none;"></iframe>
-          </div>
-          <div class="plot-panel" id="plotT-popculture-week" style="display:none;">
-            <iframe src="plots/julien/schedule_popculture_week.html" title="Pop-Culture - average week" width="100%" height="450" style="border:none;"></iframe>
-          </div>
-        </div>
-
-        <p> Let's look at the week-level. In the plot above you can see the "typical" week : for example above Tuesday you can read the mean of the negativity rate of every single Tuesday in our dataset. (Reminder : this negativity rate
-            is simply the number of negative posts divided by the number of total posts for that particular day). </p>
-        <p>We will fit a logistic regression on the days of the week : Monday represents the reference negativity rate (value 0, also called the intercept). For each other day of the week, the model tries to find the value by which the 
-          rate for this day changes on average when compared with Monday. Logistic regression can calculate log-odds (the chance between 0 and 1 that a random post on e.g. Tuesday is negative) based 
-          on categorical variables (the days of the week). The negativity rate can be naturally interpreted as a log-odd : if there are 10 negative posts for 100 total posts, the rate of 0.1 means that a randomly picked post has 0.1 
-          chance of being negative. So it makes sense to use this model. Let's look at the results.
-        </p>
-        <div class="plot-container">
-        <!-- Logistic regression - week -->
-        <iframe id="plot_logistic_regression_week"
-                src="plots/julien/log_reg_full_week.html"
-                title="Logistic regression - week"
-                width="100%" height="450" style="border:none;"></iframe>
-      </div>
-      <p>How do we interpret this table ? The p-value tells us the probability that the null-hypothesis "there is no difference of negativity ratio between day X and Monday" is true, so we can only consider that there is some
-          statistically significant event when the p-value < 0.05. The column "increase %" tells us by how much the negativity rate increased (or decreased if it's negative) between day X and monday. It is calculated using the coefficient
-          beta discovered by the logistic regression model for this day as follows : increase % = (exp(beta) - 1)*100. The confidence interval column represents the range in which the increase % will fall 95% of the time (calculated 
-          with a binomial distribution / Wald interval) and finally the z-score = beta / standard_error represents the "effect size".
-          So we see that two days have a stastically significant p-value : Saturday and Sunday with a corresponding percentage % of 7.35% and 6.3% respectively. Nice ! Did we determine that haters tend to hate more on the weekends ? 
-          Sadly there are two more values in the table that we need to pay attention to : pseudo R-squared and Pearson's Chi-square. 
-          R-squared tells us the explaining power of the model, it is a value from 0 to 1 that represents the amount of the observed difference in rate that our model explains (1 would mean that our model explains 100% of the observed difference,
-          i.e the model perfectly encampsulates the observed phenomenon). Our logistic regression can't provide us with a real R-squared metric, but this pseudo-metric is an approximation. 
-          On the other hand the Chi-square measures the goodness of fit of our model : it sums the squared differences between observed data and model predictions (weighted by expected values). 
-          Low values indicate that our predictions closely match reality (it's a good model) while high values show significant mismatches.
-
-          Our table gives us an abysmally small pseudo R-squared, and an extremely high Chi-square, which means our model has almost no explaining power, and a terribly bad fit. In short, it tells us almost nothing 😢.      
+    <div class="about-box">
+      <strong>Rules</strong>
+      <p>
+        1. Be respectful<br>
+        2. Data-based discussion only
       </p>
-
-      <p>Let's try the same analysis comparing the different months of the year.</p>
-
-      <div class="plot-container">
-        <!-- Logistic regression - year by month -->
-        <iframe id="plot_logistic_regression_year_by_month"
-                src="plots/julien/log_reg_full_year_by_month.html"
-                title="Logistic regression - year by month"
-                width="100%" height="450" style="border:none;"></iframe>
-      </div>
-
-
-      <h2>Is the hater sensitive to world events ? </h2>
-      <p>After having examined the negative posting behavior over time, we wonder if it is possible to see the effect of important events on the amount of negatitivity posted on Reddit. Intuitively this would make sense : if some 
-        controversial event happens in the real world, some Redditors will probably post about it in a deragotive manner or argue about it. With some luck and if the event is important enough, there would be 
-        enough discussion on the subject inside or between subreddits, generating enough hyperlinks associated with a negative link sentiment such that we detect a change.
-      </p>
-      <label for="eventDatasetSelector">Select Dataset</label>
-      <select id="eventDatasetSelector">
-        <option value="full">Full Dataset</option>
-        <option value="geopolitics">Cluster Geopolitics</option>
-        <option value="popculture">Cluster Pop-Culture</option>
-      </select>
-
-      <div class="plot-container">
-        <div id="event-full" class="plot-panel" style="display: block;">
-          <iframe src="plots/julien/event_analysis_full.html" title="Negativity & Events - Full dataset" width="100%" height="700" style="border:none;"> </iframe>
-        </div>
-        <div id="event-geopolitics" class="plot-panel" style="display: none;">
-          <iframe src="plots/julien/event_analysis_geopolitics.html" title="Negativity & Events - Geopolitics" width="100%" height="700" style="border:none;"> </iframe>
-        </div>
-        <div id="event-popculture" class="plot-panel" style="display: none;">
-          <iframe src="plots/julien/event_analysis_popculture.html" title="Negativity & Events - Pop-Culture" width="100%" height="700" style="border:none;"> </iframe>
-        </div>
-      </div>
-
-      <p>Of course here we are only detecting correlation, not causation. Trump's election correlates quite strongly with a decrease in negativity among the dataset overall. Is it because Redditors are happy about the election ? 
-        Is it actually because the campaigning preceding the election has higher above average negativity due to the political tensions, and that the period after the election simply went back to the normal rate ? 
-        Is it because of some completely different exterior factor (maybe Redditors are just less negative in November than in September in general) ? Those questions are still open. 
-
-
-
-      <h2>Limitations</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
-
-      <footer>© 2025 NinjADA Team</footer>
     </div>
-  </div>
-</article>
+
+  </aside>
 
 
-
-    </main>
-
-    <!--===== Right Sidebar ===== -->
-    <aside class="about">
-      <div class="about-box">
-        <strong>About this subreddit</strong>
-        <p>Data-driven analysis of online hostility on Reddit (2014–2017).</p>
-      </div>
-
-      <div class="about-box">
-        <strong>Rules</strong>
-        <p>
-          1. Be respectful<br>
-          2. Data-based discussion only
-        </p>
-      </div>
-      
-    </aside>
-
-  
 
   </div>
 
@@ -1193,10 +1119,10 @@
 
     let bubbleInterval = null;
 
-    function randomItem(arr){ return arr[Math.floor(Math.random() * arr.length)]; }
-    function clamp(n, min, max){ return Math.max(min, Math.min(max, n)); }
+    function randomItem(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+    function clamp(n, min, max) { return Math.max(min, Math.min(max, n)); }
 
-    function spawnBubble(){
+    function spawnBubble() {
       const bubble = document.createElement("div");
       const life = 2000 + Math.random() * 2200;
 
@@ -1205,7 +1131,7 @@
       bubble.textContent = randomItem(NEGATIVE_COMMENTS);
 
       const rect = layer.getBoundingClientRect();
-      const x = rect.width  * (0.25 + Math.random() * 0.5);
+      const x = rect.width * (0.25 + Math.random() * 0.5);
       const y = rect.height * (0.25 + Math.random() * 0.5);
 
       layer.appendChild(bubble);
@@ -1214,18 +1140,18 @@
       const bh = bubble.offsetHeight;
 
       bubble.style.left = `${clamp(x - bw / 2, 10, rect.width - bw - 10)}px`;
-      bubble.style.top  = `${clamp(y - bh / 2, 10, rect.height - bh - 10)}px`;
+      bubble.style.top = `${clamp(y - bh / 2, 10, rect.height - bh - 10)}px`;
 
       setTimeout(() => bubble.remove(), life + 350);
     }
 
-    function startBubbles(){
+    function startBubbles() {
       if (bubbleInterval) return;
       spawnBubble();
       bubbleInterval = setInterval(() => spawnBubble(), 900 + Math.random() * 700);
     }
 
-    function stopBubbles(){
+    function stopBubbles() {
       clearInterval(bubbleInterval);
       bubbleInterval = null;
       layer.innerHTML = "";
@@ -1367,7 +1293,7 @@
 
   <script>
     ///////////// julien's script for buttons
-  // Hater's schedule - Post 2 timespan selector
+    // Hater's schedule - Post 2 timespan selector
     const timespanSelectorGeo = document.getElementById('timespanSelectorGeo');
     const geopoPanels = {
       complete: document.getElementById('geopo-complete'),
@@ -1378,12 +1304,12 @@
     function updateGeopoTimespan() {
       if (!timespanSelectorGeo) return;
       const choice = timespanSelectorGeo.value;
-      
+
       // Hide all panels
       Object.values(geopoPanels).forEach(panel => {
         if (panel) panel.style.display = 'none';
       });
-      
+
       // Show selected
       if (geopoPanels[choice]) {
         geopoPanels[choice].style.display = 'block';
@@ -1421,7 +1347,7 @@
       if (panelsPlotT[key]) { panelsPlotT[key].style.display = 'block'; }
     }
 
-  
+
 
     // for the logistic regression plots
     // Logistic regression plots (dependent only on datasetSelector-plotT)
@@ -1429,15 +1355,15 @@
     const logisticYearFrame = document.getElementById('plot_logistic_regression_year_by_month');
 
     const logisticSrcWeekByDataset = {
-      full:        'plots/julien/log_reg_full_week.html',
+      full: 'plots/julien/log_reg_full_week.html',
       geopolitics: 'plots/julien/log_reg_geopolitics_week.html',
-      popculture:  'plots/julien/log_reg_popculture_week.html'
+      popculture: 'plots/julien/log_reg_popculture_week.html'
     };
 
     const logisticSrcYearByMonthByDataset = {
-      full:        'plots/julien/log_reg_full_year_by_month.html',
+      full: 'plots/julien/log_reg_full_year_by_month.html',
       geopolitics: 'plots/julien/log_reg_geopolitics_year_by_month.html',
-      popculture:  'plots/julien/log_reg_popculture_year_by_month.html'
+      popculture: 'plots/julien/log_reg_popculture_year_by_month.html'
     };
 
     function updateLogisticPlotsT() {
@@ -1463,19 +1389,20 @@
     }
 
 
-        // Time-Analysis - Event Analysis toggle
+    // Time-Analysis - Event Analysis toggle
     const eventDatasetSelector = document.getElementById('eventDatasetSelector');
     const eventPanels = {
-      full:        document.getElementById('event-full'),
+      full: document.getElementById('event-full'),
       geopolitics: document.getElementById('event-geopolitics'),
-      popculture:  document.getElementById('event-popculture')};
+      popculture: document.getElementById('event-popculture')
+    };
 
     function updateEventPlots() {
       if (!eventDatasetSelector) return;
       const choice = eventDatasetSelector.value;
 
       // hide all
-      Object.values(eventPanels).forEach(p => { if (p) p.style.display = 'none';});
+      Object.values(eventPanels).forEach(p => { if (p) p.style.display = 'none'; });
 
       // show selected
       if (eventPanels[choice]) { eventPanels[choice].style.display = 'block'; }
@@ -1486,9 +1413,10 @@
       updateEventPlots(); // initial state
     }
     //////////////////////////// end of julien's scripts //////
-    </script> 
+  </script>
 
 
 
 </body>
+
 </html>
