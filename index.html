@@ -388,15 +388,67 @@
                     background: transparent;
                   ">
               </div>
-
-              
-
-
-        
-
-              
-              
             </section>
+
+
+            <section id="haters-schedule">
+              <h2>The Hater's Schedule</h2>
+                <p> Do haters have a specific time schedule ? Is there more negativity during summer than during winter ? Or on the week-end as opposed to during the week ? </p>
+                <p>Let's plot the data and find out !</p>
+              <!-- Interactive plot with timespan selector -->
+              <label for="timespanSelectorGeo">Select Timespan</label>
+              <select id="timespanSelectorGeo">
+                <option value="complete">Complete</option>
+                <option value="year_by_month">Year by month</option>
+                <option value="week">Average Week</option>
+              </select>
+              
+              <!-- Hidden iframes for each timespan -->
+              <div class="plot-panel" id="geopo-complete" style="display: block;">
+                <iframe src="plots/julien/geopolitics_complete.html" height="450" title="Geopolitics Complete" style="width: 100%; border: none;"></iframe>
+              </div>
+              <div class="plot-panel" id="geopo-year_by_month" style="display: none;">
+                <iframe src="plots/julien/geopolitics_year_by_month.html" height="450" title="Geopolitics Year by Month" style="width: 100%; border: none;"></iframe>
+              </div>
+              <div class="plot-panel" id="geopo-week" style="display: none;">
+                <iframe src="plots/julien/geopolitics_week.html" height="450" title="Geopolitics Average Week" style="width: 100%; border: none;"></iframe>
+              </div>
+              
+              <p> Let's look at the week-level. In the plot above you can see the "typical" week : for example above Tuesday you can read the mean of the negativity rate of every single Tuesday in our dataset. (Reminder : this negativity rate
+                is simply the number of negative posts divided by the number of total posts for that particular day). </p>
+              <p>We will fit a logistic regression on the days of the week : Monday represents the reference negativity rate (value 0, also called the intercept). For each other day of the week, the model tries to find the value by which the 
+                rate for this day changes on average when compared with Monday. Logistic regression can calculate log-odds (the chance between 0 and 1 that a random post on e.g. Tuesday is negative) based 
+                on categorical variables (the days of the week). The negativity rate can be naturally interpreted as a log-odd : if there are 10 negative posts for 100 total posts, the rate of 0.1 means that a randomly picked post has 0.1 
+                chance of being negative. So it makes sense to use this model. Let's look at the results.
+              </p>
+                        
+              <!-- Fixed logistic regression plot (first instance) -->
+              <p>Logistic regression results for week-level analysis 😢</p>
+              <iframe src="plots/julien/log_reg_geopolitics_week.html" height="450" title="Logistic Regression Geopolitics Week" style="width: 100%; border: none;"></iframe>
+              
+              <p>How do we interpret this table ? The p-value tells us the probability that the null-hypothesis "there is no difference of negativity ratio between day X and Monday" is true, so we can only consider that there is some
+              statistically significant event when the p-value < 0.05. The column "increase %" tells us by how much the negativity rate increased (or decreased if it's negative) between day X and monday. It is calculated using the coefficient
+              beta discovered by the logistic regression model for this day as follows : increase % = (exp(beta) - 1)*100. The confidence interval column represents the range in which the increase % will fall 95% of the time (calculated 
+              with a binomial distribution / Wald interval) and finally the z-score = beta / standard_error represents the "effect size".
+              So we see that two days have a stastically significant p-value : Saturday and Sunday with a corresponding percentage % of 7.35% and 6.3% respectively. Nice ! Did we determine that haters tend to hate more on the weekends ? 
+              Sadly there are two more values in the table that we need to pay attention to : pseudo R-squared and Pearson's Chi-square. 
+              R-squared tells us the explaining power of the model, it is a value from 0 to 1 that represents the amount of the observed difference in rate that our model explains (1 would mean that our model explains 100% of the observed difference,
+              i.e the model perfectly encampsulates the observed phenomenon). Our logistic regression can't provide us with a real R-squared metric, but this pseudo-metric is an approximation. 
+              On the other hand the Chi-square measures the goodness of fit of our model : it sums the squared differences between observed data and model predictions (weighted by expected values). 
+              Low values indicate that our predictions closely match reality (it's a good model) while high values show significant mismatches.
+
+              Our table gives us an abysmally small pseudo R-squared, and an extremely high Chi-square, which means our model has almost no explaining power, and a terribly bad fit. In short, it tells us almost nothing 😢.      
+              </p>
+
+               <p>Let's try the same analysis comparing the different months of the year.</p>
+
+              
+              <!-- Fixed logistic regression plot (second instance) -->
+              <iframe src="plots/julien/log_reg_geopolitics_week.html" height="450" title="Logistic Regression Geopolitics Week" style="width: 100%; border: none;"></iframe>
+              
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. The chi-square shows goodness-of-fit between model predictions and observed data.</p>
+            </section>
+
             
 
             <h2>Limitations</h2>
@@ -769,6 +821,40 @@
       if (e.key === "Escape") closeAllPosts();
     });
   </script>
+
+
+  <script>
+    ///////////// julien's script for buttons
+  // Hater's schedule - Post 2 timespan selector
+    const timespanSelectorGeo = document.getElementById('timespanSelectorGeo');
+    const geopoPanels = {
+      complete: document.getElementById('geopo-complete'),
+      'year_by_month': document.getElementById('geopo-year_by_month'),
+      week: document.getElementById('geopo-week')
+    };
+
+    function updateGeopoTimespan() {
+      if (!timespanSelectorGeo) return;
+      const choice = timespanSelectorGeo.value;
+      
+      // Hide all panels
+      Object.values(geopoPanels).forEach(panel => {
+        if (panel) panel.style.display = 'none';
+      });
+      
+      // Show selected
+      if (geopoPanels[choice]) {
+        geopoPanels[choice].style.display = 'block';
+      }
+    }
+
+    if (timespanSelectorGeo) {
+      timespanSelectorGeo.addEventListener('change', updateGeopoTimespan);
+      updateGeopoTimespan(); // Initial state
+    }
+    //////////////////////////// end of julien's scripts //////
+    </script> 
+
 
 
 </body>
