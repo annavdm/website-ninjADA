@@ -249,11 +249,15 @@
               
               </div>
 
-              <div class="plot-panel" id="network_geopo">
-                <iframe
-                  src="plots/reactions_dynamics/network_geopo.html?v=3"
-                  title="Network— Geo-Politics">
-                </iframe>
+              <div class="plot-wrapper" id="network_geopo">
+                <embed
+                src="plots/reactions_dynamics/network_geopo.html"
+                type="text/html"
+                title="Network— Geo-Politics"
+                class="plot-iframe"
+                width="100%"
+                height="800"
+                style="border:none; overflow:visible;">
               </div>
 
               <div class="plot-panel" id="sankey_geopo">
@@ -263,18 +267,24 @@
                 </iframe>
               </div>
 
-              <div class="plot-panel" id="sankey_geopo">
+              <div class="plot-wrapper" id="sankey_geopo">
                 <iframe
                   src="plots/reactions_dynamics/spikes_pop_table_geopo.html"
                   title="Sankey Geo-Politics">
                 </iframe>
               </div>
 
-              <div class="plot-panel" id="sankey_geopo">
-                <iframe
+              <div class="plot-wrapper" id="dropdown_geopo">
+                <embed
                   src="plots/reactions_dynamics/geopo_year_dropdown.html"
-                  title="Sankey Geo-Politics">
-                </iframe>
+                  type="text/html"
+                  title="Dropdown Geo-Politics"
+                  style="
+                    width: 100%;
+                    height: 750px;
+                    border: none;
+                    background: transparent;
+                  ">
               </div>
 
               <section class="result-card">

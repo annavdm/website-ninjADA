@@ -119,7 +119,7 @@ body{
   background:var(--panel);
   border:1px solid var(--border);
   border-radius:var(--radius);
-  overflow:hidden;
+  overflow:visible; !important
   margin-bottom: 24px;
 }
 
@@ -286,6 +286,7 @@ body.viewing-post .post:not(.is-open){
 /* Full post body */
 .post-body{
   padding:18px;
+  overflow : visible;
 }
 
 .post-body h2{
@@ -319,6 +320,7 @@ iframe{
   border-radius:12px;
   margin:12px 0;
   background:#081012;
+  overflow:visible;
 }
 
 /* ===== Right Sidebar ===== */
@@ -453,16 +455,6 @@ footer{
   background:transparent;
 }
 
-/* Make Geo-Politics plot fully visible */
-#network_geopo iframe{
-  height:600px;   /* 👈 doit être >= hauteur plot + marges */
-  width:100%;   /* enough to show the whole Plotly figure */
-  border-radius:12px;
-  border:white ; 
-  background:transparent;
-}
-
-
 
 /* Make Geo-Politics plot fully visible */
 #sankey_geopo iframe{
@@ -472,6 +464,23 @@ footer{
   border:white ; 
   background:transparent;
 }
+
+
+.plot-panel {
+  width: 100%;
+  overflow: visible;   /* VERY IMPORTANT */
+}
+
+.plot-iframe { /*tweak the embedded post */
+  width: 100%;          /* take full width of its container */
+  height: 800px;        /* match your Plotly figure height */
+  border: none;
+  display: block;
+  margin: 10px auto;       /* center it */
+  overflow: visible;    /* do NOT clip legend on the right */
+}
+
+
 
 .result-card {
   margin: 28px 0;
@@ -575,4 +584,10 @@ footer{
 
 .pval {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.plot-wrapper {
+  width: 100%;
+  margin: 0 auto;      /* center on the page */
+  overflow: visible;   /* make sure nothing is clipped */
 }
