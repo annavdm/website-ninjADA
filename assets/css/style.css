@@ -121,6 +121,16 @@ body{
   border-radius:var(--radius);
   margin-bottom: 24px;
 }
+/* Hide ADA Geeks card from main feed list */
+.post#post-methods {
+  display: none;
+}
+
+/* Show it when JS marks it as open */
+.post#post-methods.is-open {
+  display: block;
+}
+
 
 .post:focus{
   outline:2px solid rgba(255,69,0,.35);
@@ -196,6 +206,17 @@ body{
   padding:10px 12px;
   color:var(--muted);
   font-size:13px;
+}
+.post .post-full {
+  display: none;
+}
+
+.post[aria-expanded="true"] .post-full {
+  display: block;
+}
+
+.post .post-summary[role="button"] {
+  cursor: pointer;
 }
 
 .action-sep{

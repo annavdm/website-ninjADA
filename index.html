@@ -38,6 +38,7 @@
     <aside class="sidebar">
       <div class="subreddit-title">r/TheAnatomyOfAHater</div>
       <a href="#post-1">📌 Dataset Presentation</a>
+      <a href="#post-clusteringninja">🔎 Clustering Ninja</a>
       <a href="#post-2">🌍 Geopolitics</a>
       <a href="#post-3">🎬 Pop Culture</a>
       <a href="#post-4">🧩 Reddit Core</a>
@@ -630,7 +631,7 @@
       </article>
 
       <!-- ================== POST #5 ================== -->
-      <article class="post" id="post-5" tabindex="0" aria-expanded="false">
+      <article class="post" id="post-3" tabindex="0" aria-expanded="false">
         <div class="post-summary" role="button" aria-label="Open post">
           <div class="post-header">
             <img src="images/icon-pop.png" alt="r/PopCulture icon" class="post-icon">
@@ -1292,6 +1293,22 @@
       </p>
     </div>
 
+  <!-- New box -->
+  <div class="about-box for-ada-geeks"
+       tabindex="0"
+       role="button"
+       aria-controls="post-methods"
+       aria-expanded="false"
+       aria-label="Open methods for ADA geeks">
+    <strong>For ADA Geeks</strong>
+    <p>
+      1. Reaction dynamics<br>
+      2. Feature analysis<br>
+      3. Time analysis</br>
+    </p>
+    <p class="open-hint">Click to open methods post</p>
+  </div>
+
   </aside>
 
 
@@ -1449,6 +1466,48 @@
         if (post.classList.contains("is-open")) closeAllPosts();
         else openPost(post);
       });
+      // ===== For ADA Geeks sidebar box opens #post-methods =====
+      const adaBox = document.querySelector('.for-ada-geeks');
+      const methodsPost = document.getElementById('post-methods');
+
+      if (adaBox && methodsPost) {
+        const openMethodsFromSidebar = () => {
+          openPost(methodsPost);   // reuse your existing function
+          adaBox.setAttribute('aria-expanded', 'true');
+        };
+
+      adaBox.addEventListener('click', openMethodsFromSidebar);
+
+      adaBox.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openMethodsFromSidebar();
+        }
+      });
+    
+    }
+      if (adaBox) adaBox.setAttribute('aria-expanded', 'false');
+    // ===== Left sidebar navigation opens posts =====
+    const sidebarLinks = document.querySelectorAll('.sidebar a[href^="#post-"]');
+
+    sidebarLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault(); // prevent default jump
+      const targetId = link.getAttribute('href').slice(1); // "post-1"
+      const targetPost = document.getElementById(targetId);
+      if (!targetPost) return;
+
+      openPost(targetPost); // use your existing function
+
+      // smooth scroll to the opened card
+      targetPost.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    });
+  });
+
+
 
       // voting logic (per post)
       const upBtn = post.querySelector(".vote-btn.up");
@@ -1619,6 +1678,8 @@
     }
 
     //////////////////////////// end of julien's scripts //////
+    // ================== end post open/close toggles ==================
+
   </script>
 
 
