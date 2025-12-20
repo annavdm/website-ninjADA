@@ -1057,19 +1057,41 @@
                   </div>
                 </div>
 
-                <p>Of course here we are only detecting correlation, not causation. Trump's election correlates quite
-                  strongly with a decrease in negativity among the dataset overall. Is it because Redditors are happy about
-                  the election ?
-                  Is it actually because the campaigning preceding the election has higher above average negativity due to
+                <p>Of course here we are only detecting correlation, not causation. As an example, Trump's election in November 2016 
+                  correlates quite strongly with a decrease in negativity when compared to September.
+                  But is it really because Redditors are happy about the election ? Or is there some other confounding factor ? 
+                  For example it might be possible that Redditors are just less negative in November than in September every year.
+                  Or it could be  because the campaigning preceding the election has higher above average negativity due to
                   the political tensions, and that the period after the election simply went back to the normal rate ?
-                  Is it because of some completely different exterior factor (maybe Redditors are just less negative in
-                  November than in September in general) ? Those questions are still open.
+          
+                  Let's test out the first hypothesis : "it's not the election, it's just a recurring pattern every year".
+                  At first it seems quite simple : we could just use a t-test to compare the observed difference in mean negativity around the 
+                  election  in 2016 with the difference in mean negativity at the same time period in years with no election. 
+                  But the thing is, we only have about three years of data so we have two other similar time-windows (in 2014 and 2015) to compare
+                  it with. Only two samples is a meager sample size, and the result of the test would not be very meaningful.
 
+                  To get out of this dead end, we have to use a tricky technique called bootstrap resampling. Here's how it works : in our non-election
+                  years (2014-2015) we take the daily negativity rate of all days of September (so 2 times 30). Then we create synthetic or "bootstrap" Septembers by sampling at random 
+                  (with replacement) 30 out of these 60 days to creaete one "bootstrap" September. We can repeat this as many times and in theory each bootstrap 
+                  September should be different (since there are so many different possible combinations of days). Using the days of two Septembers, we can 
+                  create a huge number of new Septembers (for example 100) : we have artificially mutliplied the size of our sample by 50. 
+                  We do the same in parallel with our Novembers 2014-2015, and for each pair of bootstrap months we calculate the mean rate of each and 
+                  finally the difference of both. 
+                  We now have 100 synthetic, non-election-year differences of mean negativity to compare our observed 2016 difference to. With this synthetic
+                  data we create the following 95% confidence interval (i.e into which range do 95% of all synthetic differences fall) :
 
+                </p>
+                <div id="nonEventBootstrapContainer">
+                <iframe id="nonEventBootstrapFrame" src="non_event_bootstrap_full.html"style="width:100%;height:500px;border:none;"></iframe>
+                </div>
 
-                <h2>Limitations</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus
-                  ante dapibus diam.</p>
+                <p>
+                Alright so what does this tell us ? According to our bootstrap distribution, the expected difference of mean negativity in non-election 
+                years should be completely almost negligeable at ~1% and positive, instead of our observed -18.8%. More importantly, we can see that our
+                observed difference in 2016 lies very far outside the 95% confidence interval of non-election years. 
+                This information supports the hypothesis that Redditors were really less negative after November 8 2016 (compared to September 2016) and that 
+                it isn't a yearly pattern.
+                </p>
 
                 <footer>© 2025 NinjADA Team</footer>
           </div>
@@ -1406,12 +1428,21 @@
 
       // show selected
       if (eventPanels[choice]) { eventPanels[choice].style.display = 'block'; }
+
+      // update non-event bootstrap iframe
+      const frame = document.getElementById('nonEventBootstrapFrame');
+      if (frame) {
+        if (choice === 'full') frame.src = 'plots/julien/non_event_bootstrap_full.html';
+        else if (choice === 'geopolitics') frame.src = 'plots/julien/non_event_bootstrap_geopolitics.html';
+        else if (choice === 'popculture') frame.src = 'plots/julien/non_event_bootstrap_popculture.html';
+      }
     }
 
     if (eventDatasetSelector) {
-      eventDatasetSelector.addEventListener('change', updateEventPlots);
-      updateEventPlots(); // initial state
+        eventDatasetSelector.addEventListener('change', updateEventPlots);
+        updateEventPlots(); // initial state
     }
+
     //////////////////////////// end of julien's scripts //////
   </script>
 
