@@ -93,29 +93,96 @@
             <section id="introduction">
               <h2>Introduction</h2>
               <p class="intro-big-text">
-                Online conflict is rising, and social media often turns into a stage for anonymous negativity.
-                Using a Reddit dataset (2014–2017), we trace how subreddits link to each other and reveal a hidden
-                network of hostility.
-                Focusing on the 10% of interactions tagged as negative, we dive into the profiles of the users who
-                spread this hostility:
-                their communities, writing styles, targets, and posting habits.
-                By uncovering how these “haters” operate, we aim to shed light on the dynamics that fuel online anger.
-              </p>
-            </section>
-
-            <section id="research-questions">
-              <h2>Research Questions</h2>
-              <div class="rq-grid">
-                <div class="rq-card">Is a hater likely to be active in certain subreddits?</div>
-                <div class="rq-card">Are there persisting conflicts between subreddits?</div>
-                <div class="rq-card">Does a hater have a particular way of writing?</div>
-              </div>
+              Welcome! 👋<br>
+              This website digs into how online conflict actually spreads on Reddit.
+              Using data from 2014–2017, we map how subreddits connect to each other and uncover a less visible network built around negativity. We zoom in on the roughly 10% of interactions marked as hostile and take a closer look at the behavior behind them — where they post, how they write, who they target, and how often they show up.
+              The goal is to understand patterns: how “hate” travels between communities and what fuels online anger in the first place. If you’re interested in Reddit dynamics, social networks, or the mechanics of online conflict, you’re in the right place.
+              Jump in, explore the data, and join the discussion!!              </p>
             </section>
 
             <section id="data-presentation">
               <h2>Data Presentation</h2>
 
-              <section id="dataset-embeddings">
+              <section id="dataset-hyperlinks">
+                <h3>Hyperlink Network Dataset</h3>
+                <p class="data-intro">
+                  So now there’s this giant network of Reddit where every time one subreddit links to another, it counts
+                  as a little arrow from
+                  “source” to “target.”Here is a simplified version of what it represents with the 10 most active subreddits. If the arrow is read 
+                  it means that the source subreddit sent more negative links than positive.
+                </p>
+                <img
+                src="plots/subreddit_network.png"
+                alt="Subreddit network"
+                class="img-center"
+                style="width: 500px; height: auto; border-radius: 20px;"
+                > 
+               <div class="plot-panel" id="plotB-sentiment">
+                 <p class="plot-caption">
+                   Hostile posts represent about 10% of the dataset — the goal is to understand what characterizes that “red” portion.
+                 </p>
+                 <img
+                    src="plots/sentiment_distribution.png"
+                    alt="Sentiment distribution"
+                    class="img-center"
+                    style="width: 500px; height: auto; border-radius: 20px;"
+                    >
+                </div>
+
+                <div class="plot-panel" id="plotB-sentiment">
+  <p class="plot-caption">
+    The dataset provides information on where the link is located — either title or body.
+  </p>
+
+  <!-- Toggle controls -->
+  <div class="plot-toggle">
+    <label>
+      <input type="radio" name="bt-toggle" value="overall" checked>
+     Overall body vs title
+    </label>
+    <label>
+      <input type="radio" name="bt-toggle" value="by-sentiment">
+      Body vs title by sentiment
+    </label>
+  </div>
+
+  <!-- Both images, one visible at a time -->
+  <img
+    id="img-overall"
+    src="plots/body_vs_title_distribution.png"
+    alt="Body vs title distribution"
+    class="img-center"
+    style="width: 500px; height: auto; border-radius: 20px;"
+  >
+
+  <img
+    id="img-by-sentiment"
+    src="plots/body_title_sentiment.png"
+    alt="Sentiment distribution in body and title"
+    class="img-center"
+    style="width: 500px; height: auto; border-radius: 20px; display: none;"
+  >
+</div>
+
+<script>
+  const overallImg = document.getElementById("img-overall");
+  const bySentimentImg = document.getElementById("img-by-sentiment");
+  const radios = document.querySelectorAll("input[name='bt-toggle']");
+
+  radios.forEach(r => {
+    r.addEventListener("change", () => {
+      if (r.value === "overall") {
+        overallImg.style.display = "block";
+        bySentimentImg.style.display = "none";
+      } else {
+        overallImg.style.display = "none";
+        bySentimentImg.style.display = "block";
+      }
+    });
+  });
+</script>
+              </section>
+                          <section id="dataset-embeddings">
                 <h3>Subreddit Embeddings</h3>
                 <p class="data-intro">
                   So the dataset takes about 2.5 years of Reddit activity in 51,278 unique subreddits, then turns each
@@ -124,49 +191,18 @@
                   in the embedding space.
                 </p>
 
-                <label for="plotSelectorA">Choose a plot:</label>
-                <select id="plotSelectorA">
-                  <option value="pca_2d">2D PCA</option>
-                  <option value="tsne">t-SNE</option>
-                </select>
-
                 <div class="plot-panel" id="plotA-pca_2d">
                   <iframe src="plots/subreddit_pca_2d.html" height="450" title="Subreddit Embeddings in 2D"></iframe>
                 </div>
-
-                <div class="plot-panel" id="plotA-tsne" style="display:none;">
-                  <iframe src="plots/tsne_on_pca.html" height="450" title="Subreddit embedding after t-SNE"></iframe>
-                </div>
               </section>
-
-              <section id="dataset-hyperlinks">
-                <h3>Hyperlink Network Dataset</h3>
-                <p class="data-intro">
-                  So now there’s this giant network of Reddit where every time one subreddit links to another, it counts
-                  as a little arrow from
-                  “source” to “target.”
-                </p>
-
-                <label for="plotSelectorB">Choose a plot:</label>
-                <select id="plotSelectorB">
-                  <option value="sentiment">Sentiment distribution</option>
-                  <option value="body_vs_title">Body vs title</option>
-                </select>
-
-                <div class="plot-panel" id="plotB-sentiment">
-                  <p class="plot-caption">
-                    Hostile posts represent about 10% of the dataset — the goal is to understand what characterizes that
-                    “red” portion.
-                  </p>
-                  <iframe src="plots/sentiment_distribution.html" height="450" title="Sentiment distribution"></iframe>
-                </div>
-
-                <div class="plot-panel" id="plotB-body_vs_title" style="display:none;">
-                  <p class="plot-caption">The dataset provides information on where the link is located — either title
-                    or body.</p>
-                  <iframe src="plots/body_title_sentiment.html" height="450" title="Body vs title"></iframe>
-                </div>
-              </section>
+            </section>
+            <section id="research-questions">
+              <h2>Research Questions</h2>
+              <div class="rq-grid">
+                <div class="rq-card">Is a hater likely to be active in certain subreddits?</div>
+                <div class="rq-card">Are there persisting conflicts between subreddits?</div>
+                <div class="rq-card">Does a hater have a particular way of writing?</div>
+              </div>
             </section>
 
 
@@ -524,14 +560,6 @@
                           background: transparent;
                         ">
             </div>
-
-
-
-
-
-
-
-
           </div>
           </section>
 
@@ -649,6 +677,62 @@
                             background: transparent;
                           ">
             </div>
+
+            <div class="plot-wrapper" id="table_pop">
+              <embed src="plots/reactions_dynamics/spikes_pop_table.html" type="text/html"
+                title="tableGeo-Politics" style="
+                      width: 100%;
+                      height: 500px;
+                      border: none;
+                      background: transparent;
+                    ">
+            </div>
+
+            <section class="result-card">
+              <h1>Negative link activity after attack peaks</h1>
+
+              <div class="result-header">
+                <span class="result-cluster">Pop-culture</span>
+                <span class="result-badge significant">Statistically significant</span>
+              </div>
+
+              <div class="result-meta">
+                <span class="chip">39 spikes</span>
+                <span class="chip">7-day window</span>
+                <span class="chip">Tested on rate</span>
+              </div>
+
+              <div class="result-metrics">
+                <div class="metric">
+                  <div class="label">Before</div>
+                  <div class="value">35.46</div>
+                  <div class="sub">mean rate</div>
+                </div>
+
+                <div class="arrow">→</div>
+
+                <div class="metric">
+                  <div class="label">After</div>
+                  <div class="value">38.62</div>
+                  <div class="sub">mean rate</div>
+                </div>
+
+                <div class="delta positive">
+                  <div class="delta-value">+3.15</div>
+                  <div class="delta-sub">(+x%)</div>
+                </div>
+              </div>
+
+              <div class="result-footer">
+                <div class="pval">p = 0.02638</div>
+                <div class="note">
+                  Mean change across 39 hostility spikes.
+                </div>
+              </div>
+            </section>
+
+          
+
 
             <h2>Content</h2>
             <p>(Fill this post content.)</p>
@@ -793,6 +877,59 @@
                           ">
             </div>
 
+            <div class="plot-wrapper" id="table_pop">
+              <embed src="plots/reactions_dynamics/spikes_reddit_table.html" type="text/html"
+                title="tableGeo-Politics" style="
+                      width: 100%;
+                      height: 500px;
+                      border: none;
+                      background: transparent;
+                    ">
+            </div>
+
+            <section class="result-card">
+              <h1>Negative link activity after attack peaks</h1>
+
+              <div class="result-header">
+                <span class="result-cluster">Reddit Core</span>
+                <span class="result-badge non-significant">Statistically non significant</span>
+              </div>
+
+              <div class="result-meta">
+                <span class="chip">39 spikes</span>
+                <span class="chip">7-day window</span>
+                <span class="chip">Tested on rate</span>
+              </div>
+
+              <div class="result-metrics">
+                <div class="metric">
+                  <div class="label">Before</div>
+                  <div class="value">56.08</div>
+                  <div class="sub">mean rate</div>
+                </div>
+
+                <div class="arrow">→</div>
+
+                <div class="metric">
+                  <div class="label">After</div>
+                  <div class="value">57</div>
+                  <div class="sub">mean rate</div>
+                </div>
+
+                <div class="delta positive">
+                  <div class="delta-value">+0.92</div>
+                  <div class="delta-sub">(+x%)</div>
+                </div>
+              </div>
+
+              <div class="result-footer">
+                <div class="pval">p = 0.4049 </div>
+                <div class="note">
+                  Mean change across 39 hostility spikes.
+                </div>
+              </div>
+            </section>
+
 
 
 
@@ -936,6 +1073,63 @@
                             background: transparent;
                           ">
             </div>
+
+            <div class="plot-wrapper" id="table_pop">
+              <embed src="plots/reactions_dynamics/spikes_mental_table.html" type="text/html"
+                title="tableGeo-Politics" style="
+                      width: 100%;
+                      height: 500px;
+                      border: none;
+                      background: transparent;
+                    ">
+            </div>
+
+            <section class="result-card">
+              <h1>Negative link activity after attack peaks</h1>
+
+              <div class="result-header">
+                <span class="result-cluster">Mental Health</span>
+                <span class="result-badge non-significant">Statistically non significant</span>
+              </div>
+
+              <div class="result-meta">
+                <span class="chip">63 spikes</span>
+                <span class="chip">7-day window</span>
+                <span class="chip">Tested on rate</span>
+              </div>
+
+              <div class="result-metrics">
+                <div class="metric">
+                  <div class="label">Before</div>
+                  <div class="value">14.51</div>
+                  <div class="sub">mean rate</div>
+                </div>
+
+                <div class="arrow">→</div>
+
+                <div class="metric">
+                  <div class="label">After</div>
+                  <div class="value">15.38</div>
+                  <div class="sub">mean rate</div>
+                </div>
+
+                <div class="delta positive">
+                  <div class="delta-value">+0.87</div>
+                  <div class="delta-sub">(+x%)</div>
+                </div>
+              </div>
+
+              <div class="result-footer">
+                <div class="pval">p = 0.2759 </div>
+                <div class="note">
+                  Mean change across 63 hostility spikes.
+                </div>
+              </div>
+            </section>
+
+
+
+
 
             <div class="plot-wrapper" id="selfmh_pronouns_diff">
               <embed src="plots/maelle/self_mh_culture_pronouns_diff.html" type="text/html"

@@ -454,6 +454,13 @@ footer{
   align-items:center;
   gap:12px;
 }
+/* Center the body-vs-title images */
+.img-center {
+  display: block;
+  margin: 0 auto;              /* horizontal centering */
+}
+
+
 
 /* Big profile-like icon in open post */
 .post.is-open .post-icon--hero{
