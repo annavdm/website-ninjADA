@@ -198,6 +198,23 @@ body{
 }
 
 
+.post-thumb--preview {
+  display: block;
+  max-width: 480px;     /* size */
+  width: 100%;
+  margin: 4px auto;    /* 🔽 less space top & bottom */
+  border-radius: 8px;
+}
+
+#img-clustering {
+  display: block;
+  max-width: 700px;     /* size */
+  width: 100%;
+  margin: 4px auto;    /* 🔽 less space top & bottom */
+  border-radius: 8px;
+}
+
+
 
 .post-actions{
   display:flex;
@@ -616,7 +633,7 @@ footer{
 .plot-wrapper {
   width: 100%;
   margin: 0 auto;      /* center on the page */
-  background-color : transparent;   /* make sure nothing is clipped */
+  background-color: transparent;   /* make sure nothing is clipped */
 }
 
 /* === Normalize plot spacing inside open posts === */
