@@ -744,3 +744,13 @@ footer{
   border: none;
 }
 
+#heatmap{
+
+  width: 100%;        /* 👈 make plot smaller */
+  max-width: 1500px;  /* 👈 hard limit */    /* 👈 control vertical size */
+  border: none;
+  background: transparent;
+  display: flex;
+  justify-content: center;   /* center horizontally */
+  margin: 4px 0;
+}
