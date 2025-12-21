@@ -316,12 +316,52 @@
 
             <section class="method">
               <h3>Reaction dynamics</h3>
-              <p>[Short description of method 1.]</p>
+              <p>The aim is to analyze the typical profile of a hater in online communities. Based on the clusters 
+                identified in our previous analysis, we study the behavior and reactions of different subreddits according 
+                to their main topics of interest. Key indicators are: negativity levels, targeted groups or topics, and responses 
+                to incoming negative links. Bu-y these analyses we determine how aggressive is the hater in a community and how sensitive 
+              he is to negativity</p>
+              <h2>Negativity rate analysis</h2>
+              <p>
+                Negativity of a subreddit or of a cluster is the total posts sent with negative link sentiment over total number of posts sent. 
+                By comparing negativity trends and repartition between targeted clusters and subreddits it enables us to extract characteristic behavior of 
+                a hater within a cluster. 
+              </p>
+              <h2>Atatck spike analysis</h2>
+              To study how the cluster reacts to periods of high incoming negativity, we analyze changes in 
+              its behavior before and after these events. For each detected attack, we 
+              compute the cluster’s negativity rate over two symmetric time windows of 
+              seven days: one preceding the event and one following it.<br>
+
+              <br>To determine whether the observed changes in negativity are
+               statistically meaningful, we apply a Wilcoxon signed-rank test.
+                This non-parametric test compares paired observations and does 
+                not assume a normal distribution of the data, making it well 
+                suited for skewed or sparse interaction measures such as negativity 
+                rates. The test evaluates whether the median difference between the 
+                pre- and post-attack negativity rates significantly differs from zero.
+
+              <br>This approach allows us to assess whether periods of high 
+              received negativity are followed by systematic increases or 
+              decreases in negative linking behavior, thereby providing 
+              insight into the cluster’s reactivity and response strategies 
+              n the face of external attacks.
+              <p>
+
+              </p>
             </section>
 
             <section class="method">
               <h3>Feature analysis</h3>
-              <p>[Short description of method 2.]</p>
+              <p>Feature analysis is done by analysing the properties section of the hyperlink dataset. Indeed they provide informtion on structure, themes
+                and emotions for each posts. The features that came out as characteristic hater features for both methods were kept. 
+              </p>
+              <h2>Standardized mean difference</h2>
+              <p>
+              </p>
+              <h2>
+                Logit analysis
+              </h2>
             </section>
 
             <section class="method">
@@ -485,7 +525,7 @@
       <p>
         For the Geo-Politics cluster, we find 47 moments where it suddenly receives a lot of negativity. 
         When that happens, the cluster tends to fire back. After these events, it sends more negative links, 
-        and a larger share of its interactions are negative overall. And it is statistically significant. In other words, it’s not just posting more — it’s 
+        and a larger share of its interactions are negative overall. And it is statistically significant. In other words, it’s not just posting more; it’s 
         posting more hostile content. This pattern shows up consistently, suggesting that when Geo-Politics gets attacked, it usually responds by escalating 
         the negativity rather than cooling things down. So Geopolitic and news related users are kind of sensitive. On average, 84.9% of negative links are 
         redirected toward the same clusters that generated the attack spikes during peak periods. However, nearly half of the negative links (48.7%) target 
@@ -553,23 +593,59 @@
         >
       </div>
 
-              <div class="plot-wrapper" id="spearman_geopo">
-                <embed src="plots/maelle/geo_politics_pronouns_diff.html" type="text/html"
-                  title="Difference of the mean - promoun features" style="
-                          width: 100%;
-                          height: 750px;
-                          border: none;
-                          background: transparent;
-                        ">
-              </div>
-              <embed src="plots/maelle/geopolitics_pronouns_diff_features_table.html" type="text/html"
-                title="p values of the pronoun features" style="
-                          width: 100%;
-                          height: 750px;
-                          border: none;
-                          background: transparent;
-                        ">
-          </div>
+      <h2>
+      Characteristic Feature Analysis
+      </h2>
+      <p> Lets see how negativity translates in the features. Plotting the standardized difference of the mean for structural features a high value means that 
+        the pronoun is more present in negatively linked posts than in positive. Here the I pronoun and the She/He pronouns are most represented in negative posts. 
+        The mean difference is statistically significative. For the logits coefficient error bars show uncertainty; coefficients far from zero with tight intervals are the most reliable predictors. 
+        T
+        
+      </p>
+<div>
+  <!-- Dropdown -->
+  <label for="plotSelector"><b>Select view</b></label>
+  <select id="plotSelector">
+    <option value="plot">Difference of the mean – pronoun features</option>
+    <option value="table">p-values of the pronoun features</option>
+  </select>
+</div>
+
+<!-- Container for both embeds -->
+<div id="geopoContainer" style="margin-top: 10px;">
+
+  <!-- Plot view -->
+  <div id="geopo_plot_view">
+    <embed src="plots/maelle/geo_politics_pronouns_diff.html" type="text/html"
+           title="Difference of the mean - pronoun features"
+           style="width: 100%; height: 750px; border: none; background: transparent;">
+  </div>
+
+  <!-- Table view -->
+  <div id="geopo_table_view" style="display: none;">
+    <embed src="plots/maelle/geopolitics_pronouns_diff_features_table.html" type="text/html"
+           title="p values of the pronoun features"
+           style="width: 100%; height: 750px; border: none; background: transparent;">
+  </div>
+
+</div>
+
+<script>
+  const selector = document.getElementById('plotSelector');
+  const plotView = document.getElementById('geopo_plot_view');
+  const tableView = document.getElementById('geopo_table_view');
+
+  selector.addEventListener('change', function () {
+    if (this.value === 'plot') {
+      plotView.style.display = 'block';
+      tableView.style.display = 'none';
+    } else {
+      plotView.style.display = 'none';
+      tableView.style.display = 'block';
+    }
+  });
+</script>
+
           <div class="plot-wrapper" id="spearman_geopo">
             <embed src="plots/maelle/geo_logit_pronouns.html" type="text/html" title="Logit pronoun analysis" style="
                           width: 100%;
@@ -578,24 +654,50 @@
                           background: transparent;
                         ">
           </div>
-          <div class="plot-wrapper" id="spearman_geopo">
-            <embed src="plots/maelle/geo_politics_sentiment_diff.html" type="text/html"
-              title="Difference of the mean - promoun features" style="
-                          width: 100%;
-                          height: 750px;
-                          border: none;
-                          background: transparent;
-                        ">
-            <div class="plot-wrapper" id="spearman_geopo">
-              <embed src="plots/maelle/geopolitics_sentiments_diff_features_table.html" type="text/html"
-                title="p values of the sentiment difference" style="
-                          width: 100%;
-                          height: 750px;
-                          border: none;
-                          background: transparent;
-                        ">
-            </div>
-            <div class="plot-wrapper" id="spearman_geopo">
+<div>
+  <!-- Dropdown -->
+  <label for="sentimentPlotSelector"><b>Select view</b></label>
+  <select id="sentimentPlotSelector">
+    <option value="plot">Difference of the mean – sentiment features</option>
+    <option value="table">p-values of the sentiment features</option>
+  </select>
+</div>
+
+<!-- Container for both embeds -->
+<div id="geopoSentimentContainer" style="margin-top: 10px;">
+
+  <!-- Plot view -->
+  <div id="geopo_sentiment_plot_view">
+    <embed src="plots/maelle/geo_politics_sentiment_diff.html" type="text/html"
+           title="Difference of the mean - sentiment features"
+           style="width: 100%; height: 750px; border: none; background: transparent;">
+  </div>
+
+  <!-- Table view -->
+  <div id="geopo_sentiment_table_view" style="display: none;">
+    <embed src="plots/maelle/geopolitics_sentiments_diff_features_table.html" type="text/html"
+           title="p values of the sentiment difference"
+           style="width: 100%; height: 750px; border: none; background: transparent;">
+  </div>
+
+</div>
+
+<script>
+  const sentimentSelector = document.getElementById('sentimentPlotSelector');
+  const sentimentPlotView = document.getElementById('geopo_sentiment_plot_view');
+  const sentimentTableView = document.getElementById('geopo_sentiment_table_view');
+
+  sentimentSelector.addEventListener('change', function () {
+    if (this.value === 'plot') {
+      sentimentPlotView.style.display = 'block';
+      sentimentTableView.style.display = 'none';
+    } else {
+      sentimentPlotView.style.display = 'none';
+      sentimentTableView.style.display = 'block';
+    }
+  });
+</script>
+s="plot-wrapper" id="spearman_geopo">
               <embed src="plots/maelle/geo_logit_sentiments.html" type="text/html" title="Logit sentiment analysis"
                 style="
                           width: 100%;
@@ -652,12 +754,26 @@
             <div class="topbar-title">r/Pop-Culture</div>
           </div>
 
+          <p>
+            Welcome to the Pop culture cluster of subreddit! <br>
+            Let's not loose time and dig in to see what these 10% of negativity is made of. 
+          </p>
+
           <div class="post-body">
             <div class="plot-wrapper" id="pop_overall_distribution">
               <embed src="plots/maelle/pop_overall_distribution.html" type="text/html"
                 title="Negative - Positive link distribution" class="plot-iframe" width="100%" height="800"
                 style="border:none; overflow:visible;">
             </div>
+          <h2>
+            Reaction dynamics
+          </h2>
+          <p>
+            The top hater subreddit hits about 80% negativity, but that’s mostly tiny subreddits with barely any activity behind 
+            those numbers. Subreddits like r/bitchimabus and r/wallpaperdump look more toxic, but it’s off a handful of 
+            links, so more “one‑off outbursts” than steady hate streams. Looks like the real problem is r/againstkarmawhores: 
+            it’s both pretty negative and very active, so it’s the one really shaping how toxic the Pop‑Culture cluster looks overall.
+          </p>
 
            <div class="plot-wrapper" id="bar_pop">
               <embed src="plots/reactions_dynamics/bar_pop.html" type="text/html" style="
@@ -676,6 +792,14 @@
                             background: transparent;
                           ">
             </div>
+            <p>
+            Some subreddits, especially r/againstkarmawhores, repeatedly throw shade at lots of big, mainstream targets.
+            Most of the other super‑negative subreddits just light up one or two cells on the heatmap, meaning short, targeted bursts of hate rather than constant drama.
+            Taken together, the Pop‑Culture cluster’s negativity looks  and localized: spikes around specific topics or communities, not a universal hate‑machine.
+            Now look at inter-cluster relations, see how they target a wide variety of l-clusters with no external cluster dominating. Kind of boring. Mainly 
+            entertainment, meme... Negative linking behavior in the Pop-Culture cluster is driven more by content critique, humor, or norm enforcement than by sustained ideological conflict. 
+            Let's look att the attack spikes and reactivity to see if we find anything spicier. 
+            </p>
 
             <div class="plot-wrapper" id="heatmap_pop">
               <embed src="plots/reactions_dynamics/negative_links_pop.html" type="text/html" style="
@@ -694,6 +818,13 @@
                             background: transparent;
                           ">
             </div>
+            <h2>
+              Attack spikes
+            </h2>
+            <p>
+              Now let's see how the cluster reacts to periods of high incoming negativity. Now to look at methods details please refer to the dedicated post. 
+              The idea here is still to see how sensitive are Pop-culture interested users. 
+            </p>
 
             <div class="plot-wrapper" id="heatmap_pop">
               <embed src="plots/reactions_dynamics/sankey_pop.html" type="text/html" style="
@@ -712,6 +843,13 @@
                             background: transparent;
                           ">
             </div>
+            <p>
+              Overall, these results indicate that the Pop-Culture cluster does respond to periods of high received negativity, 
+              but in a weakly reactive manner. Rather than strong escalation or retaliation, the response appears modest and likely 
+              reflects short-lived or localized increases in negative interactions rather than systematic behavioral shifts. 
+              The negativity rate slighlty increases after negativoty spike and is statistically significant there may be a little 
+              sensitivity here. But aren't we all a little sensitive? 
+            </p>
 
             <div class="plot-wrapper" id="heatmap_pop">
               <embed src="plots/reactions_dynamics/spearman_pop.html" type="text/html" style="
@@ -731,7 +869,12 @@
                       background: transparent;
                     ">
             </div>
+            <p>
+              Roughly 80% of post‑attack negative links go back toward the same clusters that started the drama, and about 57% hit the exact same subreddits.
+​
 
+            So retaliation happens both broadly at the cluster level and very directly at specific communities, mixing “shoot back at the bloc” with “shoot back at the exact subreddit.
+            </p>
             <section class="result-card">
               <h1>Negative link activity after attack peaks</h1>
 
@@ -858,15 +1001,27 @@
           </div>
 
           <div class="post-body">
-            <h2>Content</h2>
-            <p></p>
+            <p>
+              Welcome to the Reddit Core cluster of subreddits ! <br>
+              What are the 11% of negativity made of this time ? 
+            </p>
 
             <div class="plot-wrapper" id="reddit_overall_distribution">
               <embed src="plots/maelle/reddit_overall_distribution.html" type="text/html"
                 title="Negative - Positive link distribution" class="plot-iframe" width="100%" height="800"
                 style="border:none; overflow:visible;">
             </div>
+            <h2>
+              Reaction dynamics
+            </h2>
+            <p>
+              The Reddit Core cluster is basically a punching bag: it gets way more negative links than it sends for the whole period and rarely hits back.
+              Looks like it is more a victim of hate than a hater. 
 
+              You see big waves of hate around mid‑2015 and late 2016, but those spikes in incoming negativity aren’t followed by matching revenge spikes.
+
+              So Reddit Core acts as a negativity sink in the network—constantly targeted, mostly chill in response—unlike the more politicized clusters that tend to fight back when they’re attacked.
+            </p>
             <div class="plot-wrapper" id="bar_pop">
               <embed src="plots/reactions_dynamics/bar_reddit.html" type="text/html" style="
                             width: 100%;
@@ -884,6 +1039,15 @@
                             background: transparent;
                           ">
             </div>
+            <p>
+              The Reddit Core cluster exhibits morderate negativity rates overall with no subreddits exceeding 50%.
+              The r/britishproblems and r/animalsbeingjerks have the highest negativity rate but these values are driven by a very small
+              number of total link. So the hater behavior of this cluster, when there is, seems to be sporadic rather than sustained negative behavior.
+              The heatmap shows this trend well. Only quityourbullshit emerges as a widespread aggressor, directing moderate negativity (teal/green blocks) 
+              across a long list of major subreddits like pics, funny, and worldnews, consistent with its culture of calling out fake posts.
+
+
+            </p>
 
             <div class="plot-wrapper" id="heatmap_pop">
               <embed src="plots/reactions_dynamics/negative_links_reddit.html" type="text/html" style="
@@ -903,6 +1067,14 @@
                           ">
             </div>
 
+            <p>
+            The network shows that most of the portion of their aggression is actuallu internal "friendly-fire" directed 
+            at other Core Subreffits. Central hubs like r/quityourbullshit and r/animalsbeingjerks frequently target fellow 
+            core members such as r/funny, r/pics, and r/aww (indicated by the numerous connections to purple nodes), suggesting 
+            a strong culture of self-policing and meta-commentary within the memes and general chat sphere. The nature of negativity here 
+            is rather teasing than hate no ?
+            </p>
+
             <div class="plot-wrapper" id="heatmap_pop">
               <embed src="plots/reactions_dynamics/sankey_reddit.html" type="text/html" style="
                             width: 100%;
@@ -911,6 +1083,11 @@
                             background: transparent;
                           ">
             </div>
+
+            <h2>
+              Attack spikes
+            </h2>
+            <p>Lets look at the sensitivity to negativity of the Reddit Core subreddit. </p>
             
             <div class="plot-wrapper" id="heatmap_pop">
               <embed src="plots/reactions_dynamics/reddit_year_dropdown.html" type="text/html" style="
@@ -930,6 +1107,12 @@
                       background: transparent;
                     ">
             </div>
+            <p>
+              The post spike slight increase in negativity is within the range of normal fluctuation and 
+              is not statistically significant. So looks like Reddit Core is insensitive to hate ? Or rather, 
+              as we just saw, since the negativity they are targetted with are mainly "friendly attacks", there 
+              is nothing to be sensitive about. 
+            </p>
 
             <section class="result-card">
               <h1>Negative link activity after attack peaks</h1>
@@ -1054,15 +1237,18 @@
           </div>
 
           <div class="post-body">
-            <h2>Content</h2>
-            <p>(Fill this post content.)</p>
+            Welcome to the mental health cluster of subreddits! <br>
+            Don't worry, you are in a safe space here. Or you are supposed to be at least. Let's see 
+            what the 9% of negaitivity is made of ! 
 
             <div class="plot-wrapper" id="selfmh_overall_distribution">
               <embed src="plots/maelle/self_mh_overall_distribution.html" type="text/html"
                 title="Negative - Positive link distribution" class="plot-iframe" width="100%" height="800"
                 style="border:none; overflow:visible;">
             </div>
-
+            <p>
+              Here like for Reddit Core cluster, the Mental Health cluster is mainly a taret of negative links. 
+            </p>
 
             <div class="plot-wrapper" id="bar_pop">
               <embed src="plots/reactions_dynamics/bar_mental.html" type="text/html" style="
@@ -1081,6 +1267,16 @@
                             background: transparent;
                           ">
             </div>
+            <p>
+              The Self‑Improvement & Mental Health cluster is pretty chill overall: negativity is there, 
+              but it’s nowhere near the levels of more conflict‑heavy spaces like Geo‑Politics, and none 
+              of the top subreddits go past ~40% negativity. The heatmaps confirms that trend with the most active subreddits 
+              (r/changemyview, r/offmychest, r/relationships, and r/depression) display partial horizontal patterns, 
+              reflecting moderate negativity toward a restricted set of targets, often thematically related 
+              or highly visible subreddits. Overall, the heatmap suggests that negativity in this cluster is 
+              fragmented, context‑dependent, and mostly turned inward, which fits with how support and self‑improvement 
+              communities usually work
+            </p>
 
             <div class="plot-wrapper" id="heatmap_pop">
               <embed src="plots/reactions_dynamics/negative_links_mental.html" type="text/html" style="
@@ -1100,6 +1296,10 @@
                           ">
             </div>
 
+            <h2>
+              Attack spikes
+            </h2>
+
             <div class="plot-wrapper" id="heatmap_pop">
               <embed src="plots/reactions_dynamics/sankey_mental.html" type="text/html" style="
                             width: 100%;
@@ -1117,6 +1317,16 @@
                             background: transparent;
                           ">
             </div>
+
+            <p>
+              Overall, these results indicate that the Self-Improvement & Mental Health cluster exhibits little 
+              to no systematic reactive behavior following periods of high received negativity. Despite being a 
+              frequent recipient of negative links, the cluster does not escalate its own negative interactions in response.
+               This finding is consistent with earlier structural analyses showing that negativity in this cluster is low-intensity,
+                context-dependent, and inward-focused, rather than retaliatory or conflict-driven. Looks like the basic hater won't be 
+                found in Mental health and self improvement communities. But let's dive into the feature analysis to 
+                see how they communicate when they send negativity. 
+            </p>
 
             <div class="plot-wrapper" id="table_pop">
               <embed src="plots/reactions_dynamics/spikes_mental_table.html" type="text/html"
