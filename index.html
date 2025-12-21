@@ -2549,13 +2549,32 @@ negativity and negatively linked posts.
                   deragotive
                   manner or argue about it. With some luck and if the event is important enough, there would be
                   enough discussion on the subject inside or between subreddits, generating enough hyperlinks associated
-                  with a negative link sentiment such that we detect a change.
-                </p>
+                  with a negative link sentiment such that we detect a change. The geopolitics cluster is probably the easiest one
+                  to test this on : we generated a list of major political events between 2014 and 2017 (focusing on the US
+                  because half of Redditors are american) :
+                  </p>
+                  <p>
+                  - US midterm elections (4th november 2014)
+                - Russian annexation of Crimea (27 february / 1st march 2014)
+                - UK general election (7 may 2015) 
+                - Brexit Referendum (June 23, 2016)
+                - US presidential election (8th november 2016)
+                  </p>
+                  <p>For each event we define a "post-event" time window starting on the day and lasting 30 days, and a "pre-event" time window which
+                    also lasts 30 days but starts 60 days before the event (so it finishes one month before).
+                    We then compare the average of the negativity rate R over these two time windows different tools (t-test, boostrap confidence intervals). 
+                    The pre-event window is not directly before but has this one-month offset to prevent the anticipation effect : for an event that is planned in advance, 
+                    emotions might rise in the weeks before it happens. Taking one month of buffer seemed like a decent middle ground that reduces the effect of anticipation but 
+                    still pairs it with a period that is sufficiently close in time to be very comparable.</p>
+
+                    <p>You can use the button </p>
+
+                 
                 <label for="eventDatasetSelector">Select Dataset</label>
                 <select id="eventDatasetSelector">
-                  <option value="full">Full Dataset</option>
                   <option value="geopolitics">Cluster Geopolitics</option>
                   <option value="popculture">Cluster Pop-Culture</option>
+                  <option value="full">Full Dataset</option>
                 </select>
 
                 <div class="plot-container">
@@ -2572,33 +2591,30 @@ negativity and negatively linked posts.
                       width="100%" height="700" style="border:none;"> </iframe>
                   </div>
                 </div>
+                <p>(Notes : the null hypothesis tested by the p-value in this table is "there is no difference 
+                  in the mean of the post-event window and the pre-event window (0% relative increase)"</p>
+                <p>Ok so what do we see ?   We find two p-values that might indicate an interesting result. Not only that, 
+                  but the 95% confidence intervals exclude 0 for both. So we have two different metrics that tell us that the chance of 
+                  no relative change of negativity is low.  The 2016 US presidential election is a bit more pronounced : the effect seems larger 
+                  (-1 standard deviation, ie almost 20% relative decrease), and even the lowest bound for the CI is above 10%. 
+                  It is a good candidate to investigate further. 
+                (NB : to make it simpler from this point we will pretend that the post-election window is the full month of November 2016 and
+                 the pre-election window is the full month of September 2016. In reality the windows sit across different months, 
+                 which is why we could not compare months directly as we did with our logistic regression above, but have to construct 
+                 the appropriate 30 day time windows. However it is easier to imagine and talk about it by just saying "November" or "September")</p>
 
-                <p>Of course here we are only detecting correlation, not causation. As an example, Trump's election in
-                  November 2016
-                  correlates quite strongly with a decrease in negativity when compared to September.
-                  But is it really because Redditors are happy about the election ? Or is there some other confounding
-                  factor ?
-                  For example it might be possible that Redditors are just less negative in November than in September
-                  every
-                  year.
-                  Or it could be because the campaigning preceding the election has higher above average negativity due
-                  to
-                  the political tensions, and that the period after the election simply went back to the normal rate ?
 
-                  Let's test out the first hypothesis : "it's not the election, it's just a recurring pattern every
-                  year".
-                  At first it seems quite simple : we could just use a t-test to compare the observed difference in mean
-                  negativity around the
-                  election in 2016 with the difference in mean negativity at the same time period in years with no
-                  election.
-                  But the thing is, we only have about three years of data so we have two other similar time-windows (in
-                  2014 and 2015) to compare
-                  it with. Only two samples is a meager sample size, and the result of the test would not be very
+                <p>
+                  How can we know if the relative change is actually due to the presidential election of 2016, and not just because each 
+                  year people are slightly happier (less negative) in November than in September ? To check this we want to repeat the same paired 
+                  windows test across other years and see if it is a pattern. 
+                  But the thing is, we only have about three years of data so we only have two other Novembers and Septembers (in
+                  2014 and 2015) to compare it with. 
+                  Only two samples is a meager sample size, and the result of the test would not be very
                   meaningful.
 
                   To get out of this dead end, we have to use a tricky technique called bootstrap resampling. Here's how
-                  it
-                  works : in our non-election
+                  it works : in our non-election
                   years (2014-2015) we take the daily negativity rate of all days of September (so 2 times 30). Then we
                   create synthetic or "bootstrap" Septembers by sampling at random
                   (with replacement) 30 out of these 60 days to creaete one "bootstrap" September. We can repeat this as
@@ -2617,7 +2633,7 @@ negativity and negatively linked posts.
                   difference to. With this synthetic
                   data we create the following 95% confidence interval (i.e into which range do 95% of all synthetic
                   differences fall) :
-                  Table A
+      
 
                 </p>
                 <div id="otherEventsBootstrapContainer">
@@ -2625,24 +2641,20 @@ negativity and negatively linked posts.
                 </div>
 
                 <p>
-                  Alright so what does this tell us ? According to our bootstrap distribution, the expected difference
-                  of
-                  mean negativity in non-election
-                  years should be completely almost negligeable at ~1% and positive, instead of our observed -18.8%.
-                  More
-                  importantly, we can see that our
-                  observed difference in 2016 lies very far outside the 95% confidence interval of non-election years.
-                  This information supports the hypothesis that Redditors were really less negative after November 8
-                  2016
-                  (compared to September 2016) and that
-                  it isn't a yearly pattern.
+                  Alright so what does this tell us ? We see that the expected relative change using this bootstrap method is very small, close to none. 
+                  More interestingly, the observed relative change that we found before is largely outside of the 95% confidence interval calculated using this 
+                  bootstrap. Even better, we notice for the 2016 presidential election that the 95% CI of the relative negativity change found previously [-26.82% ; -10.19%] 
+                  does not overlap at all with the 95% confidence interval of non-event years calculated right above [-8.75% ; 11.44%]. 
+                  This is pretty solid evidence that something stastically significant happened in November 2016.
                 </p>
+                  
+                  
+                  
+      
 
                 <p>
-                  Ok about our second question : now that we know that something special happened in 2016 that made
-                  November's negativity rate lower
-                  than September's, how can we know that whether November was a less negative than usual month or
-                  September
+                  Ok now a second question : Say "November" 2016 (the post-election window) is negative than "September" 2016. 
+                 How can we know whether "November" 2016 was a less negative than usual month or whether "September" 2016
                   was a more negative than usual month ?
                   To discover that we will compare the post election time window's (November 2016) mean negativity rate
                   to
@@ -2650,7 +2662,7 @@ negativity and negatively linked posts.
                   in the dataset. Careful, before we were talking about an increase or decrease % between the mean rates
                   of
                   two months, now we're just talking about
-                  the mean rate of a month.
+                  the mean rate R of a month.
                   Table B :
                 </p>
                 <div id="whatever">
@@ -2659,19 +2671,22 @@ negativity and negatively linked posts.
 
                 Ok so what does the data tell us ? We can read from the table that the post-2016 presidential election
                 window has a has a mean negativity rate that is lower than the mean of all similarly shaped
-                time windows in the dataset. Not only that, but it is outside of the 95% and even 99% ranges (or
-                confidence
-                intervals) of of all similarly shaped time windows in dataset.
+                time windows in the dataset combined (although not by much, ~0.17 vs ~0.2). 
+                Not only that, but "November" 2016's mean R is outside of the 95% and even 99% ranges
+                of of all similarly shaped time windows in dataset.
 
-                So we can quite confidently say that the 2016 election had an effect (not just a yearly pattern)thanks
-                to
-                table A, and that the effect was a negativity decrease thanks to table B.
+                This allows us to say that we have robust evidence to think that
+                1) There is significant difference in negativity between ~November 2016 and ~September 2016 
+                2) This difference does not happen in other years 
+                3) ~November 2016 is really less negative compared to other time windows of the dataset.
 
-                <p>
-                  Bullshit conclusion : we can conclude that 1) we cannot predict hater negativity behavior pattern in
-                  time
-                  (no hater's schedule) 2) hater's may react minorly to certain events
-                </p>
+              Thus we are pretty confident in saying that Redditors were less negative because of Trump's election !  
+
+              "Because of ?" Wait a second ! Saying because is of course wrong. In all of our analyses here, we are only exploring
+              correlation, not causation. The real statement is that Redditors were less negative AFTER Trump's election !  
+              These two events correlate in time, but who can say if one caused the other ?  Our dataset certainly doesn't 
+              allow us to say that.
+              
 
                 <footer>© 2025 NinjADA Team</footer>
           </div>
