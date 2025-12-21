@@ -2330,20 +2330,21 @@
             As is visible from the histogram above, just counting the amount doesn't reflect the level of negativity of
             Reddit users.
             That's why our main metric will be the negativity rate R : it's the number of negative posts divided by the
-            total of number of posts.
+            total of number of posts. <br> 
+            <br>
 
             Alright then, what does R look like for different clusters and over different time periods ? In the window
             below
             you can select one of the four clusters that we analyzed in the previous posts or examine the entirety of
             the
-            dataset.
+            dataset.<br>
             You can also decide over which time period to examine the data : we averaged the data over different scales
             to
             be able to
             see how the negativity rate evolves over a "typical" year / month / week / day, or you can look at the
             complete
             dataset from start
-            to finish. 95% confidence intervals (calculated according to binomial distribution) are also shown on the
+            to finish. <br>95% confidence intervals (calculated according to binomial distribution) are also shown on the
             plots,
             but you can click
             on the legend in the top left to make them disappear if it's too messy.
@@ -2510,19 +2511,18 @@
 
             <p>Which patterns can we find ? Simply looking at the graphs above it's hard to tell :
               there's a lot of noise in the data, R can swing up and down a lot from one point to the next, each cluster
-              seems to draw quite different graphs and R doesn't even change that much (barely more than a few hundreths
-              of difference between min and max on each graph).
+              seems to draw quite different graphs, and the confidence intervals are too wide.<br>
               We need some better tools if we want to investigate this.
-              How about a logistic regression ?
+              How about a logistic regression ? <br>
             </p>
-            <p> Let's forst try to apply it on week-level. In the plot just above you could see an average week :
+            <p> Let's first try to apply it on week-level. <br>In the plot just above you could see an average week :
               the value of Tuesday represents the mean value of R of all Tuesdays in our dataset for example. </p>
-            <p>We will fit a logistic regression on the days of the week. Monday represents the baseline R rate
+            <p>We will fit a logistic regression on the days of the week. <br>Monday represents the baseline R rate
               and the model will compare each day of the week to Monday : it tries to find the value by
               which the rate for this day changes on average when compared with Monday. Logistic regression can calculate
               log-odds
               (the chance between 0 and 1 that a random post on e.g. Tuesday is negative) based
-              on categorical variables (the days of the week). The negativity rate can be naturally interpreted as a
+              on categorical variables (the days of the week). <br>The negativity rate can be naturally interpreted as a
               log-odd
               : if there are 10 negative posts for 100 total posts, R = 0.1 which means that a randomly picked post
               has 1 out of 10 chance of being negative. So it makes sense to use this model. Let's look at the results.
@@ -2536,12 +2536,16 @@
               no
               difference of negativity ratio between day X and Monday" is true, so we can only consider that there is
               some
-              statistically significant event when the p-value < 0.05. The column "increase %" tells us by much R has
+              statistically significant event when the p-value < 0.05. <br>
+              <br>
+              The column "increase %" tells us by much R has
                 increased (or decreased if it's negative) on day X relatively to its value on Monday. It is calculated
                 using the coefficient beta discovered by the logistic regression model for this day as follows : increase
                 %=(exp(beta) - 1)*100. The confidence interval column represents the range in which the increase % will
                 fall 95% of the time (calculated with a binomial distribution / Wald interval) and finally the
-                z-score=beta / standard_error represents the "effect size" . So we see that two days have a stastically
+                z-score=beta / standard_error represents the "effect size" . 
+                <br>
+                <br>So we see that two days have a stastically
                 significant p-value : Saturday and Sunday with a corresponding percentage % of 7.35% and 6.3%
                 respectively. Nice ! Did we determine that haters tend to hate more on the weekends ? Sadly there are two
                 more values in the table that we need to pay attention to : pseudo R-squared and Pearson's Chi-square.
@@ -2551,11 +2555,13 @@
                 regression can't provide us with a real R-squared metric, but this pseudo-metric is an approximation. On
                 the other hand the Chi-square measures the goodness of fit of our model : it sums the squared differences
                 between observed data and model predictions (weighted by expected values). Low values indicate that our
-                predictions closely match reality (it's a good model) while high values show significant mismatches. Our
+                predictions closely match reality (it's a good model) while high values show significant mismatches. 
+                <br>
+                <br>Our
                 table gives us an abysmally small pseudo R-squared, and an extremely high Chi-square, which means our
                 model has almost no explaining power, and a terribly bad fit. In short, it tells us almost nothing We have
                 tried the same approach on all the clusters at our disposition, and the best R-squared we found was 0.002
-                meaning our model explains 0.2% of the observed change in R in that case. So it looks our tool can't
+                meaning our model explains 0.2% of the observed change in R in that case. <br> So it looks our tool can't
                 discover weekly pattern in our data. </p>
 
                 <p>Maybe we were just unlucky, let's try the same analysis but comparing the different months of the year
@@ -2586,7 +2592,7 @@
                   deragotive
                   manner or argue about it. With some luck and if the event is important enough, there would be
                   enough discussion on the subject inside or between subreddits, generating enough hyperlinks associated
-                  with a negative link sentiment such that we detect a change. The geopolitics cluster is probably the easiest one
+                  with a negative link sentiment such that we detect a change. <br>The geopolitics cluster is probably the easiest one
                   to test this on : we generated a list of major political events between 2014 and 2017 (focusing on the US
                   because half of Redditors are american) :
                   </p>
@@ -2598,13 +2604,13 @@
                 - US presidential election (8th november 2016)
                   </p>
                   <p>For each event we define a "post-event" time window starting on the day and lasting 30 days, and a "pre-event" time window which
-                    also lasts 30 days but starts 60 days before the event (so it finishes one month before).
+                    also lasts 30 days but starts 60 days before the event (so it finishes one month before). <br>
                     We then compare the average of the negativity rate R over these two time windows different tools (t-test, boostrap confidence intervals). 
-                    The pre-event window is not directly before but has this one-month offset to prevent the anticipation effect : for an event that is planned in advance, 
+                    <br> <br>The pre-event window is not directly before but has this one-month offset to prevent the anticipation effect : for an event that is planned in advance, 
                     emotions might rise in the weeks before it happens. Taking one month of buffer seemed like a decent middle ground that reduces the effect of anticipation but 
                     still pairs it with a period that is sufficiently close in time to be very comparable.</p>
 
-                    <p>You can use the button </p>
+                    <p> We will discuss the results found on the geopolitics cluster but you can also look at the results on some other ones. </p>
 
                  
                 <label for="eventDatasetSelector">Select Dataset</label>
@@ -2629,12 +2635,13 @@
                   </div>
                 </div>
                 <p>(Notes : the null hypothesis tested by the p-value in this table is "there is no difference 
-                  in the mean of the post-event window and the pre-event window (0% relative increase)"</p>
+                  in the mean of the post-event window and the pre-event window (0% relative increase)" <br> <br></p>
                 <p>Ok so what do we see ?   We find two p-values that might indicate an interesting result. Not only that, 
-                  but the 95% confidence intervals exclude 0 for both. So we have two different metrics that tell us that the chance of 
+                  but the 95% confidence intervals exclude 0 for both. <br>So we have two different metrics that tell us that the chance of 
                   no relative change of negativity is low.  The 2016 US presidential election is a bit more pronounced : the effect seems larger 
                   (-1 standard deviation, ie almost 20% relative decrease), and even the lowest bound for the CI is above 10%. 
-                  It is a good candidate to investigate further. 
+                  It is a good candidate to investigate further. <br> 
+                  <br>
                 (NB : to make it simpler from this point we will pretend that the post-election window is the full month of November 2016 and
                  the pre-election window is the full month of September 2016. In reality the windows sit across different months, 
                  which is why we could not compare months directly as we did with our logistic regression above, but have to construct 
@@ -2642,29 +2649,33 @@
 
 
                 <p>
+                  <br> 
+                  <br>
                   How can we know if the relative change is actually due to the presidential election of 2016, and not just because each 
                   year people are slightly happier (less negative) in November than in September ? To check this we want to repeat the same paired 
-                  windows test across other years and see if it is a pattern. 
+                  windows test across other years and see if it is a pattern. <br>
                   But the thing is, we only have about three years of data so we only have two other Novembers and Septembers (in
                   2014 and 2015) to compare it with. 
                   Only two samples is a meager sample size, and the result of the test would not be very
                   meaningful.
-
+                  <br>
+                  <br>
                   To get out of this dead end, we have to use a tricky technique called bootstrap resampling. Here's how
                   it works : in our non-election
                   years (2014-2015) we take the daily negativity rate of all days of September (so 2 times 30). Then we
                   create synthetic or "bootstrap" Septembers by sampling at random
                   (with replacement) 30 out of these 60 days to creaete one "bootstrap" September. We can repeat this as
                   many times and in theory each bootstrap
-                  September should be different (since there are so many different possible combinations of days). Using
+                  September should be different (since there are so many different possible combinations of days).<br> Using
                   the
                   days of two Septembers, we can
                   create a huge number of new Septembers (for example 100) : we have artificially mutliplied the size of
                   our
-                  sample by 50.
+                  sample by 50.<br> 
                   We do the same in parallel with our Novembers 2014-2015, and for each pair of bootstrap months we
                   calculate the mean rate of each and
-                  finally the difference of both.
+                  finally the difference of both.<br>
+                  <br>
                   We now have 100 synthetic, non-election-year differences of mean negativity to compare our observed
                   2016
                   difference to. With this synthetic
@@ -2681,8 +2692,10 @@
                 <p>
                   Alright so what does this tell us ? We see that the expected relative change using this bootstrap method is very small, close to none. 
                   More interestingly, the observed relative change that we found before is largely outside of the 95% confidence interval calculated using this 
-                  bootstrap. Even better, we notice for the 2016 presidential election that the 95% CI of the relative negativity change found previously [-26.82% ; -10.19%] 
-                  does not overlap at all with the 95% confidence interval of non-event years calculated right above [-8.75% ; 11.44%]. 
+                  bootstrap. <br>
+                  Even better, we notice for the 2016 presidential election that the 95% CI of the relative negativity change found previously [-26.82% ; -10.19%] 
+                  does not overlap at all with the 95% confidence interval of non-event years calculated right above [-8.75% ; 11.44%]. <br>
+                  <br>
                   This is pretty solid evidence that something stastically significant happened in November 2016.
                 </p>
                   
@@ -2693,7 +2706,8 @@
                 <p>
                   Ok now a second question : Say "November" 2016 (the post-election window) is negative than "September" 2016. 
                  How can we know whether "November" 2016 was a less negative than usual month or whether "September" 2016
-                  was a more negative than usual month ?
+                  was a more negative than usual month ?<br>
+                  <br>
                   To discover that we will compare the post election time window's (November 2016) mean negativity rate
                   to
                   the mean negativity rate of all other months
@@ -2714,17 +2728,20 @@
                 <p>
                 Ok so what does the data tell us ? We can read from the table that the post-2016 presidential election
                 window has a has a mean negativity rate that is lower than the mean of all similarly shaped
-                time windows in the dataset combined (although not by much, ~0.17 vs ~0.2). 
+                time windows in the dataset combined (although not by much, ~0.17 vs ~0.2). <br>
                 Not only that, but "November" 2016's mean R is outside of the 95% and even 99% ranges
                 of of all similarly shaped time windows in dataset.
+                <br>
+                <br>
 
-                This allows us to say that we have robust evidence to think that
-                1) There is significant difference in negativity between ~November 2016 and ~September 2016 
-                2) This difference does not happen in other years 
-                3) ~November 2016 is really less negative compared to other time windows of the dataset.
+                This allows us to say that we have robust evidence to think that <br>
+                1) There is significant difference in negativity between ~November 2016 and ~September 2016 <br>
+                2) This difference does not happen in other years <br>
+                3) ~November 2016 is really less negative compared to other time windows of the dataset.<br>
 
-              Thus we are pretty confident in saying that Redditors were less negative because of Trump's election !  
-
+              Thus we are pretty confident in saying that Redditors were less negative because of Trump's election !  <br>
+              <br>
+              <br>
               "Because of ?" Wait a second ! Saying because is of course wrong. In all of our analyses here, we are only exploring
               correlation, not causation. The real statement is that Redditors were less negative AFTER Trump's election !  
               These two events correlate in time, but who can say if one caused the other ?  Our dataset certainly doesn't 
