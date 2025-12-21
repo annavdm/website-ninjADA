@@ -124,10 +124,21 @@
             <section id="data-presentation">
               <h2>Data Presentation</h2>
 
+              <div class="reddit-comment">
+                <div class="reddit-comment__avatar">
+                  <img src="images/ninjadateam.png" alt="u/NinjADA profile picture">
+                </div>
+            
+                <div class="reddit-comment__content">
+                  <div class="reddit-comment__meta">
+                    <span class="reddit-comment__user">u/NinjADA</span>
+                    <span class="reddit-comment__dot">•</span>
+                    <span class="reddit-comment__time">pinned</span>
+                  </div>
               <section id="dataset-hyperlinks">
-                <h3>Hyperlink Network Dataset</h3>
+                <h3>For those wondering what hyperlink the dataset looks like</h3>
                 <p class="data-intro">
-                  So now there’s this giant network of Reddit where every time one subreddit links to another, it counts
+                  So there’s this giant network of Reddit where every time one subreddit links to another, it counts
                   as a little arrow from
                   “source” to “target.”Here is a simplified version of what it represents with the 10 most active
                   subreddits. If the arrow is red
@@ -135,18 +146,49 @@
                 </p>
                 <img src="plots/subreddit_network.png" alt="Subreddit network" class="img-center"
                   style="width: 500px; height: auto; border-radius: 20px;">
+              </div>
+              </div>
+              </section>
+
+              <div class="reddit-comment">
+                <div class="reddit-comment__avatar">
+                  <img src="images/ninjadateam.png" alt="u/NinjADA profile picture">
+                </div>
+            
+                <div class="reddit-comment__content">
+                  <div class="reddit-comment__meta">
+                    <span class="reddit-comment__user">u/NinjADA</span>
+                    <span class="reddit-comment__dot">•</span>
+                    <span class="reddit-comment__time">pinned</span>
+                  </div>
+              
                 <div class="plot-panel" id="plotB-sentiment">
-                  <p class="plot-caption">
+                  <p class="dataset-hyperlinks">
                     Hostile posts represent about 10% of the dataset — the goal is to understand what characterizes that
                     “red” portion.
                   </p>
                   <img src="plots/sentiment_distribution.png" alt="Sentiment distribution" class="img-center"
                     style="width: 500px; height: auto; border-radius: 20px;">
                 </div>
+                </div>
+                </div>
 
-                <div class="plot-panel" id="plotB-sentiment">
+                <div class="reddit-comment">
+                <div class="reddit-comment__avatar">
+                  <img src="images/ninjadateam.png" alt="u/NinjADA profile picture">
+                </div>
+            
+                <div class="reddit-comment__content">
+                  <div class="reddit-comment__meta">
+                    <span class="reddit-comment__user">u/NinjADA</span>
+                    <span class="reddit-comment__dot">•</span>
+                    <span class="reddit-comment__time">pinned</span>
+                  </div>
+
+                <div class="plot-caption" id="plotB-sentiment">
                   <p class="plot-caption">
-                    The dataset provides information on where the link is located, either title or body.
+                    The dataset provides information on where the link is located, either title or body. Look at the negative - positive/neutral posts repartition according to where the post is 
+                    located. 
                   </p>
 
                   <!-- Toggle controls -->
@@ -169,29 +211,70 @@
                     alt="Sentiment distribution in body and title" class="img-center"
                     style="width: 500px; height: auto; border-radius: 20px; display: none;">
                 </div>
+                </div>
+                </div>
               </section>
               <section id="dataset-embeddings">
-                <h3>Subreddit Embeddings</h3>
+              <div class="reddit-comment">
+              <div class="reddit-comment__avatar">
+              <img src="images/ninjadateam.png" alt="u/NinjADA profile picture">
+              </div>
+              <div class="reddit-comment__content">
+                  <div class="reddit-comment__meta">
+                    <span class="reddit-comment__user">u/NinjADA</span>
+                    <span class="reddit-comment__dot">•</span>
+                    <span class="reddit-comment__time">pinned</span>
+                  </div>
+
+                <div class="plot-container" id="plotB-sentiment">
+
+                <h3>Let's not ommit our other important dataset : the SUBREDDIT EMBEDDINGS dataset</h3>
                 <p class="data-intro">
                   So the dataset takes about 2.5 years of Reddit activity in 51,278 unique subreddits, then turns each
                   subreddit into a 300-dimensional vector
                   that captures “who posts where,” meaning that subreddits that have similar users end up close together
-                  in the embedding space.
+                  in the embedding space. Here it is projected in 2D using PCA dimension reduction ! Unfortunately the subreddits of the hyperlinks dataset and the 
+                  ones from the embeddings dataset do not exactly match so we kept only the one present in both. We also removed all the subreddits that were sources of less than 5 posts 
+                  because they were too inactive and would bias negativity rates with their small count. Thus filtered dataset kept 94% of the posts present in the hyperlink dataset
+                  and 41% of the subreddits. 
+
                 </p>
 
                 <div class="plot-panel" id="plotA-pca_2d">
                   <iframe src="plots/subreddit_pca_2d.html" height="450" title="Subreddit Embeddings in 2D"></iframe>
                 </div>
+                </div>
+              </div>
               </section>
             </section>
+
+
             <section id="research-questions">
+              <div class="reddit-comment">
+              <div class="reddit-comment__avatar">
+              <img src="images/ninjadateam.png" alt="u/NinjADA profile picture">
+              </div>
+            <div class="reddit-comment__content">
+                  <div class="reddit-comment__meta">
+                    <span class="reddit-comment__user">u/NinjADA</span>
+                    <span class="reddit-comment__dot">•</span>
+                    <span class="reddit-comment__time">pinned</span>
+                  </div>
               <h2>Research Questions</h2>
+              <p>
+              So now that you've become a reddit hyperlink dataset Ninja like us aren't there many questions popping into your head ? 
+              We asked ourseleves the following...
+              </p>
               <div class="rq-grid">
                 <div class="rq-card">Is a hater likely to be active in certain subreddits?</div>
                 <div class="rq-card">Are there persisting conflicts between subreddits?</div>
                 <div class="rq-card">Does a hater have a particular way of writing?</div>
+                <div class="rq-card"> Do different kinds of communities exhibit different hostility patterns ?</div>
               </div>
+            </div>
             </section>
+
+
 
 
 
