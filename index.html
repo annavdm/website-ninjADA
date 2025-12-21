@@ -982,19 +982,29 @@
             <h3>
               Characteristic Feature Analysis
             </h3>
+            <p> Now let's have a look into linguistic features of this cluster. Here we will try to better understand how the negativity is communicated
+             to others, based on the analysis of pronouns usage and emotional tone.  </p>
             <h2>
               Pronouns feature analysis
             </h2>
             <p> In terms of how negativity shows up in the features, looking at the standardized mean differences for structural features, a higher value means that a given 
-              pronoun shows up more in negatively linked posts than in positive ones. In the Geopolitics cluster, LIWC_Ipron (impersonal pronouns like “it”, “its”, “that”...) 
-              and LIWC_SheHe (she/he pronouns) are clearly more common in negative-link posts, and that mean difference is statistically significant. The logit analysis backs 
-              this up: the pronouns most strongly associated with negative links are again LIWC_Ipron and LIWC_SheHe, and because the model is multivariate it captures the unique 
-              effect of each feature while controlling for correlations with the others, which helps avoid confounding issues. Basically the typical “geopolitics hater” seems to 
+              pronoun shows up more in negative linked posts than in positive ones. In the Geopolitics cluster, LIWC_Ipron (impersonal pronouns such as “it”, “its”, “that”...) 
+              and LIWC_SheHe (she/he pronouns) are clearly more common in negative-link posts, with statistically significant mean differences. The logit results backs 
+              this up: these same pronouns emerge as the strongest predictors of negative links. Because the model is multivariate it captures the unique 
+              effect of each feature while controlling for correlations with the others, which helps avoid confounding issues.</p>
+              <p> We also observe that the first-person singular pronouns (LIWC_I) are underrepresented in negative posts, as indicated by the negative mean difference. 
+                It seems that the authors tend to distance themselves from their statements and avoid personal positioning when expressing negativity. </p> 
+              <p> Basically the typical “geopolitics hater” seems to 
               lean heavily on third-person and impersonal pronouns, which suggests a lot of blaming and finger‑pointing at others. The combo of more third‑person and fewer “you” 
               pronouns also hints at a style that’s more about indirect aggression and complaining about people or groups to third parties than actually addressing others directly. 
               Looks like the geopolitic hater is afraid of direct confrontation and may be kind of a coward ? 
 
             </p>
+
+
+
+
+
             <div>
               <!-- Dropdown -->
               <label for="plotSelector"><b>Select view</b></label>
@@ -1032,14 +1042,22 @@
                         ">
             </div>
 
+
+
             <h2>
               Sentiment/emotion feature analysis
             </h2>
             <p>
               Across both the mean‑difference and logit analyses, anger is the emotion that most consistently lines up with negative links, so when posts go negative here, 
               they’re doing it in an angry way. General affect (LIWC_Affect: emotional words overall) is more common in negative posts if you just look at raw means, but once you control 
-              for the other features, it’s not strongly tied to negativity anymore. This is because affect is strongly correlated with anger. So the hater is not “being emotional” in general, he is angry and it shows in his writing style. 
+              for the other features in the multivariate model, it’s not strongly tied to negativity anymore. Affective language in itself is not a distinctive marker of negativity once 
+              ither emotional dimensions are controlled for, but reflects its correlation with anger.
+              </p>
+            <p> In contrast, sadness (LIWC_Sad) has a significant coefficient in the logistic regression but the mean difference is not so large. Sadness also contributes to the expression of 
+              negativity. Negative posts in Geo-Politics cluster is fortunately not purely aggressive, but also a bit framed by pessimism, disappointment... Swearing and anxiety, while present
+              in the mean analysis, are weaker when the full emotional context is considered. 
             </p>
+            <p> So the hater here is primarily angry and he shows it in his writing style. </p>
 
             <div>
               <!-- Dropdown -->
@@ -1127,32 +1145,34 @@
             <div class="topbar-title">r/Pop-Culture</div>
           </div>
 
-          <p>
-            Welcome to the Pop culture cluster of subreddit! <br>
-            Let's not loose time and dig in to see what these 10% of negativity is made of.
-          </p>
+          <div class="post-body"> 
 
-          <div class="post-body">
-            <div class="plot-wrapper" id="pop_overall_distribution">
-              <embed src="plots/writing_style/pop_overall_distribution.html" type="text/html"
-                title="Negative - Positive link distribution" class="plot-iframe" width="100%" height="800"
-                style="border:none; overflow:visible;">
-            </div>
-            <h2>
-              Reaction dynamics
-            </h2>
             <p>
-              The top hater subreddit hits about 80% negativity, but that’s mostly tiny subreddits with barely any
-              activity
-              behind
-              those numbers. Subreddits like r/bitchimabus and r/wallpaperdump look more toxic, but it’s off a handful
-              of
-              links, so more “one‑off outbursts” than steady hate streams. Looks like the real problem is
-              r/againstkarmawhores:
-              it’s both pretty negative and very active, so it’s the one really shaping how toxic the Pop‑Culture
-              cluster
-              looks overall.
+              Welcome to the Pop culture cluster of subreddit! <br>
+              Let's not loose time and dig in to see what these 10% of negativity is made of.
             </p>
+
+            <div class="post-body">
+              <div class="plot-wrapper" id="pop_overall_distribution">
+                <embed src="plots/writing_style/pop_overall_distribution.html" type="text/html"
+                  title="Negative - Positive link distribution" class="plot-iframe" width="100%" height="800"
+                  style="border:none; overflow:visible;">
+              </div>
+              <h2>
+                Reaction dynamics
+              </h2>
+              <p>
+                The top hater subreddit hits about 80% negativity, but that’s mostly tiny subreddits with barely any
+                activity
+                behind
+                those numbers. Subreddits like r/bitchimabus and r/wallpaperdump look more toxic, but it’s off a handful
+                of
+                links, so more “one‑off outbursts” than steady hate streams. Looks like the real problem is
+                r/againstkarmawhores:
+                it’s both pretty negative and very active, so it’s the one really shaping how toxic the Pop‑Culture
+                cluster
+                looks overall.
+              </p>
 
             <div class="plot-wrapper" id="bar_pop">
               <embed src="plots/reactions_dynamics/bar_pop.html" type="text/html" style="
@@ -1316,126 +1336,136 @@
 
 
 
-
-            <h3>Feature analysis</h3>
+            <h3> Characteristic Feature analysis
+            </h3>
+            <p> Now let's have a look into linguistic features of this cluster. Here we will try to better understand how the negativity is communicated
+                to others, based on the analysis of pronouns usage and emotional tone. </p>
             <h2>
-              Pronoun features analysis
+                Pronoun features analysis
             </h2>
             <p>
-              In here the Ppron (all personal pronouns) proves to be proportionally much more represented in the negative links than in the positive/neutral ones and this shows in the logit 
-              analysis too. Suggestong conflict is personal and not necessariliy objective as usually one tends to avoids pronouns when wanting to write in an objective way. 
+                In here the Ppron (all personal pronouns) proves to be proportionally much more represented in the negative links than in the positive/neutral ones when looking at mean differences. 
+                However in the logisitc regression its coefficient is positive, meaning that once other pronoun categories are controlled for, a higher use of personal pronouns is actually associated with positive links. 
+                The standard deviation of LIWC_Ppron in large which indicates high variability in how personal pronouns are used across posts. 
             </p>
-
-
-<div>
-  <!-- Dropdown -->
-  <label for="popPronounsSelector"><b>Select view</b></label>
-  <select id="popPronounsSelector">
-    <option value="plot">Difference of the means – pronoun features</option>
-    <option value="table">p-values of the pronoun features</option>
-  </select>
-</div>
-
-<!-- Container -->
-<div id="popPronounsContainer" style="margin-top: 10px;">
-
-  <!-- Plot view -->
-  <div id="pop_pronouns_plot_view">
-    <embed src="plots/writing_style/pop_culture_pronouns_diff.html"
-           type="text/html"
-           title="Difference of the means - pronoun features"
-           style="width: 100%; height: 750px; border: none; background: transparent;">
-  </div>
-
-  <!-- Table view -->
-  <div id="pop_pronouns_table_view" style="display: none;">
-    <embed src="plots/writing_style/popculture_pronouns_diff_features_table.html"
-           type="text/html"
-           title="p values of the pronouns features difference"
-           style="width: 100%; height: 750px; border: none; background: transparent;">
-  </div>
-
-</div>
-
-<script>
-  const popSelector = document.getElementById('popPronounsSelector');
-  const popPlotView = document.getElementById('pop_pronouns_plot_view');
-  const popTableView = document.getElementById('pop_pronouns_table_view');
-
-  popSelector.addEventListener('change', function () {
-    if (this.value === 'plot') {
-      popPlotView.style.display = 'block';
-      popTableView.style.display = 'none';
-    } else {
-      popPlotView.style.display = 'none';
-      popTableView.style.display = 'block';
-    }
-  });
-</script>
-
-
-            <div class="plot-wrapper" id="pop_logit_pronouns">
-              <embed src="plots/writing_style/pop_logit_pronouns.html" type="text/html" title="Logit analysis - pronouns"
-                style="width: 100%; height: 750px; border: none; background: transparent;">
+            <p> Let's have a look into more specific pronouns that capture the ineterpersonal dynanics better: </p>
+            <p> Impersonal pronouns (LIWC_Ipron) and third-person pronouns (LIWC_She/He) have similar negative coefficients in the logistic regression. LIWC_Ipron reflects depersonalized critism and LIWC_She/He points
+                 directly to others. Negativity is charecterized by referring to others or to abstract entities.   
+            </p> 
             </div>
 
-<div>
-  <h2>
-    Sentiment/emotion feature analysis 
-  </h2>
-  <p>
-    Anger and affect are still significantly more present in negative posts than in neutral or positive ones. A new pattern that emerges is the LIWC_Swear feature, which is the s
-    econd most negatively correlated feature with link sentiment. This suggests that pop‑culture‑oriented users (often younger, Gen Z, or teenagers) tend to express their anger 
-    through use of swear words. Many swear words are insults so their way of expressing hate is by insulting others. 
+<div class="post-body"> 
+            
 
-  </p>
-
-  <!-- Dropdown -->
-  <label for="popSentimentSelector"><b>Select view</b></label>
-  <select id="popSentimentSelector">
-    <option value="plot">Difference of the mean – sentiment features</option>
-    <option value="table">p-values of the sentiment features</option>
-  </select>
-</div>
-
-<!-- Container -->
-<div id="popSentimentContainer" style="margin-top: 10px;">
-
-  <!-- Plot view -->
-  <div id="pop_sentiment_plot_view">
-    <embed src="plots/writing_style/pop_culture_sentiment_diff.html"
-           type="text/html"
-           title="Difference of the mean sentiment features"
-           style="width: 100%; height: 750px; border: none; background: transparent;">
+  <div>
+    <!-- Dropdown -->
+    <label for="popPronounsSelector"><b>Select view</b></label>
+    <select id="popPronounsSelector">
+      <option value="plot">Difference of the means – pronoun features</option>
+      <option value="table">p-values of the pronoun features</option>
+    </select>
   </div>
 
-  <!-- Table view -->
-  <div id="pop_sentiment_table_view" style="display: none;">
-    <embed src="plots/writing_style/popculture_sentiments_diff_features_table.html"
-           type="text/html"
-           title="p-value of the sentiment features difference"
-           style="width: 100%; height: 750px; border: none; background: transparent;">
+  <!-- Container -->
+  <div id="popPronounsContainer" style="margin-top: 10px;">
+
+    <!-- Plot view -->
+    <div id="pop_pronouns_plot_view">
+      <embed src="plots/writing_style/pop_culture_pronouns_diff.html"
+            type="text/html"
+            title="Difference of the means - pronoun features"
+            style="width: 100%; height: 750px; border: none; background: transparent;">
+    </div>
+
+    <!-- Table view -->
+    <div id="pop_pronouns_table_view" style="display: none;">
+      <embed src="plots/writing_style/popculture_pronouns_diff_features_table.html"
+            type="text/html"
+            title="p values of the pronouns features difference"
+            style="width: 100%; height: 750px; border: none; background: transparent;">
+    </div>
+
   </div>
 
+  <script>
+    const popSelector = document.getElementById('popPronounsSelector');
+    const popPlotView = document.getElementById('pop_pronouns_plot_view');
+    const popTableView = document.getElementById('pop_pronouns_table_view');
+
+    popSelector.addEventListener('change', function () {
+      if (this.value === 'plot') {
+        popPlotView.style.display = 'block';
+        popTableView.style.display = 'none';
+      } else {
+        popPlotView.style.display = 'none';
+        popTableView.style.display = 'block';
+      }
+    });
+  </script>
+
+
+              <div class="plot-wrapper" id="pop_logit_pronouns">
+                <embed src="plots/writing_style/pop_logit_pronouns.html" type="text/html" title="Logit analysis - pronouns"
+                  style="width: 100%; height: 750px; border: none; background: transparent;">
+              </div>
+
+  <div>
+    <h2>
+      Sentiment/emotion feature analysis 
+    </h2>
+    <p>
+        Anger and affect are still significantly more present in negative posts than in neutral or positive ones. A new pattern that emerges is the LIWC_Swear feature, which is the 
+        second most negatively correlated feature with link sentiment in the logistic regression. This suggests that pop‑culture‑oriented users (often younger, Gen Z, or teenagers) tend to express their anger 
+        through informal language. Swear words are mainly insults so their way of expressing hate is by insulting others. 
+
+    </p>
+
+    <!-- Dropdown -->
+    <label for="popSentimentSelector"><b>Select view</b></label>
+    <select id="popSentimentSelector">
+      <option value="plot">Difference of the mean – sentiment features</option>
+      <option value="table">p-values of the sentiment features</option>
+    </select>
+  </div>
+
+  <!-- Container -->
+  <div id="popSentimentContainer" style="margin-top: 10px;">
+
+    <!-- Plot view -->
+    <div id="pop_sentiment_plot_view">
+      <embed src="plots/writing_style/pop_culture_sentiment_diff.html"
+            type="text/html"
+            title="Difference of the mean sentiment features"
+            style="width: 100%; height: 750px; border: none; background: transparent;">
+    </div>
+
+    <!-- Table view -->
+    <div id="pop_sentiment_table_view" style="display: none;">
+      <embed src="plots/writing_style/popculture_sentiments_diff_features_table.html"
+            type="text/html"
+            title="p-value of the sentiment features difference"
+            style="width: 100%; height: 750px; border: none; background: transparent;">
+    </div>
+
+  </div>
+
+  <script>
+    const popSentimentSelector = document.getElementById('popSentimentSelector');
+    const popSentimentPlotView = document.getElementById('pop_sentiment_plot_view');
+    const popSentimentTableView = document.getElementById('pop_sentiment_table_view');
+
+    popSentimentSelector.addEventListener('change', function () {
+      if (this.value === 'plot') {
+        popSentimentPlotView.style.display = 'block';
+        popSentimentTableView.style.display = 'none';
+      } else {
+        popSentimentPlotView.style.display = 'none';
+        popSentimentTableView.style.display = 'block';
+      }
+    });
+  </script>
+
 </div>
-
-<script>
-  const popSentimentSelector = document.getElementById('popSentimentSelector');
-  const popSentimentPlotView = document.getElementById('pop_sentiment_plot_view');
-  const popSentimentTableView = document.getElementById('pop_sentiment_table_view');
-
-  popSentimentSelector.addEventListener('change', function () {
-    if (this.value === 'plot') {
-      popSentimentPlotView.style.display = 'block';
-      popSentimentTableView.style.display = 'none';
-    } else {
-      popSentimentPlotView.style.display = 'none';
-      popSentimentTableView.style.display = 'block';
-    }
-  });
-</script>
-
-
             <div class="plot-wrapper" id="pop_logit_sentiments">
               <embed src="plots/writing_style/pop_logit_sentiments.html" type="text/html" title="Logit analysis - sentiment"
                 style="width: 100%; height: 750px; border: none; background: transparent;">
@@ -1656,9 +1686,12 @@
                 </div>
               </div>
             </section>
+
             <h3>
-              Feature Analysis
+              Characteristic Feature Analysis
             </h3>
+            <p> Now let's have a look into linguistic features of this cluster. Here we will try to better understand how the negativity is communicated to others, based on the analysis of pronouns usage and emotional tone.
+            </p>
             <h2>
               Pronouns feature analysis
             </h2>
@@ -1666,6 +1699,9 @@
               Again more impersonal pronouns and She/he pronouns that come out much more in negatively linked posts than positive. The difference in the univariate mean difference is statistically significative and 
               comes out as the most negatively correlated with link sentiment. Yet the absolute value of the logit coefficient is lower than what showed in other clusters (like geopolitics). Looks like negatively linked posts show 
               similar patterns accross clusters: maybe blaming other people to a third party is uncorrelated with interests but characteristic to a hater. 
+            </p>
+            <p> Similarly as Geo-Politics cluster, the difference of the means for the first-person singular prounouns is negative, and are so underrepresented in negative posts. It is confirmed with the logistic regression, where 
+              the coefficient of LIWC_I is particularly positive. Here, personal positioning is also avoided by the haters. 
             </p>
 
 
@@ -1716,16 +1752,6 @@
   });
 </script>
 
-<h2>
-  Sentiment/emotion feature analysis
-</h2>
-In the reddit‑core cluster, negative posts are clearly more emotionally loaded than neutral or positive ones, with a noticeable presence of anger. Anger and overall affect are 
-tightly linked, so once anger is in the model, the generic emotionality feature (LIWC_Affect) moves closer to zero in the logit coefficients, while sadness shows up as the second 
-strongest emotion on the negative side. So haters in the reddit‑core cluster don’t just sound harsh, they also show sadness. Which softens the purely aggressive picture we had of 
-negativity and negatively linked posts.
-<p>
-  
-</p>
 
 
             <div class="plot-wrapper" id="reddit_logit_pronouns">
@@ -1734,6 +1760,23 @@ negativity and negatively linked posts.
             </div>
 
 <div>
+
+<h2>
+  Sentiment/emotion feature analysis
+</h2>
+
+<p>
+In the reddit‑core cluster, negative posts are clearly more emotionally loaded than neutral or positive ones, with a noticeable presence of anger. Anger and overall affect are 
+tightly linked, so once anger is in the model, the generic emotionality feature (LIWC_Affect) moves closer to zero in the logit coefficients, while sadness shows up as the second 
+strongest emotion on the negative side. So haters in the reddit‑core cluster don’t just sound harsh, they also show sadness. Which softens the purely aggressive picture we had of 
+negativity and negatively linked posts.
+
+</p>
+<p>
+  
+</p>
+
+
   <!-- Dropdown -->
   <label for="redditSentimentSelector"><b>Select view</b></label>
   <select id="redditSentimentSelector">
