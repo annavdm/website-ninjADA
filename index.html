@@ -880,37 +880,106 @@
 
 
 
-            <h2>Content</h2>
-            <p>(Fill this post content.)</p>
+            <h2>Feature analysis</h2>
 
-            <div class="plot-wrapper" id="pop_pronouns_diff">
-              <embed src="plots/maelle/pop_culture_pronouns_diff.html" type="text/html"
-                title="Difference of the means - pronoun features"
-                style="width: 100%; height: 750px; border: none; background: transparent;">
-            </div>
+<div>
+  <!-- Dropdown -->
+  <label for="popPronounsSelector"><b>Select view</b></label>
+  <select id="popPronounsSelector">
+    <option value="plot">Difference of the means – pronoun features</option>
+    <option value="table">p-values of the pronoun features</option>
+  </select>
+</div>
 
-            <div class="plot-wrapper" id="pop_pronouns_table">
-              <embed src="plots/maelle/popculture_pronouns_diff_features_table.html" type="text/html"
-                title="p values of the pronouns features difference"
-                style="width: 100%; height: 750px; border: none; background: transparent;">
-            </div>
+<!-- Container -->
+<div id="popPronounsContainer" style="margin-top: 10px;">
+
+  <!-- Plot view -->
+  <div id="pop_pronouns_plot_view">
+    <embed src="plots/maelle/pop_culture_pronouns_diff.html"
+           type="text/html"
+           title="Difference of the means - pronoun features"
+           style="width: 100%; height: 750px; border: none; background: transparent;">
+  </div>
+
+  <!-- Table view -->
+  <div id="pop_pronouns_table_view" style="display: none;">
+    <embed src="plots/maelle/popculture_pronouns_diff_features_table.html"
+           type="text/html"
+           title="p values of the pronouns features difference"
+           style="width: 100%; height: 750px; border: none; background: transparent;">
+  </div>
+
+</div>
+
+<script>
+  const popSelector = document.getElementById('popPronounsSelector');
+  const popPlotView = document.getElementById('pop_pronouns_plot_view');
+  const popTableView = document.getElementById('pop_pronouns_table_view');
+
+  popSelector.addEventListener('change', function () {
+    if (this.value === 'plot') {
+      popPlotView.style.display = 'block';
+      popTableView.style.display = 'none';
+    } else {
+      popPlotView.style.display = 'none';
+      popTableView.style.display = 'block';
+    }
+  });
+</script>
+
 
             <div class="plot-wrapper" id="pop_logit_pronouns">
               <embed src="plots/maelle/pop_logit_pronouns.html" type="text/html" title="Logit analysis - pronouns"
                 style="width: 100%; height: 750px; border: none; background: transparent;">
             </div>
 
-            <div class="plot-wrapper" id="pop_sentiment_diff">
-              <embed src="plots/maelle/pop_culture_sentiment_diff.html" type="text/html"
-                title="Difference of the mean sentiment features"
-                style="width: 100%; height: 750px; border: none; background: transparent;">
-            </div>
+<div>
+  <!-- Dropdown -->
+  <label for="popSentimentSelector"><b>Select view</b></label>
+  <select id="popSentimentSelector">
+    <option value="plot">Difference of the mean – sentiment features</option>
+    <option value="table">p-values of the sentiment features</option>
+  </select>
+</div>
 
-            <div class="plot-wrapper" id="pop_sentiments_table">
-              <embed src="plots/maelle/popculture_sentiments_diff_features_table.html" type="text/html"
-                title="p-value of the sentiment features difference"
-                style="width: 100%; height: 750px; border: none; background: transparent;">
-            </div>
+<!-- Container -->
+<div id="popSentimentContainer" style="margin-top: 10px;">
+
+  <!-- Plot view -->
+  <div id="pop_sentiment_plot_view">
+    <embed src="plots/maelle/pop_culture_sentiment_diff.html"
+           type="text/html"
+           title="Difference of the mean sentiment features"
+           style="width: 100%; height: 750px; border: none; background: transparent;">
+  </div>
+
+  <!-- Table view -->
+  <div id="pop_sentiment_table_view" style="display: none;">
+    <embed src="plots/maelle/popculture_sentiments_diff_features_table.html"
+           type="text/html"
+           title="p-value of the sentiment features difference"
+           style="width: 100%; height: 750px; border: none; background: transparent;">
+  </div>
+
+</div>
+
+<script>
+  const popSentimentSelector = document.getElementById('popSentimentSelector');
+  const popSentimentPlotView = document.getElementById('pop_sentiment_plot_view');
+  const popSentimentTableView = document.getElementById('pop_sentiment_table_view');
+
+  popSentimentSelector.addEventListener('change', function () {
+    if (this.value === 'plot') {
+      popSentimentPlotView.style.display = 'block';
+      popSentimentTableView.style.display = 'none';
+    } else {
+      popSentimentPlotView.style.display = 'none';
+      popSentimentTableView.style.display = 'block';
+    }
+  });
+</script>
+
 
             <div class="plot-wrapper" id="pop_logit_sentiments">
               <embed src="plots/maelle/pop_logit_sentiments.html" type="text/html" title="Logit analysis - sentiment"
@@ -1132,38 +1201,109 @@
                 </div>
               </div>
             </section>
+            <h2>
+              Feature Analysis
+            </h2>
 
 
 
+<div>
+  <!-- Dropdown -->
+  <label for="redditPronounsSelector"><b>Select view</b></label>
+  <select id="redditPronounsSelector">
+    <option value="plot">Difference of the mean – pronoun features</option>
+    <option value="table">p-values of the pronoun features</option>
+  </select>
+</div>
 
-            <div class="plot-wrapper" id="reddit_pronouns_diff">
-              <embed src="plots/maelle/reddit_culture_pronouns_diff.html" type="text/html"
-                title="Difference of the mean - Pronouns feature"
-                style="width: 100%; height: 750px; border: none; background: transparent;">
-            </div>
+<!-- Container -->
+<div id="redditPronounsContainer" style="margin-top: 10px;">
 
-            <div class="plot-wrapper" id="reddit_pronouns_table">
-              <embed src="plots/maelle/reddit_pronouns_diff_features_table.html" type="text/html"
-                title="p-value for difference of the mean - pronoun feature"
-                style="width: 100%; height: 750px; border: none; background: transparent;">
-            </div>
+  <!-- Plot view -->
+  <div id="reddit_pronouns_plot_view">
+    <embed src="plots/maelle/reddit_culture_pronouns_diff.html"
+           type="text/html"
+           title="Difference of the mean - Pronouns feature"
+           style="width: 100%; height: 750px; border: none; background: transparent;">
+  </div>
+
+  <!-- Table view -->
+  <div id="reddit_pronouns_table_view" style="display: none;">
+    <embed src="plots/maelle/reddit_pronouns_diff_features_table.html"
+           type="text/html"
+           title="p-value for difference of the mean - pronoun feature"
+           style="width: 100%; height: 750px; border: none; background: transparent;">
+  </div>
+
+</div>
+
+<script>
+  const redditPronounsSelector = document.getElementById('redditPronounsSelector');
+  const redditPronounsPlotView = document.getElementById('reddit_pronouns_plot_view');
+  const redditPronounsTableView = document.getElementById('reddit_pronouns_table_view');
+
+  redditPronounsSelector.addEventListener('change', function () {
+    if (this.value === 'plot') {
+      redditPronounsPlotView.style.display = 'block';
+      redditPronounsTableView.style.display = 'none';
+    } else {
+      redditPronounsPlotView.style.display = 'none';
+      redditPronounsTableView.style.display = 'block';
+    }
+  });
+</script>
+
 
             <div class="plot-wrapper" id="reddit_logit_pronouns">
               <embed src="plots/maelle/reddit_logit_pronouns.html" type="text/html" title="Logit Analysis - Pronouns"
                 style="width: 100%; height: 750px; border: none; background: transparent;">
             </div>
 
-            <div class="plot-wrapper" id="reddit_sentiment_diff">
-              <embed src="plots/maelle/reddit_culture_sentiment_diff.html" type="text/html"
-                title="Difference of the mean - Sentiment feature"
-                style="width: 100%; height: 750px; border: none; background: transparent;">
-            </div>
+<div>
+  <!-- Dropdown -->
+  <label for="redditSentimentSelector"><b>Select view</b></label>
+  <select id="redditSentimentSelector">
+    <option value="plot">Difference of the mean – sentiment features</option>
+    <option value="table">p-values of the sentiment features</option>
+  </select>
+</div>
 
-            <div class="plot-wrapper" id="reddit_sentiments_table">
-              <embed src="plots/maelle/reddit_sen timents_diff_features_table.html" type="text/html"
-                title="p-value for difference of the mean - Sentiment features"
-                style="width: 100%; height: 750px; border: none; background: transparent;">
-            </div>
+<!-- Container -->
+<div id="redditSentimentContainer" style="margin-top: 10px;">
+
+  <!-- Plot view -->
+  <div id="reddit_sentiment_plot_view">
+    <embed src="plots/maelle/reddit_culture_sentiment_diff.html"
+           type="text/html"
+           title="Difference of the mean - Sentiment feature"
+           style="width: 100%; height: 750px; border: none; background: transparent;">
+  </div>
+
+  <!-- Table view -->
+  <div id="reddit_sentiment_table_view" style="display: none;">
+    <embed src="plots/maelle/reddit_sentiments_diff_features_table.html"
+           type="text/html"
+           title="p-value for difference of the mean - Sentiment features"
+           style="width: 100%; height: 750px; border: none; background: transparent;">
+  </div>
+
+</div>
+
+<script>
+  const redditSentimentSelector = document.getElementById('redditSentimentSelector');
+  const redditSentimentPlotView = document.getElementById('reddit_sentiment_plot_view');
+  const redditSentimentTableView = document.getElementById('reddit_sentiment_table_view');
+
+  redditSentimentSelector.addEventListener('change', function () {
+    if (this.value === 'plot') {
+      redditSentimentPlotView.style.display = 'block';
+      redditSentimentTableView.style.display = 'none';
+    } else {
+      redditSentimentPlotView.style.display = 'none';
+      redditSentimentTableView.style.display = 'block';
+    }
+  });
+</script>
 
             <div class="plot-wrapper" id="reddit_logit_sentiments">
               <embed src="plots/maelle/reddit_logit_sentiments.html" type="text/html"
@@ -1366,34 +1506,104 @@
 
 
 
-            <div class="plot-wrapper" id="selfmh_pronouns_diff">
-              <embed src="plots/maelle/self_mh_culture_pronouns_diff.html" type="text/html"
-                title="Difference of the means - Pronouns"
-                style="width: 100%; height: 750px; border: none; background: transparent;">
-            </div>
+<div>
+  <!-- Dropdown -->
+  <label for="selfmhPronounsSelector"><b>Select view</b></label>
+  <select id="selfmhPronounsSelector">
+    <option value="plot">Difference of the means – pronoun features</option>
+    <option value="table">p-values of the pronoun features</option>
+  </select>
+</div>
 
-            <div class="plot-wrapper" id="selfmh_pronouns_table">
-              <embed src="plots/maelle/self_mh_pronouns_diff_features_table.html" type="text/html"
-                title="p-value for difference of the mean - Pronoun features"
-                style="width: 100%; height: 750px; border: none; background: transparent;">
-            </div>
+<!-- Container -->
+<div id="selfmhPronounsContainer" style="margin-top: 10px;">
+
+  <!-- Plot view -->
+  <div id="selfmh_pronouns_plot_view">
+    <embed src="plots/maelle/self_mh_culture_pronouns_diff.html"
+           type="text/html"
+           title="Difference of the means - Pronouns"
+           style="width: 100%; height: 750px; border: none; background: transparent;">
+  </div>
+
+  <!-- Table view -->
+  <div id="selfmh_pronouns_table_view" style="display: none;">
+    <embed src="plots/maelle/self_mh_pronouns_diff_features_table.html"
+           type="text/html"
+           title="p-value for difference of the mean - Pronoun features"
+           style="width: 100%; height: 750px; border: none; background: transparent;">
+  </div>
+
+</div>
+
+<script>
+  const selfmhPronounsSelector = document.getElementById('selfmhPronounsSelector');
+  const selfmhPronounsPlotView = document.getElementById('selfmh_pronouns_plot_view');
+  const selfmhPronounsTableView = document.getElementById('selfmh_pronouns_table_view');
+
+  selfmhPronounsSelector.addEventListener('change', function () {
+    if (this.value === 'plot') {
+      selfmhPronounsPlotView.style.display = 'block';
+      selfmhPronounsTableView.style.display = 'none';
+    } else {
+      selfmhPronounsPlotView.style.display = 'none';
+      selfmhPronounsTableView.style.display = 'block';
+    }
+  });
+</script>
+
 
             <div class="plot-wrapper" id="selfmh_logit_pronouns">
               <embed src="plots/maelle/self_mh_logit_pronouns.html" type="text/html" title="Logit Analysis - Pronouns"
                 style="width: 100%; height: 750px; border: none; background: transparent;">
             </div>
 
-            <div class="plot-wrapper" id="selfmh_sentiment_diff">
-              <embed src="plots/maelle/self_mh_culture_sentiment_diff.html" type="text/html"
-                title="Difference of the mean - Sentiment"
-                style="width: 100%; height: 750px; border: none; background: transparent;">
-            </div>
+<div>
+  <!-- Dropdown -->
+  <label for="selfmhSentimentSelector"><b>Select view</b></label>
+  <select id="selfmhSentimentSelector">
+    <option value="plot">Difference of the mean – sentiment features</option>
+    <option value="table">p-values of the sentiment features</option>
+  </select>
+</div>
 
-            <div class="plot-wrapper" id="selfmh_sentiments_table">
-              <embed src="plots/maelle/self_mh_sentiments_diff_features_table.html" type="text/html"
-                title="p-value for difference of the mean - Sentiment features"
-                style="width: 100%; height: 750px; border: none; background: transparent;">
-            </div>
+<!-- Container -->
+<div id="selfmhSentimentContainer" style="margin-top: 10px;">
+
+  <!-- Plot view -->
+  <div id="selfmh_sentiment_plot_view">
+    <embed src="plots/maelle/self_mh_culture_sentiment_diff.html"
+           type="text/html"
+           title="Difference of the mean - Sentiment"
+           style="width: 100%; height: 750px; border: none; background: transparent;">
+  </div>
+
+  <!-- Table view -->
+  <div id="selfmh_sentiment_table_view" style="display: none;">
+    <embed src="plots/maelle/self_mh_sentiments_diff_features_table.html"
+           type="text/html"
+           title="p-value for difference of the mean - Sentiment features"
+           style="width: 100%; height: 750px; border: none; background: transparent;">
+  </div>
+
+</div>
+
+<script>
+  const selfmhSentimentSelector = document.getElementById('selfmhSentimentSelector');
+  const selfmhSentimentPlotView = document.getElementById('selfmh_sentiment_plot_view');
+  const selfmhSentimentTableView = document.getElementById('selfmh_sentiment_table_view');
+
+  selfmhSentimentSelector.addEventListener('change', function () {
+    if (this.value === 'plot') {
+      selfmhSentimentPlotView.style.display = 'block';
+      selfmhSentimentTableView.style.display = 'none';
+    } else {
+      selfmhSentimentPlotView.style.display = 'none';
+      selfmhSentimentTableView.style.display = 'block';
+    }
+  });
+</script>
+
 
             <div class="plot-wrapper" id="selfmh_logit_sentiments">
               <embed src="plots/maelle/self_mh_logit_sentiments.html" type="text/html"
@@ -1700,12 +1910,12 @@
 
     </main>
 
-    <!--===== Right Sidebar ===== -->
-    <aside class="about">
-      <div class="about-box">
-        <strong>About this subreddit</strong>
-        <p>Data-driven analysis of online hostility on Reddit (2014–2017).</p>
-      </div>
+  <!--===== Right Sidebar ===== -->
+  <aside class="sidebar">
+    <div class="about-box">
+      <strong>About this subreddit</strong>
+      <p>Data-driven analysis of online hostility on Reddit (2014–2017).</p>
+    </div>
 
       <div class="about-box">
         <strong>Rules</strong>
