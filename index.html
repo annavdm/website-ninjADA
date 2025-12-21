@@ -218,32 +218,187 @@
           </div>
 
           <div class="post-body">
-            <h2>Content</h2>
-            <section id="anatomy-of-a-hater">
-              <h2>Anatomy of a Hater</h2>
-              <p>
-                We cluster subreddits into communities to see if some are more “hater-friendly” than others.
-              </p>
+            <h2>Clustering subreddit into themes to identify different types of hate</h2>
 
-              <div class="plot-panel">
-                <iframe src="plots/subreddit_pca_clusters_2d.html" height="450" title="Clusters"></iframe>
-              </div>
+            <p>
+              After filtering the dataset, we retain 22,954 subreddits.
+              In our analysis, a community corresponds to a single subreddit,
+              while a theme refers to a group of subreddits that share similar audiences.
+            </p>
 
-              <div class="plot-panel">
-                <iframe src="plots/cluster_treemap.html" height="450" title="Treemap"></iframe>
-              </div>
-            </section>
+            <h3>Do different kinds of communities exhibit different hostility patterns?</h3>
 
-            <section id="conclusion">
-              <h2>Conclusion</h2>
-              <p>
-                This project maps hostile interactions between communities and starts sketching the behavioral “profile”
-                of haters.
-              </p>
-            </section>
+            <p>
+              Rather than studying hate subreddit by subreddit, we group communities by theme
+              and analyze hostility at a higher level.
+              This allows us to compare how different types of communities behave,
+              instead of focusing on isolated cases.
+            </p>
 
-            <h2>Limitations</h2>
-            <p>(Fill this post limitations.)</p>
+            <h3>Step 1 — Clustering subreddits</h3>
+
+            <p>
+              Each subreddit is represented by a 300-dimensional embedding and subreddits close in the embedding space tend to attract users
+              with similar interests. That's why the subreddits can be grouped into themes based on their embeddings.
+            </p>
+
+            <p>
+              Before clustering, to reduce noise and redundancy in this space, we apply a PCA on the filtered subreddit
+              embeddings and keep 23 principal components.
+              These components explain 80% of the total variance of the original embedding space,
+              which allows us to work in a lower-dimensional space.
+            </p>
+
+            <p>
+              We then apply KMeans on the PCA-reduced embeddings and obtain 15 clusters.
+              KMeans groups subreddits by minimizing distances within clusters.
+              Other approaches such as DBSCAN after t-SNE or Louvain community detection were tested,
+              but KMeans produced clusters that were more stable and easier to interpret at scale.
+            </p>
+
+            <p>
+              Below, the clusters can be visualized in 3D using either PCA or t-SNE.
+              PCA highlights the global structure of the embedding space,
+              while t-SNE helps visualize local neighborhoods.
+            </p>
+
+            <iframe src="plots/subreddit_pca_3d_clusters.html" height="480"></iframe>
+            <iframe src="plots/subreddit_tsne_3d_clusters.html" height="480"></iframe>
+
+            <h4>Cluster overview</h4>
+
+            <p>
+              The resulting clusters vary greatly in size.
+              Some capture very large and heterogeneous parts of Reddit,
+              while others correspond to more specific themes.
+              Below are representative subreddits for each cluster.
+            </p>
+
+            <ul>
+              <li><span class="underline">Diverse Niche Communities</span> (2,920): r/endlessspace, r/clubpenguin, r/dota2betting</li>
+              <li><span class="underline">Geo-Politics</span> (269): r/geopolitics, r/ukrainianconflict, r/truereddit</li>
+              <li><span class="underline">Unofficial Platforms & Digital Commerce</span> (130): r/steamgameswap, r/freestuffnyc, r/sweepstakes</li>
+              <li><span class="underline">E-Sports</span> (192): r/competitivehs, r/clashroyale, r/summonerswar</li>
+              <li><span class="underline">Tinkerers</span> (446): r/surfing, r/longboarding, r/soylent</li>
+              <li><span class="underline">Pop-Culture</span> (1,111): r/davidbowie, r/sadcringe, r/100movies365days</li>
+              <li><span class="underline">Large & Heterogeneous</span> (14,106): r/askreddit, r/videos, r/place</li>
+              <li><span class="underline">Mainstream Fandoms & Social Spaces</span> (545): r/southpark, r/toontown, r/coys</li>
+              <li><span class="underline">Culture Literacy</span> (1,567): r/wealth, r/qatar, r/farming</li>
+              <li><span class="underline">Gaming Universe</span> (382): r/witcher, r/overclocking, r/battlefront</li>
+              <li><span class="underline">BizTech</span> (185): r/technology, r/hacking, r/marketing</li>
+              <li><span class="underline">Porn</span> (489): r/milf, r/dirtysmall, r/bigboobsgonewild</li>
+              <li><span class="underline">Sports Pro</span> (169): r/nfl, r/fantasyfootball, r/ea_nhl</li>
+              <li><span class="underline">Reddit Core – Memes & General Chat</span> (261): r/videos, r/explainlikeimfive, r/place</li>
+              <li><span class="underline">Self-Improvement & Mental Health</span> (182): r/iwanttolearn, r/amiugly, r/teenagers</li>
+            </ul>
+
+
+            <h3>Step 2 — Definition of a Hater</h3>
+
+            <p>
+              To quantify hostility, we define the negativity rate of a cluster as:
+            </p>
+
+            <p style="text-align:center;">
+              Negativity rate = (number of negative posts) / (total number of posts)
+            </p>
+
+            <p>
+              This normalized measure allows us to compare clusters of very different sizes.
+            </p>
+
+            <iframe src="plots/negativity_rate_by_cluster.html" height="420"></iframe>
+
+            <p>
+              Based on this metric, we focus on four clusters:
+              Geo-Politics, Reddit Core – Memes & General Chat, Pop-Culture,
+              and Self-Improvement & Mental Health.
+              These clusters have the highest negativity rates among all themes.
+            </p>
+
+            <p>
+              Although Culture Literacy also shows a high negativity rate,
+              it is excluded from further analysis because its topics largely overlap
+              with Geo-Politics, making it difficult to distinguish meaningful differences
+              between the two clusters.
+            </p>
+
+            <h3>Step 3 — General observations on their negativity</h3>
+
+            <h4>Inter- vs intra-community negativity</h4>
+
+            <p>
+              This additional analysis allows to identify the most negative clusters inside 
+              their own communities (highest negativity rate on the posts linked to subreddits 
+              of the same cluster) and in their interactions with other clusters (highest negativity 
+              rate on the posts linked to another cluster).
+            </p>
+
+            <iframe src="plots/cluster_heatmap_neg_rate.html" height="520"></iframe>
+
+            <p>
+              Most selected clusters are highly negative both within their own communities
+              and toward other clusters.
+              This indicates that hostility is not limited to internal discussions,
+              but also appears in interactions across themes.
+            </p>
+
+            <p>
+              The Self-Improvement & Mental Health cluster behaves differently.
+              Here, negativity is more concentrated inside the community itself.
+              This aligns with the nature of discussions in these subreddits,
+              which often involve personal issues, advice, and direct feedback,
+              and can therefore appear more critical in tone without being outwardly aggressive.
+            </p>
+
+
+            <h4>Cluster size and statistical patterns</h4>
+
+            <p>
+              We further analyze the relationship between cluster activity and hostility.
+            </p>
+            
+              <iframe src="plots/cluster_scatter_activity_vs_hostility.html" height="520"></iframe>
+
+            <p>
+              Together, these results indicate that cluster activity and outward-facing behavior are strongly associated with hostility asymmetry.
+              Clusters that are more active and that send more posts than they receive are, on average, more likely to be net contributors of negative content.
+            </p>
+
+            <h3>Conclusion</h3>
+
+            <p>
+              The four selected clusters stand out because they have the highest negativity rates
+              among all themes.
+              Culture Literacy is excluded to focus on clusters that are clearly distinct
+              in terms of topics and interaction patterns.
+            </p>
+
+            <p>
+              Looking more closely at Geo-Politics, Reddit Core – Memes & General Chat,
+              Pop-Culture, and Self-Improvement & Mental Health,
+              common characteristics of what we call “hater” clusters start to emerge.
+            </p>
+
+            <p>
+              These communities are not small or isolated corners of Reddit.
+              On the contrary, they are among the largest and most active clusters,
+              with many interactions both within and across communities.
+              Indeed, high activity means higher exposure to conflict,
+              which naturally increases the likelihood of negative exchanges.
+            </p>
+
+            <p>
+              Another shared feature is that these clusters are sending more posts than they receive.
+              Hater clusters are therefore not only reacting to attacks from others,
+              but often play an active role in spreading negativity through the network.
+            </p>
+
+            <p>
+              Further analyses will explore how these selected clusters differ
+              in the way they react to hate, express negativity,
+              and evolve over time.
+            </p>
 
             <footer>© 2025 NinjADA Team</footer>
           </div>
