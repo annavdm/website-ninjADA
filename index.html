@@ -620,10 +620,10 @@
             </p>
 
             <p>
-              Now, we'd like to name drop and let you have the whole picture. You can see who attacks who, how much and
+              Now, we'd like to name drop and let you have the whole picture. You can see in the following graphs who attacks who, how much, and
               compare with other subreddits! <br>
-              For example, see how r/mensi-right subreddit attacks r/relationships, r/twoxchromosomes, r/feminisms and
-              r/askreddits ?
+              For example, see how r/mensright subreddit attacks r/relationships, r/twoxchromosomes, r/feminisms and
+              r/askreddits the most ?
               It also looks like r/subredditdrama and r/drama are the most problematic subreddit of the geo-politic
               cluster. Could it be because people who follow politics
               and news are also naturally drawn to gossip? Or is it beaucause clustering with PCA and kmeans has its
@@ -1065,7 +1065,15 @@
 
 
 
-            <h2>Feature analysis</h2>
+            <h3>Feature analysis</h3>
+            <h2>
+              Pronoun features analysis
+            </h2>
+            <p>
+              In here the Ppron (all personal pronouns) proves to be proportionally much more represented in the negative links than in the positive/neutral ones and this shows in the logit 
+              analysis too. Suggestong conflict is personal and not necessariliy objective as usually one tends to avoids pronouns when wanting to write in an objective way. 
+            </p>
+
 
 <div>
   <!-- Dropdown -->
@@ -1120,6 +1128,16 @@
             </div>
 
 <div>
+  <h2>
+    Sentiment/emotion feature analysis 
+  </h2>
+  <p>
+    Anger and affect are still significantly more present in negative posts than in neutral or positive ones. A new pattern that emerges is the LIWC_Swear feature, which is the s
+    econd most negatively correlated feature with link sentiment. This suggests that pop‑culture‑oriented users (often younger, Gen Z, or teenagers) tend to express their anger 
+    through use of swear words. Many swear words are insults so their way of expressing hate is by insulting others. 
+
+  </p>
+
   <!-- Dropdown -->
   <label for="popSentimentSelector"><b>Select view</b></label>
   <select id="popSentimentSelector">
@@ -1395,7 +1413,7 @@
             <p>
               Again more impersonal pronouns and She/he pronouns that come out much more in negatively linked posts than positive. The difference in the univariate mean difference is statistically significative and 
               comes out as the most negatively correlated with link sentiment. Yet the absolute value of the logit coefficient is lower than what showed in other clusters (like geopolitics). Looks like negatively linked posts show 
-              similar patterns accross clusters: looks like blaming other people to a third party is uncorrelated with interests but characteristic to a hater. 
+              similar patterns accross clusters: maybe blaming other people to a third party is uncorrelated with interests but characteristic to a hater. 
             </p>
 
 
@@ -1449,8 +1467,10 @@
 <h2>
   Sentiment/emotion feature analysis
 </h2>
-Again much more emotional words in the negative posts than in the neutral/positive posts. And also a lot of anger. Obviously anger is positively correlated with the LIWC_Affect, 
-so th
+In the reddit‑core cluster, negative posts are clearly more emotionally loaded than neutral or positive ones, with a noticeable presence of anger. Anger and overall affect are 
+tightly linked, so once anger is in the model, the generic emotionality feature (LIWC_Affect) moves closer to zero in the logit coefficients, while sadness shows up as the second 
+strongest emotion on the negative side. So haters in the reddit‑core cluster don’t just sound harsh, they also show sadness. Which softens the purely aggressive picture we had of 
+negativity and negatively linked posts.
 <p>
   
 </p>
@@ -1703,12 +1723,16 @@ so th
                 </div>
               </div>
             </section>
-
-
-
-
-
 <div>
+  <h3>
+    Feature Analysis
+  </h3>
+  <h2>
+    Pronouns feature analysis
+  </h2>
+  <p>
+    
+  </p>
   <!-- Dropdown -->
   <label for="selfmhPronounsSelector"><b>Select view</b></label>
   <select id="selfmhPronounsSelector">
