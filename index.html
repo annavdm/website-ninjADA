@@ -278,38 +278,43 @@
               while t-SNE helps visualize local neighborhoods.
             </p>
 
-            <label for="plot-selector">Select visualization:</label>
+            <!-- ================== CLUSTER VISUALIZATION ================== -->
 
-            <select id="plot-selector" onchange="changePlot()">
-              <option value="plots/subreddit_pca_3d_clusters.html">
-                PCA – All clusters
-              </option>
-              <option value="plots/subreddit_pca_3d_clusters_no_6.html">
-                PCA – Without Large & Heterogeneous
-              </option>
-              <option value="plots/subreddit_tsne_3d_clusters.html">
-                t-SNE – All clusters
-              </option>
-              <option value="plots/subreddit_tsne_3d_clusters_no_6.html">
-                t-SNE – Without Large & Heterogeneous
-              </option>
-            </select>
+            <div class="plot-selector-container">
+              <label for="plot-selector">Select visualization:</label>
 
-            <iframe
-              id="plot-frame"
-              src="plots/clustering/subreddit_pca_3d_clusters.html"
-              width="100%"
-              height="520"
-              style="border:none;"
-            ></iframe>
+              <select id="plot-selector">
+                <option value="plots/clustering/subreddit_pca_3d_clusters.html">
+                  PCA – All clusters
+                </option>
+                <option value="plots/clustering/subreddit_pca_3d_clusters_no_6.html">
+                  PCA – Without Large & Heterogeneous
+                </option>
+                <option value="plots/clustering/subreddit_tsne_3d_clusters.html">
+                  t-SNE – All clusters
+                </option>
+                <option value="plots/clustering/subreddit_tsne_3d_clusters_no_6.html">
+                  t-SNE – Without Large & Heterogeneous
+                </option>
+              </select>
+            </div>
 
+            <div class="plot-frame-container">
+              <iframe
+                id="plot-frame"
+                src="plots/clustering/subreddit_pca_3d_clusters.html"
+                loading="lazy"
+              ></iframe>
+            </div>
+
+            <!-- SCRIPT: must be AFTER the select + iframe -->
             <script>
-              function changePlot() {
-                const selector = document.getElementById("plot-selector");
+              document.getElementById("plot-selector").addEventListener("change", function () {
                 const iframe = document.getElementById("plot-frame");
-                iframe.src = selector.value;
-              }
+                iframe.src = this.value;
+              });
             </script>
+
 
             <h4>Cluster overview</h4>
 
@@ -353,14 +358,8 @@
               This normalized measure allows us to compare clusters of very different sizes.
             </p>
 
-            <div class="plot-container">
-              <iframe
-                src="plots/clustering/cluster_scatter_dropdown.html"
-                width="100%"
-                height="520"
-                style="border:none;"
-              ></iframe>
-            </div>
+            <iframe src="plots/clustering/negativity_rate_by_cluster.html" width="100%" height="520" style="border:none;"></iframe>
+
 
             <p>
               Based on this metric, we focus on four clusters:
@@ -388,9 +387,8 @@
             </p>
 
             <iframe
-              src="plots/clustering/negativity_rates_dropdown.html"
-              style="width: 100%; height: 560px; border: none;"
-              loading="lazy">
+              src="plots/negativity_dropdown.html"
+              style="width:100%; height:560px; border:none;">
             </iframe>
 
 
@@ -416,14 +414,11 @@
               We further analyze the relationship between cluster activity and hostility.
             </p>
             
-              <div class="plot-container">
-                <iframe
-                  src="plots/clustering/cluster_scatter_dropdown.html"
-                  width="100%"
-                  height="520"
-                  style="border:none;"
-                ></iframe>
-              </div>
+              <iframe
+                src="plots/cluster_scatter_dropdown.html"
+                style="width:100%; height:560px; border:none;">
+              </iframe>
+
 
             <p>
               Together, these results indicate that cluster activity and outward-facing behavior are strongly associated with hostility asymmetry.

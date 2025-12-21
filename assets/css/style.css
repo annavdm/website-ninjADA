@@ -693,3 +693,37 @@ footer{
   margin: 6px 0 0 0;
   line-height: 1.45;
 }
+
+.plot-selector-container {
+  margin: 12px 0 10px 0;
+}
+
+.plot-selector-container label {
+  color: #ffffff;
+  font-weight: 500;
+  margin-right: 8px;
+}
+
+.plot-selector-container select {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255,255,255,0.6);
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.plot-frame-container {
+  width: 100%;
+  height: 560px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.03);
+}
+
+.plot-frame-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
