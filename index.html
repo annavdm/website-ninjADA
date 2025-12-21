@@ -711,8 +711,11 @@
                 title="Retaliation Geo-Politics" style="width:100%; height:750px; border:none; background:transparent;">
             </div>
 
-            <h2>
+            <h3>
               Characteristic Feature Analysis
+            </h3>
+            <h2>
+              Pronouns feature analysis
             </h2>
             <p> In terms of how negativity shows up in the features, looking at the standardized mean differences for structural features, a higher value means that a given 
               pronoun shows up more in negatively linked posts than in positive ones. In the Geopolitics cluster, LIWC_Ipron (impersonal pronouns like “it”, “its”, “that”...) 
@@ -761,6 +764,15 @@
                         ">
             </div>
 
+            <h2>
+              Sentiment/emotion feature analysis
+            </h2>
+            <p>
+              Across both the mean‑difference and logit analyses, anger is the emotion that most consistently lines up with negative links, so when posts go negative here, 
+              they’re doing it in an angry way. General affect (LIWC_Affect: emotional words overall) is more common in negative posts if you just look at raw means, but once you control 
+              for the other features, it’s not strongly tied to negativity anymore. This is because affect is strongly correlated with anger. So the hater is not “being emotional” in general, he is angry and it shows in his writing style. 
+            </p>
+
             <div>
               <!-- Dropdown -->
               <label for="sentimentPlotSelector"><b>Select view</b></label>
@@ -789,11 +801,6 @@
 
             </div>
 
-            <p>
-              Across both the mean‑difference and logit analyses, anger is the emotion that most consistently lines up with negative links, so when posts go negative here, 
-              they’re doing it in an angry way. General affect (LIWC_Affect: emotional words overall) is more common in negative posts if you just look at raw means, but once you control 
-              for the other features, it’s not strongly tied to negativity anymore. So the hater is not “being emotional” in general, he is angry and it shows in his writing style. 
-            </p>
 
 
             <div id="plot-wrapper" id="spearman_geopo">
@@ -1363,9 +1370,17 @@
                 </div>
               </div>
             </section>
-            <h2>
+            <h3>
               Feature Analysis
+            </h3>
+            <h2>
+              Pronouns feature analysis
             </h2>
+            <p>
+              Again more impersonal pronouns and She/he pronouns that come out much more in negatively linked posts than positive. The difference in the univariate mean difference is statistically significative and 
+              comes out as the most negatively correlated with link sentiment. Yet the absolute value of the logit coefficient is lower than what showed in other clusters (like geopolitics). Looks like negatively linked posts show 
+              similar patterns accross clusters: looks like blaming other people to a third party is uncorrelated with interests but characteristic to a hater. 
+            </p>
 
 
 
@@ -1414,6 +1429,15 @@
     }
   });
 </script>
+
+<h2>
+  Sentiment/emotion feature analysis
+</h2>
+Again much more emotional words in the negative posts than in the neutral/positive posts. And also a lot of anger. Obviously anger is positively correlated with the LIWC_Affect, 
+so th
+<p>
+  
+</p>
 
 
             <div class="plot-wrapper" id="reddit_logit_pronouns">
