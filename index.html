@@ -2786,7 +2786,7 @@
             <h1 class="post-title">r/Conclusion</h1>
           </div>
 
-          <img class="post-thumb--preview" src="images/icon-conclusion.png" alt="Conclusion preview">
+          <img class="post-thumb--preview" src="images/icon-conclusion-2.png" alt="Conclusion preview">
 
           <div class="post-actions">
             <button class="vote-btn up" type="button">▲</button>
@@ -2928,6 +2928,27 @@
 
   </div>
 
+  
+  <div class="hate-post-wrapper">
+
+    <button class="reddit-btn" onclick="showRandomPost()">
+      Reveal hate Reddit post...
+    </button>
+  
+    <div id="hate-post" class="post-card hidden">
+      <div class="post-header-end">
+        <span id="post-username" class="username-end"></span>
+
+      </div>
+  
+      <div id="post-content" class="post-content"></div>
+    </div>
+  
+  </div>
+
+
+
+
   <!-- ===== Hover bubbles JS (post #1 open view) ===== -->
   <script>
     const NEGATIVE_COMMENTS = [
@@ -3026,6 +3047,33 @@
     updatePlotA();
     updatePlotB();
   </script>
+
+  <script>
+    const hatePosts = [
+      {
+      
+        text: " This thread is sickening. https://www.reddit.com/r/politics/comments/4dh3rf/the_panama_papers_let_bernie_sanders_say_i_told/?sort=top People are giving Bernie credit for exposing the corruption... while blindly ignoring that he plans on allowing for more corruption with his plans to make government massive. Wow. Liberalism really is a mental disorder."
+      },
+      {
+        
+        text: "What's that? You think they are generic as fuck and don't deserve the attention they get? FUCKING ELITIST! YOU'RE A CUNT FOR NOT LIKING WHAT I LIKE! http://www.reddit.com/r/Metal/comments/204toi/cannibal_corpse_gutted/cfztvk8 <nojerk> you know the other day I said Nightwish fans are the most butthurt when someone insults said band? Maybe I should rethink that, this thread is fucking something else. I'm glad it's not me for once in the butthurt rage firing line <jerkon>"
+      },
+      {
+        
+        text: "http://www.reddit.com/r/AdviceAnimals/comments/1vwd0o/as_someone_who_doesnt_have_a_lot_of_space_in_my/ Haha, this pile of shit magically got 3200+ upvotes.  So sickening."
+      }
+    ];
+    
+    /* Show a random post */
+    function showRandomPost(){
+      const post = hatePosts[Math.floor(Math.random() * hatePosts.length)];
+    
+      document.getElementById("post-content").textContent = post.text;
+    
+      document.getElementById("hate-post").classList.remove("hidden");
+    }
+  </script>
+
 
   <script>
     const selector = document.getElementById('plotSelector');
