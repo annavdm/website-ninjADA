@@ -714,13 +714,14 @@
             <h2>
               Characteristic Feature Analysis
             </h2>
-            <p> Lets see how negativity translates in the features. Plotting the standardized difference of the mean for
-              structural features a high value means that
-              the pronoun is more present in negatively linked posts than in positive. Here the I pronoun and the She/He
-              pronouns are most represented in negative posts.
-              The mean difference is statistically significative. For the logits coefficient error bars show
-              uncertainty; coefficients far from zero with tight intervals are the most reliable predictors.
-              T
+            <p> In terms of how negativity shows up in the features, looking at the standardized mean differences for structural features, a higher value means that a given 
+              pronoun shows up more in negatively linked posts than in positive ones. In the Geopolitics cluster, LIWC_Ipron (impersonal pronouns like “it”, “its”, “that”...) 
+              and LIWC_SheHe (she/he pronouns) are clearly more common in negative-link posts, and that mean difference is statistically significant. The logit analysis backs 
+              this up: the pronouns most strongly associated with negative links are again LIWC_Ipron and LIWC_SheHe, and because the model is multivariate it captures the unique 
+              effect of each feature while controlling for correlations with the others, which helps avoid confounding issues. Basically the typical “geopolitics hater” seems to 
+              lean heavily on third-person and impersonal pronouns, which suggests a lot of blaming and finger‑pointing at others. The combo of more third‑person and fewer “you” 
+              pronouns also hints at a style that’s more about indirect aggression and complaining about people or groups to third parties than actually addressing others directly. 
+              Looks like the geopolitic hater is afraid of direct confrontation and may be kind of a coward ? 
 
             </p>
             <div>
@@ -787,6 +788,13 @@
               </div>
 
             </div>
+
+            <p>
+              Across both the mean‑difference and logit analyses, anger is the emotion that most consistently lines up with negative links, so when posts go negative here, 
+              they’re doing it in an angry way. General affect (emotional words overall) is more common in negative posts if you just look at raw means, but once you control 
+              for the other features, it’s not strongly tied to negativity anymore—so it’s not “being emotional” in general, it’s specifically anger‑flavored emotion that marks 
+             the geopolitic hater style.
+            </p>
 
 
             <div id="plot-wrapper" id="spearman_geopo">
