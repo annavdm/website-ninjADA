@@ -316,12 +316,52 @@
 
             <section class="method">
               <h3>Reaction dynamics</h3>
-              <p>[Short description of method 1.]</p>
+              <p>The aim is to analyze the typical profile of a hater in online communities. Based on the clusters 
+                identified in our previous analysis, we study the behavior and reactions of different subreddits according 
+                to their main topics of interest. Key indicators are: negativity levels, targeted groups or topics, and responses 
+                to incoming negative links. Bu-y these analyses we determine how aggressive is the hater in a community and how sensitive 
+              he is to negativity</p>
+              <h2>Negativity rate analysis</h2>
+              <p>
+                Negativity of a subreddit or of a cluster is the total posts sent with negative link sentiment over total number of posts sent. 
+                By comparing negativity trends and repartition between targeted clusters and subreddits it enables us to extract characteristic behavior of 
+                a hater within a cluster. 
+              </p>
+              <h2>Atatck spike analysis</h2>
+              To study how the cluster reacts to periods of high incoming negativity, we analyze changes in 
+              its behavior before and after these events. For each detected attack, we 
+              compute the cluster’s negativity rate over two symmetric time windows of 
+              seven days: one preceding the event and one following it.<br>
+
+              <br>To determine whether the observed changes in negativity are
+               statistically meaningful, we apply a Wilcoxon signed-rank test.
+                This non-parametric test compares paired observations and does 
+                not assume a normal distribution of the data, making it well 
+                suited for skewed or sparse interaction measures such as negativity 
+                rates. The test evaluates whether the median difference between the 
+                pre- and post-attack negativity rates significantly differs from zero.
+
+              <br>This approach allows us to assess whether periods of high 
+              received negativity are followed by systematic increases or 
+              decreases in negative linking behavior, thereby providing 
+              insight into the cluster’s reactivity and response strategies 
+              n the face of external attacks.
+              <p>
+
+              </p>
             </section>
 
             <section class="method">
               <h3>Feature analysis</h3>
-              <p>[Short description of method 2.]</p>
+              <p>Feature analysis is done by analysing the properties section of the hyperlink dataset. Indeed they provide informtion on structure, themes
+                and emotions for each posts. The features that came out as characteristic hater features for both methods were kept. 
+              </p>
+              <h2>Standardized mean difference</h2>
+              <p>
+              </p>
+              <h2>
+                Logit analysis
+              </h2>
             </section>
 
             <section class="method">
@@ -556,24 +596,56 @@
       <h2>
       Characteristic Feature Analysis
       </h2>
+      <p> Lets see how negativity translates in the features. Plotting the standardized difference of the mean for structural features a high value means that 
+        the pronoun is more present in negatively linked posts than in positive. Here the I pronoun and the She/He pronouns are most represented in negative posts. 
+        The mean difference is statistically significative. For the logits coefficient error bars show uncertainty; coefficients far from zero with tight intervals are the most reliable predictors. 
+        T
+        
+      </p>
+<div>
+  <!-- Dropdown -->
+  <label for="plotSelector"><b>Select view</b></label>
+  <select id="plotSelector">
+    <option value="plot">Difference of the mean – pronoun features</option>
+    <option value="table">p-values of the pronoun features</option>
+  </select>
+</div>
 
-              <div class="plot-wrapper" id="spearman_geopo">
-                <embed src="plots/maelle/geo_politics_pronouns_diff.html" type="text/html"
-                  title="Difference of the mean - promoun features" style="
-                          width: 100%;
-                          height: 750px;
-                          border: none;
-                          background: transparent;
-                        ">
-              </div>
-              <embed src="plots/maelle/geopolitics_pronouns_diff_features_table.html" type="text/html"
-                title="p values of the pronoun features" style="
-                          width: 100%;
-                          height: 750px;
-                          border: none;
-                          background: transparent;
-                        ">
-          </div>
+<!-- Container for both embeds -->
+<div id="geopoContainer" style="margin-top: 10px;">
+
+  <!-- Plot view -->
+  <div id="geopo_plot_view">
+    <embed src="plots/maelle/geo_politics_pronouns_diff.html" type="text/html"
+           title="Difference of the mean - pronoun features"
+           style="width: 100%; height: 750px; border: none; background: transparent;">
+  </div>
+
+  <!-- Table view -->
+  <div id="geopo_table_view" style="display: none;">
+    <embed src="plots/maelle/geopolitics_pronouns_diff_features_table.html" type="text/html"
+           title="p values of the pronoun features"
+           style="width: 100%; height: 750px; border: none; background: transparent;">
+  </div>
+
+</div>
+
+<script>
+  const selector = document.getElementById('plotSelector');
+  const plotView = document.getElementById('geopo_plot_view');
+  const tableView = document.getElementById('geopo_table_view');
+
+  selector.addEventListener('change', function () {
+    if (this.value === 'plot') {
+      plotView.style.display = 'block';
+      tableView.style.display = 'none';
+    } else {
+      plotView.style.display = 'none';
+      tableView.style.display = 'block';
+    }
+  });
+</script>
+
           <div class="plot-wrapper" id="spearman_geopo">
             <embed src="plots/maelle/geo_logit_pronouns.html" type="text/html" title="Logit pronoun analysis" style="
                           width: 100%;
@@ -582,24 +654,50 @@
                           background: transparent;
                         ">
           </div>
-          <div class="plot-wrapper" id="spearman_geopo">
-            <embed src="plots/maelle/geo_politics_sentiment_diff.html" type="text/html"
-              title="Difference of the mean - promoun features" style="
-                          width: 100%;
-                          height: 750px;
-                          border: none;
-                          background: transparent;
-                        ">
-            <div class="plot-wrapper" id="spearman_geopo">
-              <embed src="plots/maelle/geopolitics_sentiments_diff_features_table.html" type="text/html"
-                title="p values of the sentiment difference" style="
-                          width: 100%;
-                          height: 750px;
-                          border: none;
-                          background: transparent;
-                        ">
-            </div>
-            <div class="plot-wrapper" id="spearman_geopo">
+<div>
+  <!-- Dropdown -->
+  <label for="sentimentPlotSelector"><b>Select view</b></label>
+  <select id="sentimentPlotSelector">
+    <option value="plot">Difference of the mean – sentiment features</option>
+    <option value="table">p-values of the sentiment features</option>
+  </select>
+</div>
+
+<!-- Container for both embeds -->
+<div id="geopoSentimentContainer" style="margin-top: 10px;">
+
+  <!-- Plot view -->
+  <div id="geopo_sentiment_plot_view">
+    <embed src="plots/maelle/geo_politics_sentiment_diff.html" type="text/html"
+           title="Difference of the mean - sentiment features"
+           style="width: 100%; height: 750px; border: none; background: transparent;">
+  </div>
+
+  <!-- Table view -->
+  <div id="geopo_sentiment_table_view" style="display: none;">
+    <embed src="plots/maelle/geopolitics_sentiments_diff_features_table.html" type="text/html"
+           title="p values of the sentiment difference"
+           style="width: 100%; height: 750px; border: none; background: transparent;">
+  </div>
+
+</div>
+
+<script>
+  const sentimentSelector = document.getElementById('sentimentPlotSelector');
+  const sentimentPlotView = document.getElementById('geopo_sentiment_plot_view');
+  const sentimentTableView = document.getElementById('geopo_sentiment_table_view');
+
+  sentimentSelector.addEventListener('change', function () {
+    if (this.value === 'plot') {
+      sentimentPlotView.style.display = 'block';
+      sentimentTableView.style.display = 'none';
+    } else {
+      sentimentPlotView.style.display = 'none';
+      sentimentTableView.style.display = 'block';
+    }
+  });
+</script>
+s="plot-wrapper" id="spearman_geopo">
               <embed src="plots/maelle/geo_logit_sentiments.html" type="text/html" title="Logit sentiment analysis"
                 style="
                           width: 100%;
