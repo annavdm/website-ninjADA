@@ -85,125 +85,196 @@
 
           <div class="post-body">
             <!-- IMAGE before Introduction + hover bubbles -->
-            <div class="hover-hate-wrapper" id="hateZone">
-              <img src="images/reddit-img3.png" alt="Reddit visualization" class="hover-hate-image">
-              <div class="hover-bubble-layer" id="hoverBubbleLayer"></div>
-            </div>
+
 
             <section id="introduction">
               <h2>Introduction</h2>
-              <p class="intro-big-text">
-              Welcome! 👋<br>
-              This website digs into how online conflict actually spreads on Reddit.
-              Using data from 2014–2017, we map how subreddits connect to each other and uncover a less visible network built around negativity. We zoom in on the roughly 10% of interactions marked as hostile and take a closer look at the behavior behind them — where they post, how they write, who they target, and how often they show up.
-              The goal is to understand patterns: how “hate” travels between communities and what fuels online anger in the first place. If you’re interested in Reddit dynamics, social networks, or the mechanics of online conflict, you’re in the right place.
-              Jump in, explore the data, and join the discussion!!              </p>
+            
+              <div class="reddit-comment">
+                <div class="reddit-comment__avatar">
+                  <img src="images/ninjadateam.png" alt="u/NinjADA profile picture">
+                </div>
+            
+                <div class="reddit-comment__content">
+                  <div class="reddit-comment__meta">
+                    <span class="reddit-comment__user">u/NinjADA</span>
+                    <span class="reddit-comment__dot">•</span>
+                    <span class="reddit-comment__time">pinned</span>
+                  </div>
+            
+                  <p class="reddit-comment__text">
+                  Welcome! 👋<br><br>
+                  This website digs into how online conflict actually spreads on Reddit.
+
+                  Using data from 2014–2017, we map how subreddits connect to each other and uncover a less visible
+                  network built around negativity. We zoom in on the roughly 10% of interactions marked as hostile and
+                  take a closer look at the behavior behind them where they post, how they write, who they target, and how
+                  often they show up.
+
+                  The goal is to understand patterns: how “hate” travels between communities and what fuels online anger
+                  in the first place. If you’re interested in Reddit dynamics, social networks, or the mechanics of online
+                  conflict, you’re in the right place.
+                  Jump in, explore the data, and join the discussion!!
+                  </p>
+                </div>
+              </div>
             </section>
+
 
             <section id="data-presentation">
               <h2>Data Presentation</h2>
 
+              <div class="reddit-comment">
+                <div class="reddit-comment__avatar">
+                  <img src="images/ninjadateam.png" alt="u/NinjADA profile picture">
+                </div>
+            
+                <div class="reddit-comment__content">
+                  <div class="reddit-comment__meta">
+                    <span class="reddit-comment__user">u/NinjADA</span>
+                    <span class="reddit-comment__dot">•</span>
+                    <span class="reddit-comment__time">pinned</span>
+                  </div>
               <section id="dataset-hyperlinks">
-                <h3>Hyperlink Network Dataset</h3>
+                <h3>For those wondering what hyperlink the dataset looks like</h3>
                 <p class="data-intro">
-                  So now there’s this giant network of Reddit where every time one subreddit links to another, it counts
+                  So there’s this giant network of Reddit where every time one subreddit links to another, it counts
                   as a little arrow from
-                  “source” to “target.”Here is a simplified version of what it represents with the 10 most active subreddits. If the arrow is read 
+                  “source” to “target.”Here is a simplified version of what it represents with the 10 most active
+                  subreddits. If the arrow is red
                   it means that the source subreddit sent more negative links than positive.
                 </p>
-                <img
-                src="plots/subreddit_network.png"
-                alt="Subreddit network"
-                class="img-center"
-                style="width: 500px; height: auto; border-radius: 20px;"
-                > 
-               <div class="plot-panel" id="plotB-sentiment">
-                 <p class="plot-caption">
-                   Hostile posts represent about 10% of the dataset — the goal is to understand what characterizes that “red” portion.
-                 </p>
-                 <img
-                    src="plots/sentiment_distribution.png"
-                    alt="Sentiment distribution"
-                    class="img-center"
-                    style="width: 500px; height: auto; border-radius: 20px;"
-                    >
+                <img src="plots/subreddit_network.png" alt="Subreddit network" class="img-center"
+                  style="width: 500px; height: auto; border-radius: 20px;">
+              </div>
+              </div>
+              </section>
+
+              <div class="reddit-comment">
+                <div class="reddit-comment__avatar">
+                  <img src="images/ninjadateam.png" alt="u/NinjADA profile picture">
+                </div>
+            
+                <div class="reddit-comment__content">
+                  <div class="reddit-comment__meta">
+                    <span class="reddit-comment__user">u/NinjADA</span>
+                    <span class="reddit-comment__dot">•</span>
+                    <span class="reddit-comment__time">pinned</span>
+                  </div>
+              
+                <div class="plot-panel" id="plotB-sentiment">
+                  <p class="dataset-hyperlinks">
+                    Hostile posts represent about 10% of the dataset — the goal is to understand what characterizes that
+                    “red” portion.
+                  </p>
+                  <img src="plots/sentiment_distribution.png" alt="Sentiment distribution" class="img-center"
+                    style="width: 500px; height: auto; border-radius: 20px;">
+                </div>
+                </div>
                 </div>
 
-                <div class="plot-panel" id="plotB-sentiment">
-  <p class="plot-caption">
-    The dataset provides information on where the link is located — either title or body.
-  </p>
+                <div class="reddit-comment">
+                <div class="reddit-comment__avatar">
+                  <img src="images/ninjadateam.png" alt="u/NinjADA profile picture">
+                </div>
+            
+                <div class="reddit-comment__content">
+                  <div class="reddit-comment__meta">
+                    <span class="reddit-comment__user">u/NinjADA</span>
+                    <span class="reddit-comment__dot">•</span>
+                    <span class="reddit-comment__time">pinned</span>
+                  </div>
 
-  <!-- Toggle controls -->
-  <div class="plot-toggle">
-    <label>
-      <input type="radio" name="bt-toggle" value="overall" checked>
-     Overall body vs title
-    </label>
-    <label>
-      <input type="radio" name="bt-toggle" value="by-sentiment">
-      Body vs title by sentiment
-    </label>
-  </div>
+                <div class="plot-caption" id="plotB-sentiment">
+                  <p class="plot-caption">
+                    The dataset provides information on where the link is located, either title or body. Look at the negative - positive/neutral posts repartition according to where the post is 
+                    located. 
+                  </p>
 
-  <!-- Both images, one visible at a time -->
-  <img
-    id="img-overall"
-    src="plots/body_vs_title_distribution.png"
-    alt="Body vs title distribution"
-    class="img-center"
-    style="width: 500px; height: auto; border-radius: 20px;"
-  >
+                  <!-- Toggle controls -->
+                  <div class="plot-toggle">
+                    <label>
+                      <input type="radio" name="bt-toggle" value="overall" checked>
+                      Overall body vs title
+                    </label>
+                    <label>
+                      <input type="radio" name="bt-toggle" value="by-sentiment">
+                      Body vs title by sentiment
+                    </label>
+                  </div>
 
-  <img
-    id="img-by-sentiment"
-    src="plots/body_title_sentiment.png"
-    alt="Sentiment distribution in body and title"
-    class="img-center"
-    style="width: 500px; height: auto; border-radius: 20px; display: none;"
-  >
-</div>
+                  <!-- Both images, one visible at a time -->
+                  <img id="img-overall" src="plots/body_vs_title_distribution.png" alt="Body vs title distribution"
+                    class="img-center" style="width: 500px; height: auto; border-radius: 20px;">
 
-<script>
-  const overallImg = document.getElementById("img-overall");
-  const bySentimentImg = document.getElementById("img-by-sentiment");
-  const radios = document.querySelectorAll("input[name='bt-toggle']");
-
-  radios.forEach(r => {
-    r.addEventListener("change", () => {
-      if (r.value === "overall") {
-        overallImg.style.display = "block";
-        bySentimentImg.style.display = "none";
-      } else {
-        overallImg.style.display = "none";
-        bySentimentImg.style.display = "block";
-      }
-    });
-  });
-</script>
+                  <img id="img-by-sentiment" src="plots/body_title_sentiment.png"
+                    alt="Sentiment distribution in body and title" class="img-center"
+                    style="width: 500px; height: auto; border-radius: 20px; display: none;">
+                </div>
+                </div>
+                </div>
               </section>
-                          <section id="dataset-embeddings">
-                <h3>Subreddit Embeddings</h3>
+              <section id="dataset-embeddings">
+              <div class="reddit-comment">
+              <div class="reddit-comment__avatar">
+              <img src="images/ninjadateam.png" alt="u/NinjADA profile picture">
+              </div>
+              <div class="reddit-comment__content">
+                  <div class="reddit-comment__meta">
+                    <span class="reddit-comment__user">u/NinjADA</span>
+                    <span class="reddit-comment__dot">•</span>
+                    <span class="reddit-comment__time">pinned</span>
+                  </div>
+
+                <div class="plot-container" id="plotB-sentiment">
+
+                <h3>Let's not ommit our other important dataset : the SUBREDDIT EMBEDDINGS dataset</h3>
                 <p class="data-intro">
                   So the dataset takes about 2.5 years of Reddit activity in 51,278 unique subreddits, then turns each
                   subreddit into a 300-dimensional vector
                   that captures “who posts where,” meaning that subreddits that have similar users end up close together
-                  in the embedding space.
+                  in the embedding space. Here it is projected in 2D using PCA dimension reduction ! Unfortunately the subreddits of the hyperlinks dataset and the 
+                  ones from the embeddings dataset do not exactly match so we kept only the one present in both. We also removed all the subreddits that were sources of less than 5 posts 
+                  because they were too inactive and would bias negativity rates with their small count. Thus filtered dataset kept 94% of the posts present in the hyperlink dataset
+                  and 41% of the subreddits. 
+
                 </p>
 
                 <div class="plot-panel" id="plotA-pca_2d">
                   <iframe src="plots/subreddit_pca_2d.html" height="450" title="Subreddit Embeddings in 2D"></iframe>
                 </div>
+                </div>
+              </div>
               </section>
             </section>
+
+
             <section id="research-questions">
+              <div class="reddit-comment">
+              <div class="reddit-comment__avatar">
+              <img src="images/ninjadateam.png" alt="u/NinjADA profile picture">
+              </div>
+            <div class="reddit-comment__content">
+                  <div class="reddit-comment__meta">
+                    <span class="reddit-comment__user">u/NinjADA</span>
+                    <span class="reddit-comment__dot">•</span>
+                    <span class="reddit-comment__time">pinned</span>
+                  </div>
               <h2>Research Questions</h2>
+              <p>
+              So now that you've become a reddit hyperlink dataset Ninja like us aren't there many questions popping into your head ? 
+              We asked ourseleves the following...
+              </p>
               <div class="rq-grid">
                 <div class="rq-card">Is a hater likely to be active in certain subreddits?</div>
                 <div class="rq-card">Are there persisting conflicts between subreddits?</div>
                 <div class="rq-card">Does a hater have a particular way of writing?</div>
+                <div class="rq-card"> Do different kinds of communities exhibit different hostility patterns ?</div>
               </div>
+            </div>
             </section>
+
+
 
 
 
@@ -216,7 +287,7 @@
       <article class="post" id="post-clusteringninja" tabindex="0" aria-expanded="false">
         <div class="post-summary" role="button" aria-label="Open post">
           <div class="post-header">
-            <img src="images/fond_reddit_mechant.png" alt="r/clusteringninja icon" class="post-icon">
+            <img src="images/icon-clustering.png" alt="r/clusteringninja icon" class="post-icon">
             <div class="post-meta">
               <div class="post-subreddit">r/clusteringninja</div>
               <div class="post-author">Posted by u/NinjADA • 2025</div>
@@ -227,7 +298,7 @@
             <h1 class="post-title">ClusteringNinja</h1>
           </div>
 
-          <img class="post-thumb" src="images/redditcore_preview.png" alt="ClusteringNinja preview">
+          <img class="post-thumb" src="images/post-clustering.png" alt="ClusteringNinja preview">
 
           <div class="post-actions">
             <button class="vote-btn up" type="button" aria-label="Like">▲</button>
@@ -241,37 +312,278 @@
         <div class="post-full">
           <div class="post-topbar" role="button" aria-label="Close post">
             <button class="back-btn" type="button" aria-label="Back">←</button>
-            <img src="images/icon-reddit.png" alt="r/clusteringninja icon" class="post-icon post-icon--hero">
+            <img src="images/icon-clustering.png" alt="r/clusteringninja icon" class="post-icon post-icon--hero">
             <div class="topbar-title">r/clusteringninja</div>
           </div>
 
           <div class="post-body">
-            <h2>Content</h2>
-            <section id="anatomy-of-a-hater">
-              <h2>Anatomy of a Hater</h2>
-              <p>
-                We cluster subreddits into communities to see if some are more “hater-friendly” than others.
-              </p>
-
-              <div class="plot-panel">
-                <iframe src="plots/subreddit_pca_clusters_2d.html" height="450" title="Clusters"></iframe>
+          <div class="reddit-comment">
+              <div class="reddit-comment__avatar">
+              <img src="images/ninjadateam.png" alt="u/NinjADA profile picture">
               </div>
+            <div class="reddit-comment__content">
+                  <div class="reddit-comment__meta">
+                    <span class="reddit-comment__user">u/NinjADA</span>
+                    <span class="reddit-comment__dot">•</span>
+                    <span class="reddit-comment__time">pinned</span>
+                  </div>
+            <h1>In case you were wondering what the plan is</h1>
+            <h2>Clustering subreddit into themes to identify different types of hate</h2>
 
-              <div class="plot-panel">
-                <iframe src="plots/cluster_treemap.html" height="450" title="Treemap"></iframe>
-              </div>
-            </section>
+            <p>
+              After filtering the dataset, we retain 22,954 subreddits.
+              In our analysis, a community corresponds to a single subreddit,
+              while a theme refers to a group of subreddits that share similar audiences.
+            </p>
 
-            <section id="conclusion">
-              <h2>Conclusion</h2>
-              <p>
-                This project maps hostile interactions between communities and starts sketching the behavioral “profile”
-                of haters.
-              </p>
-            </section>
+            <h3>Do different kinds of communities exhibit different hostility patterns?</h3>
 
-            <h2>Limitations</h2>
-            <p>(Fill this post limitations.)</p>
+            <p>
+              Rather than studying hate subreddit by subreddit, we group communities by theme
+              and analyze hostility at a higher level.
+              This allows us to compare how different types of communities behave,
+              instead of focusing on isolated cases.
+            </p>
+
+            <h3>Step 1 — Clustering subreddits</h3>
+
+            <p>
+              Each subreddit is represented by a 300-dimensional embedding and subreddits close in the embedding space tend to attract users
+              with similar interests. That's why the subreddits can be grouped into themes based on their embeddings.
+            </p>
+
+            <p>
+              Before clustering, to reduce noise and redundancy in this space, we apply a PCA on the filtered subreddit
+              embeddings and keep 23 principal components.
+              These components explain 80% of the total variance of the original embedding space,
+              which allows us to work in a lower-dimensional space.
+            </p>
+
+            <p>
+              We then apply KMeans on the PCA-reduced embeddings and obtain 15 clusters.
+              KMeans groups subreddits by minimizing distances within clusters.
+              Other approaches such as DBSCAN after t-SNE or Louvain community detection were tested,
+              but KMeans produced clusters that were more stable and easier to interpret at scale.
+            </p>
+
+            <p>
+              Below, the clusters can be visualized in 3D using either PCA or t-SNE.
+              PCA highlights the global structure of the embedding space,
+              while t-SNE helps visualize local neighborhoods.
+            </p>
+
+            <!-- ================== CLUSTER VISUALIZATION ================== -->
+
+            <div class="plot-selector-container">
+              <label for="plot-selector">Select visualization:</label>
+
+              <select id="plot-selector">
+                <option value="plots/clustering/subreddit_pca_3d_clusters.html">
+                  PCA – All clusters
+                </option>
+                <option value="plots/clustering/subreddit_pca_3d_clusters_no_6.html">
+                  PCA – Without Large & Heterogeneous
+                </option>
+                <option value="plots/clustering/subreddit_tsne_3d_clusters.html">
+                  t-SNE – All clusters
+                </option>
+                <option value="plots/clustering/subreddit_tsne_3d_clusters_no_6.html">
+                  t-SNE – Without Large & Heterogeneous
+                </option>
+              </select>
+            </div>
+
+            <div class="plot-frame-container">
+              <iframe
+                id="plot-frame"
+                src="plots/clustering/subreddit_pca_3d_clusters.html"
+                loading="lazy"
+              ></iframe>
+            </div>
+
+            <!-- SCRIPT: must be AFTER the select + iframe -->
+            <script>
+              document.getElementById("plot-selector").addEventListener("change", function () {
+                const iframe = document.getElementById("plot-frame");
+                iframe.src = this.value;
+              });
+            </script>
+
+            <script>
+              const iframe = document.getElementById("plot-frame");
+              const selector = document.getElementById("plot-selector");
+
+              function resizePlotlyInIframe() {
+                try {
+                  const iframeWindow = iframe.contentWindow;
+                  if (iframeWindow && iframeWindow.Plotly) {
+                    iframeWindow.Plotly.Plots.resize(
+                      iframeWindow.document.querySelector(".js-plotly-plot")
+                    );
+                  }
+                } catch (e) {
+                  // silently ignore cross-origin issues (won't happen here)
+                }
+              }
+
+              // 🔁 When dropdown changes → reload iframe
+              selector.addEventListener("change", function () {
+                iframe.src = this.value;
+              });
+
+              // ✅ When iframe finishes loading → force Plotly resize
+              iframe.addEventListener("load", function () {
+                // slight delay ensures layout is settled
+                setTimeout(resizePlotlyInIframe, 50);
+              });
+            </script>
+
+
+            <h4>Cluster overview</h4>
+
+            <p>
+              The resulting clusters vary greatly in size.
+              Some capture very large and heterogeneous parts of Reddit,
+              while others correspond to more specific themes.
+              Below are representative subreddits for each cluster.
+            </p>
+
+            <ul>
+              <li><u>Diverse Niche Communities</u> (2,920): r/endlessspace, r/clubpenguin, r/dota2betting</li>
+              <li><u>Geo-Politics</u> (269): r/geopolitics, r/ukrainianconflict, r/truereddit</li>
+              <li><u>Unofficial Platforms & Digital Commerce</u> (130): r/steamgameswap, r/freestuffnyc, r/sweepstakes</li>
+              <li><u>E-Sports</u> (192): r/competitivehs, r/clashroyale, r/summonerswar</li>
+              <li><u>Tinkerers</u> (446): r/surfing, r/longboarding, r/soylent</li>
+              <li><u>Pop-Cuture</u> (1,111): r/davidbowie, r/sadcringe, r/100movies365days</li>
+              <li><u>Large & Heterogeneous</u> (14,106): r/askreddit, r/videos, r/place</li>
+              <li><u>Mainstream Fandoms & Social Spaces</u> (545): r/southpark, r/toontown, r/coys</li>
+              <li><u>Cuture Literacy</u> (1,567): r/wealth, r/qatar, r/farming</li>
+              <li><u>Gaming Universe</u> (382): r/witcher, r/overclocking, r/battlefront</li>
+              <li><u>BizTech</u> (185): r/technology, r/hacking, r/marketing</li>
+              <li><u>Porn</u> (489): r/milf, r/dirtysmall, r/bigboobsgonewild</li>
+              <li><u>Sports Pro</u> (169): r/nfl, r/fantasyfootball, r/ea_nhl</li>
+              <li><u>Reddit Core – Memes & General Chat</u> (261): r/videos, r/explainlikeimfive, r/place</li>
+              <li><u>Self-Improvement & Mental Health</u> (182): r/iwanttolearn, r/amiugly, r/teenagers</li>
+            </ul>
+            </div>
+            </div>
+
+
+            <h3>Step 2 — Definition of a Hater</h3>
+
+            <p>
+              To quantify hostility, we define the negativity rate of a cluster as:
+            </p>
+
+            <p style="text-align:center;">
+              Negativity rate = (number of negative posts) / (total number of posts)
+            </p>
+
+            <p>
+              This normalized measure allows us to compare clusters of very different sizes.
+            </p>
+
+            <iframe src="plots/clustering/negativity_rate_by_cluster.html" width="100%" height="520" style="border:none;"></iframe>
+
+
+            <p>
+              Based on this metric, we focus on four clusters:
+              Geo-Politics, Reddit Core – Memes & General Chat, Pop-Culture,
+              and Self-Improvement & Mental Health.
+              These clusters have the highest negativity rates among all themes.
+            </p>
+
+            <p>
+              Although Culture Literacy also shows a high negativity rate,
+              it is excluded from further analysis because its topics largely overlap
+              with Geo-Politics, making it difficult to distinguish meaningful differences
+              between the two clusters.
+            </p>
+
+            <h3>Step 3 — General observations on their negativity</h3>
+
+            <h4>Inter- vs intra-community negativity</h4>
+
+            <p>
+              This additional analysis allows to identify the most negative clusters inside 
+              their own communities (highest negativity rate on the posts linked to subreddits 
+              of the same cluster) and in their interactions with other clusters (highest negativity 
+              rate on the posts linked to another cluster).
+            </p>
+
+            <iframe
+              src="plots/clustering/negativity_rates_dropdown.html"
+              style="width:100%; height:560px; border:none;">
+            </iframe>
+
+
+            <p>
+              Most selected clusters are highly negative both within their own communities
+              and toward other clusters.
+              This indicates that hostility is not limited to internal discussions,
+              but also appears in interactions across themes.
+            </p>
+
+            <p>
+              The Self-Improvement & Mental Health cluster behaves differently.
+              Here, negativity is more concentrated inside the community itself.
+              This aligns with the nature of discussions in these subreddits,
+              which often involve personal issues, advice, and direct feedback,
+              and can therefore appear more critical in tone without being outwardly aggressive.
+            </p>
+
+
+            <h4>Cluster size and statistical patterns</h4>
+
+            <p>
+              We further analyze the relationship between cluster activity and hostility.
+            </p>
+            
+              <iframe
+                src="plots/clustering/cluster_scatter_dropdown.html"
+                style="width:100%; height:560px; border:none;">
+              </iframe>
+
+
+            <p>
+              Together, these results indicate that cluster activity and outward-facing behavior are strongly associated with hostility asymmetry.
+              Clusters that are more active and that send more posts than they receive are, on average, more likely to be net contributors of negative content.
+            </p>
+
+            <h3>Conclusion</h3>
+
+            <p>
+              The four selected clusters stand out because they have the highest negativity rates
+              among all themes.
+              Culture Literacy is excluded to focus on clusters that are clearly distinct
+              in terms of topics and interaction patterns.
+            </p>
+
+            <p>
+              Looking more closely at Geo-Politics, Reddit Core – Memes & General Chat,
+              Pop-Culture, and Self-Improvement & Mental Health,
+              common characteristics of what we call “hater” clusters start to emerge.
+            </p>
+
+            <p>
+              These communities are not small or isolated corners of Reddit.
+              On the contrary, they are among the largest and most active clusters,
+              with many interactions both within and across communities.
+              Indeed, high activity means higher exposure to conflict,
+              which naturally increases the likelihood of negative exchanges.
+            </p>
+
+            <p>
+              Another shared feature is that these clusters are sending more posts than they receive.
+              Hater clusters are therefore not only reacting to attacks from others,
+              but often play an active role in spreading negativity through the network.
+            </p>
+
+            <p>
+              Further analyses will explore how these selected clusters differ
+              in the way they react to hate, express negativity,
+              and evolve over time.
+            </p>
 
             <footer>© 2025 NinjADA Team</footer>
           </div>
@@ -316,35 +628,40 @@
 
             <section class="method">
               <h3>Reaction dynamics</h3>
-              <p>The aim is to analyze the typical profile of a hater in online communities. Based on the clusters 
-                identified in our previous analysis, we study the behavior and reactions of different subreddits according 
-                to their main topics of interest. Key indicators are: negativity levels, targeted groups or topics, and responses 
-                to incoming negative links. Bu-y these analyses we determine how aggressive is the hater in a community and how sensitive 
-              he is to negativity</p>
+              <p>The aim is to analyze the typical profile of a hater in online communities. Based on the clusters
+                identified in our previous analysis, we study the behavior and reactions of different subreddits
+                according
+                to their main topics of interest. Key indicators are: negativity levels, targeted groups or topics, and
+                responses
+                to incoming negative links. Bu-y these analyses we determine how aggressive is the hater in a community
+                and how sensitive
+                he is to negativity</p>
               <h2>Negativity rate analysis</h2>
               <p>
-                Negativity of a subreddit or of a cluster is the total posts sent with negative link sentiment over total number of posts sent. 
-                By comparing negativity trends and repartition between targeted clusters and subreddits it enables us to extract characteristic behavior of 
-                a hater within a cluster. 
+                Negativity of a subreddit or of a cluster is the total posts sent with negative link sentiment over
+                total number of posts sent.
+                By comparing negativity trends and repartition between targeted clusters and subreddits it enables us to
+                extract characteristic behavior of
+                a hater within a cluster.
               </p>
               <h2>Atatck spike analysis</h2>
-              To study how the cluster reacts to periods of high incoming negativity, we analyze changes in 
-              its behavior before and after these events. For each detected attack, we 
-              compute the cluster’s negativity rate over two symmetric time windows of 
+              To study how the cluster reacts to periods of high incoming negativity, we analyze changes in
+              its behavior before and after these events. For each detected attack, we
+              compute the cluster’s negativity rate over two symmetric time windows of
               seven days: one preceding the event and one following it.<br>
 
               <br>To determine whether the observed changes in negativity are
-               statistically meaningful, we apply a Wilcoxon signed-rank test.
-                This non-parametric test compares paired observations and does 
-                not assume a normal distribution of the data, making it well 
-                suited for skewed or sparse interaction measures such as negativity 
-                rates. The test evaluates whether the median difference between the 
-                pre- and post-attack negativity rates significantly differs from zero.
+              statistically meaningful, we apply a Wilcoxon signed-rank test.
+              This non-parametric test compares paired observations and does
+              not assume a normal distribution of the data, making it well
+              suited for skewed or sparse interaction measures such as negativity
+              rates. The test evaluates whether the median difference between the
+              pre- and post-attack negativity rates significantly differs from zero.
 
-              <br>This approach allows us to assess whether periods of high 
-              received negativity are followed by systematic increases or 
-              decreases in negative linking behavior, thereby providing 
-              insight into the cluster’s reactivity and response strategies 
+              <br>This approach allows us to assess whether periods of high
+              received negativity are followed by systematic increases or
+              decreases in negative linking behavior, thereby providing
+              insight into the cluster’s reactivity and response strategies
               n the face of external attacks.
               <p>
 
@@ -353,8 +670,10 @@
 
             <section class="method">
               <h3>Feature analysis</h3>
-              <p>Feature analysis is done by analysing the properties section of the hyperlink dataset. Indeed they provide informtion on structure, themes
-                and emotions for each posts. The features that came out as characteristic hater features for both methods were kept. 
+              <p>Feature analysis is done by analysing the properties section of the hyperlink dataset. Indeed they
+                provide informtion on structure, themes
+                and emotions for each posts. The features that came out as characteristic hater features for both
+                methods were kept.
               </p>
               <h2>Standardized mean difference</h2>
               <p>
@@ -379,326 +698,298 @@
 
 
 
-<!-- ================== POST #2 ================== -->
-<article class="post" id="post-2" tabindex="0" aria-expanded="false">
-  <div class="post-summary" role="button" aria-label="Open post">
-    <div class="post-header">
-      <img src="images/icon-geopo.png" alt="r/GeoPolitics icon" class="post-icon">
-      <div class="post-meta">
-        <div class="post-subreddit">r/GeoPolitics</div>
-        <div class="post-author">Posted by u/NinjADA • 2025</div>
-      </div>
-    </div>
-
-    <div class="post-title-row">
-      <h1 class="post-title">r/Geo-Politics</h1>
-    </div>
-
-    <img class="post-thumb--preview" src="" alt="Geopolitics preview">
-
-    <div class="post-actions">
-      <button class="vote-btn up" type="button" aria-label="Like">▲</button>
-      <span class="vote-score" aria-label="Score">0</span>
-      <button class="vote-btn down" type="button" aria-label="Dislike">▼</button>
-      <span class="action-sep">•</span>
-      <span class="open-hint">Click to open</span>
-    </div>
-  </div>
-
-  <div class="post-full">
-    <div class="post-topbar" role="button" aria-label="Close post">
-      <button class="back-btn" type="button" aria-label="Back">←</button>
-      <img src="images/icon-geopo.png" alt="r/Geopo icon" class="post-icon post-icon--hero">
-      <div class="topbar-title">r/Geo-Politics</div>
-    </div>
-
-    <div class="post-body">
-      <!-- Intro -->
-      <p>
-        Welcome to the Geopolitics cluster of subreddits. So the clustering gave us a communiy of subreddit relative to geo-politics and actuallity. As showed below it is a negative subreddit with high proportion of post they negatively link to. 
-        They say that it is not "hate" but just being "critical" so let's have a closer look into their way of being "critical" then. 
-      </p>
-
-      <div class="plot-wrapper" id="network_geopo_overall">
-        <embed
-          src="plots/maelle/geo_politics_overall_distribution.html"
-          type="text/html"
-          title="Negative - Positive link distribution"
-          class="img-center"
-          width="100%"
-          height="800"
-          style="border:none; overflow:visible;"
-        >
-      </div>
-
-      <!-- Section: Reaction dynamics -->
-      <h2>Reaction dynamics</h2>
-      <p>
-        We see they clearly send more negative links than they receive them. Looks like if you are a geo-politics fan you are likely to be more an attackor than a target......<br>
-        Of course we're just kidding here, we have paid close attention to the ADA course qnd it is far too early to draw conclusions just with a plot. 
-      </p>
-
-      <p>
-        First lets look into who targets who. The cluster has 269 subreddits in which, according to LLMs, 50% actually concern global and US politics; 50% concern ideologies and activism; and 10% concern world events/news. 
-        So that leaves us with 15% of outliers... Since we're interested in characteristic hater profile let's look at the top 10 most hating subreddits and leave the other aside for the moment. 
-      </p>
-
-      <div class="plot-wrapper" id="bar_geopo">
-        <embed
-          src="plots/reactions_dynamics/bar_geopo.html"
-          type="text/html"
-          title="bar Geo-Politics"
-          style="width:100%; height:750px; border:none; background:transparent;"
-        >
-      </div>
-
-      <div class="plot-wrapper" id="heatmap_geopo">
-        <embed
-          src="plots/reactions_dynamics/heatmap_geopo.html"
-          type="text/html"
-          title="heatmap Geo-Politics"
-          style="width:100%; height:750px; border:none; background:transparent;"
-        >
-      </div>
-
-      <p>
-        Negativity in the Geo‑Politics cluster comes from two main sources: big drama subreddit that spread a lot of hate broadly, and 
-        tiny subreddits that are extremely hostile but only towards a few specific targets. Larger communities (like drama subs) regularly 
-        attack mainstream subreddits, while smaller ideological subreddits concentrate their hostility on closely related or opposing communities. 
-        Together, this creates a mix of high‑volume general attacks and narrow, highly targeted negativity. <br>
-        And this heatmap shows exactly this: some may my find it highly intimidating and others (like us) highly satistfying. But what it shows is that in the geopolitics cluster
-        some subreddit are commmon attackers and some are more engaged and attack only one or a few subreddits. 
-      </p>
-
-      <p>
-        Now, we'd like to name drop and let you have the whole picture. You can see who attacks who, how much and compare with other subreddits! <br>
-        For example, see how r/mensi-right subreddit attacks r/relationships, r/twoxchromosomes, r/feminisms and r/askreddits ?
-        It also looks like r/subredditdrama and r/drama are the most problematic subreddit of the geo-politic cluster. Could it be because people who follow politics 
-        and news are also naturally drawn to gossip? Or is it beaucause clustering with PCA and kmeans has its limits ? This is an open question...
-      </p>
-
-      <div class="plot-wrapper" id="network_geopo_detail">
-        <embed
-          src="plots/reactions_dynamics/network_geopo.html"
-          type="text/html"
-          title="Network— Geo-Politics"
-          class="plot-iframe"
-          width="100%"
-          height="800"
-          style="border:none; overflow:visible;"
-        >
-      </div>
-
-      <div class="plot-panel" id="sankey_geopo">
-        <iframe
-          src="plots/reactions_dynamics/sankey-geopo.html"
-          title="Sankey Geo-Politics"
-        ></iframe>
-      </div>
-
-      <!-- Section: Attack spikes -->
-      <h2>Attack spikes</h2>
-      <p>
-        Now let's see how the cluster reacts to periods of high incoming negativity. Now to look at methods details please 
-        refer to the dedicated post. Basically the idea here is to see how sensitive are people who follow politics/news/drama. 
-        Our guess is that they are. 
-      </p>
-
-      <div class="plot-wrapper" id="table_geopo">
-        <embed
-          src="plots/reactions_dynamics/spikes_pop_table_geopo.html"
-          type="text/html"
-          title="tableGeo-Politics"
-          style="width:100%; height:500px; border:none; background:transparent;"
-        >
-      </div>
-
-      <div class="plot-wrapper" id="dropdown_geopo">
-        <embed
-          src="plots/reactions_dynamics/geopo_year_dropdown.html"
-          type="text/html"
-          title="Dropdown Geo-Politics"
-          style="width:100%; height:650px; border:none; background:transparent;"
-        >
-      </div>
-
-      <p>
-        For the Geo-Politics cluster, we find 47 moments where it suddenly receives a lot of negativity. 
-        When that happens, the cluster tends to fire back. After these events, it sends more negative links, 
-        and a larger share of its interactions are negative overall. And it is statistically significant. In other words, it’s not just posting more; it’s 
-        posting more hostile content. This pattern shows up consistently, suggesting that when Geo-Politics gets attacked, it usually responds by escalating 
-        the negativity rather than cooling things down. So Geopolitic and news related users are kind of sensitive. On average, 84.9% of negative links are 
-        redirected toward the same clusters that generated the attack spikes during peak periods. However, nearly half of the negative links (48.7%) target 
-        the exact same subreddits that were responsible for the attack spikes, indicating a strong tendency toward direct retaliation at the subreddit level.
-      </p>
-
-      <section class="result-card">
-        <h1>Negative link activity after attack peaks</h1>
-
-        <div class="result-header">
-          <span class="result-cluster">Geo-Politics</span>
-          <span class="result-badge significant">Statistically significant</span>
-        </div>
-
-        <div class="result-meta">
-          <span class="chip">47 spikes</span>
-          <span class="chip">7-day window</span>
-          <span class="chip">Tested on rate</span>
-        </div>
-
-        <div class="result-metrics">
-          <div class="metric">
-            <div class="label">Before</div>
-            <div class="value">26.79</div>
-            <div class="sub">mean rate</div>
+      <!-- ================== POST #2 ================== -->
+      <article class="post" id="post-2" tabindex="0" aria-expanded="false">
+        <div class="post-summary" role="button" aria-label="Open post">
+          <div class="post-header">
+            <img src="images/icon-geopo.png" alt="r/GeoPolitics icon" class="post-icon">
+            <div class="post-meta">
+              <div class="post-subreddit">r/GeoPolitics</div>
+              <div class="post-author">Posted by u/NinjADA • 2025</div>
+            </div>
           </div>
 
-          <div class="arrow">→</div>
-
-          <div class="metric">
-            <div class="label">After</div>
-            <div class="value">28.64</div>
-            <div class="sub">mean rate</div>
+          <div class="post-title-row">
+            <h1 class="post-title">r/Geo-Politics</h1>
           </div>
 
-          <div class="delta positive">
-            <div class="delta-value">+1.85</div>
-            <div class="delta-sub">(+6.9%)</div>
+          <img class="post-thumb--preview" src="images/icon-geopo.jpeg" alt="Geopolitics preview">
+
+          <div class="post-actions">
+            <button class="vote-btn up" type="button" aria-label="Like">▲</button>
+            <span class="vote-score" aria-label="Score">0</span>
+            <button class="vote-btn down" type="button" aria-label="Dislike">▼</button>
+            <span class="action-sep">•</span>
+            <span class="open-hint">Click to open</span>
           </div>
         </div>
 
-        <div class="result-footer">
-          <div class="pval">p = 0.00079</div>
-          <div class="note">
-            Mean change across 47 hostility spikes.
+        <div class="post-full">
+          <div class="post-topbar" role="button" aria-label="Close post">
+            <button class="back-btn" type="button" aria-label="Back">←</button>
+            <img src="images/icon-geopo.png" alt="r/Geopo icon" class="post-icon post-icon--hero">
+            <div class="topbar-title">r/Geo-Politics</div>
           </div>
-        </div>
-      </section>
 
-      <div class="plot-wrapper" id="spearman_geopo">
-        <embed
-          src="plots/reactions_dynamics/spearman_geopo.html"
-          type="text/html"
-          title="Spearman Geo-Politics"
-          style="width:100%; height:750px; border:none; background:transparent;"
-        >
-      </div>
+          <div class="post-body">
+            <!-- Intro -->
+            <p>
+              Welcome to the Geopolitics cluster of subreddits. So the clustering gave us a community of subreddits
+              relative to geo-politics and actuality. As showed below it is a negative subreddit with high proportion of
+              post they negatively link to.
+              They say that it is not "hate" but just being "critical" so let's have a closer look into their way of
+              being "critical" then.
+            </p>
 
-      <div class="plot-wrapper" id="retaliation_geopo">
-        <embed
-          src="plots/reactions_dynamics/retaliation_cluster_vs_subreddit_geopo.html"
-          type="text/html"
-          title="Retaliation Geo-Politics"
-          style="width:100%; height:750px; border:none; background:transparent;"
-        >
-      </div>
 
-      <h2>
-      Characteristic Feature Analysis
-      </h2>
-      <p> Lets see how negativity translates in the features. Plotting the standardized difference of the mean for structural features a high value means that 
-        the pronoun is more present in negatively linked posts than in positive. Here the I pronoun and the She/He pronouns are most represented in negative posts. 
-        The mean difference is statistically significative. For the logits coefficient error bars show uncertainty; coefficients far from zero with tight intervals are the most reliable predictors. 
-        T
-        
-      </p>
-<div>
-  <!-- Dropdown -->
-  <label for="plotSelector"><b>Select view</b></label>
-  <select id="plotSelector">
-    <option value="plot">Difference of the mean – pronoun features</option>
-    <option value="table">p-values of the pronoun features</option>
-  </select>
-</div>
+            <div class="plot-wrapper" id="network_geopo_overall">
+              <embed src="plots/writing_style/geo_politics_overall_distribution.html" type="text/html"
+                title="Negative - Positive link distribution" width="100%" height="550">
+            </div>
 
-<!-- Container for both embeds -->
-<div id="geopoContainer" style="margin-top: 10px;">
 
-  <!-- Plot view -->
-  <div id="geopo_plot_view">
-    <embed src="plots/maelle/geo_politics_pronouns_diff.html" type="text/html"
-           title="Difference of the mean - pronoun features"
-           style="width: 100%; height: 750px; border: none; background: transparent;">
-  </div>
+            <!-- Section: Reaction dynamics -->
+            <h2>Reaction dynamics</h2>
+            <p>
+              We see they clearly send more negative links than they receive them. Looks like if you are a geo-politics
+              fan you are likely to be more an attackor than a target......<br>
+              Of course we're just kidding here, we have paid close attention to the ADA course and it is far too early
+              to draw conclusions just with a plot.
+            </p>
 
-  <!-- Table view -->
-  <div id="geopo_table_view" style="display: none;">
-    <embed src="plots/maelle/geopolitics_pronouns_diff_features_table.html" type="text/html"
-           title="p values of the pronoun features"
-           style="width: 100%; height: 750px; border: none; background: transparent;">
-  </div>
+            <p>
+              First let's have a look into who targets who. The cluster has 269 subreddits in which, according to LLMs,
+              50% actually concern global and US politics; 50% concern ideologies and activism; and 10% concern world
+              events/news.
+              So that leaves us with 15% of outliers... Since we're interested in characteristic hater profile let's
+              look at the top 10 most hating subreddits and leave the other aside for the moment.
+            </p>
 
-</div>
+            <div class="plot-wrapper" id="bar_geopo">
+              <embed src="plots/reactions_dynamics/bar_geopo.html" type="text/html" title="bar Geo-Politics"
+                style="width:100%; height:750px; border:none; background:transparent;">
+            </div>
 
-<script>
-  const selector = document.getElementById('plotSelector');
-  const plotView = document.getElementById('geopo_plot_view');
-  const tableView = document.getElementById('geopo_table_view');
+            <div class="plot-wrapper" id="heatmap_geopo">
+              <embed src="plots/reactions_dynamics/heatmap_geopo.html" type="text/html" title="heatmap Geo-Politics"
+                style="width:100%; height:750px; border:none; background:transparent;">
+            </div>
 
-  selector.addEventListener('change', function () {
-    if (this.value === 'plot') {
-      plotView.style.display = 'block';
-      tableView.style.display = 'none';
-    } else {
-      plotView.style.display = 'none';
-      tableView.style.display = 'block';
-    }
-  });
-</script>
+            <p>
+              Negativity in the Geo‑Politics cluster comes from two main sources: big drama subreddit that spread a lot
+              of hate broadly, and
+              tiny subreddits that are extremely hostile but only towards a few specific targets. Larger communities
+              (like drama subs) regularly
+              attack mainstream subreddits, while smaller ideological subreddits concentrate their hostility on closely
+              related or opposing communities.
+              Together, this creates a mix of high‑volume general attacks and narrow, highly targeted negativity. <br>
+              And this heatmap shows exactly this: some may find it highly intimidating and others (like us) highly
+              satistfying. But what it shows is that in the geopolitics cluster,
+              some subreddit are commmon attackers and some are more engaged and attack only one or a few subreddits.
+            </p>
 
-          <div class="plot-wrapper" id="spearman_geopo">
-            <embed src="plots/maelle/geo_logit_pronouns.html" type="text/html" title="Logit pronoun analysis" style="
+            <p>
+              Now, we'd like to name drop and let you have the whole picture. You can see in the following graphs who attacks who, how much, and
+              compare with other subreddits! <br>
+              For example, see how r/mensright subreddit attacks r/relationships, r/twoxchromosomes, r/feminisms and
+              r/askreddits the most ?
+              It also looks like r/subredditdrama and r/drama are the most problematic subreddit of the geo-politic
+              cluster. Could it be because people who follow politics
+              and news are also naturally drawn to gossip? Or is it beaucause clustering with PCA and kmeans has its
+              limits ? This is an open question...
+            </p>
+
+            <div class="plot-wrapper" id="network_geopo_detail">
+              <embed src="plots/reactions_dynamics/network_geopo.html" type="text/html" title="Network— Geo-Politics"
+                class="plot-iframe" width="100%" height="800" style="border:none; overflow:visible;">
+            </div>
+
+            <div class="plot-panel" id="sankey_geopo">
+              <iframe src="plots/reactions_dynamics/sankey-geopo.html" title="Sankey Geo-Politics"></iframe>
+            </div>
+
+            <!-- Section: Attack spikes -->
+            <h2>Attack spikes</h2>
+            <p>
+              Now let's see how the cluster reacts to periods of high incoming negativity. Now to look at methods
+              details please
+              refer to the dedicated post. Basically the idea here is to see how sensitive are people who follow
+              politics/news/drama.
+              Our guess is that they are.
+            </p>
+
+            <div class="plot-wrapper" id="table_geopo">
+              <embed src="plots/reactions_dynamics/spikes_pop_table_geopo.html" type="text/html"
+                title="tableGeo-Politics" style="width:100%; height:500px; border:none; background:transparent;">
+            </div>
+
+            <div class="plot-wrapper" id="dropdown_geopo">
+              <embed src="plots/reactions_dynamics/geopo_year_dropdown.html" type="text/html"
+                title="Dropdown Geo-Politics" style="width:100%; height:650px; border:none; background:transparent;">
+            </div>
+
+            <p>
+              For the Geo-Politics cluster, we find 47 moments where it suddenly receives a lot of negativity.
+              When that happens, the cluster tends to fire back. After these events, it sends more negative links,
+              and a larger share of its interactions are negative overall. And it is statistically significant. In other
+              words, it’s not just posting more; it’s
+              posting more hostile content. This pattern shows up consistently, suggesting that when Geo-Politics gets
+              attacked, it usually responds by escalating
+              the negativity rather than cooling things down. So Geopolitic and news related users are kind of
+              sensitive. On average, 84.9% of negative links are
+              redirected toward the same clusters that generated the attack spikes during peak periods. However, nearly
+              half of the negative links (48.7%) target
+              the exact same subreddits that were responsible for the attack spikes, indicating a strong tendency toward
+              direct retaliation at the subreddit level.
+            </p>
+
+            <section class="result-card">
+              <h1>Negative link activity after attack peaks</h1>
+
+              <div class="result-header">
+                <span class="result-cluster">Geo-Politics</span>
+                <span class="result-badge significant">Statistically significant</span>
+              </div>
+
+              <div class="result-meta">
+                <span class="chip">47 spikes</span>
+                <span class="chip">7-day window</span>
+                <span class="chip">Tested on rate</span>
+              </div>
+
+              <div class="result-metrics">
+                <div class="metric">
+                  <div class="label">Before</div>
+                  <div class="value">26.79</div>
+                  <div class="sub">mean rate</div>
+                </div>
+
+                <div class="arrow">→</div>
+
+                <div class="metric">
+                  <div class="label">After</div>
+                  <div class="value">28.64</div>
+                  <div class="sub">mean rate</div>
+                </div>
+
+                <div class="delta positive">
+                  <div class="delta-value">+1.85</div>
+                  <div class="delta-sub">(+6.9%)</div>
+                </div>
+              </div>
+
+              <div class="result-footer">
+                <div class="pval">p = 0.00079</div>
+                <div class="note">
+                  Mean change across 47 hostility spikes.
+                </div>
+              </div>
+            </section>
+
+            <div class="plot-wrapper" id="spearman_geopo">
+              <embed src="plots/reactions_dynamics/spearman_geopo.html" type="text/html" title="Spearman Geo-Politics"
+                style="width:100%; height:750px; border:none; background:transparent;">
+            </div>
+
+            <div class="plot-wrapper" id="retaliation_geopo">
+              <embed src="plots/reactions_dynamics/retaliation_cluster_vs_subreddit_geopo.html" type="text/html"
+                title="Retaliation Geo-Politics" style="width:100%; height:750px; border:none; background:transparent;">
+            </div>
+
+            <h3>
+              Characteristic Feature Analysis
+            </h3>
+            <h2>
+              Pronouns feature analysis
+            </h2>
+            <p> In terms of how negativity shows up in the features, looking at the standardized mean differences for structural features, a higher value means that a given 
+              pronoun shows up more in negatively linked posts than in positive ones. In the Geopolitics cluster, LIWC_Ipron (impersonal pronouns like “it”, “its”, “that”...) 
+              and LIWC_SheHe (she/he pronouns) are clearly more common in negative-link posts, and that mean difference is statistically significant. The logit analysis backs 
+              this up: the pronouns most strongly associated with negative links are again LIWC_Ipron and LIWC_SheHe, and because the model is multivariate it captures the unique 
+              effect of each feature while controlling for correlations with the others, which helps avoid confounding issues. Basically the typical “geopolitics hater” seems to 
+              lean heavily on third-person and impersonal pronouns, which suggests a lot of blaming and finger‑pointing at others. The combo of more third‑person and fewer “you” 
+              pronouns also hints at a style that’s more about indirect aggression and complaining about people or groups to third parties than actually addressing others directly. 
+              Looks like the geopolitic hater is afraid of direct confrontation and may be kind of a coward ? 
+
+            </p>
+            <div>
+              <!-- Dropdown -->
+              <label for="plotSelector"><b>Select view</b></label>
+              <select id="plotSelector">
+                <option value="plot">Difference of the mean – pronoun features</option>
+                <option value="table">p-values of the pronoun features</option>
+              </select>
+            </div>
+
+            <!-- Container for both embeds -->
+            <div id="geopoContainer" style="margin-top: 10px;">
+
+              <!-- Plot view -->
+              <div id="geopo_plot_view">
+                <embed src="plots/writing_style/geo_politics_pronouns_diff.html" type="text/html"
+                  title="Difference of the mean - pronoun features"
+                  style="width: 100%; height: 750px; border: none; background: transparent;">
+              </div>
+
+              <!-- Table view -->
+              <div id="geopo_table_view" style="display: none;">
+                <embed src="plots/writing_style/geopolitics_pronouns_diff_features_table.html" type="text/html"
+                  title="p values of the pronoun features"
+                  style="width: 100%; height: 750px; border: none; background: transparent;">
+              </div>
+
+            </div>
+
+            <div class="plot-wrapper" id="spearman_geopo">
+              <embed src="plots/writing_style/geo_logit_pronouns.html" type="text/html" title="Logit pronoun analysis" style="
                           width: 100%;
                           height: 750px;
                           border: none;
                           background: transparent;
                         ">
-          </div>
-<div>
-  <!-- Dropdown -->
-  <label for="sentimentPlotSelector"><b>Select view</b></label>
-  <select id="sentimentPlotSelector">
-    <option value="plot">Difference of the mean – sentiment features</option>
-    <option value="table">p-values of the sentiment features</option>
-  </select>
-</div>
+            </div>
 
-<!-- Container for both embeds -->
-<div id="geopoSentimentContainer" style="margin-top: 10px;">
+            <h2>
+              Sentiment/emotion feature analysis
+            </h2>
+            <p>
+              Across both the mean‑difference and logit analyses, anger is the emotion that most consistently lines up with negative links, so when posts go negative here, 
+              they’re doing it in an angry way. General affect (LIWC_Affect: emotional words overall) is more common in negative posts if you just look at raw means, but once you control 
+              for the other features, it’s not strongly tied to negativity anymore. This is because affect is strongly correlated with anger. So the hater is not “being emotional” in general, he is angry and it shows in his writing style. 
+            </p>
 
-  <!-- Plot view -->
-  <div id="geopo_sentiment_plot_view">
-    <embed src="plots/maelle/geo_politics_sentiment_diff.html" type="text/html"
-           title="Difference of the mean - sentiment features"
-           style="width: 100%; height: 750px; border: none; background: transparent;">
-  </div>
+            <div>
+              <!-- Dropdown -->
+              <label for="sentimentPlotSelector"><b>Select view</b></label>
+              <select id="sentimentPlotSelector">
+                <option value="plot">Difference of the mean – sentiment features</option>
+                <option value="table">p-values of the sentiment features</option>
+              </select>
+            </div>
 
-  <!-- Table view -->
-  <div id="geopo_sentiment_table_view" style="display: none;">
-    <embed src="plots/maelle/geopolitics_sentiments_diff_features_table.html" type="text/html"
-           title="p values of the sentiment difference"
-           style="width: 100%; height: 750px; border: none; background: transparent;">
-  </div>
+            <!-- Container for both embeds -->
+            <div id="geopoSentimentContainer" style="margin-top: 10px;">
 
-</div>
+              <!-- Plot view -->
+              <div id="geopo_sentiment_plot_view">
+                <embed src="plots/writing_style/geo_politics_sentiment_diff.html" type="text/html"
+                  title="Difference of the mean - sentiment features"
+                  style="width: 100%; height: 750px; border: none; background: transparent;">
+              </div>
 
-<script>
-  const sentimentSelector = document.getElementById('sentimentPlotSelector');
-  const sentimentPlotView = document.getElementById('geopo_sentiment_plot_view');
-  const sentimentTableView = document.getElementById('geopo_sentiment_table_view');
+              <!-- Table view -->
+              <div id="geopo_sentiment_table_view" style="display: none;">
+                <embed src="plots/writing_style/geopolitics_sentiments_diff_features_table.html" type="text/html"
+                  title="p values of the sentiment difference"
+                  style="width: 100%; height: 750px; border: none; background: transparent;">
+              </div>
 
-  sentimentSelector.addEventListener('change', function () {
-    if (this.value === 'plot') {
-      sentimentPlotView.style.display = 'block';
-      sentimentTableView.style.display = 'none';
-    } else {
-      sentimentPlotView.style.display = 'none';
-      sentimentTableView.style.display = 'block';
-    }
-  });
-</script>
-s="plot-wrapper" id="spearman_geopo">
-              <embed src="plots/maelle/geo_logit_sentiments.html" type="text/html" title="Logit sentiment analysis"
+            </div>
+
+
+
+            <div id="plot-wrapper" id="spearman_geopo">
+              <embed src="plots/writing_style/geo_logit_sentiments.html" type="text/html" title="Logit sentiment analysis"
                 style="
                           width: 100%;
                           height: 750px;
@@ -707,7 +998,7 @@ s="plot-wrapper" id="spearman_geopo">
                         ">
             </div>
           </div>
-          </section>
+
 
 
           <h2>Limitations</h2>
@@ -717,8 +1008,7 @@ s="plot-wrapper" id="spearman_geopo">
           </p>
 
           <footer>© 2025 NinjADA Team</footer>
-        </div>
-      
+
       </article>
 
       <!-- ================== POST #5 ================== -->
@@ -736,7 +1026,7 @@ s="plot-wrapper" id="spearman_geopo">
             <h1 class="post-title">r/Pop-Culture</h1>
           </div>
 
-          <img class="post-thumb" src="images/popculture_preview.png" alt="Pop culture preview">
+          <img class="post-thumb" src="images/icon-pop.jpeg" alt="Pop culture preview">
 
           <div class="post-actions">
             <button class="vote-btn up" type="button" aria-label="Like">▲</button>
@@ -756,26 +1046,32 @@ s="plot-wrapper" id="spearman_geopo">
 
           <p>
             Welcome to the Pop culture cluster of subreddit! <br>
-            Let's not loose time and dig in to see what these 10% of negativity is made of. 
+            Let's not loose time and dig in to see what these 10% of negativity is made of.
           </p>
 
           <div class="post-body">
             <div class="plot-wrapper" id="pop_overall_distribution">
-              <embed src="plots/maelle/pop_overall_distribution.html" type="text/html"
+              <embed src="plots/writing_style/pop_overall_distribution.html" type="text/html"
                 title="Negative - Positive link distribution" class="plot-iframe" width="100%" height="800"
                 style="border:none; overflow:visible;">
             </div>
-          <h2>
-            Reaction dynamics
-          </h2>
-          <p>
-            The top hater subreddit hits about 80% negativity, but that’s mostly tiny subreddits with barely any activity behind 
-            those numbers. Subreddits like r/bitchimabus and r/wallpaperdump look more toxic, but it’s off a handful of 
-            links, so more “one‑off outbursts” than steady hate streams. Looks like the real problem is r/againstkarmawhores: 
-            it’s both pretty negative and very active, so it’s the one really shaping how toxic the Pop‑Culture cluster looks overall.
-          </p>
+            <h2>
+              Reaction dynamics
+            </h2>
+            <p>
+              The top hater subreddit hits about 80% negativity, but that’s mostly tiny subreddits with barely any
+              activity
+              behind
+              those numbers. Subreddits like r/bitchimabus and r/wallpaperdump look more toxic, but it’s off a handful
+              of
+              links, so more “one‑off outbursts” than steady hate streams. Looks like the real problem is
+              r/againstkarmawhores:
+              it’s both pretty negative and very active, so it’s the one really shaping how toxic the Pop‑Culture
+              cluster
+              looks overall.
+            </p>
 
-           <div class="plot-wrapper" id="bar_pop">
+            <div class="plot-wrapper" id="bar_pop">
               <embed src="plots/reactions_dynamics/bar_pop.html" type="text/html" style="
                             width: 100%;
                             height: 750px;
@@ -793,12 +1089,18 @@ s="plot-wrapper" id="spearman_geopo">
                           ">
             </div>
             <p>
-            Some subreddits, especially r/againstkarmawhores, repeatedly throw shade at lots of big, mainstream targets.
-            Most of the other super‑negative subreddits just light up one or two cells on the heatmap, meaning short, targeted bursts of hate rather than constant drama.
-            Taken together, the Pop‑Culture cluster’s negativity looks  and localized: spikes around specific topics or communities, not a universal hate‑machine.
-            Now look at inter-cluster relations, see how they target a wide variety of l-clusters with no external cluster dominating. Kind of boring. Mainly 
-            entertainment, meme... Negative linking behavior in the Pop-Culture cluster is driven more by content critique, humor, or norm enforcement than by sustained ideological conflict. 
-            Let's look att the attack spikes and reactivity to see if we find anything spicier. 
+              Some subreddits, especially r/againstkarmawhores, repeatedly throw shade at lots of big, mainstream
+              targets.
+              Most of the other super‑negative subreddits just light up one or two cells on the heatmap, meaning short,
+              targeted bursts of hate rather than constant drama.
+              Taken together, the Pop‑Culture cluster’s negativity looks and localized: spikes around specific topics or
+              communities, not a universal hate‑machine.
+              Now look at inter-cluster relations, see how they target a wide variety of l-clusters with no external
+              cluster
+              dominating. Kind of boring. Mainly
+              entertainment, meme... Negative linking behavior in the Pop-Culture cluster is driven more by content
+              critique, humor, or norm enforcement than by sustained ideological conflict.
+              Let's look att the attack spikes and reactivity to see if we find anything spicier.
             </p>
 
             <div class="plot-wrapper" id="heatmap_pop">
@@ -822,8 +1124,10 @@ s="plot-wrapper" id="spearman_geopo">
               Attack spikes
             </h2>
             <p>
-              Now let's see how the cluster reacts to periods of high incoming negativity. Now to look at methods details please refer to the dedicated post. 
-              The idea here is still to see how sensitive are Pop-culture interested users. 
+              Now let's see how the cluster reacts to periods of high incoming negativity. Now to look at methods
+              details
+              please refer to the dedicated post.
+              The idea here is still to see how sensitive are Pop-culture interested users.
             </p>
 
             <div class="plot-wrapper" id="heatmap_pop">
@@ -834,7 +1138,7 @@ s="plot-wrapper" id="spearman_geopo">
                             background: transparent;
                           ">
             </div>
-            
+
             <div class="plot-wrapper" id="heatmap_pop">
               <embed src="plots/reactions_dynamics/pop_year_dropdown.html" type="text/html" style="
                             width: 100%;
@@ -844,11 +1148,17 @@ s="plot-wrapper" id="spearman_geopo">
                           ">
             </div>
             <p>
-              Overall, these results indicate that the Pop-Culture cluster does respond to periods of high received negativity, 
-              but in a weakly reactive manner. Rather than strong escalation or retaliation, the response appears modest and likely 
-              reflects short-lived or localized increases in negative interactions rather than systematic behavioral shifts. 
-              The negativity rate slighlty increases after negativoty spike and is statistically significant there may be a little 
-              sensitivity here. But aren't we all a little sensitive? 
+              Overall, these results indicate that the Pop-Culture cluster does respond to periods of high received
+              negativity,
+              but in a weakly reactive manner. Rather than strong escalation or retaliation, the response appears modest
+              and
+              likely
+              reflects short-lived or localized increases in negative interactions rather than systematic behavioral
+              shifts.
+              The negativity rate slighlty increases after negativoty spike and is statistically significant there may
+              be a
+              little
+              sensitivity here. But aren't we all a little sensitive?
             </p>
 
             <div class="plot-wrapper" id="heatmap_pop">
@@ -861,8 +1171,8 @@ s="plot-wrapper" id="spearman_geopo">
             </div>
 
             <div class="plot-wrapper" id="table_pop">
-              <embed src="plots/reactions_dynamics/spikes_pop_table.html" type="text/html"
-                title="tableGeo-Politics" style="
+              <embed src="plots/reactions_dynamics/spikes_pop_table.html" type="text/html" title="tableGeo-Politics"
+                style="
                       width: 100%;
                       height: 500px;
                       border: none;
@@ -870,10 +1180,13 @@ s="plot-wrapper" id="spearman_geopo">
                     ">
             </div>
             <p>
-              Roughly 80% of post‑attack negative links go back toward the same clusters that started the drama, and about 57% hit the exact same subreddits.
-​
+              Roughly 80% of post‑attack negative links go back toward the same clusters that started the drama, and
+              about
+              57% hit the exact same subreddits.
+              ​
 
-            So retaliation happens both broadly at the cluster level and very directly at specific communities, mixing “shoot back at the bloc” with “shoot back at the exact subreddit.
+              So retaliation happens both broadly at the cluster level and very directly at specific communities, mixing
+              “shoot back at the bloc” with “shoot back at the exact subreddit.
             </p>
             <section class="result-card">
               <h1>Negative link activity after attack peaks</h1>
@@ -918,43 +1231,130 @@ s="plot-wrapper" id="spearman_geopo">
               </div>
             </section>
 
-          
 
 
-            <h2>Content</h2>
-            <p>(Fill this post content.)</p>
 
-            <div class="plot-wrapper" id="pop_pronouns_diff">
-              <embed src="plots/maelle/pop_culture_pronouns_diff.html" type="text/html"
-                title="Difference of the means - pronoun features"
-                style="width: 100%; height: 750px; border: none; background: transparent;">
-            </div>
+            <h3>Feature analysis</h3>
+            <h2>
+              Pronoun features analysis
+            </h2>
+            <p>
+              In here the Ppron (all personal pronouns) proves to be proportionally much more represented in the negative links than in the positive/neutral ones and this shows in the logit 
+              analysis too. Suggestong conflict is personal and not necessariliy objective as usually one tends to avoids pronouns when wanting to write in an objective way. 
+            </p>
 
-            <div class="plot-wrapper" id="pop_pronouns_table">
-              <embed src="plots/maelle/popculture_pronouns_diff_features_table.html" type="text/html"
-                title="p values of the pronouns features difference"
-                style="width: 100%; height: 750px; border: none; background: transparent;">
-            </div>
+
+<div>
+  <!-- Dropdown -->
+  <label for="popPronounsSelector"><b>Select view</b></label>
+  <select id="popPronounsSelector">
+    <option value="plot">Difference of the means – pronoun features</option>
+    <option value="table">p-values of the pronoun features</option>
+  </select>
+</div>
+
+<!-- Container -->
+<div id="popPronounsContainer" style="margin-top: 10px;">
+
+  <!-- Plot view -->
+  <div id="pop_pronouns_plot_view">
+    <embed src="plots/writing_style/pop_culture_pronouns_diff.html"
+           type="text/html"
+           title="Difference of the means - pronoun features"
+           style="width: 100%; height: 750px; border: none; background: transparent;">
+  </div>
+
+  <!-- Table view -->
+  <div id="pop_pronouns_table_view" style="display: none;">
+    <embed src="plots/writing_style/popculture_pronouns_diff_features_table.html"
+           type="text/html"
+           title="p values of the pronouns features difference"
+           style="width: 100%; height: 750px; border: none; background: transparent;">
+  </div>
+
+</div>
+
+<script>
+  const popSelector = document.getElementById('popPronounsSelector');
+  const popPlotView = document.getElementById('pop_pronouns_plot_view');
+  const popTableView = document.getElementById('pop_pronouns_table_view');
+
+  popSelector.addEventListener('change', function () {
+    if (this.value === 'plot') {
+      popPlotView.style.display = 'block';
+      popTableView.style.display = 'none';
+    } else {
+      popPlotView.style.display = 'none';
+      popTableView.style.display = 'block';
+    }
+  });
+</script>
+
 
             <div class="plot-wrapper" id="pop_logit_pronouns">
-              <embed src="plots/maelle/pop_logit_pronouns.html" type="text/html" title="Logit analysis - pronouns"
+              <embed src="plots/writing_style/pop_logit_pronouns.html" type="text/html" title="Logit analysis - pronouns"
                 style="width: 100%; height: 750px; border: none; background: transparent;">
             </div>
 
-            <div class="plot-wrapper" id="pop_sentiment_diff">
-              <embed src="plots/maelle/pop_culture_sentiment_diff.html" type="text/html"
-                title="Difference of the mean sentiment features"
-                style="width: 100%; height: 750px; border: none; background: transparent;">
-            </div>
+<div>
+  <h2>
+    Sentiment/emotion feature analysis 
+  </h2>
+  <p>
+    Anger and affect are still significantly more present in negative posts than in neutral or positive ones. A new pattern that emerges is the LIWC_Swear feature, which is the s
+    econd most negatively correlated feature with link sentiment. This suggests that pop‑culture‑oriented users (often younger, Gen Z, or teenagers) tend to express their anger 
+    through use of swear words. Many swear words are insults so their way of expressing hate is by insulting others. 
 
-            <div class="plot-wrapper" id="pop_sentiments_table">
-              <embed src="plots/maelle/popculture_sentiments_diff_features_table.html" type="text/html"
-                title="p-value of the sentiment features difference"
-                style="width: 100%; height: 750px; border: none; background: transparent;">
-            </div>
+  </p>
+
+  <!-- Dropdown -->
+  <label for="popSentimentSelector"><b>Select view</b></label>
+  <select id="popSentimentSelector">
+    <option value="plot">Difference of the mean – sentiment features</option>
+    <option value="table">p-values of the sentiment features</option>
+  </select>
+</div>
+
+<!-- Container -->
+<div id="popSentimentContainer" style="margin-top: 10px;">
+
+  <!-- Plot view -->
+  <div id="pop_sentiment_plot_view">
+    <embed src="plots/writing_style/pop_culture_sentiment_diff.html"
+           type="text/html"
+           title="Difference of the mean sentiment features"
+           style="width: 100%; height: 750px; border: none; background: transparent;">
+  </div>
+
+  <!-- Table view -->
+  <div id="pop_sentiment_table_view" style="display: none;">
+    <embed src="plots/writing_style/popculture_sentiments_diff_features_table.html"
+           type="text/html"
+           title="p-value of the sentiment features difference"
+           style="width: 100%; height: 750px; border: none; background: transparent;">
+  </div>
+
+</div>
+
+<script>
+  const popSentimentSelector = document.getElementById('popSentimentSelector');
+  const popSentimentPlotView = document.getElementById('pop_sentiment_plot_view');
+  const popSentimentTableView = document.getElementById('pop_sentiment_table_view');
+
+  popSentimentSelector.addEventListener('change', function () {
+    if (this.value === 'plot') {
+      popSentimentPlotView.style.display = 'block';
+      popSentimentTableView.style.display = 'none';
+    } else {
+      popSentimentPlotView.style.display = 'none';
+      popSentimentTableView.style.display = 'block';
+    }
+  });
+</script>
+
 
             <div class="plot-wrapper" id="pop_logit_sentiments">
-              <embed src="plots/maelle/pop_logit_sentiments.html" type="text/html" title="Logit analysis - sentiment"
+              <embed src="plots/writing_style/pop_logit_sentiments.html" type="text/html" title="Logit analysis - sentiment"
                 style="width: 100%; height: 750px; border: none; background: transparent;">
             </div>
 
@@ -973,16 +1373,16 @@ s="plot-wrapper" id="spearman_geopo">
           <div class="post-header">
             <img src="images/icon-reddit.png" alt="r/RedditCore icon" class="post-icon">
             <div class="post-meta">
-              <div class="post-subreddit">r/RedditCore</div>
+              <div class="post-subreddit">r/RedditCore - Memes & General Chat</div>
               <div class="post-author">Posted by u/NinjADA • 2025</div>
             </div>
           </div>
 
           <div class="post-title-row">
-            <h1 class="post-title">r/Reddit Core</h1>
+            <h1 class="post-title">r/RedditCore - Memes & General Chat </h1>
           </div>
 
-          <img class="post-thumb" src="images/redditcore_preview.png" alt="Reddit core preview">
+          <img class="post-thumb" src="images/post-redditcore.png" alt="Reddit core preview">
 
           <div class="post-actions">
             <button class="vote-btn up" type="button" aria-label="Like">▲</button>
@@ -1003,11 +1403,11 @@ s="plot-wrapper" id="spearman_geopo">
           <div class="post-body">
             <p>
               Welcome to the Reddit Core cluster of subreddits ! <br>
-              What are the 11% of negativity made of this time ? 
+              What are the 11% of negativity made of this time ?
             </p>
 
             <div class="plot-wrapper" id="reddit_overall_distribution">
-              <embed src="plots/maelle/reddit_overall_distribution.html" type="text/html"
+              <embed src="plots/writing_style/reddit_overall_distribution.html" type="text/html"
                 title="Negative - Positive link distribution" class="plot-iframe" width="100%" height="800"
                 style="border:none; overflow:visible;">
             </div>
@@ -1015,12 +1415,16 @@ s="plot-wrapper" id="spearman_geopo">
               Reaction dynamics
             </h2>
             <p>
-              The Reddit Core cluster is basically a punching bag: it gets way more negative links than it sends for the whole period and rarely hits back.
-              Looks like it is more a victim of hate than a hater. 
+              The Reddit Core cluster is basically a punching bag: it gets way more negative links than it sends for the
+              whole period and rarely hits back.
+              Looks like it is more a victim of hate than a hater.
 
-              You see big waves of hate around mid‑2015 and late 2016, but those spikes in incoming negativity aren’t followed by matching revenge spikes.
+              You see big waves of hate around mid‑2015 and late 2016, but those spikes in incoming negativity aren’t
+              followed by matching revenge spikes.
 
-              So Reddit Core acts as a negativity sink in the network—constantly targeted, mostly chill in response—unlike the more politicized clusters that tend to fight back when they’re attacked.
+              So Reddit Core acts as a negativity sink in the network—constantly targeted, mostly chill in
+              response—unlike
+              the more politicized clusters that tend to fight back when they’re attacked.
             </p>
             <div class="plot-wrapper" id="bar_pop">
               <embed src="plots/reactions_dynamics/bar_reddit.html" type="text/html" style="
@@ -1041,10 +1445,18 @@ s="plot-wrapper" id="spearman_geopo">
             </div>
             <p>
               The Reddit Core cluster exhibits morderate negativity rates overall with no subreddits exceeding 50%.
-              The r/britishproblems and r/animalsbeingjerks have the highest negativity rate but these values are driven by a very small
-              number of total link. So the hater behavior of this cluster, when there is, seems to be sporadic rather than sustained negative behavior.
-              The heatmap shows this trend well. Only quityourbullshit emerges as a widespread aggressor, directing moderate negativity (teal/green blocks) 
-              across a long list of major subreddits like pics, funny, and worldnews, consistent with its culture of calling out fake posts.
+              The r/britishproblems and r/animalsbeingjerks have the highest negativity rate but these values are driven
+              by
+              a very small
+              number of total link. So the hater behavior of this cluster, when there is, seems to be sporadic rather
+              than
+              sustained negative behavior.
+              The heatmap shows this trend well. Only quityourbullshit emerges as a widespread aggressor, directing
+              moderate
+              negativity (teal/green blocks)
+              across a long list of major subreddits like pics, funny, and worldnews, consistent with its culture of
+              calling
+              out fake posts.
 
 
             </p>
@@ -1068,11 +1480,16 @@ s="plot-wrapper" id="spearman_geopo">
             </div>
 
             <p>
-            The network shows that most of the portion of their aggression is actuallu internal "friendly-fire" directed 
-            at other Core Subreffits. Central hubs like r/quityourbullshit and r/animalsbeingjerks frequently target fellow 
-            core members such as r/funny, r/pics, and r/aww (indicated by the numerous connections to purple nodes), suggesting 
-            a strong culture of self-policing and meta-commentary within the memes and general chat sphere. The nature of negativity here 
-            is rather teasing than hate no ?
+              The network shows that most of the portion of their aggression is actuallu internal "friendly-fire"
+              directed
+              at other Core Subreffits. Central hubs like r/quityourbullshit and r/animalsbeingjerks frequently target
+              fellow
+              core members such as r/funny, r/pics, and r/aww (indicated by the numerous connections to purple nodes),
+              suggesting
+              a strong culture of self-policing and meta-commentary within the memes and general chat sphere. The nature
+              of
+              negativity here
+              is rather teasing than hate no ?
             </p>
 
             <div class="plot-wrapper" id="heatmap_pop">
@@ -1088,7 +1505,7 @@ s="plot-wrapper" id="spearman_geopo">
               Attack spikes
             </h2>
             <p>Lets look at the sensitivity to negativity of the Reddit Core subreddit. </p>
-            
+
             <div class="plot-wrapper" id="heatmap_pop">
               <embed src="plots/reactions_dynamics/reddit_year_dropdown.html" type="text/html" style="
                             width: 100%;
@@ -1099,8 +1516,8 @@ s="plot-wrapper" id="spearman_geopo">
             </div>
 
             <div class="plot-wrapper" id="table_pop">
-              <embed src="plots/reactions_dynamics/spikes_reddit_table.html" type="text/html"
-                title="tableGeo-Politics" style="
+              <embed src="plots/reactions_dynamics/spikes_reddit_table.html" type="text/html" title="tableGeo-Politics"
+                style="
                       width: 100%;
                       height: 500px;
                       border: none;
@@ -1108,10 +1525,10 @@ s="plot-wrapper" id="spearman_geopo">
                     ">
             </div>
             <p>
-              The post spike slight increase in negativity is within the range of normal fluctuation and 
-              is not statistically significant. So looks like Reddit Core is insensitive to hate ? Or rather, 
-              as we just saw, since the negativity they are targetted with are mainly "friendly attacks", there 
-              is nothing to be sensitive about. 
+              The post spike slight increase in negativity is within the range of normal fluctuation and
+              is not statistically significant. So looks like Reddit Core is insensitive to hate ? Or rather,
+              as we just saw, since the negativity they are targetted with are mainly "friendly attacks", there
+              is nothing to be sensitive about.
             </p>
 
             <section class="result-card">
@@ -1156,41 +1573,131 @@ s="plot-wrapper" id="spearman_geopo">
                 </div>
               </div>
             </section>
+            <h3>
+              Feature Analysis
+            </h3>
+            <h2>
+              Pronouns feature analysis
+            </h2>
+            <p>
+              Again more impersonal pronouns and She/he pronouns that come out much more in negatively linked posts than positive. The difference in the univariate mean difference is statistically significative and 
+              comes out as the most negatively correlated with link sentiment. Yet the absolute value of the logit coefficient is lower than what showed in other clusters (like geopolitics). Looks like negatively linked posts show 
+              similar patterns accross clusters: maybe blaming other people to a third party is uncorrelated with interests but characteristic to a hater. 
+            </p>
 
 
 
+<div>
+  <!-- Dropdown -->
+  <label for="redditPronounsSelector"><b>Select view</b></label>
+  <select id="redditPronounsSelector">
+    <option value="plot">Difference of the mean – pronoun features</option>
+    <option value="table">p-values of the pronoun features</option>
+  </select>
+</div>
 
-            <div class="plot-wrapper" id="reddit_pronouns_diff">
-              <embed src="plots/maelle/reddit_culture_pronouns_diff.html" type="text/html"
-                title="Difference of the mean - Pronouns feature"
-                style="width: 100%; height: 750px; border: none; background: transparent;">
-            </div>
+<!-- Container -->
+<div id="redditPronounsContainer" style="margin-top: 10px;">
 
-            <div class="plot-wrapper" id="reddit_pronouns_table">
-              <embed src="plots/maelle/reddit_pronouns_diff_features_table.html" type="text/html"
-                title="p-value for difference of the mean - pronoun feature"
-                style="width: 100%; height: 750px; border: none; background: transparent;">
-            </div>
+  <!-- Plot view -->
+  <div id="reddit_pronouns_plot_view">
+    <embed src="plots/writing_style/reddit_culture_pronouns_diff.html"
+           type="text/html"
+           title="Difference of the mean - Pronouns feature"
+           style="width: 100%; height: 750px; border: none; background: transparent;">
+  </div>
+
+  <!-- Table view -->
+  <div id="reddit_pronouns_table_view" style="display: none;">
+    <embed src="plots/writing_style/reddit_pronouns_diff_features_table.html"
+           type="text/html"
+           title="p-value for difference of the mean - pronoun feature"
+           style="width: 100%; height: 750px; border: none; background: transparent;">
+  </div>
+
+</div>
+
+<script>
+  const redditPronounsSelector = document.getElementById('redditPronounsSelector');
+  const redditPronounsPlotView = document.getElementById('reddit_pronouns_plot_view');
+  const redditPronounsTableView = document.getElementById('reddit_pronouns_table_view');
+
+  redditPronounsSelector.addEventListener('change', function () {
+    if (this.value === 'plot') {
+      redditPronounsPlotView.style.display = 'block';
+      redditPronounsTableView.style.display = 'none';
+    } else {
+      redditPronounsPlotView.style.display = 'none';
+      redditPronounsTableView.style.display = 'block';
+    }
+  });
+</script>
+
+<h2>
+  Sentiment/emotion feature analysis
+</h2>
+In the reddit‑core cluster, negative posts are clearly more emotionally loaded than neutral or positive ones, with a noticeable presence of anger. Anger and overall affect are 
+tightly linked, so once anger is in the model, the generic emotionality feature (LIWC_Affect) moves closer to zero in the logit coefficients, while sadness shows up as the second 
+strongest emotion on the negative side. So haters in the reddit‑core cluster don’t just sound harsh, they also show sadness. Which softens the purely aggressive picture we had of 
+negativity and negatively linked posts.
+<p>
+  
+</p>
+
 
             <div class="plot-wrapper" id="reddit_logit_pronouns">
-              <embed src="plots/maelle/reddit_logit_pronouns.html" type="text/html" title="Logit Analysis - Pronouns"
+              <embed src="plots/writing_style/reddit_logit_pronouns.html" type="text/html" title="Logit Analysis - Pronouns"
                 style="width: 100%; height: 750px; border: none; background: transparent;">
             </div>
 
-            <div class="plot-wrapper" id="reddit_sentiment_diff">
-              <embed src="plots/maelle/reddit_culture_sentiment_diff.html" type="text/html"
-                title="Difference of the mean - Sentiment feature"
-                style="width: 100%; height: 750px; border: none; background: transparent;">
-            </div>
+<div>
+  <!-- Dropdown -->
+  <label for="redditSentimentSelector"><b>Select view</b></label>
+  <select id="redditSentimentSelector">
+    <option value="plot">Difference of the mean – sentiment features</option>
+    <option value="table">p-values of the sentiment features</option>
+  </select>
+</div>
 
-            <div class="plot-wrapper" id="reddit_sentiments_table">
-              <embed src="plots/maelle/reddit_sen timents_diff_features_table.html" type="text/html"
-                title="p-value for difference of the mean - Sentiment features"
-                style="width: 100%; height: 750px; border: none; background: transparent;">
-            </div>
+<!-- Container -->
+<div id="redditSentimentContainer" style="margin-top: 10px;">
+
+  <!-- Plot view -->
+  <div id="reddit_sentiment_plot_view">
+    <embed src="plots/writing_style/reddit_culture_sentiment_diff.html"
+           type="text/html"
+           title="Difference of the mean - Sentiment feature"
+           style="width: 100%; height: 750px; border: none; background: transparent;">
+  </div>
+
+  <!-- Table view -->
+  <div id="reddit_sentiment_table_view" style="display: none;">
+    <embed src="plots/writing_style/reddit_sentiments_diff_features_table.html"
+           type="text/html"
+           title="p-value for difference of the mean - Sentiment features"
+           style="width: 100%; height: 750px; border: none; background: transparent;">
+  </div>
+
+</div>
+
+<script>
+  const redditSentimentSelector = document.getElementById('redditSentimentSelector');
+  const redditSentimentPlotView = document.getElementById('reddit_sentiment_plot_view');
+  const redditSentimentTableView = document.getElementById('reddit_sentiment_table_view');
+
+  redditSentimentSelector.addEventListener('change', function () {
+    if (this.value === 'plot') {
+      redditSentimentPlotView.style.display = 'block';
+      redditSentimentTableView.style.display = 'none';
+    } else {
+      redditSentimentPlotView.style.display = 'none';
+      redditSentimentTableView.style.display = 'block';
+    }
+  });
+</script>
 
             <div class="plot-wrapper" id="reddit_logit_sentiments">
-              <embed src="plots/maelle/reddit_logit_sentiments.html" type="text/html"
+              <embed src="plots/writing_style/reddit_logit_sentiments.html" type="text/html"
                 title="Logit analysis - Sentiment features"
                 style="width: 100%; height: 750px; border: none; background: transparent;">
             </div>
@@ -1209,16 +1716,16 @@ s="plot-wrapper" id="spearman_geopo">
           <div class="post-header">
             <img src="images/icon-health.png" alt="r/MentalHealth icon" class="post-icon post-icon--hero">
             <div class="post-meta">
-              <div class="post-subreddit">r/MentalHealth</div>
+              <div class="post-subreddit">r/SelfImprovement & MentalHealth</div>
               <div class="post-author">Posted by u/NinjADA • 2025</div>
             </div>
           </div>
 
           <div class="post-title-row">
-            <h1 class="post-title">r/Mental Health</h1>
+            <h1 class="post-title">r/SelfImprovement & MentalHealth</h1>
           </div>
 
-          <img class="post-thumb" src="images/mentalhealth_preview.png" alt="Mental health preview">
+          <img class="post-thumb" src="images/mentalhealth_preview.jpeg" alt="Mental health preview">
 
           <div class="post-actions">
             <button class="vote-btn up" type="button" aria-label="Like">▲</button>
@@ -1238,16 +1745,16 @@ s="plot-wrapper" id="spearman_geopo">
 
           <div class="post-body">
             Welcome to the mental health cluster of subreddits! <br>
-            Don't worry, you are in a safe space here. Or you are supposed to be at least. Let's see 
-            what the 9% of negaitivity is made of ! 
+            Don't worry, you are in a safe space here. Or you are supposed to be at least. Let's see
+            what the 9% of negaitivity is made of !
 
             <div class="plot-wrapper" id="selfmh_overall_distribution">
-              <embed src="plots/maelle/self_mh_overall_distribution.html" type="text/html"
+              <embed src="plots/writing_style/self_mh_overall_distribution.html" type="text/html"
                 title="Negative - Positive link distribution" class="plot-iframe" width="100%" height="800"
                 style="border:none; overflow:visible;">
             </div>
             <p>
-              Here like for Reddit Core cluster, the Mental Health cluster is mainly a taret of negative links. 
+              Here like for Reddit Core cluster, the Mental Health cluster is mainly a taret of negative links.
             </p>
 
             <div class="plot-wrapper" id="bar_pop">
@@ -1268,13 +1775,14 @@ s="plot-wrapper" id="spearman_geopo">
                           ">
             </div>
             <p>
-              The Self‑Improvement & Mental Health cluster is pretty chill overall: negativity is there, 
-              but it’s nowhere near the levels of more conflict‑heavy spaces like Geo‑Politics, and none 
-              of the top subreddits go past ~40% negativity. The heatmaps confirms that trend with the most active subreddits 
-              (r/changemyview, r/offmychest, r/relationships, and r/depression) display partial horizontal patterns, 
-              reflecting moderate negativity toward a restricted set of targets, often thematically related 
-              or highly visible subreddits. Overall, the heatmap suggests that negativity in this cluster is 
-              fragmented, context‑dependent, and mostly turned inward, which fits with how support and self‑improvement 
+              The Self‑Improvement & Mental Health cluster is pretty chill overall: negativity is there,
+              but it’s nowhere near the levels of more conflict‑heavy spaces like Geo‑Politics, and none
+              of the top subreddits go past ~40% negativity. The heatmaps confirms that trend with the most active
+              subreddits
+              (r/changemyview, r/offmychest, r/relationships, and r/depression) display partial horizontal patterns,
+              reflecting moderate negativity toward a restricted set of targets, often thematically related
+              or highly visible subreddits. Overall, the heatmap suggests that negativity in this cluster is
+              fragmented, context‑dependent, and mostly turned inward, which fits with how support and self‑improvement
               communities usually work
             </p>
 
@@ -1308,7 +1816,7 @@ s="plot-wrapper" id="spearman_geopo">
                             background: transparent;
                           ">
             </div>
-            
+
             <div class="plot-wrapper" id="heatmap_pop">
               <embed src="plots/reactions_dynamics/mental_year_dropdown.html" type="text/html" style="
                             width: 100%;
@@ -1319,18 +1827,22 @@ s="plot-wrapper" id="spearman_geopo">
             </div>
 
             <p>
-              Overall, these results indicate that the Self-Improvement & Mental Health cluster exhibits little 
-              to no systematic reactive behavior following periods of high received negativity. Despite being a 
-              frequent recipient of negative links, the cluster does not escalate its own negative interactions in response.
-               This finding is consistent with earlier structural analyses showing that negativity in this cluster is low-intensity,
-                context-dependent, and inward-focused, rather than retaliatory or conflict-driven. Looks like the basic hater won't be 
-                found in Mental health and self improvement communities. But let's dive into the feature analysis to 
-                see how they communicate when they send negativity. 
+              Overall, these results indicate that the Self-Improvement & Mental Health cluster exhibits little
+              to no systematic reactive behavior following periods of high received negativity. Despite being a
+              frequent recipient of negative links, the cluster does not escalate its own negative interactions in
+              response.
+              This finding is consistent with earlier structural analyses showing that negativity in this cluster is
+              low-intensity,
+              context-dependent, and inward-focused, rather than retaliatory or conflict-driven. Looks like the basic
+              hater
+              won't be
+              found in Mental health and self improvement communities. But let's dive into the feature analysis to
+              see how they communicate when they send negativity.
             </p>
 
             <div class="plot-wrapper" id="table_pop">
-              <embed src="plots/reactions_dynamics/spikes_mental_table.html" type="text/html"
-                title="tableGeo-Politics" style="
+              <embed src="plots/reactions_dynamics/spikes_mental_table.html" type="text/html" title="tableGeo-Politics"
+                style="
                       width: 100%;
                       height: 500px;
                       border: none;
@@ -1380,42 +1892,126 @@ s="plot-wrapper" id="spearman_geopo">
                 </div>
               </div>
             </section>
+<div>
+  <h3>
+    Feature Analysis
+  </h3>
+  <h2>
+    Pronouns feature analysis
+  </h2>
+  <p>
+    We saw that the mental health cluster was more of a sink to hate than a source. Yet the fetaure analysis shows a higher absolute value of proportion of presence between negative and positive posts. 
+    Indeed it the personal pronouns feature difference of the means reaches 0.015 (when geopolitics reached only 0.004). Again mostly personal pronouns but the I pronoun difference appears much higher
+    in this cluster than others. This is a marker of self-focused attention and sel-involvment. One can say that negativity in Mental health cluster is centered around interpersonal distress. 
+  </p>
+  <!-- Dropdown -->
+  <label for="selfmhPronounsSelector"><b>Select view</b></label>
+  <select id="selfmhPronounsSelector">
+    <option value="plot">Difference of the means – pronoun features</option>
+    <option value="table">p-values of the pronoun features</option>
+  </select>
+</div>
 
+<!-- Container -->
+<div id="selfmhPronounsContainer" style="margin-top: 10px;">
 
+  <!-- Plot view -->
+  <div id="selfmh_pronouns_plot_view">
+    <embed src="plots/writing_style/self_mh_culture_pronouns_diff.html"
+           type="text/html"
+           title="Difference of the means - Pronouns"
+           style="width: 100%; height: 750px; border: none; background: transparent;">
+  </div>
 
+  <!-- Table view -->
+  <div id="selfmh_pronouns_table_view" style="display: none;">
+    <embed src="plots/writing_style/self_mh_pronouns_diff_features_table.html"
+           type="text/html"
+           title="p-value for difference of the mean - Pronoun features"
+           style="width: 100%; height: 750px; border: none; background: transparent;">
+  </div>
 
+</div>
 
-            <div class="plot-wrapper" id="selfmh_pronouns_diff">
-              <embed src="plots/maelle/self_mh_culture_pronouns_diff.html" type="text/html"
-                title="Difference of the means - Pronouns"
-                style="width: 100%; height: 750px; border: none; background: transparent;">
-            </div>
+<script>
+  const selfmhPronounsSelector = document.getElementById('selfmhPronounsSelector');
+  const selfmhPronounsPlotView = document.getElementById('selfmh_pronouns_plot_view');
+  const selfmhPronounsTableView = document.getElementById('selfmh_pronouns_table_view');
 
-            <div class="plot-wrapper" id="selfmh_pronouns_table">
-              <embed src="plots/maelle/self_mh_pronouns_diff_features_table.html" type="text/html"
-                title="p-value for difference of the mean - Pronoun features"
-                style="width: 100%; height: 750px; border: none; background: transparent;">
-            </div>
+  selfmhPronounsSelector.addEventListener('change', function () {
+    if (this.value === 'plot') {
+      selfmhPronounsPlotView.style.display = 'block';
+      selfmhPronounsTableView.style.display = 'none';
+    } else {
+      selfmhPronounsPlotView.style.display = 'none';
+      selfmhPronounsTableView.style.display = 'block';
+    }
+  });
+</script>
+
 
             <div class="plot-wrapper" id="selfmh_logit_pronouns">
-              <embed src="plots/maelle/self_mh_logit_pronouns.html" type="text/html" title="Logit Analysis - Pronouns"
+              <embed src="plots/writing_style/self_mh_logit_pronouns.html" type="text/html" title="Logit Analysis - Pronouns"
                 style="width: 100%; height: 750px; border: none; background: transparent;">
             </div>
 
-            <div class="plot-wrapper" id="selfmh_sentiment_diff">
-              <embed src="plots/maelle/self_mh_culture_sentiment_diff.html" type="text/html"
-                title="Difference of the mean - Sentiment"
-                style="width: 100%; height: 750px; border: none; background: transparent;">
-            </div>
+<div>
+  <h2>
+    Sentiment feature analysis 
+  </h2>
+  <p>
+    Sentiment feature analysis show no results that stands out compared to the other clusers. Except that absolute values of univariate mean differences is more important. Negativity in the 
+    mental healuth cluster show the same patterns as negativity in the other clusters but it seams that emotions are more present than in others, suggesting more users that open up. 
+  </p>
+  <!-- Dropdown -->
+  <label for="selfmhSentimentSelector"><b>Select view</b></label>
+  <select id="selfmhSentimentSelector">
+    <option value="plot">Difference of the mean – sentiment features</option>
+    <option value="table">p-values of the sentiment features</option>
+  </select>
+</div>
 
-            <div class="plot-wrapper" id="selfmh_sentiments_table">
-              <embed src="plots/maelle/self_mh_sentiments_diff_features_table.html" type="text/html"
-                title="p-value for difference of the mean - Sentiment features"
-                style="width: 100%; height: 750px; border: none; background: transparent;">
-            </div>
+<!-- Container -->
+<div id="selfmhSentimentContainer" style="margin-top: 10px;">
+
+  <!-- Plot view -->
+  <div id="selfmh_sentiment_plot_view">
+    <embed src="plots/writing_style/self_mh_culture_sentiment_diff.html"
+           type="text/html"
+           title="Difference of the mean - Sentiment"
+           style="width: 100%; height: 750px; border: none; background: transparent;">
+  </div>
+
+  <!-- Table view -->
+  <div id="selfmh_sentiment_table_view" style="display: none;">
+    <embed src="plots/writing_style/self_mh_sentiments_diff_features_table.html"
+           type="text/html"
+           title="p-value for difference of the mean - Sentiment features"
+           style="width: 100%; height: 750px; border: none; background: transparent;">
+  </div>
+
+</div>
+
+<script>
+  const selfmhSentimentSelector = document.getElementById('selfmhSentimentSelector');
+  const selfmhSentimentPlotView = document.getElementById('selfmh_sentiment_plot_view');
+  const selfmhSentimentTableView = document.getElementById('selfmh_sentiment_table_view');
+
+  selfmhSentimentSelector.addEventListener('change', function () {
+    if (this.value === 'plot') {
+      selfmhSentimentPlotView.style.display = 'block';
+      selfmhSentimentTableView.style.display = 'none';
+    } else {
+      selfmhSentimentPlotView.style.display = 'none';
+      selfmhSentimentTableView.style.display = 'block';
+    }
+  });
+</script>
+
 
             <div class="plot-wrapper" id="selfmh_logit_sentiments">
-              <embed src="plots/maelle/self_mh_logit_sentiments.html" type="text/html" title="Logit Analysis - Sentiment"
+              <embed src="plots/writing_style/self_mh_logit_sentiments.html" type="text/html"
+                title="Logit Analysis - Sentiment"
                 style="width: 100%; height: 750px; border: none; background: transparent;">
             </div>
 
@@ -1431,7 +2027,7 @@ s="plot-wrapper" id="spearman_geopo">
       <article class="post" id="post-time" tabindex="0" aria-expanded="false">
         <div class="post-summary" role="button" aria-label="Open post">
           <div class="post-header">
-            <img src="images/icon-health.png" alt="r/TimeAnalysis icon" class="post-icon">
+            <img src="images/icon-timeanalysis.png" alt="r/TimeAnalysis icon" class="post-icon">
             <div class="post-meta">
               <div class="post-subreddit">r/TimeAnalysis</div>
               <div class="post-author">Posted by u/NinjADA • 2025</div>
@@ -1439,10 +2035,10 @@ s="plot-wrapper" id="spearman_geopo">
           </div>
 
           <div class="post-title-row">
-            <h1 class="post-title">Time-Analysis</h1>
+            <h1 class="post-title">r/TimeAnalysis</h1>
           </div>
 
-          <img class="post-thumb" src="images/mentalhealth_preview.png" alt="Time-Analysis preview">
+          <img class="post-thumb" src="images/post-timeanalysis.jpeg" alt="Time-Analysis preview">
 
           <div class="post-actions">
             <button class="vote-btn up" type="button" aria-label="Like">▲</button>
@@ -1456,13 +2052,14 @@ s="plot-wrapper" id="spearman_geopo">
         <div class="post-full">
           <div class="post-topbar" role="button" aria-label="Close post">
             <button class="back-btn" type="button" aria-label="Back">←</button>
-            <img src="images/icon-health.png" alt="r/TimeAnalysis icon" class="post-icon post-icon--hero">
+            <img src="images/icon-timeanalysis.png" alt="r/TimeAnalysis icon" class="post-icon post-icon--hero">
             <div class="topbar-title">Time-Analysis</div>
           </div>
 
           <div class="post-body">
             <h2>The Hater's Schedule</h2>
-            <p> Do haters have a specific time schedule ? Is there more negativity during summer than during winter ? Or on
+            <p> Do haters have a specific time schedule ? Is there more negativity during summer than during winter ? Or
+              on
               the week-end as opposed to during the week ? </p>
             <p>Let's plot the data and find out !</p>
             <label for="datasetSelector-plotT">Select Dataset</label>
@@ -1481,88 +2078,95 @@ s="plot-wrapper" id="spearman_geopo">
 
             <div class="plot-container">
               <div class="plot-panel" id="plotT-full-complete" style="display:block;">
-                <iframe src="plots/julien/schedule_full_complete.html" title="Full dataset - complete timespan" width="100%"
-                  height="450" style="border:none;"></iframe>
+                <iframe src="plots/time_series/schedule_full_complete.html" title="Full dataset - complete timespan"
+                  width="100%" height="450" style="border:none;"></iframe>
               </div>
               <div class="plot-panel" id="plotT-full-year_by_month" style="display:none;">
-                <iframe src="plots/julien/schedule_full_year_by_month.html" title="Full dataset - year by month"
+                <iframe src="plots/time_series/schedule_full_year_by_month.html" title="Full dataset - year by month"
                   width="100%" height="450" style="border:none;"></iframe>
               </div>
               <div class="plot-panel" id="plotT-full-week" style="display:none;">
-                <iframe src="plots/julien/schedule_full_week.html" title="Full dataset - average week" width="100%"
+                <iframe src="plots/time_series/schedule_full_week.html" title="Full dataset - average week" width="100%"
                   height="450" style="border:none;"></iframe>
               </div>
               <div class="plot-panel" id="plotT-geopolitics-complete" style="display:none;">
-                <iframe src="plots/julien/schedule_geopolitics_complete.html" title="Geopolitics - complete timespan"
+                <iframe src="plots/time_series/schedule_geopolitics_complete.html" title="Geopolitics - complete timespan"
                   width="100%" height="450" style="border:none;"></iframe>
               </div>
               <div class="plot-panel" id="plotT-geopolitics-year_by_month" style="display:none;">
-                <iframe src="plots/julien/schedule_geopolitics_year_by_month.html" title="Geopolitics - year by month"
+                <iframe src="plots/time_series/schedule_geopolitics_year_by_month.html" title="Geopolitics - year by month"
                   width="100%" height="450" style="border:none;"></iframe>
               </div>
               <div class="plot-panel" id="plotT-geopolitics-week" style="display:none;">
-                <iframe src="plots/julien/schedule_geopolitics_week.html" title="Geopolitics - average week" width="100%"
-                  height="450" style="border:none;"></iframe>
+                <iframe src="plots/time_series/schedule_geopolitics_week.html" title="Geopolitics - average week"
+                  width="100%" height="450" style="border:none;"></iframe>
               </div>
               <div class="plot-panel" id="plotT-popculture-complete" style="display:none;">
-                <iframe src="plots/julien/schedule_popculture_complete.html" title="Pop-Culture - complete timespan"
+                <iframe src="plots/time_series/schedule_popculture_complete.html" title="Pop-Culture - complete timespan"
                   width="100%" height="450" style="border:none;"></iframe>
               </div>
               <div class="plot-panel" id="plotT-popculture-year_by_month" style="display:none;">
-                <iframe src="plots/julien/schedule_popculture_year_by_month.html" title="Pop-Culture - year by month"
+                <iframe src="plots/time_series/schedule_popculture_year_by_month.html" title="Pop-Culture - year by month"
                   width="100%" height="450" style="border:none;"></iframe>
               </div>
               <div class="plot-panel" id="plotT-popculture-week" style="display:none;">
-                <iframe src="plots/julien/schedule_popculture_week.html" title="Pop-Culture - average week" width="100%"
+                <iframe src="plots/time_series/schedule_popculture_week.html" title="Pop-Culture - average week" width="100%"
                   height="450" style="border:none;"></iframe>
               </div>
             </div>
 
-            <p> Let's look at the week-level. In the plot above you can see the "typical" week : for example above Tuesday
+            <p> Let's look at the week-level. In the plot above you can see the "typical" week : for example above
+              Tuesday
               you can read the mean of the negativity rate of every single Tuesday in our dataset. (Reminder : this
               negativity rate
               is simply the number of negative posts divided by the number of total posts for that particular day). </p>
-            <p>We will fit a logistic regression on the days of the week : Monday represents the reference negativity rate
+            <p>We will fit a logistic regression on the days of the week : Monday represents the reference negativity
+              rate
               (value 0, also called the intercept). For each other day of the week, the model tries to find the value by
               which the
               rate for this day changes on average when compared with Monday. Logistic regression can calculate log-odds
               (the chance between 0 and 1 that a random post on e.g. Tuesday is negative) based
-              on categorical variables (the days of the week). The negativity rate can be naturally interpreted as a log-odd
-              : if there are 10 negative posts for 100 total posts, the rate of 0.1 means that a randomly picked post has
+              on categorical variables (the days of the week). The negativity rate can be naturally interpreted as a
+              log-odd
+              : if there are 10 negative posts for 100 total posts, the rate of 0.1 means that a randomly picked post
+              has
               0.1
               chance of being negative. So it makes sense to use this model. Let's look at the results.
             </p>
             <div class="plot-container">
               <!-- Logistic regression - week -->
-              <iframe id="plot_logistic_regression_week" src="plots/julien/log_reg_full_week.html"
+              <iframe id="plot_logistic_regression_week" src="plots/time_series/log_reg_full_week.html"
                 title="Logistic regression - week" width="100%" height="450" style="border:none;"></iframe>
             </div>
-            <p>How do we interpret this table ? The p-value tells us the probability that the null-hypothesis "there is no
-              difference of negativity ratio between day X and Monday" is true, so we can only consider that there is some
+            <p>How do we interpret this table ? The p-value tells us the probability that the null-hypothesis "there is
+              no
+              difference of negativity ratio between day X and Monday" is true, so we can only consider that there is
+              some
               statistically significant event when the p-value < 0.05. The column "increase %" tells us by how much the
-                negativity rate increased (or decreased if it's negative) between day X and monday. It is calculated using
-                the coefficient beta discovered by the logistic regression model for this day as follows : increase
-                %=(exp(beta) - 1)*100. The confidence interval column represents the range in which the increase % will fall
-                95% of the time (calculated with a binomial distribution / Wald interval) and finally the z-score=beta /
-                standard_error represents the "effect size" . So we see that two days have a stastically significant p-value
-                : Saturday and Sunday with a corresponding percentage % of 7.35% and 6.3% respectively. Nice ! Did we
-                determine that haters tend to hate more on the weekends ? Sadly there are two more values in the table that
-                we need to pay attention to : pseudo R-squared and Pearson's Chi-square. R-squared tells us the explaining
-                power of the model, it is a value from 0 to 1 that represents the amount of the observed difference in rate
-                that our model explains (1 would mean that our model explains 100% of the observed difference, i.e the model
-                perfectly encampsulates the observed phenomenon). Our logistic regression can't provide us with a real
-                R-squared metric, but this pseudo-metric is an approximation. On the other hand the Chi-square measures the
-                goodness of fit of our model : it sums the squared differences between observed data and model predictions
-                (weighted by expected values). Low values indicate that our predictions closely match reality (it's a good
-                model) while high values show significant mismatches. Our table gives us an abysmally small pseudo
-                R-squared, and an extremely high Chi-square, which means our model has almost no explaining power, and a
-                terribly bad fit. In short, it tells us almost nothing 😢. </p>
+                negativity rate increased (or decreased if it's negative) between day X and monday. It is calculated
+                using the coefficient beta discovered by the logistic regression model for this day as follows :
+                increase %=(exp(beta) - 1)*100. The confidence interval column represents the range in which the
+                increase % will fall 95% of the time (calculated with a binomial distribution / Wald interval) and
+                finally the z-score=beta / standard_error represents the "effect size" . So we see that two days have a
+                stastically significant p-value : Saturday and Sunday with a corresponding percentage % of 7.35% and
+                6.3% respectively. Nice ! Did we determine that haters tend to hate more on the weekends ? Sadly there
+                are two more values in the table that we need to pay attention to : pseudo R-squared and Pearson's
+                Chi-square. R-squared tells us the explaining power of the model, it is a value from 0 to 1 that
+                represents the amount of the observed difference in rate that our model explains (1 would mean that our
+                model explains 100% of the observed difference, i.e the model perfectly encampsulates the observed
+                phenomenon). Our logistic regression can't provide us with a real R-squared metric, but this
+                pseudo-metric is an approximation. On the other hand the Chi-square measures the goodness of fit of our
+                model : it sums the squared differences between observed data and model predictions (weighted by
+                expected values). Low values indicate that our predictions closely match reality (it's a good model)
+                while high values show significant mismatches. Our table gives us an abysmally small pseudo R-squared,
+                and an extremely high Chi-square, which means our model has almost no explaining power, and a terribly
+                bad fit. In short, it tells us almost nothing 😢. </p>
 
                 <p>Let's try the same analysis comparing the different months of the year.</p>
 
                 <div class="plot-container">
                   <!-- Logistic regression - year by month -->
-                  <iframe id="plot_logistic_regression_year_by_month" src="plots/julien/log_reg_full_year_by_month.html"
+                  <iframe id="plot_logistic_regression_year_by_month" src="plots/time_series/log_reg_full_year_by_month.html"
                     title="Logistic regression - year by month" width="100%" height="450" style="border:none;"></iframe>
                 </div>
 
@@ -1571,7 +2175,8 @@ s="plot-wrapper" id="spearman_geopo">
                 <p>After having examined the negative posting behavior over time, we wonder if it is possible to see the
                   effect of important events on the amount of negativity posted on Reddit. Intuitively this would make
                   sense : if some
-                  controversial event happens in the real world, some Redditors will probably post about it in a deragotive
+                  controversial event happens in the real world, some Redditors will probably post about it in a
+                  deragotive
                   manner or argue about it. With some luck and if the event is important enough, there would be
                   enough discussion on the subject inside or between subreddits, generating enough hyperlinks associated
                   with a negative link sentiment such that we detect a change.
@@ -1585,41 +2190,63 @@ s="plot-wrapper" id="spearman_geopo">
 
                 <div class="plot-container">
                   <div id="event-full" class="plot-panel" style="display: block;">
-                    <iframe src="plots/julien/event_analysis_full.html" title="Negativity & Events - Full dataset"
+                    <iframe src="plots/time_series/event_analysis_full.html" title="Negativity & Events - Full dataset"
                       width="100%" height="700" style="border:none;"> </iframe>
                   </div>
                   <div id="event-geopolitics" class="plot-panel" style="display: none;">
-                    <iframe src="plots/julien/event_analysis_geopolitics.html" title="Negativity & Events - Geopolitics"
+                    <iframe src="plots/time_series/event_analysis_geopolitics.html" title="Negativity & Events - Geopolitics"
                       width="100%" height="700" style="border:none;"> </iframe>
                   </div>
                   <div id="event-popculture" class="plot-panel" style="display: none;">
-                    <iframe src="plots/julien/event_analysis_popculture.html" title="Negativity & Events - Pop-Culture"
+                    <iframe src="plots/time_series/event_analysis_popculture.html" title="Negativity & Events - Pop-Culture"
                       width="100%" height="700" style="border:none;"> </iframe>
                   </div>
                 </div>
 
-                <p>Of course here we are only detecting correlation, not causation. As an example, Trump's election in November 2016 
+                <p>Of course here we are only detecting correlation, not causation. As an example, Trump's election in
+                  November 2016
                   correlates quite strongly with a decrease in negativity when compared to September.
-                  But is it really because Redditors are happy about the election ? Or is there some other confounding factor ? 
-                  For example it might be possible that Redditors are just less negative in November than in September every year.
-                  Or it could be  because the campaigning preceding the election has higher above average negativity due to
+                  But is it really because Redditors are happy about the election ? Or is there some other confounding
+                  factor ?
+                  For example it might be possible that Redditors are just less negative in November than in September
+                  every
+                  year.
+                  Or it could be because the campaigning preceding the election has higher above average negativity due
+                  to
                   the political tensions, and that the period after the election simply went back to the normal rate ?
-          
-                  Let's test out the first hypothesis : "it's not the election, it's just a recurring pattern every year".
-                  At first it seems quite simple : we could just use a t-test to compare the observed difference in mean negativity around the 
-                  election  in 2016 with the difference in mean negativity at the same time period in years with no election. 
-                  But the thing is, we only have about three years of data so we have two other similar time-windows (in 2014 and 2015) to compare
-                  it with. Only two samples is a meager sample size, and the result of the test would not be very meaningful.
 
-                  To get out of this dead end, we have to use a tricky technique called bootstrap resampling. Here's how it works : in our non-election
-                  years (2014-2015) we take the daily negativity rate of all days of September (so 2 times 30). Then we create synthetic or "bootstrap" Septembers by sampling at random 
-                  (with replacement) 30 out of these 60 days to creaete one "bootstrap" September. We can repeat this as many times and in theory each bootstrap 
-                  September should be different (since there are so many different possible combinations of days). Using the days of two Septembers, we can 
-                  create a huge number of new Septembers (for example 100) : we have artificially mutliplied the size of our sample by 50. 
-                  We do the same in parallel with our Novembers 2014-2015, and for each pair of bootstrap months we calculate the mean rate of each and 
-                  finally the difference of both. 
-                  We now have 100 synthetic, non-election-year differences of mean negativity to compare our observed 2016 difference to. With this synthetic
-                  data we create the following 95% confidence interval (i.e into which range do 95% of all synthetic differences fall) :
+                  Let's test out the first hypothesis : "it's not the election, it's just a recurring pattern every
+                  year".
+                  At first it seems quite simple : we could just use a t-test to compare the observed difference in mean
+                  negativity around the
+                  election in 2016 with the difference in mean negativity at the same time period in years with no
+                  election.
+                  But the thing is, we only have about three years of data so we have two other similar time-windows (in
+                  2014 and 2015) to compare
+                  it with. Only two samples is a meager sample size, and the result of the test would not be very
+                  meaningful.
+
+                  To get out of this dead end, we have to use a tricky technique called bootstrap resampling. Here's how
+                  it
+                  works : in our non-election
+                  years (2014-2015) we take the daily negativity rate of all days of September (so 2 times 30). Then we
+                  create synthetic or "bootstrap" Septembers by sampling at random
+                  (with replacement) 30 out of these 60 days to creaete one "bootstrap" September. We can repeat this as
+                  many times and in theory each bootstrap
+                  September should be different (since there are so many different possible combinations of days). Using
+                  the
+                  days of two Septembers, we can
+                  create a huge number of new Septembers (for example 100) : we have artificially mutliplied the size of
+                  our
+                  sample by 50.
+                  We do the same in parallel with our Novembers 2014-2015, and for each pair of bootstrap months we
+                  calculate the mean rate of each and
+                  finally the difference of both.
+                  We now have 100 synthetic, non-election-year differences of mean negativity to compare our observed
+                  2016
+                  difference to. With this synthetic
+                  data we create the following 95% confidence interval (i.e into which range do 95% of all synthetic
+                  differences fall) :
                   Table A
 
                 </p>
@@ -1628,32 +2255,52 @@ s="plot-wrapper" id="spearman_geopo">
                 </div>
 
                 <p>
-                Alright so what does this tell us ? According to our bootstrap distribution, the expected difference of mean negativity in non-election 
-                years should be completely almost negligeable at ~1% and positive, instead of our observed -18.8%. More importantly, we can see that our
-                observed difference in 2016 lies very far outside the 95% confidence interval of non-election years. 
-                This information supports the hypothesis that Redditors were really less negative after November 8 2016 (compared to September 2016) and that 
-                it isn't a yearly pattern.
+                  Alright so what does this tell us ? According to our bootstrap distribution, the expected difference
+                  of
+                  mean negativity in non-election
+                  years should be completely almost negligeable at ~1% and positive, instead of our observed -18.8%.
+                  More
+                  importantly, we can see that our
+                  observed difference in 2016 lies very far outside the 95% confidence interval of non-election years.
+                  This information supports the hypothesis that Redditors were really less negative after November 8
+                  2016
+                  (compared to September 2016) and that
+                  it isn't a yearly pattern.
                 </p>
 
                 <p>
-                  Ok about our second question : now that we know that something special happened in 2016 that made November's negativity rate lower 
-                  than September's, how can we know that whether November was a less negative than usual month or September was a more negative than usual month ?
-                  To discover that we will compare the post election time window's (November 2016) mean negativity rate to the mean negativity rate of all other months
-                  in the dataset. Careful, before we were talking about an increase or decrease % between the mean rates of two months, now we're just talking about 
-                  the mean rate of a month. 
+                  Ok about our second question : now that we know that something special happened in 2016 that made
+                  November's negativity rate lower
+                  than September's, how can we know that whether November was a less negative than usual month or
+                  September
+                  was a more negative than usual month ?
+                  To discover that we will compare the post election time window's (November 2016) mean negativity rate
+                  to
+                  the mean negativity rate of all other months
+                  in the dataset. Careful, before we were talking about an increase or decrease % between the mean rates
+                  of
+                  two months, now we're just talking about
+                  the mean rate of a month.
                   Table B :
                 </p>
                 <div id="whatever">
                 <iframe id="whatevs" src="plots/julien/neg_rate_comparison_no_event_vs_event_geopolitics.html"style="width:100%;height:300px;border:none;"></iframe>
                 </div>
 
-                Ok so what does the data tell us ? We can read from the table that the post-2016 presidential election window has a has a mean negativity rate that is lower than the mean of all similarly shaped
-                time windows in the dataset. Not only that, but it is outside of the 95% and even 99% ranges (or confidence intervals) of of all similarly shaped time windows in dataset.
-                
-                So we can quite confidently say that the 2016 election had an effect (not just a yearly pattern)thanks to table A, and that the effect was a negativity decrease thanks to table B.
+                Ok so what does the data tell us ? We can read from the table that the post-2016 presidential election
+                window has a has a mean negativity rate that is lower than the mean of all similarly shaped
+                time windows in the dataset. Not only that, but it is outside of the 95% and even 99% ranges (or
+                confidence
+                intervals) of of all similarly shaped time windows in dataset.
+
+                So we can quite confidently say that the 2016 election had an effect (not just a yearly pattern)thanks
+                to
+                table A, and that the effect was a negativity decrease thanks to table B.
 
                 <p>
-                  Bullshit conclusion : we can conclude that 1) we cannot predict hater negativity behavior pattern in time (no hater's schedule)  2) hater's may react minorly to certain events
+                  Bullshit conclusion : we can conclude that 1) we cannot predict hater negativity behavior pattern in
+                  time
+                  (no hater's schedule) 2) hater's may react minorly to certain events
                 </p>
 
                 <footer>© 2025 NinjADA Team</footer>
@@ -1663,40 +2310,36 @@ s="plot-wrapper" id="spearman_geopo">
 
 
 
-  </main>
+    </main>
 
   <!--===== Right Sidebar ===== -->
-  <aside class="about">
+  <aside class="sidebar">
     <div class="about-box">
       <strong>About this subreddit</strong>
       <p>Data-driven analysis of online hostility on Reddit (2014–2017).</p>
     </div>
 
-    <div class="about-box">
-      <strong>Rules</strong>
-      <p>
-        1. Be respectful<br>
-        2. Data-based discussion only
-      </p>
-    </div>
+      <div class="about-box">
+        <strong>Rules</strong>
+        <p>
+          1. Be respectful<br>
+          2. Data-based discussion only
+        </p>
+      </div>
 
-  <!-- New box -->
-  <div class="about-box for-ada-geeks"
-       tabindex="0"
-       role="button"
-       aria-controls="post-methods"
-       aria-expanded="false"
-       aria-label="Open methods for ADA geeks">
-    <strong>For ADA Geeks</strong>
-    <p>
-      1. Reaction dynamics<br>
-      2. Feature analysis<br>
-      3. Time analysis</br>
-    </p>
-    <p class="open-hint">Click to open methods post</p>
-  </div>
+      <!-- New box -->
+      <div class="about-box for-ada-geeks" tabindex="0" role="button" aria-controls="post-methods" aria-expanded="false"
+        aria-label="Open methods for ADA geeks">
+        <strong>For ADA Geeks</strong>
+        <p>
+          1. Reaction dynamics<br>
+          2. Feature analysis<br>
+          3. Time analysis</br>
+        </p>
+        <p class="open-hint">Click to open methods post</p>
+      </div>
 
-  </aside>
+    </aside>
 
 
 
@@ -1802,6 +2445,41 @@ s="plot-wrapper" id="spearman_geopo">
   </script>
 
   <script>
+    const selector = document.getElementById('plotSelector');
+    const plotView = document.getElementById('geopo_plot_view');
+    const tableView = document.getElementById('geopo_table_view');
+
+    selector.addEventListener('change', function () {
+      if (this.value === 'plot') {
+        plotView.style.display = 'block';
+        tableView.style.display = 'none';
+      } else {
+        plotView.style.display = 'none';
+        tableView.style.display = 'block';
+      }
+    });
+  </script>
+
+
+  <script>
+    const overallImg = document.getElementById("img-overall");
+    const bySentimentImg = document.getElementById("img-by-sentiment");
+    const radios = document.querySelectorAll("input[name='bt-toggle']");
+
+    radios.forEach(r => {
+      r.addEventListener("change", () => {
+        if (r.value === "overall") {
+          overallImg.style.display = "block";
+          bySentimentImg.style.display = "none";
+        } else {
+          overallImg.style.display = "none";
+          bySentimentImg.style.display = "block";
+        }
+      });
+    });
+  </script>
+
+  <script>
     // ===== Feed open/close + like/dislike under each card =====
     const body = document.body;
     const posts = document.querySelectorAll(".post");
@@ -1863,36 +2541,36 @@ s="plot-wrapper" id="spearman_geopo">
           adaBox.setAttribute('aria-expanded', 'true');
         };
 
-      adaBox.addEventListener('click', openMethodsFromSidebar);
+        adaBox.addEventListener('click', openMethodsFromSidebar);
 
-      adaBox.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          openMethodsFromSidebar();
-        }
-      });
-    
-    }
+        adaBox.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openMethodsFromSidebar();
+          }
+        });
+
+      }
       if (adaBox) adaBox.setAttribute('aria-expanded', 'false');
-    // ===== Left sidebar navigation opens posts =====
-    const sidebarLinks = document.querySelectorAll('.sidebar a[href^="#post-"]');
+      // ===== Left sidebar navigation opens posts =====
+      const sidebarLinks = document.querySelectorAll('.sidebar a[href^="#post-"]');
 
-    sidebarLinks.forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault(); // prevent default jump
-      const targetId = link.getAttribute('href').slice(1); // "post-1"
-      const targetPost = document.getElementById(targetId);
-      if (!targetPost) return;
+      sidebarLinks.forEach(link => {
+        link.addEventListener('click', e => {
+          e.preventDefault(); // prevent default jump
+          const targetId = link.getAttribute('href').slice(1); // "post-1"
+          const targetPost = document.getElementById(targetId);
+          if (!targetPost) return;
 
-      openPost(targetPost); // use your existing function
+          openPost(targetPost); // use your existing function
 
-      // smooth scroll to the opened card
-      targetPost.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
+          // smooth scroll to the opened card
+          targetPost.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        });
       });
-    });
-  });
 
 
 
@@ -1933,9 +2611,25 @@ s="plot-wrapper" id="spearman_geopo">
     });
   </script>
 
+  <script>
+    const sentimentSelector = document.getElementById('sentimentPlotSelector');
+    const sentimentPlotView = document.getElementById('geopo_sentiment_plot_view');
+    const sentimentTableView = document.getElementById('geopo_sentiment_table_view');
+
+    sentimentSelector.addEventListener('change', function () {
+      if (this.value === 'plot') {
+        sentimentPlotView.style.display = 'block';
+        sentimentTableView.style.display = 'none';
+      } else {
+        sentimentPlotView.style.display = 'none';
+        sentimentTableView.style.display = 'block';
+      }
+    });
+  </script>
+
 
   <script>
-    ///////////// julien's script for buttons
+    ///////////// time_series's script for buttons
 
     // Time-Analysis - Hater's schedule (plotT)
     const datasetSelectorPlotT = document.getElementById('datasetSelector-plotT');
@@ -1970,15 +2664,15 @@ s="plot-wrapper" id="spearman_geopo">
     const logisticYearFrame = document.getElementById('plot_logistic_regression_year_by_month');
 
     const logisticSrcWeekByDataset = {
-      full: 'plots/julien/log_reg_full_week.html',
-      geopolitics: 'plots/julien/log_reg_geopolitics_week.html',
-      popculture: 'plots/julien/log_reg_popculture_week.html'
+      full: 'plots/time_series/log_reg_full_week.html',
+      geopolitics: 'plots/time_series/log_reg_geopolitics_week.html',
+      popculture: 'plots/time_series/log_reg_popculture_week.html'
     };
 
     const logisticSrcYearByMonthByDataset = {
-      full: 'plots/julien/log_reg_full_year_by_month.html',
-      geopolitics: 'plots/julien/log_reg_geopolitics_year_by_month.html',
-      popculture: 'plots/julien/log_reg_popculture_year_by_month.html'
+      full: 'plots/time_series/log_reg_full_year_by_month.html',
+      geopolitics: 'plots/time_series/log_reg_geopolitics_year_by_month.html',
+      popculture: 'plots/time_series/log_reg_popculture_year_by_month.html'
     };
 
     function updateLogisticPlotsT() {
@@ -2032,11 +2726,11 @@ s="plot-wrapper" id="spearman_geopo">
     }
 
     if (eventDatasetSelector) {
-        eventDatasetSelector.addEventListener('change', updateEventPlots);
-        updateEventPlots(); // initial state
+      eventDatasetSelector.addEventListener('change', updateEventPlots);
+      updateEventPlots(); // initial state
     }
 
-    //////////////////////////// end of julien's scripts //////
+    //////////////////////////// end of time_series's scripts //////
     // ================== end post open/close toggles ==================
 
   </script>
