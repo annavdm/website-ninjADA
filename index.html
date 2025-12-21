@@ -752,7 +752,7 @@
             <h2>Reaction dynamics</h2>
             <p>
               We see they clearly send more negative links than they receive them. Looks like if you are a geo-politics
-              fan you are likely to be more an attackor than a target......<br>
+              fan you are likely to be more an attacker than a target......<br>
               Of course we're just kidding here, we have paid close attention to the ADA course and it is far too early
               to draw conclusions just with a plot.
             </p>
@@ -2059,79 +2059,167 @@ negativity and negatively linked posts.
           <div class="post-body">
             <h2>The Hater's Schedule</h2>
             <p> Do haters have a specific time schedule ? Is there more negativity during summer than during winter ? Or
-              on
-              the week-end as opposed to during the week ? </p>
+              on the week-end as opposed to during the week ? Let's first look at the amount of positive and negative hyperlinks posted every day on Reddit.
+              (NB : you can click on the green/red square in the top right to choose which category to visualize).
+              
+              <div id="hist_post_dates_container">
+              <iframe id="hist_post_dates_frame" src="plots/time_series/hist_posting_dates.html" style="width:100%;height:600px;border:none;"></iframe>
+              </div>
+
+              We can see that posts containing positive/neutral tone far outweigh the negative ones. To examine negativity we need a metric sensible metric. 
+              As is visible from the histogram above, just counting the amount doesn't reflect the level of negativity of Reddit users.
+              That's why our main metric will be the negativity rate R : it's the number of negative posts divided by the total of number of posts.
+              
+              Alright then, what does R look like for different clusters and over different time periods ? In the window below
+              you can select one of the four clusters that we analyzed in the previous posts or examine the entirety of the dataset.
+              You can also decide over which time period to examine the data : we averaged the data over different scales to be able to 
+              see how the negativity rate evolves over a "typical" year / month / week / day, or you can look at the complete dataset from start
+              to finish. 95% confidence intervals (calculated according to binomial distribution) are also shown on the plots, but you can click
+              on the legend in the top left to make them disappear if it's too messy.
+              </p>
             <p>Let's plot the data and find out !</p>
             <label for="datasetSelector-plotT">Select Dataset</label>
             <select id="datasetSelector-plotT">
               <option value="full">Full Dataset</option>
               <option value="geopolitics">Cluster Geopolitics</option>
               <option value="popculture">Cluster Pop-Culture</option>
+              <option value="popculture">Cluster Pop-Culture</option>
+              <option value="redditcore">Cluster Redditcore</option>
+              <option value="mental_health">Cluster Mental Health</option>
             </select>
 
             <label for="timespanSelector-plotT">Timespan</label>
             <select id="timespanSelector-plotT">
               <option value="complete">Complete</option>
               <option value="year_by_month">Year by month</option>
+              <option value="year_by_day">Year by day</option>
+              <option value="month">Average Month</option>
               <option value="week">Average Week</option>
+              <option value="day">Average Day</option>
             </select>
 
             <div class="plot-container">
+               <!-- full -->
               <div class="plot-panel" id="plotT-full-complete" style="display:block;">
-                <iframe src="plots/time_series/schedule_full_complete.html" title="Full dataset - complete timespan"
-                  width="100%" height="450" style="border:none;"></iframe>
+                <iframe src="plots/time_series/schedule_full_complete.html" title="Full dataset - complete timespan" width="100%" height="480" style="border:none;"></iframe>
               </div>
               <div class="plot-panel" id="plotT-full-year_by_month" style="display:none;">
-                <iframe src="plots/time_series/schedule_full_year_by_month.html" title="Full dataset - year by month"
-                  width="100%" height="450" style="border:none;"></iframe>
+                <iframe src="plots/time_series/schedule_full_year_by_month.html" title="Full dataset - year by month" width="100%" height="480" style="border:none;"></iframe>
+              </div>
+              <div class="plot-panel" id="plotT-full-year_by_day" style="display:none;">
+                <iframe src="plots/time_series/schedule_full_year_by_day.html" title="Full dataset - year by day" width="100%" height="480" style="border:none;"></iframe>
+              </div>
+              <div class="plot-panel" id="plotT-full-month" style="display:none;">
+                <iframe src="plots/time_series/schedule_full_month.html" title="Full dataset - average month" width="100%" height="480" style="border:none;"></iframe>
               </div>
               <div class="plot-panel" id="plotT-full-week" style="display:none;">
-                <iframe src="plots/time_series/schedule_full_week.html" title="Full dataset - average week" width="100%"
-                  height="450" style="border:none;"></iframe>
+                <iframe src="plots/time_series/schedule_full_week.html" title="Full dataset - average week" width="100%" height="480" style="border:none;"></iframe>
               </div>
-              <div class="plot-panel" id="plotT-geopolitics-complete" style="display:none;">
-                <iframe src="plots/time_series/schedule_geopolitics_complete.html" title="Geopolitics - complete timespan"
-                  width="100%" height="450" style="border:none;"></iframe>
+              <div class="plot-panel" id="plotT-full-day" style="display:none;">
+                <iframe src="plots/time_series/schedule_full_day.html" title="Full dataset - average day" width="100%" height="480" style="border:none;"></iframe>
+              </div>
+            
+            <!-- geopolitics -->
+              <div class="plot-panel" id="plotT-geopolitics-complete" style="display:block;">
+                <iframe src="plots/time_series/schedule_geopolitics_complete.html" title="geopolitics dataset - complete timespan" width="100%" height="480" style="border:none;"></iframe>
               </div>
               <div class="plot-panel" id="plotT-geopolitics-year_by_month" style="display:none;">
-                <iframe src="plots/time_series/schedule_geopolitics_year_by_month.html" title="Geopolitics - year by month"
-                  width="100%" height="450" style="border:none;"></iframe>
+                <iframe src="plots/time_series/schedule_geopolitics_year_by_month.html" title="geopolitics dataset - year by month" width="100%" height="480" style="border:none;"></iframe>
+              </div>
+              <div class="plot-panel" id="plotT-geopolitics-year_by_day" style="display:none;">
+                <iframe src="plots/time_series/schedule_geopolitics_year_by_day.html" title="geopolitics dataset - year by day" width="100%" height="480" style="border:none;"></iframe>
+              </div>
+              <div class="plot-panel" id="plotT-geopolitics-month" style="display:none;">
+                <iframe src="plots/time_series/schedule_geopolitics_month.html" title="geopolitics dataset - average month" width="100%" height="480" style="border:none;"></iframe>
               </div>
               <div class="plot-panel" id="plotT-geopolitics-week" style="display:none;">
-                <iframe src="plots/time_series/schedule_geopolitics_week.html" title="Geopolitics - average week"
-                  width="100%" height="450" style="border:none;"></iframe>
+                <iframe src="plots/time_series/schedule_geopolitics_week.html" title="geopolitics dataset - average week" width="100%" height="480" style="border:none;"></iframe>
               </div>
-              <div class="plot-panel" id="plotT-popculture-complete" style="display:none;">
-                <iframe src="plots/time_series/schedule_popculture_complete.html" title="Pop-Culture - complete timespan"
-                  width="100%" height="450" style="border:none;"></iframe>
+              <div class="plot-panel" id="plotT-geopolitics-day" style="display:none;">
+                <iframe src="plots/time_series/schedule_geopolitics_day.html" title="geopolitics dataset - average day" width="100%" height="480" style="border:none;"></iframe>
+              </div>
+            
+
+            <!-- popculture -->
+              <div class="plot-panel" id="plotT-popculture-complete" style="display:block;">
+                <iframe src="plots/time_series/schedule_popculture_complete.html" title="popculture dataset - complete timespan" width="100%" height="480" style="border:none;"></iframe>
               </div>
               <div class="plot-panel" id="plotT-popculture-year_by_month" style="display:none;">
-                <iframe src="plots/time_series/schedule_popculture_year_by_month.html" title="Pop-Culture - year by month"
-                  width="100%" height="450" style="border:none;"></iframe>
+                <iframe src="plots/time_series/schedule_popculture_year_by_month.html" title="popculture dataset - year by month" width="100%" height="480" style="border:none;"></iframe>
+              </div>
+              <div class="plot-panel" id="plotT-popculture-year_by_day" style="display:none;">
+                <iframe src="plots/time_series/schedule_popculture_year_by_day.html" title="popculture dataset - year by day" width="100%" height="480" style="border:none;"></iframe>
+              </div>
+              <div class="plot-panel" id="plotT-popculture-month" style="display:none;">
+                <iframe src="plots/time_series/schedule_popculture_month.html" title="popculture dataset - average month" width="100%" height="480" style="border:none;"></iframe>
               </div>
               <div class="plot-panel" id="plotT-popculture-week" style="display:none;">
-                <iframe src="plots/time_series/schedule_popculture_week.html" title="Pop-Culture - average week" width="100%"
-                  height="450" style="border:none;"></iframe>
+                <iframe src="plots/time_series/schedule_popculture_week.html" title="popculture dataset - average week" width="100%" height="480" style="border:none;"></iframe>
+              </div>
+              <div class="plot-panel" id="plotT-popculture-day" style="display:none;">
+                <iframe src="plots/time_series/schedule_popculture_day.html" title="popculture dataset - average day" width="100%" height="480" style="border:none;"></iframe>
+              </div>
+            
+
+            <!-- redditcore -->
+              <div class="plot-panel" id="plotT-redditcore-complete" style="display:block;">
+                <iframe src="plots/time_series/schedule_redditcore_complete.html" title="redditcore dataset - complete timespan" width="100%" height="480" style="border:none;"></iframe>
+              </div>
+              <div class="plot-panel" id="plotT-redditcore-year_by_month" style="display:none;">
+                <iframe src="plots/time_series/schedule_redditcore_year_by_month.html" title="redditcore dataset - year by month" width="100%" height="480" style="border:none;"></iframe>
+              </div>
+              <div class="plot-panel" id="plotT-redditcore-year_by_day" style="display:none;">
+                <iframe src="plots/time_series/schedule_redditcore_year_by_day.html" title="redditcore dataset - year by day" width="100%" height="480" style="border:none;"></iframe>
+              </div>
+              <div class="plot-panel" id="plotT-redditcore-month" style="display:none;">
+                <iframe src="plots/time_series/schedule_redditcore_month.html" title="redditcore dataset - average month" width="100%" height="480" style="border:none;"></iframe>
+              </div>
+              <div class="plot-panel" id="plotT-redditcore-week" style="display:none;">
+                <iframe src="plots/time_series/schedule_redditcore_week.html" title="redditcore dataset - average week" width="100%" height="480" style="border:none;"></iframe>
+              </div>
+              <div class="plot-panel" id="plotT-redditcore-day" style="display:none;">
+                <iframe src="plots/time_series/schedule_redditcore_day.html" title="redditcore dataset - average day" width="100%" height="480" style="border:none;"></iframe>
+              </div>
+
+            <!-- mental_health -->
+              <div class="plot-panel" id="plotT-mental_health-complete" style="display:block;">
+                <iframe src="plots/time_series/schedule_mental_health_complete.html" title="mental_health dataset - complete timespan" width="100%" height="480" style="border:none;"></iframe>
+              </div>
+              <div class="plot-panel" id="plotT-mental_health-year_by_month" style="display:none;">
+                <iframe src="plots/time_series/schedule_mental_health_year_by_month.html" title="mental_health dataset - year by month" width="100%" height="480" style="border:none;"></iframe>
+              </div>
+              <div class="plot-panel" id="plotT-mental_health-year_by_day" style="display:none;">
+                <iframe src="plots/time_series/schedule_mental_health_year_by_day.html" title="mental_health dataset - year by day" width="100%" height="480" style="border:none;"></iframe>
+              </div>
+              <div class="plot-panel" id="plotT-mental_health-month" style="display:none;">
+                <iframe src="plots/time_series/schedule_mental_health_month.html" title="mental_health dataset - average month" width="100%" height="480" style="border:none;"></iframe>
+              </div>
+              <div class="plot-panel" id="plotT-mental_health-week" style="display:none;">
+                <iframe src="plots/time_series/schedule_mental_health_week.html" title="mental_health dataset - average week" width="100%" height="480" style="border:none;"></iframe>
+              </div>
+              <div class="plot-panel" id="plotT-mental_health-day" style="display:none;">
+                <iframe src="plots/time_series/schedule_mental_health_day.html" title="mental_health dataset - average day" width="100%" height="480" style="border:none;"></iframe>
               </div>
             </div>
+          </div>
 
-            <p> Let's look at the week-level. In the plot above you can see the "typical" week : for example above
-              Tuesday
-              you can read the mean of the negativity rate of every single Tuesday in our dataset. (Reminder : this
-              negativity rate
-              is simply the number of negative posts divided by the number of total posts for that particular day). </p>
-            <p>We will fit a logistic regression on the days of the week : Monday represents the reference negativity
-              rate
-              (value 0, also called the intercept). For each other day of the week, the model tries to find the value by
-              which the
-              rate for this day changes on average when compared with Monday. Logistic regression can calculate log-odds
+            <p>Which patterns can we find ? Simply looking at the graphs above it's hard to tell :
+              there's a lot of noise in the data, R can swing up and down a lot from one point to the next, each cluster
+              seems to draw quite different graphs and R doesn't even change that much (barely more than a few hundreths 
+              of difference between min and max on each graph).
+              We need some better tools if we want to investigate this.
+              How about a logistic regression ?
+            </p>
+            <p> Let's forst try to apply it on week-level. In the plot just above you could see an average week : 
+              the value of Tuesday represents the mean value of R of all Tuesdays in our dataset for example. </p>
+            <p>We will fit a logistic regression on the days of the week. Monday represents the baseline R rate
+              and the model will compare each day of the week to Monday : it tries to find the value by
+              which the rate for this day changes on average when compared with Monday. Logistic regression can calculate log-odds
               (the chance between 0 and 1 that a random post on e.g. Tuesday is negative) based
               on categorical variables (the days of the week). The negativity rate can be naturally interpreted as a
               log-odd
-              : if there are 10 negative posts for 100 total posts, the rate of 0.1 means that a randomly picked post
-              has
-              0.1
-              chance of being negative. So it makes sense to use this model. Let's look at the results.
+              : if there are 10 negative posts for 100 total posts, R = 0.1 which means that a randomly picked post
+              has 1 out of 10 chance of being negative. So it makes sense to use this model. Let's look at the results.
             </p>
             <div class="plot-container">
               <!-- Logistic regression - week -->
@@ -2142,15 +2230,16 @@ negativity and negatively linked posts.
               no
               difference of negativity ratio between day X and Monday" is true, so we can only consider that there is
               some
-              statistically significant event when the p-value < 0.05. The column "increase %" tells us by how much the
-                negativity rate increased (or decreased if it's negative) between day X and monday. It is calculated
+              statistically significant event when the p-value < 0.05. The column "increase %" tells us by much R has 
+               increased (or decreased if it's negative) on day X relatively to its value on Monday. It is calculated
                 using the coefficient beta discovered by the logistic regression model for this day as follows :
                 increase %=(exp(beta) - 1)*100. The confidence interval column represents the range in which the
                 increase % will fall 95% of the time (calculated with a binomial distribution / Wald interval) and
                 finally the z-score=beta / standard_error represents the "effect size" . So we see that two days have a
                 stastically significant p-value : Saturday and Sunday with a corresponding percentage % of 7.35% and
-                6.3% respectively. Nice ! Did we determine that haters tend to hate more on the weekends ? Sadly there
-                are two more values in the table that we need to pay attention to : pseudo R-squared and Pearson's
+                6.3% respectively. Nice ! Did we determine that haters tend to hate more on the weekends ? 
+                
+                Sadly there are two more values in the table that we need to pay attention to : pseudo R-squared and Pearson's
                 Chi-square. R-squared tells us the explaining power of the model, it is a value from 0 to 1 that
                 represents the amount of the observed difference in rate that our model explains (1 would mean that our
                 model explains 100% of the observed difference, i.e the model perfectly encampsulates the observed
@@ -2158,17 +2247,30 @@ negativity and negatively linked posts.
                 pseudo-metric is an approximation. On the other hand the Chi-square measures the goodness of fit of our
                 model : it sums the squared differences between observed data and model predictions (weighted by
                 expected values). Low values indicate that our predictions closely match reality (it's a good model)
-                while high values show significant mismatches. Our table gives us an abysmally small pseudo R-squared,
-                and an extremely high Chi-square, which means our model has almost no explaining power, and a terribly
-                bad fit. In short, it tells us almost nothing 😢. </p>
+                while high values show significant mismatches. 
 
-                <p>Let's try the same analysis comparing the different months of the year.</p>
+                Our table gives us an abysmally small pseudo R-squared,
+                and an extremely high Chi-square, which means our model has almost no explaining power, and a terribly
+                bad fit. In short, it tells us almost nothing 
+                
+                We have tried the same approach on all the clusters at our disposition, and the best R-squared we found 
+                was 0.002 meaning our model explains 0.2% of the observed change in R in that case. 
+                So it looks our tool can't discover weekly pattern in our data.
+                </p>
+
+                <p>Maybe we were just unlucky, let's try the same analysis but comparing the different months of the year this time !</p>
 
                 <div class="plot-container">
                   <!-- Logistic regression - year by month -->
                   <iframe id="plot_logistic_regression_year_by_month" src="plots/time_series/log_reg_full_year_by_month.html"
-                    title="Logistic regression - year by month" width="100%" height="450" style="border:none;"></iframe>
+                    title="Logistic regression - year by month" width="100%" height="530" style="border:none;"></iframe>
                 </div>
+
+                <p>
+                  We stumble on exactly the same problem as before. The value of the pseudo R-square stays way too low
+                  to be able to extract any meaningful info from our model.
+                 We are a bit sad to say that we couldn't find a model that helped us predict hater behavior in function of time  😢. 
+                </p>
 
 
                 <h2>Is the hater sensitive to world events ? </h2>
@@ -2251,7 +2353,7 @@ negativity and negatively linked posts.
 
                 </p>
                 <div id="otherEventsBootstrapContainer">
-                <iframe id="otherEventsBootstrapFrame" src="plots/time_series/other_windows_bootstrap_geopolitics.html" style="width:100%;height:300px;border:none;"></iframe>
+                <iframe id="otherEventsBootstrapFrame" src="plots/time_series/other_windows_bootstrap_geopolitics.html" style="width:100%;height:200px;border:none;"></iframe>
                 </div>
 
                 <p>
@@ -2284,7 +2386,7 @@ negativity and negatively linked posts.
                   Table B :
                 </p>
                 <div id="whatever">
-                <iframe id="whatevs" src="plots/time_series/neg_rate_comparison_no_event_vs_event_geopolitics.html"style="width:100%;height:300px;border:none;"></iframe>
+                <iframe id="whatevs" src="plots/time_series/neg_rate_comparison_no_event_vs_event_geopolitics.html"style="width:100%;height:200px;border:none;"></iframe>
                 </div>
 
                 Ok so what does the data tell us ? We can read from the table that the post-2016 presidential election
@@ -2632,29 +2734,65 @@ negativity and negatively linked posts.
     ///////////// time_series's script for buttons
 
     // Time-Analysis - Hater's schedule (plotT)
-    const datasetSelectorPlotT = document.getElementById('datasetSelector-plotT');
-    const timespanSelectorPlotT = document.getElementById('timespanSelector-plotT');
-    const panelsPlotT = {
-      'full-complete': document.getElementById('plotT-full-complete'),
-      'full-year_by_month': document.getElementById('plotT-full-year_by_month'),
-      'full-week': document.getElementById('plotT-full-week'),
-      'geopolitics-complete': document.getElementById('plotT-geopolitics-complete'),
-      'geopolitics-year_by_month': document.getElementById('plotT-geopolitics-year_by_month'),
-      'geopolitics-week': document.getElementById('plotT-geopolitics-week'),
-      'popculture-complete': document.getElementById('plotT-popculture-complete'),
-      'popculture-year_by_month': document.getElementById('plotT-popculture-year_by_month'),
-      'popculture-week': document.getElementById('plotT-popculture-week')
-    };
+      const datasetSelectorPlotT = document.getElementById('datasetSelector-plotT');
+      const timespanSelectorPlotT = document.getElementById('timespanSelector-plotT');
 
-    function updatePlotT() {
-      if (!datasetSelectorPlotT || !timespanSelectorPlotT) return;
-      const dataset = datasetSelectorPlotT.value;
-      const timespan = timespanSelectorPlotT.value;
-      const key = dataset + '-' + timespan;
+      const panelsPlotT = {
+        // full
+        'full-complete':        document.getElementById('plotT-full-complete'),
+        'full-year_by_month':   document.getElementById('plotT-full-year_by_month'),
+        'full-year_by_day':     document.getElementById('plotT-full-year_by_day'),
+        'full-month':           document.getElementById('plotT-full-month'),
+        'full-week':            document.getElementById('plotT-full-week'),
+        'full-day':             document.getElementById('plotT-full-day'),
 
-      Object.values(panelsPlotT).forEach(p => { if (p) p.style.display = 'none'; });
-      if (panelsPlotT[key]) { panelsPlotT[key].style.display = 'block'; }
-    }
+        // geopolitics
+        'geopolitics-complete':      document.getElementById('plotT-geopolitics-complete'),
+        'geopolitics-year_by_month': document.getElementById('plotT-geopolitics-year_by_month'),
+        'geopolitics-year_by_day':   document.getElementById('plotT-geopolitics-year_by_day'),
+        'geopolitics-month':         document.getElementById('plotT-geopolitics-month'),
+        'geopolitics-week':          document.getElementById('plotT-geopolitics-week'),
+        'geopolitics-day':           document.getElementById('plotT-geopolitics-day'),
+
+        // popculture
+        'popculture-complete':       document.getElementById('plotT-popculture-complete'),
+        'popculture-year_by_month':  document.getElementById('plotT-popculture-year_by_month'),
+        'popculture-year_by_day':    document.getElementById('plotT-popculture-year_by_day'),
+        'popculture-month':          document.getElementById('plotT-popculture-month'),
+        'popculture-week':           document.getElementById('plotT-popculture-week'),
+        'popculture-day':            document.getElementById('plotT-popculture-day'),
+
+        // redditcore
+        'redditcore-complete':       document.getElementById('plotT-redditcore-complete'),
+        'redditcore-year_by_month':  document.getElementById('plotT-redditcore-year_by_month'),
+        'redditcore-year_by_day':    document.getElementById('plotT-redditcore-year_by_day'),
+        'redditcore-month':          document.getElementById('plotT-redditcore-month'),
+        'redditcore-week':           document.getElementById('plotT-redditcore-week'),
+        'redditcore-day':            document.getElementById('plotT-redditcore-day'),
+
+        // mental_health
+        'mental_health-complete':       document.getElementById('plotT-mental_health-complete'),
+        'mental_health-year_by_month':  document.getElementById('plotT-mental_health-year_by_month'),
+        'mental_health-year_by_day':    document.getElementById('plotT-mental_health-year_by_day'),
+        'mental_health-month':          document.getElementById('plotT-mental_health-month'),
+        'mental_health-week':           document.getElementById('plotT-mental_health-week'),
+        'mental_health-day':            document.getElementById('plotT-mental_health-day'),
+      };
+
+      function updatePlotT() {
+        if (!datasetSelectorPlotT || !timespanSelectorPlotT) return;
+        const dataset = datasetSelectorPlotT.value;
+        const timespan = timespanSelectorPlotT.value;
+        const key = dataset + '-' + timespan;
+
+        Object.values(panelsPlotT).forEach(p => { if (p) p.style.display = 'none'; });
+        if (panelsPlotT[key]) { panelsPlotT[key].style.display = 'block'; }
+      }
+
+      datasetSelectorPlotT.addEventListener('change', updatePlotT);
+      timespanSelectorPlotT.addEventListener('change', updatePlotT);
+      window.addEventListener('DOMContentLoaded', updatePlotT);
+
 
 
 
