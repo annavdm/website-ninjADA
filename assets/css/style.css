@@ -633,7 +633,7 @@ footer{
 .plot-wrapper {
   width: 100%;
   margin: 0 auto;      /* center on the page */
-  background-color : transparent;   /* make sure nothing is clipped */
+  background-color: transparent;   /* make sure nothing is clipped */
 }
 
 /* === Normalize plot spacing inside open posts === */
