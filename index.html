@@ -1623,8 +1623,8 @@ s="plot-wrapper" id="spearman_geopo">
                   Table A
 
                 </p>
-                <div id="nonEventBootstrapContainer">
-                <iframe id="nonEventBootstrapFrame" src="non_event_bootstrap_full.html"style="width:100%;height:500px;border:none;"></iframe>
+                <div id="otherEventsBootstrapContainer">
+                <iframe id="otherEventsBootstrapFrame" src="plots/julien/other_windows_bootstrap_geopolitics.html" style="width:100%;height:300px;border:none;"></iframe>
                 </div>
 
                 <p>
@@ -1644,7 +1644,7 @@ s="plot-wrapper" id="spearman_geopo">
                   Table B :
                 </p>
                 <div id="whatever">
-                <iframe id="whatevs" src="plots/julien/non_event_windows_intervals_geopolitics.html"style="width:100%;height:500px;border:none;"></iframe>
+                <iframe id="whatevs" src="plots/julien/neg_rate_comparison_no_event_vs_event_geopolitics.html"style="width:100%;height:300px;border:none;"></iframe>
                 </div>
 
                 Ok so what does the data tell us ? We can read from the table that the post-2016 presidential election window has a has a mean negativity rate that is lower than the mean of all similarly shaped
@@ -2023,11 +2023,11 @@ s="plot-wrapper" id="spearman_geopo">
       if (eventPanels[choice]) { eventPanels[choice].style.display = 'block'; }
 
       // update non-event bootstrap iframe
-      const frame = document.getElementById('nonEventBootstrapFrame');
+      const frame = document.getElementById('otherEventsBootstrapFrame');
       if (frame) {
-        if (choice === 'full') frame.src = 'plots/julien/non_event_bootstrap_full.html';
-        else if (choice === 'geopolitics') frame.src = 'plots/julien/non_event_bootstrap_geopolitics.html';
-        else if (choice === 'popculture') frame.src = 'plots/julien/non_event_bootstrap_popculture.html';
+        if (choice === 'full') frame.src = 'plots/julien/other_windows_bootstrap_geopolitics.html';
+        else if (choice === 'geopolitics') frame.src = 'plots/julien/other_windows_bootstrap_geopolitics.html';
+        else if (choice === 'popculture') frame.src = 'plots/julien/other_windows_bootstrap_geopolitics.html';
       }
     }
 
