@@ -409,6 +409,36 @@
               });
             </script>
 
+            <script>
+              const iframe = document.getElementById("plot-frame");
+              const selector = document.getElementById("plot-selector");
+
+              function resizePlotlyInIframe() {
+                try {
+                  const iframeWindow = iframe.contentWindow;
+                  if (iframeWindow && iframeWindow.Plotly) {
+                    iframeWindow.Plotly.Plots.resize(
+                      iframeWindow.document.querySelector(".js-plotly-plot")
+                    );
+                  }
+                } catch (e) {
+                  // silently ignore cross-origin issues (won't happen here)
+                }
+              }
+
+              // 🔁 When dropdown changes → reload iframe
+              selector.addEventListener("change", function () {
+                iframe.src = this.value;
+              });
+
+              // ✅ When iframe finishes loading → force Plotly resize
+              iframe.addEventListener("load", function () {
+                // slight delay ensures layout is settled
+                setTimeout(resizePlotlyInIframe, 50);
+              });
+            </script>
+
+
 
             <h4>Cluster overview</h4>
 
