@@ -282,10 +282,11 @@
                     We asked ourseleves the following...
                   </p>
                   <div class="rq-grid">
-                    <div class="rq-card">Is a hater likely to be active in certain subreddits?</div>
-                    <div class="rq-card">Are there persisting conflicts between subreddits?</div>
-                    <div class="rq-card">Does a hater have a particular way of writing?</div>
-                    <div class="rq-card"> Do different kinds of communities exhibit different hostility patterns ?</div>
+                    <div class="rq-card">Do different kinds of communities exhibit different hostility patterns?</div>
+                    <div class="rq-card">Does a hater respond to attack ?</div>
+                    <div class="rq-card">Does a hater have a particular way of writing/ communicating?</div>
+                    <div class="rq-card"> Is the hater influenced by external factors?</div>
+                    <div class="rq-card"> Is there a time pattern of a hater's activity within a day? Is there time periods within the day that has higher activity of negative posts?</div>
                   </div>
                 </div>
             </section>
@@ -746,20 +747,31 @@
                   <h3>Feature analysis</h3>
                   <p>
                     Feature analysis is based on the properties section of the hyperlink dataset. These features provide
-                    information on structure, themes, and emotions for each post. The features that consistently emerged
+                    information on structure, themes, and emotions for each post. We restricted to pronouns and sentiment/emotion categories. 
+                    The features that consistently emerged
                     as
                     characteristic hater markers across methods were retained.
                   </p>
 
-                  <h2>Standardized mean difference</h2>
-                  <p>
-                    We compute standardized differences of the mean for each feature between negative and non‑negative
-                    links.
-                    This highlights which structural, thematic, or emotional features are over‑represented in hostile
-                    posts.
+                  <h2> Data Separation </h2>
+                  <p> For each cluster, hyperlinks are plit into : <br>
+                  - Negative links (sentiment = -1) <br>
+                  - Positive/neutral links (sentiment = 1) <br>
+                  LIWC features are expressed as proportions (values between 0 and 1), representing the relative presence of linguistic categories
                   </p>
 
-                  <h2>Logit analysis</h2>
+                  <h2>Mean difference Analysis</h2>
+                  <p>
+                    We first compare average LIWC feature values between negative and non-negative links.
+                    For each feature, we test whether it is: <br>
+                    - over-represented in negative links <br>
+                    - under-represented in negative links <br> 
+                    - or not significantly different <br>
+                    Two one-sided statistical tests are used, and results are considered significant when p < alpha. This step highlights which linguistic markers are most characteristic of negative posts.
+                    
+                  </p>
+
+                  <h2>Logistic regression</h2>
                   <p>
                     We then fit multivariate logistic regression models where link sentiment (negative vs other) is
                     predicted
@@ -767,7 +779,9 @@
                     for
                     correlations with others, helping avoid confounding and revealing which features are most strongly
                     linked
-                    to hostility.
+                    to hostility.<br>
+                    - A negative coefficient indicates an increased probability of a negative link. <br>
+                    - A positive coefficient indicates an increased probability of a non-negative link.
                   </p>
                 </section>
               </div>
