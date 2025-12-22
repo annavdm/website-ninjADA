@@ -718,6 +718,12 @@
                     test
                     evaluates whether the median difference between pre‑ and post‑attack negativity rates differs
                     significantly from zero.
+
+                    <p>We test the following hypotheses regarding the median difference <span style="font-style: italic;">&delta;&#771;</span>:</p>
+                      <ul>
+                          <li><strong>H<sub>0</sub>: <span style="font-style: italic;">&delta;&#771;</span> = 0</strong> (No systematic change in behavior after attacks)</li>
+                          <li><strong>H<sub>1</sub>: <span style="font-style: italic;">&delta;&#771;</span> &ne; 0</strong> (Significant change in behavior)</li>
+                      </ul>
                   </p>
                   <p>
                     This approach allows us to assess whether periods of high received negativity are followed by
@@ -726,6 +732,29 @@
                     and
                     response strategies in the face of external attacks.
                   </p>
+
+
+                  <h2>Correlation Analysis (Spearman's Rank)</h2>
+                    <p>
+                        To explore potential correlation between number of negative links sent after attack peaks and the numbe rof attacks during those peaks , 
+                        we utilize <strong>Spearman’s rank correlation coefficient</strong>, denoted by \(\rho\). 
+                        Unlike Pearson’s correlation, this non-parametric test does not assume linearity or normality, 
+                        making it suitable for analyzing skewed interaction data found in online communities.
+                    </p>
+                    <p>
+                      The observations are first converted to ranks, and the coefficient is calculated as:
+                    </p>
+                    <p style="text-align: center; font-style: italic;">
+                      &rho; = 1 &minus; <sup>6 &sum; d<sub>i</sub><sup>2</sup></sup> &frasl; <sub>n(n<sup>2</sup> &minus; 1)</sub>
+                    </p>
+                    <p>
+                      Where <em>d<sub>i</sub></em> is the difference between the two ranks of each observation and <em>n</em> is the sample size. 
+                      We test the statistical significance of the association with the following hypotheses:
+                    </p>
+                    <ul>
+                      <li><strong>H<sub>0</sub>: &rho; = 0</strong> (No monotonic association between the variables)</li>
+                      <li><strong>H<sub>1</sub>: &rho; &ne; 0</strong> (Significant monotonic association)</li>
+                    </ul>
                 </section>
               </div>
             </div>
@@ -823,24 +852,9 @@
               </div>
             </div>
 
-            <!-- Limitations -->
-            <div class="reddit-comment">
-              <div class="reddit-comment__avatar">
-                <img src="images/ninjadateam.png" alt="u/NinjADA profile picture">
-              </div>
-              <div class="reddit-comment__content">
-                <div class="reddit-comment__meta">
-                  <span class="reddit-comment__user">u/NinjADA</span>
-                  <span class="reddit-comment__dot">•</span>
-                  <span class="reddit-comment__time">pinned</span>
-                </div>
+            
 
-                <section class="method">
-                </section>
 
-                <footer>© 2025 NinjADA Team</footer>
-              </div>
-            </div>
 
           </div><!-- /.post-body -->
         </div><!-- /.post-full -->
@@ -1312,7 +1326,7 @@
 
             <div class="plot-wrapper" id="pop_overall_distribution">
               <embed src="plots/writing_style/pop_overall_distribution.html" type="text/html"
-                title="Negative - Positive link distribution" class="plot-iframe" width="100%" height="800"
+                title="Negative - Positive link distribution" width="100%" height="450"
                 style="border:none; overflow:visible;">
             </div>
             <h2>
@@ -1328,7 +1342,7 @@
             <div class="plot-wrapper" id="negative_links_pop">
               <embed src="plots/reactions_dynamics/negative_links_pop.html" type="text/html"
                 title="Negative links Pop-Culture"
-                style="width:100%; height:550px; border:none; background:transparent;">
+                style="width:100%; height:600px; border:none; background:transparent;">
             </div>
 
             <p>
@@ -1353,16 +1367,23 @@
 
             <p>
               Some subs (looking at you, r/againstkarmawhores) just throw shade at everyone, lots of big, mainstream targets, all the time. Absolute hater energy.
-              <br>
+              <br><br>
               Meanwhile, most of the other ultra-negative subs? They barely show up on the heatmap. One or two lit-up cells at most, which basically means quick, targeted bursts of hate, not nonstop drama.
               Overall, the Pop-Culture cluster is pretty chill by Reddit standards. The negativity is localized, usually flaring up around specific topics or communities, not some platform-wide hate machine.
               When you zoom out to inter-cluster interactions, they’re kind of all over the place. No single outside cluster gets dogpiled. Most targets are entertainment, meme, or adjacent spaces.
-              <br>
+              <br><br>
               So yeah, this isn’t ideological warfare. It’s more: <br>
-              👉 content criticism<br>
-              👉 jokes and sarcasm<br>
-              👉 “that’s not how this sub works” energy <br>
-              Now let’s check the attack spikes and reactions and see if anything actually gets spicy
+              <p style="text-indent: 2em;">
+                👉 content criticism<br>
+              </p>
+              <p style="text-indent: 2em;">
+                👉 jokes and sarcasm<br>
+              </p>
+              <p style="text-indent: 2em;">
+                👉 “that’s not how this sub works” energy <br>
+              </p>
+                
+              Now let’s check the attack spikes and reactions and see if anything actually gets spicy ! 
 
             </p>
 
@@ -1472,9 +1493,9 @@
 
                 <p>
                   As for retaliation: 
-                  <br>
+                  <br><br>
                   •	About 80% of post-attack negative links go back to the same clusters that started the drama.<br>
-                  •	And around 57% hit the exact same subreddits.<br>
+                  •	And around 57% hit the exact same subreddits.<br><br>
                   So yeah, clapbacks do happen, both at a broad level (“your whole group started this”) and very directly (“no, you started this”). It’s a mix of shooting back at the bloc and shooting back at the specific sub.
 
                 </p>
@@ -1546,14 +1567,14 @@
               <div id="pop_pronouns_plot_view">
                 <embed src="plots/writing_style/pop_culture_pronouns_diff.html" type="text/html"
                   title="Difference of the means - pronoun features"
-                  style="width: 100%; height: 750px; border: none; background: transparent;">
+                  style="width: 100%; height: 500px; border: none; background: transparent;">
               </div>
 
               <!-- Table view -->
-              <div id="pop_pronouns_table_view" style="display: none;">
+              <div id="pop_pronouns_table_view" style="margin-right: 0px;">
                 <embed src="plots/writing_style/popculture_pronouns_diff_features_table.html" type="text/html"
                   title="p values of the pronouns features difference"
-                  style="width: 100%; height: 750px; border: none; background: transparent;">
+                  style="width: 100%; height: 400px; border: none; background: transparent;">
               </div>
 
             </div>
@@ -1578,7 +1599,7 @@
             <div class="plot-wrapper" id="pop_logit_pronouns">
               <embed src="plots/writing_style/pop_logit_pronouns.html" type="text/html"
                 title="Logit analysis - pronouns"
-                style="width: 100%; height: 750px; border: none; background: transparent;">
+                style="width: 100%; height: 500px; border: none; background: transparent; margin-right: 0px;">
             </div>
               </div>
               </div>
@@ -1625,14 +1646,14 @@
               <div id="pop_sentiment_plot_view">
                 <embed src="plots/writing_style/pop_culture_sentiment_diff.html" type="text/html"
                   title="Difference of the mean sentiment features"
-                  style="width: 100%; height: 750px; border: none; background: transparent;">
+                  style="width: 100%; height: 500px; border: none; background: transparent;">
               </div>
 
               <!-- Table view -->
-              <div id="pop_sentiment_table_view" style="display: none;">
+              <div id="pop_sentiment_table_view" style="margin-right: 0px;">
                 <embed src="plots/writing_style/popculture_sentiments_diff_features_table.html" type="text/html"
                   title="p-value of the sentiment features difference"
-                  style="width: 100%; height: 750px; border: none; background: transparent;">
+                  style="width: 100%; height: 400px; border: none; background: transparent;">
               </div>
 
             </div>
@@ -1654,10 +1675,10 @@
             </script>
 
 
-            <div class="plot-wrapper" id="pop_logit_sentiments">
+            <div class="plot-wrapper" id="pop_logit_sentiments" >
               <embed src="plots/writing_style/pop_logit_sentiments.html" type="text/html"
                 title="Logit analysis - sentiment"
-                style="width: 100%; height: 750px; border: none; background: transparent;">
+                style="width: 100%; height: 500px; border: none; background: transparent;">
             </div>
             </div>
             </div>
@@ -1795,7 +1816,7 @@
 
                 <div class="plot-wrapper" id="network_reddit">
                   <embed src="plots/reactions_dynamics/network_reddit.html" type="text/html" title="Network Reddit Core"
-                    style="width:100%; height:550px; border:none; background:transparent;">
+                    style="width:100%; height:800px; border:none; background:transparent;">
                 </div>
 
                 <p>
@@ -1808,7 +1829,7 @@
 
                 <div class="plot-wrapper" id="sankey_reddit">
                   <embed src="plots/reactions_dynamics/sankey_reddit.html" type="text/html" title="Sankey Reddit Core"
-                    style="width:100%; height:550px; border:none; background:transparent;">
+                    style="width:100%; height:800px; border:none; background:transparent;">
                 </div>
               </div>
             </div>
@@ -1833,7 +1854,7 @@
                 <div class="plot-wrapper" id="spikes_reddit_table">
                   <embed src="plots/reactions_dynamics/spikes_reddit_table.html" type="text/html"
                     title="Spikes table Reddit Core"
-                    style="width:100%; height:450px; border:none; background:transparent;">
+                    style="width:100%; height:550px; border:none; background:transparent;">
                 </div>
 
                 <p> So Reddit Core gets hit with 39 attack spikes over the period. Sounds dramatic, but… it really isn’t.</p>
@@ -1841,7 +1862,7 @@
                 <div class="plot-wrapper" id="reddit_year_dropdown">
                   <embed src="plots/reactions_dynamics/reddit_year_dropdown.html" type="text/html"
                     title="Reddit Core spikes over time"
-                    style="width:100%; height:550px; border:none; background:transparent;">
+                    style="width:100%; height:650px; border:none; background:transparent;">
                 </div>
 
                 
@@ -1955,10 +1976,10 @@
                       style="width:100%; height:450px; border:none; background:transparent;">
                   </div>
 
-                  <div id="reddit_pronouns_table_view" style="display:none;">
+                  <div id="reddit_pronouns_table_view">
                     <embed src="plots/writing_style/reddit_pronouns_diff_features_table.html" type="text/html"
                       title="p-value for difference of the mean - pronoun feature"
-                      style="width:100%; height:450px; border:none; background:transparent;">
+                      style="width:100%; height:400px; border:none; background:transparent;">
                   </div>
                 </div>
 
@@ -2034,10 +2055,10 @@
                   style="width:100%; height:450px; border:none; background:transparent;">
               </div>
 
-              <div id="reddit_sentiment_table_view" style="display:none;">
+              <div id="reddit_sentiment_table_view">
                 <embed src="plots/writing_style/reddit_sentiments_diff_features_table.html" type="text/html"
                   title="p-value for difference of the mean - Sentiment features"
-                  style="width:100%; height:450px; border:none; background:transparent;">
+                  style="width:100%; height:350px; border:none; background:transparent;">
               </div>
             </div>
 
@@ -2160,7 +2181,7 @@
                 <p>
                   The Self-Improvement & Mental Health cluster is honestly pretty chill. Negativity does exist, but it’s way lower than what you see in drama-heavy spaces like geopolitics, and none of the big subs even get close to 40% negativity.
                   The heatmap lines up with that. The most active subs — r/changemyview, r/offmychest, r/relationships, r/depression — show these partial horizontal bands, which basically means some negativity, but only toward a small, specific set of targets.
-                  And that negativity isn’t random or hostile. <br>
+                  And that negativity isn’t random or hostile.
                   It’s mostly:<br>
                   •	context-dependent<br>
                   •	tied to very visible or closely related topics<br>
@@ -2173,21 +2194,21 @@
                 <div class="plot-wrapper" id="negative_links_mental">
                   <embed src="plots/reactions_dynamics/negative_links_mental.html" type="text/html"
                     title="Negative links Mental Health"
-                    style="width:100%; height:550px; border:none; background:transparent;">
+                    style="width:100%; height:650px; border:none; background:transparent;">
                 </div>
 
                 <div class="plot-wrapper" id="network_mental">
                   <embed src="plots/reactions_dynamics/network_mental.html" type="text/html"
                     title="Network Mental Health"
-                    style="width:100%; height:550px; border:none; background:transparent;">
+                    style="width:100%; height:800px; border:none; background:transparent;">
                 </div>
 
                 <div class="plot-wrapper" id="sankey_mental">
                   <embed src="plots/reactions_dynamics/sankey_mental.html" type="text/html" title="Sankey Mental Health"
-                    style="width:100%; height:550px; border:none; background:transparent;">
+                    style="width:100%; height:800px; border:none; background:transparent;">
                 </div>
 
-                <p> TL;DR:
+                <p> TL;DR: 
                   Low toxicity, selective friction, and a lot of people trying (imperfectly) to help each other.
                   </p>
 
@@ -2339,7 +2360,7 @@
                       style="width:100%; height:450px; border:none; background:transparent;">
                   </div>
 
-                  <div id="selfmh_pronouns_table_view" style="display:none;">
+                  <div id="selfmh_pronouns_table_view">
                     <embed src="plots/writing_style/self_mh_pronouns_diff_features_table.html" type="text/html"
                       title="p-value for difference of the mean - Pronoun features"
                       style="width:100%; height:450px; border:none; background:transparent;">
@@ -2389,13 +2410,13 @@
                   <div id="selfmh_sentiment_plot_view">
                     <embed src="plots/writing_style/self_mh_culture_sentiment_diff.html" type="text/html"
                       title="Difference of the mean - Sentiment"
-                      style="width:100%; height:450px; border:none; background:transparent;">
+                      style="width:100%; height:500px; border:none; background:transparent;">
                   </div>
 
-                  <div id="selfmh_sentiment_table_view" style="display:none;">
+                  <div id="selfmh_sentiment_table_view">
                     <embed src="plots/writing_style/self_mh_sentiments_diff_features_table.html" type="text/html"
                       title="p-value for difference of the mean - Sentiment features"
-                      style="width:100%; height:450px; border:none; background:transparent%;">
+                      style="width:100%; height:500px; border:none; background:transparent;">
                   </div>
                 </div>
 
@@ -2407,20 +2428,6 @@
               </div>
             </div>
 
-            <!-- Limitations -->
-            <div class="reddit-comment">
-              <div class="reddit-comment__avatar">
-                <img src="images/ninjadateam.png" alt="u/NinjADA profile picture">
-              </div>
-              <div class="reddit-comment__content">
-                <div class="reddit-comment__meta">
-                  <span class="reddit-comment__user">u/NinjADA</span>
-                  <span class="reddit-comment__dot">•</span>
-                  <span class="reddit-comment__time">pinned</span>
-                </div>
-
-              </div>
-            </div>
 
           </div><!-- /.post-body -->
         </div><!-- /.post-full -->
