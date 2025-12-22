@@ -847,7 +847,7 @@
       </article>
 
 
-      <!-- ================== POST #2 ================== -->
+      <!-- ================== GEO-POLITICS ================== -->
       <article class="post" id="post-2" tabindex="0" aria-expanded="false">
         <div class="post-summary" role="button" aria-label="Open post">
           <div class="post-header">
@@ -922,6 +922,11 @@
                 </div>
 
                 <h2>Reaction dynamics</h2>
+
+                <div class="plot-wrapper" id="bar_geopo">
+                  <embed src="plots/reactions_dynamics/negative_links_geopo.html" type="text/html" title="bar Geo-Politics"
+                    style="width:100%; height: 650px; border:none; background:transparent;">
+                </div>
                 <p>
                   They clearly send more negative links than they receive. If you hang out in geopolitics,
                   you look more like an attacker than a target…
@@ -940,18 +945,26 @@
                     style="width:100%; height:550px; border:none; background:transparent;">
                 </div>
 
+                <p>
+                  Alright, so after digging into the Geo-Politics cluster, here’s what’s going on:
+                  The negativity basically comes from two very different types of subs.
+                  First, you’ve got the big drama subs. These guys don’t discriminate, they just spray hostility everywhere. Mainstream communities? Yep. Random bystanders? Also yep. If there’s drama to be had, they’re broadcasting it at scale.
+                  Then on the other end, you’ve got tiny, highly ideological subs. <br> They don’t care about volume. They pick one or two specific enemies and go absolutely feral on them. Think “I have one beef and I will die on this hill.”
+                  So what you end up with is: <br>
+                  •	high-volume, general attacks from big subs, and <br>
+                  •	low-volume but extremely targeted hate from smaller ones.<br>
+                  
+                
+              
+
+                </p>
+
                 <div class="plot-wrapper" id="heatmap">
                   <embed src="plots/reactions_dynamics/heatmap_geopo.html" type="text/html" title="heatmap Geo-Politics"
                     style="width:100%; height:550px; border:none; background:transparent;">
                 </div>
 
-                <p>
-                  Negativity in the Geo‑Politics cluster comes from two main sources: large drama subreddits that
-                  broadcast hostility widely, and tiny communities that are extremely hostile toward just a few
-                  specific targets. Big drama subs regularly attack mainstream communities, while smaller ideological
-                  ones concentrate their hostility on closely related or opposing subreddits. This creates a mix of
-                  high‑volume general attacks and narrow, highly targeted negativity.
-                </p>
+                
 
                 <p>
                   The heatmap makes this visible: some subreddits are common attackers, while others are more
@@ -991,10 +1004,7 @@
                   people sensitive to attacks? Our guess is yes.
                 </p>
 
-                <div class="plot-wrapper" id="table_geopo">
-                  <embed src="plots/reactions_dynamics/spikes_pop_table_geopo.html" type="text/html"
-                    title="table Geo-Politics" style="width:100%; height:450px; border:none; background:transparent;">
-                </div>
+            
 
                 <div class="plot-wrapper" id="dropdown_geopo">
                   <embed src="plots/reactions_dynamics/geopo_year_dropdown.html" type="text/html"
@@ -1002,13 +1012,18 @@
                     style="width:100%; height:550px; border:none; background:transparent;">
                 </div>
 
+                <p> Every time there’s an attack, boom — negativity spikes. Those red dots? Yeah, that’s basically the cluster going “and I took that personally.”</p>
+
+                <div class="plot-wrapper" id="table_geopo">
+                  <embed src="plots/reactions_dynamics/spikes_pop_table_geopo.html" type="text/html"
+                    title="table Geo-Politics" style="width:100%; height:450px; border:none; background:transparent;">
+                </div>
+
+
                 <p>
                   For the Geo‑Politics cluster, we detect 47 spikes of incoming negativity. After these spikes,
                   the cluster sends more negative links and a higher share of its activity becomes negative.
-                  The change is statistically significant, which means it is not just posting more overall,
-                  but posting more hostile content. On average, 84.9% of negative links are redirected toward
-                  the same clusters that generated the spikes, and about 48.7% hit the exact same subreddits,
-                  showing strong retaliation at subreddit level.
+
                 </p>
 
                 <section class="result-card">
@@ -1054,17 +1069,38 @@
                   </div>
                 </section>
 
+                <p> I also checked whether bigger attacks = bigger salt afterward. Ran a Spearman correlation. I compared:<br>
+                    •	how many negative links get dropped during an attack, vs<br>
+                    •	how many get fired back later.<br>
+                    Result? Very strong correlation. Statistically legit.<br>
+                    Translation: the harder you hit, the harder the clapback. And you can literally see it on the curve.
+                </p>
+
                 <div class="plot-wrapper" id="spearman_geopo">
                   <embed src="plots/reactions_dynamics/spearman_geopo.html" type="text/html"
                     title="Spearman Geo-Politics"
                     style="width:100%; height:550px; border:none; background:transparent;">
                 </div>
 
+                <p> Now here’s the spicy part ! <br>
+                  The negativity doesn’t just wander around randomly like a lost Redditor:<br>
+                  •	~85% of the negative responses go straight back to the same clusters that started the mess.<br>
+                  •	Almost 49% land on the exact same subreddits.<br>
+                  So yeah, this isn’t “general toxicity.” This is targeted beef.<br>
+                  Communities remember. Communities retaliate. Reddit never forgets.
+                  </p>
+
                 <div class="plot-wrapper" id="retaliation_geopo">
                   <embed src="plots/reactions_dynamics/retaliation_cluster_vs_subreddit_geopo.html" type="text/html"
                     title="Retaliation Geo-Politics"
                     style="width:100%; height:550px; border:none; background:transparent;">
                 </div>
+
+                <p> TL;DR:<br>
+                  - Start drama → get drama<br>
+                  - Bigger drama → bigger backlash<br>
+                  - And yes, it usually comes back to you<br>
+                  </p>
               </div>
             </div>
 
@@ -1223,7 +1259,7 @@
 
 
 
-      <!-- ================== POST #5 ================== -->
+      <!-- ================== POP CULTURE ================== -->
       <article class="post" id="post-3" tabindex="0" aria-expanded="false">
         <div class="post-summary" role="button" aria-label="Open post">
           <div class="post-header">
@@ -1282,6 +1318,19 @@
             <h2>
               Reaction dynamics
             </h2>
+            
+
+            <div class="plot-wrapper" id="bar_pop">
+              <embed src="plots/reactions_dynamics/bar_pop.html" type="text/html" title="Bar Pop-Culture"
+                style="width:100%; height:550px; border:none; background:transparent;">
+            </div>
+
+            <div class="plot-wrapper" id="negative_links_pop">
+              <embed src="plots/reactions_dynamics/negative_links_pop.html" type="text/html"
+                title="Negative links Pop-Culture"
+                style="width:100%; height:550px; border:none; background:transparent;">
+            </div>
+
             <p>
               The top hater subreddit hits about 80% negativity, but that’s mostly tiny subreddits with barely any
               activity
@@ -1295,54 +1344,37 @@
               looks overall.
             </p>
 
-            <div class="plot-wrapper" id="bar_pop">
-              <embed src="plots/reactions_dynamics/bar_pop.html" type="text/html" title="Bar Pop-Culture"
-                style="width:100%; height:550px; border:none; background:transparent;">
-            </div>
-
             <div class="plot-wrapper" id="heatmap_pop">
               <embed src="plots/reactions_dynamics/heatmap_pop.html" type="text/html" title="Heatmap Pop-Culture"
                 style="width:100%; height:550px; border:none; background:transparent;">
             </div>
 
-            <p>
-              Some subreddits, especially r/againstkarmawhores, repeatedly throw shade at lots of big, mainstream
-              targets. Most of the other super‑negative subs just light up one or two cells on the heatmap, meaning
-              short,
-              targeted bursts of hate rather than constant drama. Overall, the Pop‑Culture cluster’s negativity looks
-              localized: spikes around specific topics or communities, not a universal hate‑machine. Looking at
-              inter‑cluster relations, they target a wide variety of clusters with no single external cluster
-              dominating,
-              mostly entertainment, memes, and similar spaces.
-              Negative linking here is driven more by content critique, humor, or norm enforcement than by sustained
-              ideological conflict. Now let’s look at attack spikes and reactivity to see if there is anything spicier.
-            </p>
+    
 
-            <div class="plot-wrapper" id="negative_links_pop">
-              <embed src="plots/reactions_dynamics/negative_links_pop.html" type="text/html"
-                title="Negative links Pop-Culture"
-                style="width:100%; height:550px; border:none; background:transparent;">
-            </div>
+            <p>
+              Some subs (looking at you, r/againstkarmawhores) just throw shade at everyone, lots of big, mainstream targets, all the time. Absolute hater energy.
+              <br>
+              Meanwhile, most of the other ultra-negative subs? They barely show up on the heatmap. One or two lit-up cells at most, which basically means quick, targeted bursts of hate, not nonstop drama.
+              Overall, the Pop-Culture cluster is pretty chill by Reddit standards. The negativity is localized, usually flaring up around specific topics or communities, not some platform-wide hate machine.
+              When you zoom out to inter-cluster interactions, they’re kind of all over the place. No single outside cluster gets dogpiled. Most targets are entertainment, meme, or adjacent spaces.
+              <br>
+              So yeah, this isn’t ideological warfare. It’s more: <br>
+              👉 content criticism<br>
+              👉 jokes and sarcasm<br>
+              👉 “that’s not how this sub works” energy <br>
+              Now let’s check the attack spikes and reactions and see if anything actually gets spicy
+
+            </p>
 
             <div class="plot-wrapper" id="network_pop">
               <embed src="plots/reactions_dynamics/network_pop.html" type="text/html" title="Network Pop-Culture"
                 style="width:100%; height:800px; border:none; background:transparent;">
             </div>
-            </div>
-            </div>
 
-            <div class="reddit-comment">
-              <div class="reddit-comment__avatar">
-                <img src="images/ninjadateam.png" alt="u/NinjADA profile picture">
-              </div>
-              <div class="reddit-comment__content">
-                <div class="reddit-comment__meta">
-                  <span class="reddit-comment__user">u/NinjADA</span>
-                  <span class="reddit-comment__dot">•</span>
-                  <span class="reddit-comment__time">pinned</span>
-                </div>
-              </div>
-              </div>
+            <div class="plot-wrapper" id="sankey_pop">
+              <embed src="plots/reactions_dynamics/sankey_pop.html" type="text/html" title="Sankey Pop-Culture"
+                style="width:100%; height:750px; border:none; background:transparent;">
+            </div>
 
 
 
@@ -1361,35 +1393,9 @@
                 <h2>Attack spikes</h2>
                 <p>
                   Now we check how the cluster reacts to periods of high incoming negativity. For method details, see
-                  the
-                  dedicated methods post. The idea is still the same: how sensitive are Pop‑Culture users to being
+                  the dedicated methods post. The idea is still the same: how sensitive are Pop‑Culture users to being
                   attacked?
                 </p>
-
-                <div class="plot-wrapper" id="sankey_pop">
-                  <embed src="plots/reactions_dynamics/sankey_pop.html" type="text/html" title="Sankey Pop-Culture"
-                    style="width:100%; height:750px; border:none; background:transparent;">
-                </div>
-
-                <div class="plot-wrapper" id="pop_year_dropdown">
-                  <embed src="plots/reactions_dynamics/pop_year_dropdown.html" type="text/html"
-                    title="Year dropdown Pop-Culture"
-                    style="width:100%; height:600px; border:none; background:transparent;">
-                </div>
-
-                <p>
-                  Overall, the Pop‑Culture cluster does react to high incoming negativity, but only weakly. There is no
-                  strong
-                  escalation or systematic retaliation; instead, responses look modest and short‑lived, more like
-                  localized
-                  flare‑ups than stable behavioral shifts. The negativity rate increases slightly after spikes and this
-                  increase is statistically significant, which suggests a bit of sensitivity — but nothing extreme.
-                </p>
-
-                <div class="plot-wrapper" id="spearman_pop">
-                  <embed src="plots/reactions_dynamics/spearman_pop.html" type="text/html" title="Spearman Pop-Culture"
-                    style="width:100%; height:550px; border:none; background:transparent;">
-                </div>
 
                 <div class="plot-wrapper" id="table_pop">
                   <embed src="plots/reactions_dynamics/spikes_pop_table.html" type="text/html" title="Table Pop-Culture"
@@ -1397,11 +1403,21 @@
                 </div>
 
                 <p>
-                  Roughly 80% of post‑attack negative links go back toward the same clusters that started the drama, and
-                  about
-                  57% hit the exact same subreddits. So retaliation happens both broadly at the cluster level and very
-                  directly at specific communities, mixing “shoot back at the bloc” with “shoot back at the exact
-                  subreddit”.
+                  So for the Pop Culture cluster, we counted 39 attack spikes over the whole time period. Not nothing, but also not constant chaos.
+
+            
+                </p>
+
+              
+
+                <div class="plot-wrapper" id="pop_year_dropdown">
+                  <embed src="plots/reactions_dynamics/pop_year_dropdown.html" type="text/html"
+                    title="Year dropdown Pop-Culture"
+                    style="width:100%; height:600px; border:none; background:transparent;">
+                </div>
+
+                <p> What’s interesting is how they react. Yeah, they do respond when a lot of negativity comes in , but only a little. There’s no big escalation, no sustained revenge arc. It’s more like small, short-lived flare-ups than a permanent shift into “toxic mode.”
+                  After each spike, the negativity rate goes up slightly, and that increase is statistically significant, so the cluster is clearly paying attention, but it’s nowhere near extreme. Think “mildly annoyed,” not “choose violence.”
                 </p>
 
                 <section class="result-card">
@@ -1435,7 +1451,7 @@
 
                     <div class="delta positive">
                       <div class="delta-value">+3.15</div>
-                      <div class="delta-sub">(+x%)</div>
+                      <div class="delta-sub"></div>
                     </div>
                   </div>
 
@@ -1446,6 +1462,28 @@
                     </div>
                   </div>
                 </section>
+
+                <div class="plot-wrapper" id="spearman_pop">
+                  <embed src="plots/reactions_dynamics/spearman_pop.html" type="text/html" title="Spearman Pop-Culture"
+                    style="width:100%; height:550px; border:none; background:transparent;">
+                </div>
+
+              
+
+                <p>
+                  As for retaliation: 
+                  <br>
+                  •	About 80% of post-attack negative links go back to the same clusters that started the drama.<br>
+                  •	And around 57% hit the exact same subreddits.<br>
+                  So yeah, clapbacks do happen, both at a broad level (“your whole group started this”) and very directly (“no, you started this”). It’s a mix of shooting back at the bloc and shooting back at the specific sub.
+
+                </p>
+
+
+                <p> TL;DR:
+                Pop Culture doesn’t really hold grudges.
+                They’ll fire back, but briefly, and then everyone goes back to posting memes.</p>
+
               </div>
             </div>
 
@@ -1630,7 +1668,7 @@
       </article>
 
 
-      <!-- ================== POST #6 ================== -->
+      <!-- ================== REDDIT CORE ================== -->
       <article class="post" id="post-4" tabindex="0" aria-expanded="false">
         <div class="post-summary" role="button" aria-label="Open post">
           <div class="post-header">
@@ -1717,37 +1755,43 @@
                   attacked.
                 </p>
 
+                <div class="plot-wrapper" id="negative_links_reddit">
+                  <embed src="plots/reactions_dynamics/negative_links_reddit.html" type="text/html"
+                    title="Negative links Reddit Core"
+                    style="width:100%; height:550px; border:none; background:transparent;">
+                </div>
+
                 <div class="plot-wrapper" id="bar_reddit">
                   <embed src="plots/reactions_dynamics/bar_reddit.html" type="text/html" title="Bar Reddit Core"
                     style="width:100%; height:550px; border:none; background:transparent;">
                 </div>
+
+                <p>
+                  So the Reddit Core cluster is honestly pretty tame. Negativity levels are moderate overall, and no subreddit even cracks 50% negativity. <br>
+                  Yeah, r/britishproblems and r/animalsbeingjerks technically have the highest negativity rates — but that’s mostly because of a tiny number of links. So when they’re being haters, it’s more “one bad day” than a full-on personality trait.
+
+                </p>
+
 
                 <div class="plot-wrapper" id="heatmap_reddit">
                   <embed src="plots/reactions_dynamics/heatmap_reddit.html" type="text/html" title="Heatmap Reddit Core"
                     style="width:100%; height:550px; border:none; background:transparent;">
                 </div>
 
+            
                 <p>
-                  The Reddit Core cluster shows moderate negativity rates overall, with no subreddits exceeding 50%.
-                  r/britishproblems and r/animalsbeingjerks have the highest negativity rates, but those values are
-                  driven
-                  by
-                  a very small number of links. So when there is hater behavior here, it looks sporadic rather than
-                  sustained.
-                </p>
-                <p>
-                  The heatmap confirms this. Only r/quityourbullshit emerges as a widespread aggressor, directing
-                  moderate
-                  negativity across many major subreddits like r/pics, r/funny, and r/worldnews, consistent with its
-                  culture
-                  of calling out fake posts.
+                  The heatmap backs this up. There’s very little sustained aggression flying around… <br>
+                  Except for r/quityourbullshit. That one actually shows up as a broad-spectrum attacker, spreading moderate negativity across a bunch of big-name subs like r/pics, r/funny, and r/worldnews. Which honestly tracks, given that the entire sub is built around calling out fake or misleading posts. <br>
+                  So overall: 
+                  <br>
+                  - No constant toxicity<br>
+                  - No long-term beef<br>
+                  - Mostly chill vibes <br>
+                  And one sub whose whole job is basically: “Source?”
+
+
                 </p>
 
-                <div class="plot-wrapper" id="negative_links_reddit">
-                  <embed src="plots/reactions_dynamics/negative_links_reddit.html" type="text/html"
-                    title="Negative links Reddit Core"
-                    style="width:100%; height:550px; border:none; background:transparent;">
-                </div>
 
                 <div class="plot-wrapper" id="network_reddit">
                   <embed src="plots/reactions_dynamics/network_reddit.html" type="text/html" title="Network Reddit Core"
@@ -1755,14 +1799,11 @@
                 </div>
 
                 <p>
-                  The network shows that much of the aggression is actually internal “friendly fire” directed at other
-                  Core
-                  subreddits. Central hubs like r/quityourbullshit and r/animalsbeingjerks frequently target fellow core
-                  members such as r/funny, r/pics, and r/aww (lots of links to purple nodes), suggesting a strong
-                  culture of
-                  self‑policing and meta‑commentary in the memes/general chat sphere. The negativity here feels more
-                  like
-                  teasing and calling out than pure hate.
+                  One funny thing the network shows is that a lot of the aggression here is actually friendly fire. Most of the negativity stays inside the Reddit Core cluster.
+                  Big hubs like r/quityourbullshit and r/animalsbeingjerks are constantly taking shots at other core subs like r/funny, r/pics, and r/aww (you can see all the links going to the purple nodes).
+                  This really looks less like inter-sub warfare and more like self-policing. It’s very “calling out bad posts,” “that doesn’t belong here,” or “nope, that’s staged.” Classic meta-commentary vibes from the memes / general chat side of Reddit.
+                  So yeah, the negativity here doesn’t feel like actual hate. Basically Reddit arguing with itself, as usual.
+
                 </p>
 
                 <div class="plot-wrapper" id="sankey_reddit">
@@ -1789,25 +1830,26 @@
                   Let’s look at how sensitive Reddit Core is to incoming negativity spikes.
                 </p>
 
-                <div class="plot-wrapper" id="reddit_year_dropdown">
-                  <embed src="plots/reactions_dynamics/reddit_year_dropdown.html" type="text/html"
-                    title="Reddit Core spikes over time"
-                    style="width:100%; height:550px; border:none; background:transparent;">
-                </div>
-
                 <div class="plot-wrapper" id="spikes_reddit_table">
                   <embed src="plots/reactions_dynamics/spikes_reddit_table.html" type="text/html"
                     title="Spikes table Reddit Core"
                     style="width:100%; height:450px; border:none; background:transparent;">
                 </div>
 
+                <p> So Reddit Core gets hit with 39 attack spikes over the period. Sounds dramatic, but… it really isn’t.</p>
+
+                <div class="plot-wrapper" id="reddit_year_dropdown">
+                  <embed src="plots/reactions_dynamics/reddit_year_dropdown.html" type="text/html"
+                    title="Reddit Core spikes over time"
+                    style="width:100%; height:550px; border:none; background:transparent;">
+                </div>
+
+                
+
                 <p>
-                  The post‑spike increase in negativity stays within the range of normal fluctuation and is not
-                  statistically
-                  significant. Reddit Core seems insensitive to hate — or, more precisely, since the negativity it
-                  receives
-                  is
-                  mostly “friendly attacks”, there is not much to be sensitive about.
+                  After those spikes, the negativity level barely moves. Any increase stays well within normal day-to-day fluctuation and isn’t even statistically significant. In other words: nothing actually changes. <br>
+                  Honestly, Reddit Core just seems kind of immune to hate, or more accurately, there’s not much real hate to react to in the first place. Most of what it gets are basically friendly attacks: callouts, teasing, meta snark.
+
                 </p>
 
                 <section class="result-card">
@@ -1841,7 +1883,7 @@
 
                     <div class="delta positive">
                       <div class="delta-value">+0.92</div>
-                      <div class="delta-sub">(+x%)</div>
+                      <div class="delta-sub"></div>
                     </div>
                   </div>
 
@@ -2039,7 +2081,7 @@
         });
       </script>
 
-      <!-- ================== POST #7 ================== -->
+      <!-- ================== MENTAL HEALTH================== -->
       <article class="post" id="post-5" tabindex="0" aria-expanded="false">
         <div class="post-summary" role="button" aria-label="Open post">
           <div class="post-header">
@@ -2101,7 +2143,7 @@
                   As in the Reddit Core cluster, the Mental Health cluster is mainly a target of negative links rather
                   than
                   a
-                  strong source of hostility.
+                  strong source of hostility. 
                 </p>
 
                 <div class="plot-wrapper" id="bar_mental">
@@ -2116,17 +2158,16 @@
                 </div>
 
                 <p>
-                  The Self‑Improvement & Mental Health cluster is pretty chill overall: negativity exists, but it is far
-                  below
-                  levels seen in conflict‑heavy spaces like Geo‑Politics, and none of the main subreddits go past about
-                  40%
-                  negativity. The heatmap confirms this: the most active subs (r/changemyview, r/offmychest,
-                  r/relationships,
-                  r/depression) show partial horizontal bands, reflecting moderate negativity toward a limited set of
-                  often
-                  thematically related or very visible targets. Negativity here is fragmented, context‑dependent, and
-                  mostly
-                  turned inward, which fits support and self‑improvement communities.
+                  The Self-Improvement & Mental Health cluster is honestly pretty chill. Negativity does exist, but it’s way lower than what you see in drama-heavy spaces like geopolitics, and none of the big subs even get close to 40% negativity.
+                  The heatmap lines up with that. The most active subs — r/changemyview, r/offmychest, r/relationships, r/depression — show these partial horizontal bands, which basically means some negativity, but only toward a small, specific set of targets.
+                  And that negativity isn’t random or hostile. <br>
+                  It’s mostly:<br>
+                  •	context-dependent<br>
+                  •	tied to very visible or closely related topics<br>
+                  •	and often turned inward (self-critique, tough love, reality checks)<br>
+                  Which honestly fits the whole vibe of support and self-improvement communities.<br>
+                  Less “attack mode,” more “hard conversations.”
+
                 </p>
 
                 <div class="plot-wrapper" id="negative_links_mental">
@@ -2140,8 +2181,19 @@
                     title="Network Mental Health"
                     style="width:100%; height:550px; border:none; background:transparent;">
                 </div>
+
+                <div class="plot-wrapper" id="sankey_mental">
+                  <embed src="plots/reactions_dynamics/sankey_mental.html" type="text/html" title="Sankey Mental Health"
+                    style="width:100%; height:550px; border:none; background:transparent;">
+                </div>
+
+                <p> TL;DR:
+                  Low toxicity, selective friction, and a lot of people trying (imperfectly) to help each other.
+                  </p>
+
               </div>
             </div>
+
 
             <!-- Attack spikes -->
             <div class="reddit-comment">
@@ -2156,20 +2208,16 @@
                 </div>
 
                 <h2>Attack spikes</h2>
-                <p>
-                  Overall, the Self‑Improvement & Mental Health cluster shows little to no systematic reactive behavior
-                  after
-                  periods of high incoming negativity. Even though it is frequently targeted, it does not escalate its
-                  own
-                  negative interactions in response. This matches the structural picture: negativity here is
-                  low‑intensity,
-                  context‑dependent, and inward‑focused rather than retaliatory or conflict‑driven.
-                </p>
 
-                <div class="plot-wrapper" id="sankey_mental">
-                  <embed src="plots/reactions_dynamics/sankey_mental.html" type="text/html" title="Sankey Mental Health"
-                    style="width:100%; height:550px; border:none; background:transparent;">
+                <div class="plot-wrapper" id="spikes_mental_table">
+                  <embed src="plots/reactions_dynamics/spikes_mental_table.html" type="text/html"
+                    title="Spikes table Mental Health"
+                    style="width:100%; height:450px; border:none; background:transparent;">
                 </div>
+
+                <p> So yeah, this cluster gets hit with 63 attack spikes, which sounds like a lot… but don’t get excited. <br>
+                  Most of those spikes are low-intensity : only a small number of negative links each time. More like little pokes than actual attacks.
+                  </p>
 
                 <div class="plot-wrapper" id="mental_year_dropdown">
                   <embed src="plots/reactions_dynamics/mental_year_dropdown.html" type="text/html"
@@ -2177,11 +2225,21 @@
                     style="width:100%; height:550px; border:none; background:transparent;">
                 </div>
 
-                <div class="plot-wrapper" id="spikes_mental_table">
-                  <embed src="plots/reactions_dynamics/spikes_mental_table.html" type="text/html"
-                    title="Spikes table Mental Health"
-                    style="width:100%; height:450px; border:none; background:transparent;">
-                </div>
+                <p>
+                  Overall, the Self-Improvement & Mental Health cluster just… doesn’t take the bait.<br>
+                  Even when it gets hit with higher-than-usual negativity, there’s no real reactive pattern afterward. No escalation, no revenge arc, no sudden spike in outgoing negativity.
+                  Basically, it gets targeted, shrugs, and keeps doing its thing.
+                  Which lines up perfectly with what we saw structurally: <br>
+                  •	negativity stays low-intensity<br>
+                  •	it’s context-dependent (tough conversations, not attacks)<br>
+                  •	and it’s mostly inward-focused, not aimed at fighting other communities<br>
+                  So instead of clapbacks, you get reflection. Instead of conflict, you get coping.
+
+                </p>
+
+      
+              
+
 
                 <section class="result-card">
                   <h1>Negative link activity after attack peaks</h1>
@@ -2214,7 +2272,7 @@
 
                     <div class="delta positive">
                       <div class="delta-value">+0.87</div>
-                      <div class="delta-sub">(+x%)</div>
+                      <div class="delta-sub"></div>
                     </div>
                   </div>
 
@@ -2225,6 +2283,13 @@
                     </div>
                   </div>
                 </section>
+
+                <p> And when you check what happens afterward?
+                  The increase in negativity is not statistically significant. Translation: nothing really changes.</p>
+                  
+                <p>TL;DR:
+                  This cluster chooses therapy, not violence. </p>
+
               </div>
             </div>
 

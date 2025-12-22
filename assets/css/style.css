@@ -841,3 +841,9 @@ footer{
 .hidden{
   display:none;
 }
+
+#pop_overall_distribution{
+
+
+  margin-bottom: 0;
+}
