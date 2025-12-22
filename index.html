@@ -2723,8 +2723,8 @@
                   How can we know if the relative change is actually due to the presidential election of 2016, and not just because each 
                   year people are slightly happier (less negative) in November than in September ? To check this we want to repeat the same paired 
                   windows test across other years and see if it is a pattern. <br>
-                  But the thing is, we only have about three years of data so we only have two other Novembers and Septembers (in
-                  2014 and 2015) to compare it with. 
+                  But the thing is, we only have about three years of data which leaves us with two other Novembers and Septembers (in
+                  2014 and 2015) only to compare our 2016 effect with. 
                   Only two samples is a meager sample size, and the result of the test would not be very
                   meaningful.
                   <br>
@@ -2733,19 +2733,19 @@
                   it works : in our non-election
                   years (2014-2015) we take the daily negativity rate of all days of September (so 2 times 30). Then we
                   create synthetic or "bootstrap" Septembers by sampling at random
-                  (with replacement) 30 out of these 60 days to creaete one "bootstrap" September. We can repeat this as
-                  many times and in theory each bootstrap
+                  (with replacement) 30 out of these 60 days to create one "bootstrap" September. We can repeat this as
+                  many times as desired and in theory each bootstrap
                   September should be different (since there are so many different possible combinations of days).<br> Using
                   the
                   days of two Septembers, we can
-                  create a huge number of new Septembers (for example 100) : we have artificially mutliplied the size of
+                  create a huge number of new Septembers (for example 1000) : we have artificially multiplied the size of
                   our
-                  sample by 50.<br> 
+                  sample by 500.<br> 
                   We do the same in parallel with our Novembers 2014-2015, and for each pair of bootstrap months we
                   calculate the mean rate of each and
                   finally the difference of both.<br>
                   <br>
-                  We now have 100 synthetic, non-election-year differences of mean negativity to compare our observed
+                  We now have 1000 synthetic, non-election-year differences of mean negativity to compare our observed
                   2016
                   difference to. With this synthetic
                   data we create the following 95% confidence interval (i.e into which range do 95% of all synthetic
@@ -2765,7 +2765,7 @@
                   Even better, we notice for the 2016 presidential election that the 95% CI of the relative negativity change found previously [-26.82% ; -10.19%] 
                   does not overlap at all with the 95% confidence interval of non-event years calculated right above [-8.75% ; 11.44%]. <br>
                   <br>
-                  This is pretty solid evidence that something stastically significant happened in November 2016.
+                  This is pretty solid evidence that something stastically significant happened in November 2016. Note that conclusions for Brexit are similar.
                 </p>
                   
                   
@@ -2799,11 +2799,14 @@
                 window has a has a mean negativity rate that is lower than the mean of all similarly shaped
                 time windows in the dataset combined (although not by much, ~0.17 vs ~0.2). <br>
                 Not only that, but "November" 2016's mean R is outside of the 95% and even 99% ranges
-                of of all similarly shaped time windows in dataset.
+                of of all similarly shaped time windows in dataset. <br> For Brexit however, the post event window mean is similar to the mean of no-event windows,
+                and smack in the middle of the interval, which means that after Brexit there probably wasn't a different negat.ivity R than usual. (This could 
+                indicate that the pre-event window of Brexit did have a different R, but that's not what we're investigating)
                 <br>
                 <br>
 
-                This allows us to say that we have robust evidence to think that <br>
+                Coming back to the US 2016 election :
+                What we've seen so far allows us to say that we have robust evidence to think that <br>
                 1) There is significant difference in negativity between ~November 2016 and ~September 2016 <br>
                 2) This difference does not happen in other years <br>
                 3) ~November 2016 is really less negative compared to other time windows of the dataset.<br>
@@ -2822,6 +2825,10 @@
         </div>
       
       </article>
+
+
+
+
 
       <!-- ================== POST #8 ================== -->
       <article class="post" id="post-conclusion" tabindex="0" aria-expanded="false">
