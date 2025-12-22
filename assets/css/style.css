@@ -850,3 +850,9 @@ footer{
 
   margin-bottom: 0;
 }
+
+.logo-link {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
