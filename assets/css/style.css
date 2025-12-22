@@ -754,3 +754,90 @@ footer{
   justify-content: center;   /* center horizontally */
   margin: 4px 0;
 }
+
+
+/* Center wrapper */
+.hate-post-wrapper{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  margin:48px 0;
+}
+
+/* Reddit-style button */
+.reddit-btn{
+  background:#ff4500;
+  color:white;
+  font-family:Inter, system-ui, sans-serif;
+  font-size:1.05rem;
+  font-weight:700;
+  padding:14px 26px;
+  border-radius:999px;
+  border:none;
+  cursor:pointer;
+  box-shadow:0 6px 18px rgba(255,69,0,0.25);
+  transition:transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.reddit-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 24px rgba(255,69,0,0.35);
+}
+
+.reddit-btn:active{
+  transform:scale(0.98);
+}
+
+/* Post card */
+.post-card{
+  width:100%;
+  max-width:1000px;
+  margin-top:24px;
+  padding:18px 20px;
+  background:var(--panel);
+  border-radius:16px;
+  border:1px solid var(--border);
+  box-shadow:0 12px 30px rgba(0,0,0,0.35);
+  animation:postReveal 0.35s ease forwards;
+}
+
+/* Header */
+#post-header-end{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:0.85rem;
+  margin-bottom:10px;
+}
+
+#username-end{
+  font-weight:700;
+  color:#ff784e;
+}
+
+.platform{
+  color:var(--muted);
+}
+
+/* Content */
+.post-content{
+  font-size:1rem;
+  line-height:1.45;
+}
+
+/* Reveal animation */
+@keyframes postReveal{
+  from{
+    opacity:0;
+    transform:translateY(10px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* Hidden state */
+.hidden{
+  display:none;
+}
