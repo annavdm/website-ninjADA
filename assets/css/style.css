@@ -348,6 +348,7 @@ body.viewing-post .post:not(.is-open){
   background:#162327;
   border-radius:12px;
   font-size:14px;
+  border: 0.2px solid #ff4500;
 }
 
 /* Iframes */
@@ -635,6 +636,8 @@ footer{
   margin: 0 auto;      /* center on the page */
   background-color: transparent;   /* make sure nothing is clipped */
 }
+
+
 
 /* === Normalize plot spacing inside open posts === */
 .post.is-open .plot-panel,
